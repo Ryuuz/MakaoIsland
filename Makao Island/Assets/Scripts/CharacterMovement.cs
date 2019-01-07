@@ -7,8 +7,7 @@ public class CharacterMovement : MonoBehaviour
 
     public float mMaxSpeed = 10f;
     public float mJumpForce = 5f;
-    public float mMaxFallSpeed = 20f;
-    public float mTurnSpeed = 2f;
+    public float mMaxFallSpeed = 10f;
 
     private Vector3 mMovementDirection = Vector3.zero;
     private float mCurrentSpeed = 0f;
@@ -33,36 +32,30 @@ public class CharacterMovement : MonoBehaviour
         MoveCharacter();
 	}
 
-    void Jump()
-    {
-        if(mCharacterController.isGrounded)
-        {
-            mCurrentFallSpeed += mJumpForce;
-        }
-    }
-
     void MoveCharacter()
     {
         mCharacterController.Move(((mMovementDirection * mCurrentSpeed) + new Vector3(0f, mCurrentFallSpeed, 0f)) * Time.deltaTime);
-    }
-
-    void RotateCharacter()
-    {
-
     }
 
     void Gravity()
     {
         if(!mCharacterController.isGrounded)
         {
-            mCurrentFallSpeed -= Physics.gravity.y * Time.deltaTime;
-
-            mCurrentFallSpeed = Mathf.Max(mCurrentFallSpeed, mMaxFallSpeed);
-            mCurrentFallSpeed = Mathf.Min(mCurrentFallSpeed, -mMaxFallSpeed);
+            mCurrentFallSpeed += Physics.gravity.y * Time.deltaTime;
+            mCurrentFallSpeed = Mathf.Max(mCurrentFallSpeed, -mMaxFallSpeed);
         }
-        else if(mCharacterController.isGrounded && mCurrentFallSpeed != 0f)
+    }
+
+    public void RotateCharacter(Quaternion charRotation)
+    {
+        transform.rotation = charRotation;
+    }
+
+    public void Jump()
+    {
+        if (mCharacterController.isGrounded)
         {
-            mCurrentFallSpeed = 0f;
+            mCurrentFallSpeed = mJumpForce;
         }
     }
 
@@ -70,8 +63,8 @@ public class CharacterMovement : MonoBehaviour
     {
         mCurrentSpeed = speed;
 
-        mCurrentSpeed = Mathf.Max(mCurrentSpeed, mMaxSpeed);
-        mCurrentSpeed = Mathf.Min(mCurrentSpeed, 0f);
+        mCurrentSpeed = Mathf.Min(mCurrentSpeed, mMaxSpeed);
+        mCurrentSpeed = Mathf.Max(mCurrentSpeed, 0f);
     }
 
     public void SetDirection(Vector3 direction)
