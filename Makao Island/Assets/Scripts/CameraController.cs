@@ -14,21 +14,24 @@ public class CameraController : MonoBehaviour
     private Vector3 mCameraPosition;
 
     // Use this for initialization
-    void Start ()
+    void Start()
     {
         mPlayer = GameObject.Find("Player");
     }
 	
 	// Update is called once per frame
-	void Update ()
+	void Update()
     {
         //Place camera at player's origin, then move up by 'mCameraHeight'
         mCameraPosition = mPlayer.transform.position;
         mCameraPosition.y += mCameraHeight;
         transform.position = mCameraPosition;
+    }
 
-        mRotation.x = (mRotation.x + (Input.GetAxisRaw("Mouse X") * mTurnSpeed)) % 360;
-        mRotation.y = (mRotation.y - (Input.GetAxisRaw("Mouse Y") * mTurnSpeed)) % 360;
+    public void RotateCamera(float xAxis, float yAxis)
+    {
+        mRotation.x = (mRotation.x + (xAxis * mTurnSpeed)) % 360;
+        mRotation.y = (mRotation.y - (yAxis * mTurnSpeed)) % 360;
 
         //Limit how far you can look up and down
         mRotation.y = Mathf.Max(mRotation.y, -60);

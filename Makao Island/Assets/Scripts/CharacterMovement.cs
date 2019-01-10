@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour
 {
-
-    public float mMaxSpeed = 10f;
     public float mJumpForce = 5f;
     public float mMaxFallSpeed = 10f;
 
@@ -18,15 +16,8 @@ public class CharacterMovement : MonoBehaviour
     {
         mCharacterController = GetComponent<CharacterController>();
     }
-
-    // Use this for initialization
-    void Start ()
-    {
-		
-	}
 	
-	// Update is called once per frame
-	void Update ()
+	void Update()
     {
         Gravity();
         MoveCharacter();
@@ -34,9 +25,18 @@ public class CharacterMovement : MonoBehaviour
 
     void MoveCharacter()
     {
-        mCharacterController.Move(((mMovementDirection * mCurrentSpeed) + new Vector3(0f, mCurrentFallSpeed, 0f)) * Time.deltaTime);
+        if(mCharacterController.isGrounded)
+        {
+            mCharacterController.Move(((mMovementDirection * mCurrentSpeed) + new Vector3(0f, mCurrentFallSpeed, 0f)) * Time.deltaTime);
+            Debug.Log((((mMovementDirection * mCurrentSpeed) + new Vector3(0f, mCurrentFallSpeed, 0f)) * Time.deltaTime).magnitude);
+        }
+        else
+        {
+            mCharacterController.Move(((mMovementDirection * (mCurrentSpeed*0.8f)) + new Vector3(0f, mCurrentFallSpeed, 0f)) * Time.deltaTime);
+        }
     }
 
+    //Applies gravity to the character
     void Gravity()
     {
         if(!mCharacterController.isGrounded)
@@ -46,11 +46,13 @@ public class CharacterMovement : MonoBehaviour
         }
     }
 
+    //Rotates the character to the given rotation
     public void RotateCharacter(Quaternion charRotation)
     {
         transform.rotation = charRotation;
     }
 
+    //Makes the character jump if grounded
     public void Jump()
     {
         if (mCharacterController.isGrounded)
@@ -59,14 +61,13 @@ public class CharacterMovement : MonoBehaviour
         }
     }
 
+    //Sets the speed and makes sure it's within its limits
     public void SetSpeed(float speed)
     {
         mCurrentSpeed = speed;
-
-        mCurrentSpeed = Mathf.Min(mCurrentSpeed, mMaxSpeed);
-        mCurrentSpeed = Mathf.Max(mCurrentSpeed, 0f);
     }
 
+    //Sets the direction to move in
     public void SetDirection(Vector3 direction)
     {
         mMovementDirection = direction;

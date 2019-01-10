@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-
+    public float mSpeed = 5f;
     private Vector3 mDirection = Vector3.zero;
-    
     private CharacterMovement mMovementController;
 
     private void Awake()
@@ -14,22 +13,26 @@ public class PlayerController : MonoBehaviour
         mMovementController = GetComponent<CharacterMovement>();
     }
 
-    // Use this for initialization
-    void Start ()
+    void Start()
     {
-        mMovementController.SetSpeed(5f);
+        GetComponent<MeshRenderer>().enabled = false;
+        mMovementController.SetSpeed(mSpeed);
     }
 	
-	// Update is called once per frame
-	void Update ()
+	void Update()
     {
-        mDirection = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
-        mDirection = transform.TransformDirection(mDirection);
-        mMovementController.SetDirection(mDirection);
 
-        if(Input.GetButtonDown("Jump"))
-        {
-            mMovementController.Jump();
-        }
 	}
+
+    public void MovePlayer(float horizontal, float vertical)
+    {
+        mDirection = transform.TransformDirection(new Vector3(horizontal, 0f, vertical));
+        //mDirection.Normalize();
+        mMovementController.SetDirection(mDirection);
+    }
+
+    public void TriggerJump()
+    {
+        mMovementController.Jump();
+    }
 }
