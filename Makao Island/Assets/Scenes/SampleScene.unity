@@ -364,6 +364,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 553086707}
+  - component: {fileID: 553086708}
   - component: {fileID: 553086706}
   m_Layer: 0
   m_Name: Manager
@@ -396,6 +397,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &553086708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 553086705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f77059dbf433134cad5f86ec828fe1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mInputHandler: {fileID: 0}
+  mPlayer: {fileID: 0}
+  mMainCamera: {fileID: 0}
 --- !u!1001 &975728414
 Prefab:
   m_ObjectHideFlags: 0
@@ -434,6 +449,15 @@ Prefab:
     - target: {fileID: 4909251983476952, guid: 04f3f54a5cea66745912ee3d47729baf, type: 2}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114802826201337696, guid: 04f3f54a5cea66745912ee3d47729baf,
+        type: 2}
+      propertyPath: mRunSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1837058904439086, guid: 04f3f54a5cea66745912ee3d47729baf, type: 2}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 04f3f54a5cea66745912ee3d47729baf, type: 2}

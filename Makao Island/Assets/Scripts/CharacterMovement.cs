@@ -28,11 +28,10 @@ public class CharacterMovement : MonoBehaviour
         if(mCharacterController.isGrounded)
         {
             mCharacterController.Move(((mMovementDirection * mCurrentSpeed) + new Vector3(0f, mCurrentFallSpeed, 0f)) * Time.deltaTime);
-            Debug.Log((((mMovementDirection * mCurrentSpeed) + new Vector3(0f, mCurrentFallSpeed, 0f)) * Time.deltaTime).magnitude);
         }
         else
         {
-            mCharacterController.Move(((mMovementDirection * (mCurrentSpeed*0.8f)) + new Vector3(0f, mCurrentFallSpeed, 0f)) * Time.deltaTime);
+            mCharacterController.Move(((mMovementDirection * (mCurrentSpeed*0.6f)) + new Vector3(0f, mCurrentFallSpeed, 0f)) * Time.deltaTime);
         }
     }
 

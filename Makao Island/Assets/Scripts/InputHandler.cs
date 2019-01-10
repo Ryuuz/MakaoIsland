@@ -5,20 +5,54 @@ using UnityEngine;
 public class InputHandler : MonoBehaviour
 {
     private bool mInMenu = false;
+
     private GameObject mPlayer;
     private GameObject mCamera;
+    private GameManager mGameManager;
 
     private PlayerController mPlayerController;
     private CameraController mCameraController;
 
+    private static InputHandler inputHandler;
+
+    public static InputHandler InputInstance()
+    {
+        if (inputHandler == null)
+        {
+            GameObject manager = GameObject.Find("Manager");
+
+            if (manager)
+            {
+                inputHandler = manager.AddComponent<InputHandler>();
+            }
+            else
+            {
+                manager = new GameObject("Manager");
+                inputHandler = manager.AddComponent<InputHandler>();
+            }
+        }
+
+        return inputHandler;
+    }
+
     private void Awake()
     {
-        mPlayer = GameObject.Find("Player");
-        mCamera = GameObject.Find("Main Camera");
+        if (inputHandler == null)
+        {
+            inputHandler = this;
+        }
+        else if(inputHandler != this)
+        {
+            Destroy(this);
+        }
     }
 
     void Start()
     {
+        mGameManager = GameManager.ManagerInstance();
+        mPlayer = mGameManager.mPlayer;
+        mCamera = mGameManager.mMainCamera;
+
         mPlayerController = mPlayer.GetComponent<PlayerController>();
         mCameraController = mCamera.GetComponent<CameraController>();
 	}
@@ -43,6 +77,15 @@ public class InputHandler : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
         {
             mPlayerController.TriggerJump();
+        }
+
+        if(Input.GetButtonDown("Sprint"))
+        {
+            mPlayerController.TriggerSprint(true);
+        }
+        else if(Input.GetButtonUp("Sprint"))
+        {
+            mPlayerController.TriggerSprint(false);
         }
     }
 
