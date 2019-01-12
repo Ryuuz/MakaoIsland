@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class DayCycle : MonoBehaviour
 {
-    public float dawnLength = 10f;
-    public float dayLength = 20f;
-    public float duskLength = 10f;
-    public float nightLength = 20f;
+    public float mDawnLength = 10f;
+    public float mDayLength = 20f;
+    public float mDuskLength = 10f;
+    public float mNightLength = 20f;
+    public float mCyclusSpeed = 1f;
 
-    private float currentTime;
-    private DayCyclus currentCyclusStep;
-    private float currentCyclusTime;
-    private float currentRotation;
-    private float timeStep;
-    private float timeOfDay;
+    private float mCurrentTime;
+    private DayCyclus mCurrentCyclusStep;
+    private float mCurrentCyclusLength;
+    private float mCurrentRotation;
+    private float mRotationStep;
 
     enum DayCyclus
     {
@@ -23,57 +23,49 @@ public class DayCycle : MonoBehaviour
 
 	void Start()
     {
-        currentCyclusStep = DayCyclus.dawn;
-        currentTime = 0f;
-        timeOfDay = 0f;
-        currentCyclusTime = CyclusStepLength();
-        timeStep = 360 / (dawnLength + dayLength + duskLength + nightLength);
-        currentRotation = 0f;
+        mCurrentCyclusStep = DayCyclus.dawn;
+        mCurrentCyclusLength = mDawnLength;
+        mCurrentTime = 0f;
+        mRotationStep = 360f / (mDawnLength + mDayLength + mDuskLength + mNightLength);
+        mCurrentRotation = 0f;
     }
 	
 	void Update()
     {
-        currentTime += Time.deltaTime;
-        timeOfDay += Time.deltaTime;
-        currentRotation = ((timeStep) * timeOfDay) % 360;
-        transform.eulerAngles = new Vector3(currentRotation, 0f, 0f);
+        mCurrentTime += Time.deltaTime * mCyclusSpeed;
+        mCurrentRotation = (mRotationStep * mCurrentTime);
+        transform.eulerAngles = new Vector3(mCurrentRotation, 0f, 0f);
 
-        if(currentTime >= currentCyclusTime)
+        if(mCurrentTime >= mCurrentCyclusLength)
         {
-            currentCyclusStep = NextCyclusStep();
-            currentCyclusTime = CyclusStepLength();
-            currentTime = 0f;
-
-            if(currentCyclusStep == DayCyclus.dawn)
-            {
-                timeOfDay = 0f;
-            }
+            NextCyclusStep();
         }
 	}
 
-    float CyclusStepLength()
+    void NextCyclusStep()
     {
-        switch(currentCyclusStep)
+        switch (mCurrentCyclusStep)
         {
-            case DayCyclus.dawn: return dawnLength;
-            case DayCyclus.day: return dayLength;
-            case DayCyclus.dusk: return duskLength;
-            case DayCyclus.night: return nightLength;
+            case DayCyclus.dawn:
+                mCurrentCyclusLength += mDayLength;
+                mCurrentCyclusStep = DayCyclus.day;
+                break;
+
+            case DayCyclus.day:
+                mCurrentCyclusLength += mDuskLength;
+                mCurrentCyclusStep = DayCyclus.dusk;
+                break;
+
+            case DayCyclus.dusk:
+                mCurrentCyclusLength += mNightLength;
+                mCurrentCyclusStep = DayCyclus.night;
+                break;
+
+            case DayCyclus.night:
+                mCurrentCyclusLength = mDawnLength;
+                mCurrentTime = 0f;
+                mCurrentCyclusStep = DayCyclus.dawn;
+                break;
         }
-
-        return 0f;
-    }
-
-    DayCyclus NextCyclusStep()
-    {
-        switch (currentCyclusStep)
-        {
-            case DayCyclus.dawn: return DayCyclus.day;
-            case DayCyclus.day: return DayCyclus.dusk;
-            case DayCyclus.dusk: return DayCyclus.night;
-            case DayCyclus.night: return DayCyclus.dawn;
-        }
-
-        return DayCyclus.dawn;
     }
 }
