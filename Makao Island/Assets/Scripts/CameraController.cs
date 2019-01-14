@@ -7,19 +7,15 @@ public class CameraController : MonoBehaviour
     public float mCameraHeight = 0.8f;
     public float mTurnSpeed = 1.2f;
 
-    [SerializeField]
     private GameObject mPlayer;
-
     private Vector2 mRotation = Vector2.zero;
     private Vector3 mCameraPosition;
 
-    // Use this for initialization
     void Start()
     {
-        mPlayer = GameObject.Find("Player");
+        mPlayer = GameManager.ManagerInstance().mPlayer;
     }
 	
-	// Update is called once per frame
 	void Update()
     {
         //Place camera at player's origin, then move up by 'mCameraHeight'

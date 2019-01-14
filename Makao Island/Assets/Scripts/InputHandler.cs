@@ -13,35 +13,38 @@ public class InputHandler : MonoBehaviour
     private PlayerController mPlayerController;
     private CameraController mCameraController;
 
-    private static InputHandler inputHandler;
+    //Singleton to insure only one instance of the class
+    private static InputHandler sInputHandler;
 
+    //Returns the instance of the class if there is one. Otherwise creates an instance
     public static InputHandler InputInstance()
     {
-        if (inputHandler == null)
+        if (sInputHandler == null)
         {
             GameObject manager = GameObject.Find("Manager");
 
             if (manager)
             {
-                inputHandler = manager.AddComponent<InputHandler>();
+                sInputHandler = manager.AddComponent<InputHandler>();
             }
             else
             {
                 manager = new GameObject("Manager");
-                inputHandler = manager.AddComponent<InputHandler>();
+                sInputHandler = manager.AddComponent<InputHandler>();
             }
         }
 
-        return inputHandler;
+        return sInputHandler;
     }
 
     private void Awake()
     {
-        if (inputHandler == null)
+        //Check if an instance of the class already exists
+        if (sInputHandler == null)
         {
-            inputHandler = this;
+            sInputHandler = this;
         }
-        else if(inputHandler != this)
+        else if(sInputHandler != this)
         {
             Destroy(this);
         }
@@ -59,6 +62,7 @@ public class InputHandler : MonoBehaviour
 	
 	void Update()
     {
+        //Different handling on input depending on whether the player is in a menu
 		if(!mInMenu)
         {
             HandlePlayInput();
@@ -69,9 +73,10 @@ public class InputHandler : MonoBehaviour
         }
 	}
 
+    //Handling of input while the game is running
     private void HandlePlayInput()
     {
-        mPlayerController.MovePlayer(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        mPlayerController.SetMovementDirection(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         mCameraController.RotateCamera(Input.GetAxisRaw("Look X"), Input.GetAxisRaw("Look Y"));
 
         if (Input.GetButtonDown("Jump"))
@@ -87,13 +92,30 @@ public class InputHandler : MonoBehaviour
         {
             mPlayerController.TriggerSprint(false);
         }
+
+        if(Input.GetButtonDown("Special"))
+        {
+            Debug.Log("Special action triggered");
+        }
+
+        if(Input.GetButtonDown("Map"))
+        {
+            Debug.Log("Map opened");
+        }
+
+        if(Input.GetButtonDown("Pause"))
+        {
+            Debug.Log("Game paused");
+        }
     }
 
+    //Handling of input while the game is paused
     private void HandlePauseInput()
     {
 
     }
 
+    //Pause or unpause the game
     public void TogglePause()
     {
         mInMenu = !mInMenu;

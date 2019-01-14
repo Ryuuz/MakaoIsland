@@ -20,13 +20,9 @@ public class PlayerController : MonoBehaviour
         GetComponent<MeshRenderer>().enabled = false;
         mMovementController.SetSpeed(mWalkSpeed);
     }
-	
-	void Update()
-    {
 
-	}
-
-    public void MovePlayer(float horizontal, float vertical)
+    //Sets the direction the player should move in
+    public void SetMovementDirection(float horizontal, float vertical)
     {
         mDirection = transform.TransformDirection(new Vector3(horizontal, 0f, vertical));
         mMovementController.SetDirection(mDirection);
@@ -37,6 +33,7 @@ public class PlayerController : MonoBehaviour
         mMovementController.Jump();
     }
 
+    //Makes the character sprint
     public void TriggerSprint(bool sprinting)
     {
         if(sprinting)

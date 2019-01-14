@@ -23,6 +23,7 @@ public class CharacterMovement : MonoBehaviour
         MoveCharacter();
 	}
 
+    //Moves the character with different speed depending on whether it's on the ground or in the air
     void MoveCharacter()
     {
         if(mCharacterController.isGrounded)
