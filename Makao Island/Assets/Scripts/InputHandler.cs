@@ -81,7 +81,7 @@ public class InputHandler : MonoBehaviour
 
         if (Input.GetButtonDown("Jump"))
         {
-            mPlayerController.TriggerJump();
+            mPlayerController.Jump();
         }
 
         if(Input.GetButtonDown("Sprint"))

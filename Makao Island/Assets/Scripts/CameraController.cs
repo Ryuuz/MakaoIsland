@@ -35,6 +35,6 @@ public class CameraController : MonoBehaviour
 
         transform.eulerAngles = new Vector3(mRotation.y, mRotation.x, 0f);
 
-        mPlayer.GetComponent<CharacterMovement>().RotateCharacter(Quaternion.AngleAxis(transform.rotation.eulerAngles.y, Vector3.up));
+        mPlayer.GetComponent<PlayerController>().RotateCharacter(Quaternion.AngleAxis(transform.rotation.eulerAngles.y, Vector3.up));
     }
 }

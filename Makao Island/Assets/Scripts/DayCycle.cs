@@ -26,7 +26,8 @@ public class DayCycle : MonoBehaviour
     {
         mGameManager = GameManager.ManagerInstance();
         eTimeChanged.AddListener(mGameManager.TimeOfDayChanged);
-        CycleSpeedChanged();
+        mGameManager.eSpeedChanged.AddListener(CycleSpeedChanged);
+        mCyclusSpeed = 1f;
 
         //Game starts at dawn
         mCurrentCyclusStep = DayCyclus.dawn;
@@ -79,9 +80,9 @@ public class DayCycle : MonoBehaviour
         }
     }
 
-    public void CycleSpeedChanged()
+    public void CycleSpeedChanged(float speed)
     {
-        mCyclusSpeed = mGameManager.GetGameSpeed();
+        mCyclusSpeed = speed;
     }
 
     public DayCyclus GetTimeOfDay()

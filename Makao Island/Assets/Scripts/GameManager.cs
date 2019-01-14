@@ -8,13 +8,27 @@ public enum DayCyclus
     dawn, day, dusk, night
 };
 
+[System.Serializable]
+public class SpeedChangeEvent : UnityEvent<float>
+{
+
+}
+
+[System.Serializable]
+public class TimeChangeEvent : UnityEvent<DayCyclus>
+{
+
+}
+
 public class GameManager : MonoBehaviour
 {
     public InputHandler mInputHandler;
     public GameObject mPlayer;
     public GameObject mMainCamera;
     public DayCycle mDayCycle;
-    public UnityEvent eSpeedChanged = new UnityEvent();
+
+    public SpeedChangeEvent eSpeedChanged = new SpeedChangeEvent();
+    public TimeChangeEvent eTimeChanged = new TimeChangeEvent();
 
     private float mGameSpeed = 1f;
 
@@ -79,18 +93,13 @@ public class GameManager : MonoBehaviour
     public void SetGameSpeed(float speed)
     {
         mGameSpeed = speed;
-        eSpeedChanged.Invoke();
-    }
-
-    public float GetGameSpeed()
-    {
-        return mGameSpeed;
+        eSpeedChanged.Invoke(mGameSpeed);
     }
 
     //When the time of the day changes
     public void TimeOfDayChanged()
     {
-        //DayCyclus currentTimeOfDay = mDayCycle.GetTimeOfDay();
-        Debug.Log("Time of day changed");
+        DayCyclus currentTimeOfDay = mDayCycle.GetTimeOfDay();
+        eTimeChanged.Invoke(currentTimeOfDay);
     }
 }

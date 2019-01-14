@@ -6,43 +6,85 @@ public class PlayerController : MonoBehaviour
 {
     public float mWalkSpeed = 5f;
     public float mRunSpeed = 10f;
+    public float mJumpForce = 5f;
+    public float mMaxFallSpeed = 10f;
 
-    private Vector3 mDirection = Vector3.zero;
-    private CharacterMovement mMovementController;
+    private Vector3 mMovementDirection = Vector3.zero;
+    private float mCurrentFallSpeed;
+    private float mCurrentMovementSpeed;
+    private CharacterController mCharacterController;
 
     private void Awake()
     {
-        mMovementController = GetComponent<CharacterMovement>();
+        mCharacterController = GetComponent<CharacterController>();
     }
 
     void Start()
     {
         GetComponent<MeshRenderer>().enabled = false;
-        mMovementController.SetSpeed(mWalkSpeed);
+        mCurrentMovementSpeed = mWalkSpeed;
+        mCurrentFallSpeed = 0f;
+    }
+
+    void Update()
+    {
+        Gravity();
+        MoveCharacter();
+    }
+
+    //Moves the character with different speed depending on whether it's on the ground or in the air
+    void MoveCharacter()
+    {
+        if (mCharacterController.isGrounded)
+        {
+            mCharacterController.Move(((mMovementDirection * mCurrentMovementSpeed) + new Vector3(0f, mCurrentFallSpeed, 0f)) * Time.deltaTime);
+        }
+        else
+        {
+            mCharacterController.Move(((mMovementDirection * (mCurrentMovementSpeed * 0.6f)) + new Vector3(0f, mCurrentFallSpeed, 0f)) * Time.deltaTime);
+        }
+    }
+
+    //Applies gravity to the character
+    void Gravity()
+    {
+        if (!mCharacterController.isGrounded)
+        {
+            mCurrentFallSpeed += Physics.gravity.y * Time.deltaTime;
+            mCurrentFallSpeed = Mathf.Max(mCurrentFallSpeed, -mMaxFallSpeed);
+        }
+    }
+
+    //Rotates the character to the given rotation
+    public void RotateCharacter(Quaternion charRotation)
+    {
+        transform.rotation = charRotation;
+    }
+
+    //Makes the character jump if grounded
+    public void Jump()
+    {
+        if (mCharacterController.isGrounded)
+        {
+            mCurrentFallSpeed = mJumpForce;
+        }
     }
 
     //Sets the direction the player should move in
     public void SetMovementDirection(float horizontal, float vertical)
     {
-        mDirection = transform.TransformDirection(new Vector3(horizontal, 0f, vertical));
-        mMovementController.SetDirection(mDirection);
+        mMovementDirection = transform.TransformDirection(new Vector3(horizontal, 0f, vertical));
     }
 
-    public void TriggerJump()
-    {
-        mMovementController.Jump();
-    }
-
-    //Makes the character sprint
     public void TriggerSprint(bool sprinting)
     {
-        if(sprinting)
+        if (sprinting)
         {
-            mMovementController.SetSpeed(mRunSpeed);
+            mCurrentMovementSpeed = mRunSpeed;
         }
         else
         {
-            mMovementController.SetSpeed(mWalkSpeed);
+            mCurrentMovementSpeed = mWalkSpeed;
         }
     }
 }
