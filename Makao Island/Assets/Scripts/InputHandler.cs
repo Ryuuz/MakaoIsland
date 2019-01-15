@@ -95,7 +95,11 @@ public class InputHandler : MonoBehaviour
 
         if(Input.GetButtonDown("Special"))
         {
-            Debug.Log("Special action triggered");
+            mPlayerController.TriggerSpecialAction(true);
+        }
+        else if(Input.GetButtonUp("Special"))
+        {
+            mPlayerController.TriggerSpecialAction(false);
         }
 
         if(Input.GetButtonDown("Map"))

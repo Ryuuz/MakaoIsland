@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public float mRunSpeed = 10f;
     public float mJumpForce = 5f;
     public float mMaxFallSpeed = 10f;
+    public SpecialActionObject mSpecialAction { get; set; }
 
     private Vector3 mMovementDirection = Vector3.zero;
     private float mCurrentFallSpeed;
@@ -85,6 +86,14 @@ public class PlayerController : MonoBehaviour
         else
         {
             mCurrentMovementSpeed = mWalkSpeed;
+        }
+    }
+
+    public void TriggerSpecialAction(bool active)
+    {
+        if(mSpecialAction != null)
+        {
+            mSpecialAction.UseSpecialAction(active);
         }
     }
 }

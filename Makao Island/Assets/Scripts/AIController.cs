@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.AI;
 
 public class AIController : MonoBehaviour
@@ -32,28 +30,32 @@ public class AIController : MonoBehaviour
 
     public void Transition(DayCyclus time)
     {
-        Vector3 pos = transform.position;
+        Transform pos = null;
 
         switch (time)
         {
             case DayCyclus.dawn:
-                pos = mDawnLocation.position;
+                pos = mDawnLocation;
                 break;
 
             case DayCyclus.day:
-                pos = mDayLocation.position;
+                pos = mDayLocation;
                 break;
 
             case DayCyclus.dusk:
-                pos = mDuskLocation.position;
+                pos = mDuskLocation;
                 break;
 
             case DayCyclus.night:
-                pos = mNightLocation.position;
+                pos = mNightLocation;
                 break;
         }
 
-        mAgent.SetDestination(pos);
+        if(pos)
+        {
+            mAgent.SetDestination(pos.position);
+        }
+        
     }
 
     public void ChangingSpeed(float speed)
