@@ -56,9 +56,21 @@ public class InputHandler : MonoBehaviour
         mPlayer = mGameManager.mPlayer;
         mCamera = mGameManager.mMainCamera;
 
-        mPlayerController = mPlayer.GetComponent<PlayerController>();
-        mCameraController = mCamera.GetComponent<CameraController>();
-	}
+        if(mPlayer)
+        {
+            mPlayerController = mPlayer.GetComponent<PlayerController>();
+        }
+
+        if(mCamera)
+        {
+            mCameraController = mCamera.GetComponent<CameraController>();
+            if(!mCameraController)
+            {
+                mCameraController = mCamera.AddComponent<CameraController>();
+            }
+        }
+        
+    }
 	
 	void Update()
     {
@@ -76,40 +88,47 @@ public class InputHandler : MonoBehaviour
     //Handling of input while the game is running
     private void HandlePlayInput()
     {
-        mPlayerController.SetMovementDirection(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-        mCameraController.RotateCamera(Input.GetAxisRaw("Look X"), Input.GetAxisRaw("Look Y"));
+        if(mCameraController)
+        {
+            mCameraController.RotateCamera(Input.GetAxisRaw("Look X"), Input.GetAxisRaw("Look Y"));
+        }
+        
+        if(mPlayerController)
+        {
+            mPlayerController.SetMovementDirection(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
 
-        if (Input.GetButtonDown("Jump"))
-        {
-            mPlayerController.Jump();
-        }
+            if (Input.GetButtonDown("Jump"))
+            {
+                mPlayerController.Jump();
+            }
 
-        if(Input.GetButtonDown("Sprint"))
-        {
-            mPlayerController.TriggerSprint(true);
-        }
-        else if(Input.GetButtonUp("Sprint"))
-        {
-            mPlayerController.TriggerSprint(false);
-        }
+            if (Input.GetButtonDown("Sprint"))
+            {
+                mPlayerController.TriggerSprint(true);
+            }
+            else if (Input.GetButtonUp("Sprint"))
+            {
+                mPlayerController.TriggerSprint(false);
+            }
 
-        if(Input.GetButtonDown("Special"))
-        {
-            mPlayerController.TriggerSpecialAction(true);
-        }
-        else if(Input.GetButtonUp("Special"))
-        {
-            mPlayerController.TriggerSpecialAction(false);
-        }
+            if (Input.GetButtonDown("Special"))
+            {
+                mPlayerController.TriggerSpecialAction(true);
+            }
+            else if (Input.GetButtonUp("Special"))
+            {
+                mPlayerController.TriggerSpecialAction(false);
+            }
 
-        if(Input.GetButtonDown("Map"))
-        {
-            Debug.Log("Map opened");
-        }
+            if (Input.GetButtonDown("Map"))
+            {
+                Debug.Log("Map opened");
+            }
 
-        if(Input.GetButtonDown("Pause"))
-        {
-            Debug.Log("Game paused");
+            if (Input.GetButtonDown("Pause"))
+            {
+                Debug.Log("Game paused");
+            }
         }
     }
 

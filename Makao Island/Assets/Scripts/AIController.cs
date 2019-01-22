@@ -16,7 +16,11 @@ public class AIController : MonoBehaviour
     {
         mAgent = GetComponent<NavMeshAgent>();
         mAgent.speed = mSpeed;
-        transform.position = mDawnLocation.position;
+
+        if(mDawnLocation)
+        {
+            transform.position = mDawnLocation.position;
+        }
 
         GameManager.ManagerInstance().eSpeedChanged.AddListener(ChangingSpeed);
         GameManager.ManagerInstance().eTimeChanged.AddListener(Transition);

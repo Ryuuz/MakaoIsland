@@ -23,8 +23,13 @@ public class DayCycle : MonoBehaviour
 	void Start()
     {
         mGameManager = GameManager.ManagerInstance();
-        eTimeChanged.AddListener(mGameManager.TimeOfDayChanged);
-        mGameManager.eSpeedChanged.AddListener(CycleSpeedChanged);
+
+        if(mGameManager)
+        {
+            eTimeChanged.AddListener(mGameManager.TimeOfDayChanged);
+            mGameManager.eSpeedChanged.AddListener(CycleSpeedChanged);
+        }
+        
         mCyclusSpeed = 1f;
 
         //Game starts at dawn

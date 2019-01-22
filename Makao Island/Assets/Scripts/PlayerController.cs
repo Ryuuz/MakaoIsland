@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     private float mCurrentFallSpeed;
     private float mCurrentMovementSpeed;
     private CharacterController mCharacterController;
+    private GameManager mGameManager;
 
     private void Awake()
     {
@@ -22,6 +23,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        mGameManager = GameManager.ManagerInstance();
         GetComponent<MeshRenderer>().enabled = false;
         mCurrentMovementSpeed = mWalkSpeed;
         mCurrentFallSpeed = 0f;

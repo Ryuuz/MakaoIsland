@@ -79,14 +79,23 @@ public class GameManager : MonoBehaviour
         }
         if(!mDayCycle)
         {
-            mDayCycle = GameObject.Find("DayNight").GetComponent<DayCycle>();
+            GameObject tempDay = GameObject.Find("DayNight");
+
+            if(tempDay)
+            {
+                mDayCycle = tempDay.GetComponent<DayCycle>();
+            }
         }
     }
 
     void Start()
     {
         mInputHandler = InputHandler.InputInstance();
-        eSpeedChanged.AddListener(mDayCycle.CycleSpeedChanged);
+
+        if(mDayCycle)
+        {
+            eSpeedChanged.AddListener(mDayCycle.CycleSpeedChanged);
+        }
     }
 
     //Set the speed the game should play at. 0 = pause, 1 = normal speed, >1 = speed up
@@ -99,7 +108,10 @@ public class GameManager : MonoBehaviour
     //When the time of the day changes
     public void TimeOfDayChanged()
     {
-        DayCyclus currentTimeOfDay = mDayCycle.GetTimeOfDay();
-        eTimeChanged.Invoke(currentTimeOfDay);
+        if(mDayCycle)
+        {
+            DayCyclus currentTimeOfDay = mDayCycle.GetTimeOfDay();
+            eTimeChanged.Invoke(currentTimeOfDay);
+        }
     }
 }

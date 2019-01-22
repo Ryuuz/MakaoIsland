@@ -19,9 +19,12 @@ public class CameraController : MonoBehaviour
 	void Update()
     {
         //Place camera at player's origin, then move up by 'mCameraHeight'
-        mCameraPosition = mPlayer.transform.position;
-        mCameraPosition.y += mCameraHeight;
-        transform.position = mCameraPosition;
+        if(mPlayer)
+        {
+            mCameraPosition = mPlayer.transform.position;
+            mCameraPosition.y += mCameraHeight;
+            transform.position = mCameraPosition;
+        }
     }
 
     public void RotateCamera(float xAxis, float yAxis)
@@ -35,6 +38,9 @@ public class CameraController : MonoBehaviour
 
         transform.eulerAngles = new Vector3(mRotation.y, mRotation.x, 0f);
 
-        mPlayer.GetComponent<PlayerController>().RotateCharacter(Quaternion.AngleAxis(transform.rotation.eulerAngles.y, Vector3.up));
+        if(mPlayer)
+        {
+            mPlayer.GetComponent<PlayerController>().RotateCharacter(Quaternion.AngleAxis(transform.rotation.eulerAngles.y, Vector3.up));
+        }
     }
 }
