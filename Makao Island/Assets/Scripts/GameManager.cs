@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
     public InputHandler mInputHandler;
     public GameObject mPlayer;
     public GameObject mMainCamera;
+    public GameObject mDialogueManager;
     public DayCycle mDayCycle;
 
     public SpeedChangeEvent eSpeedChanged = new SpeedChangeEvent();

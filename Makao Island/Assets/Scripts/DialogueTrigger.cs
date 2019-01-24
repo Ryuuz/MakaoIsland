@@ -10,10 +10,18 @@ public class DialogueTrigger : MonoBehaviour
     private bool[] mSpeakerPresent;
     private GameObject mPlayerPresent = null;
     private List<Sentence> mSentences;
+    private DialogueManager mDialogueManager;
 
     void Start()
     {
         //Retrieve dialogue lines from the dialogue manager
+        GameObject temp = GameManager.ManagerInstance().mDialogueManager;
+        if(temp)
+        {
+            mDialogueManager = temp.GetComponent<DialogueManager>();
+        }
+
+        GetDialogue();
 
         //The speakers that are present inside the dialogue trigger from the start
         mSpeakerPresent = new bool[mSpeakers.Length];
@@ -98,14 +106,20 @@ public class DialogueTrigger : MonoBehaviour
 
     private bool AllSpeakersPresent()
     {
-        bool present = true;
+        if(mSpeakerPresent.Length == 0)
+        {
+            return false;
+        }
 
         for(int i = 0; i < mSpeakerPresent.Length; i++)
         {
-            present = present && mSpeakerPresent[i];
+            if(!mSpeakerPresent[i])
+            {
+                return false;
+            }
         }
 
-        return present;
+        return true;
     }
 
     private bool IsASpeaker(GameObject character)
@@ -119,5 +133,18 @@ public class DialogueTrigger : MonoBehaviour
         }
 
         return false;
+    }
+
+    private void GetDialogue()
+    {
+        if(mDialogueManager)
+        {
+            Sentence[] tempDialogue = mDialogueManager.mDialogueLines.GetConversation(mDialogueNumber);
+
+            foreach (Sentence line in tempDialogue)
+            {
+                mSentences.Add(line);
+            }
+        }
     }
 }

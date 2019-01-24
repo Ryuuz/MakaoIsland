@@ -15,6 +15,7 @@ public class DialogueLines
 {
     private Sentence[][] mConversations =
     {
+        //0
         new Sentence[]
         {
             new Sentence(1, "Heya!"),
