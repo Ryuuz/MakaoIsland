@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
+﻿
 public struct Sentence
 {
     public int speaker;
@@ -14,17 +11,21 @@ public struct Sentence
     }
 }
 
-public class DialogueLines : MonoBehaviour
+public class DialogueLines
 {
-    // Start is called before the first frame update
-    void Start()
+    private Sentence[][] mConversations =
     {
-        
-    }
+        new Sentence[]
+        {
+            new Sentence(1, "Heya!"),
+            new Sentence(2, "How's it hanging?"),
+            new Sentence(1, "Pretty good. You?"),
+            new Sentence(2, "Can't complain.")
+        }
+    };
 
-    // Update is called once per frame
-    void Update()
+    public Sentence[] GetConversation(int index)
     {
-        
+        return mConversations[index];
     }
 }
