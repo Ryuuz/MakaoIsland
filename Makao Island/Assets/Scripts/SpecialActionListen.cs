@@ -2,17 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpecialActionListen : MonoBehaviour
+public class SpecialActionListen : SpecialActionObject
 {
-    // Start is called before the first frame update
-    void Start()
+    private DialogueTrigger mOwner;
+
+    public SpecialActionListen(DialogueTrigger owner)
     {
-        
+        mOwner = owner;
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void UseSpecialAction(bool active)
     {
-        
+        if (active)
+        {
+            mOwner.PlayDialogue();
+        }
     }
 }

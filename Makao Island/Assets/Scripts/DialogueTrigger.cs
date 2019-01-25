@@ -11,9 +11,14 @@ public class DialogueTrigger : MonoBehaviour
     private GameObject mPlayerPresent = null;
     private List<Sentence> mSentences;
     private DialogueManager mDialogueManager;
+    private bool mPlaying = false;
+    private bool mPlayerListening = false;
+    private SpecialActionListen mListenAction;
 
     void Start()
     {
+        mListenAction = new SpecialActionListen(this);
+
         //Retrieve dialogue lines from the dialogue manager
         GameObject temp = GameManager.ManagerInstance().mDialogueManager;
         if(temp)
@@ -39,11 +44,6 @@ public class DialogueTrigger : MonoBehaviour
         }
     }
 
-    void Update()
-    {
-        
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player")
@@ -66,7 +66,7 @@ public class DialogueTrigger : MonoBehaviour
 
         if(AllSpeakersPresent() && mPlayerPresent)
         {
-            //Give listen action
+            mPlayerPresent.GetComponent<PlayerController>().mSpecialAction = mListenAction;
         }
     }
 
@@ -76,6 +76,7 @@ public class DialogueTrigger : MonoBehaviour
         {
             mPlayerPresent.GetComponent<PlayerController>().mSpecialAction = null;
             mPlayerPresent = null;
+            mPlayerListening = false;
         }
         else if(IsASpeaker(other.gameObject))
         {
@@ -94,14 +95,35 @@ public class DialogueTrigger : MonoBehaviour
         }
     }
 
-    private void PlayDialogue()
+    public void PlayDialogue()
     {
+        if(!mPlaying)
+        {
+            //Set npcs talking to true
+            //Set listening and playing to true
+        }
+    }
 
+    private IEnumerator DialogueRunning()
+    {
+        foreach(Sentence line in mSentences)
+        {
+            //Calculate time
+            //if listening
+                //Retrieve npc name and icon
+                //Update dialogue box 
+            //yield the calculated time
+        }
+
+        StopDialogue();
+        yield return null;
     }
 
     private void StopDialogue()
     {
-
+        //Set npcs talking to false
+        //Set listening and playing to false
+        //Hide dialogue box
     }
 
     private bool AllSpeakersPresent()

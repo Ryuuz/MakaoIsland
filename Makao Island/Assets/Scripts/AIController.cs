@@ -8,6 +8,10 @@ public class AIController : MonoBehaviour
     public Transform mDayLocation;
     public Transform mDuskLocation;
     public Transform mNightLocation;
+    public Sprite mIcon;
+
+    [HideInInspector]
+    public bool mTalking = false;
 
     private NavMeshAgent mAgent;
 
