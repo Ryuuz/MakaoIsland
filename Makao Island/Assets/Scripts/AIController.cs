@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.AI;
 
 public class AIController : MonoBehaviour
@@ -20,11 +22,6 @@ public class AIController : MonoBehaviour
     {
         mAgent = GetComponent<NavMeshAgent>();
         mAgent.speed = mSpeed;
-
-        if(mDawnLocation)
-        {
-            transform.position = mDawnLocation.position;
-        }
 
         GameManager.ManagerInstance().eSpeedChanged.AddListener(ChangingSpeed);
         GameManager.ManagerInstance().eTimeChanged.AddListener(Transition);
@@ -61,7 +58,7 @@ public class AIController : MonoBehaviour
 
         if(pos)
         {
-            mAgent.SetDestination(pos.position);
+            StartCoroutine("MoveWhenReady", pos.position);
         }
         
     }
@@ -69,5 +66,12 @@ public class AIController : MonoBehaviour
     public void ChangingSpeed(float speed)
     {
         mAgent.speed = mSpeed * speed;
+    }
+
+    private IEnumerator MoveWhenReady(Vector3 position)
+    {
+        yield return new WaitUntil(() => mTalking == false);
+
+        mAgent.SetDestination(position);
     }
 }

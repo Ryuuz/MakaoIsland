@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7128574489735542859}
   - component: {fileID: 7128574489735542856}
   - component: {fileID: 7128574489735542855}
+  - component: {fileID: 7170472208005371228}
   m_Layer: 0
   m_Name: Villager
   m_TagString: Untagged
@@ -133,3 +134,21 @@ MonoBehaviour:
   mDayLocation: {fileID: 0}
   mDuskLocation: {fileID: 0}
   mNightLocation: {fileID: 0}
+  mIcon: {fileID: 0}
+  mTalking: 0
+--- !u!54 &7170472208005371228
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7128574489735542857}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

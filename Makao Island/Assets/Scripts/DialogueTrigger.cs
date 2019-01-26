@@ -5,14 +5,17 @@ using UnityEngine;
 public class DialogueTrigger : MonoBehaviour
 {
     public int mDialogueNumber;
+    public float mCooldown = 10f;
     public GameObject[] mSpeakers;
 
+    private AIController[] mSpeakerControllers;
     private bool[] mSpeakerPresent;
     private GameObject mPlayerPresent = null;
-    private List<Sentence> mSentences;
+    private List<Sentence> mSentences = new List<Sentence>();
     private DialogueManager mDialogueManager;
     private bool mPlaying = false;
     private bool mPlayerListening = false;
+    private bool mCoolingDown = false;
     private SpecialActionListen mListenAction;
 
     void Start()
@@ -42,11 +45,18 @@ public class DialogueTrigger : MonoBehaviour
                 mSpeakerPresent[i] = false;
             }
         }
+
+        mSpeakerControllers = new AIController[mSpeakers.Length];
+
+        for(int i = 0; i < mSpeakerControllers.Length; i++)
+        {
+            mSpeakerControllers[i] = mSpeakers[i].GetComponent<AIController>();
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Player")
+        if (other.tag == "Player")
         {
             mPlayerPresent = other.gameObject;
         }
@@ -64,7 +74,7 @@ public class DialogueTrigger : MonoBehaviour
             }
         }
 
-        if(AllSpeakersPresent() && mPlayerPresent)
+        if(AllSpeakersPresent() && mPlayerPresent && !mCoolingDown)
         {
             mPlayerPresent.GetComponent<PlayerController>().mSpecialAction = mListenAction;
         }
@@ -72,11 +82,12 @@ public class DialogueTrigger : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if(other.tag == "Player")
+        if (other.tag == "Player")
         {
             mPlayerPresent.GetComponent<PlayerController>().mSpecialAction = null;
             mPlayerPresent = null;
             mPlayerListening = false;
+            mDialogueManager.HideDialogueBox();
         }
         else if(IsASpeaker(other.gameObject))
         {
@@ -99,31 +110,67 @@ public class DialogueTrigger : MonoBehaviour
     {
         if(!mPlaying)
         {
-            //Set npcs talking to true
-            //Set listening and playing to true
+            for(int i = 0; i < mSpeakerControllers.Length; i++)
+            {
+                mSpeakerControllers[i].mTalking = true;
+            }
+            mPlaying = true;
+            mPlayerListening = true;
+
+            mPlayerPresent.GetComponent<PlayerController>().mSpecialAction = null;
+
+            StartCoroutine(DialogueRunning());
+        }
+        else
+        {
+            mPlayerListening = true;
+            mDialogueManager.ShowDialogueBox();
+            mPlayerPresent.GetComponent<PlayerController>().mSpecialAction = null;
         }
     }
 
     private IEnumerator DialogueRunning()
     {
+        float dialogueTime = 0f;
+
         foreach(Sentence line in mSentences)
         {
-            //Calculate time
-            //if listening
-                //Retrieve npc name and icon
-                //Update dialogue box 
-            //yield the calculated time
+            dialogueTime = 0.4f * line.text.Length;
+
+            if(mPlayerListening)
+            {
+                mDialogueManager.FillDialogueBox(mSpeakers[line.speaker - 1].name, line.text, mSpeakerControllers[line.speaker - 1].mIcon);
+            }
+
+            yield return new WaitForSeconds(dialogueTime);
         }
 
-        StopDialogue();
-        yield return null;
+        StartCoroutine(StopDialogue());
     }
 
-    private void StopDialogue()
+    private IEnumerator StopDialogue()
     {
-        //Set npcs talking to false
-        //Set listening and playing to false
-        //Hide dialogue box
+        for (int i = 0; i < mSpeakerControllers.Length; i++)
+        {
+            mSpeakerControllers[i].mTalking = false;
+        }
+        mPlaying = false;
+        mPlayerListening = false;
+
+        mDialogueManager.HideDialogueBox();
+
+        mPlayerPresent.GetComponent<PlayerController>().mSpecialAction = null;
+
+        Debug.Log("Starting cooldown");
+        mCoolingDown = true;
+        yield return new WaitForSeconds(mCooldown);
+        mCoolingDown = false;
+        Debug.Log("Cooldown over");
+
+        if (AllSpeakersPresent() && mPlayerPresent)
+        {
+            mPlayerPresent.GetComponent<PlayerController>().mSpecialAction = mListenAction;
+        }
     }
 
     private bool AllSpeakersPresent()
