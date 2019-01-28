@@ -22,7 +22,9 @@ public class TimeChangeEvent : UnityEvent<DayCyclus>
 
 public class GameManager : MonoBehaviour
 {
+    [HideInInspector]
     public InputHandler mInputHandler;
+
     public GameObject mPlayer;
     public GameObject mMainCamera;
     public GameObject mDialogueManager;
@@ -31,7 +33,7 @@ public class GameManager : MonoBehaviour
     public SpeedChangeEvent eSpeedChanged = new SpeedChangeEvent();
     public TimeChangeEvent eTimeChanged = new TimeChangeEvent();
 
-    private float mGameSpeed = 1f;
+    public float mGameSpeed = 1f;
 
     //Singleton to ensure only one instance of the class
     private static GameManager sGameManager;
