@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class InputHandler : MonoBehaviour
 {
+    public MapManager mMapManager;
     private bool mInMenu = false;
 
     private GameObject mPlayer;
@@ -74,7 +75,7 @@ public class InputHandler : MonoBehaviour
 	
 	void Update()
     {
-        //Different handling on input depending on whether the player is in a menu
+        //Different handling of input depending on whether the player is in a menu
 		if(!mInMenu)
         {
             HandlePlayInput();
@@ -120,14 +121,16 @@ public class InputHandler : MonoBehaviour
                 mPlayerController.TriggerSpecialAction(false);
             }
 
-            if (Input.GetButtonDown("Map"))
+            if (Input.GetButtonDown("Map") && mMapManager)
             {
-                Debug.Log("Map opened");
+                mMapManager.ShowMap();
+                ToggleMenu();
             }
 
             if (Input.GetButtonDown("Pause"))
             {
                 Debug.Log("Game paused");
+                ToggleMenu();
             }
         }
     }
@@ -135,12 +138,23 @@ public class InputHandler : MonoBehaviour
     //Handling of input while the game is paused
     private void HandlePauseInput()
     {
+        if (Input.GetButtonDown("Map") && mMapManager)
+        {
+            mMapManager.HideMap();
+            ToggleMenu();
+        }
 
+        if (Input.GetButtonDown("Pause"))
+        {
+            Debug.Log("Game unpaused");
+            ToggleMenu();
+        }
     }
 
     //Pause or unpause the game
-    public void TogglePause()
+    public void ToggleMenu()
     {
         mInMenu = !mInMenu;
+
     }
 }
