@@ -6,15 +6,21 @@ using UnityEngine.AI;
 public class AIController : MonoBehaviour
 {
     public float mSpeed = 3.5f;
-    public Transform mDawnLocation;
-    public Transform mDayLocation;
-    public Transform mDuskLocation;
-    public Transform mNightLocation;
-    public Sprite mIcon;
+    public float mWaypointRadius = 4f;
+    public float mTransitionDelay = 2f;
 
     [HideInInspector]
     public bool mTalking = false;
 
+    [SerializeField]
+    private Transform mDawnLocation;
+    [SerializeField]
+    private Transform mDayLocation;
+    [SerializeField]
+    private Transform mDuskLocation;
+    [SerializeField]
+    private Transform mNightLocation;
+    
     private NavMeshAgent mAgent;
 
     // Start is called before the first frame update
@@ -25,12 +31,6 @@ public class AIController : MonoBehaviour
 
         GameManager.ManagerInstance().eSpeedChanged.AddListener(ChangingSpeed);
         GameManager.ManagerInstance().eTimeChanged.AddListener(Transition);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void Transition(DayCyclus time)
@@ -58,7 +58,11 @@ public class AIController : MonoBehaviour
 
         if(pos)
         {
-            StartCoroutine("MoveWhenReady", pos.position);
+            //Take the position of the waypoint and set a destination in a radius near it
+            Vector3 destination = pos.position + Random.insideUnitSphere * mWaypointRadius;
+            destination.y = pos.position.y;
+
+            StartCoroutine("MoveWhenReady", destination);
         }
         
     }
@@ -70,7 +74,14 @@ public class AIController : MonoBehaviour
 
     private IEnumerator MoveWhenReady(Vector3 position)
     {
-        yield return new WaitUntil(() => mTalking == false);
+        if (mTalking)
+        {
+            yield return new WaitUntil(() => mTalking == false);
+        }
+        else
+        {
+            yield return new WaitForSeconds(mTransitionDelay);
+        }
 
         mAgent.SetDestination(position);
     }
