@@ -1,20 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class AITalking : MonoBehaviour
+public class AITalking : AIController
 {
     public Sprite mIcon;
-
-    private AIController mController;
 
     [SerializeField]
     private RectTransform mSpeechBubble;
 
+    private bool mTalking = false;
+
     private void Awake()
     {
-        mController = GetComponent<AIController>();
         ToggleSpeechBubble(false);
     }
 
@@ -30,19 +28,22 @@ public class AITalking : MonoBehaviour
         }
     }
 
-    public IEnumerator LookAtObject(Vector3 obj)
-    {
-        Quaternion endRotation = Quaternion.LookRotation(obj - transform.position, Vector3.up);
-
-        while (Quaternion.Angle(transform.rotation, endRotation) > 2f)
-        {
-            transform.rotation = Quaternion.Slerp(transform.rotation, endRotation, Time.deltaTime * GameManager.ManagerInstance().mGameSpeed);
-            yield return null;
-        }
-    }
-
     public void SetTalking(bool talking)
     {
-        mController.mTalking = talking;
+        mTalking = talking;
+    }
+
+    protected override IEnumerator MoveWhenReady(Vector3 position)
+    {
+        if (mTalking)
+        {
+            yield return new WaitUntil(() => mTalking == false);
+        }
+        else
+        {
+            yield return new WaitForSeconds(mTransitionDelay / mGameManager.mGameSpeed);
+        }
+
+        mAgent.SetDestination(position);
     }
 }

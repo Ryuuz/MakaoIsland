@@ -382,6 +382,16 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -0.029999971
       objectReference: {fileID: 0}
+    - target: {fileID: 2293655667498756040, guid: c71c44bb6d3bb1a4ea90bd325694f463,
+        type: 3}
+      propertyPath: mNightLocation
+      value: 
+      objectReference: {fileID: 2117229816}
+    - target: {fileID: 2293655667498756040, guid: c71c44bb6d3bb1a4ea90bd325694f463,
+        type: 3}
+      propertyPath: mDuskLocation
+      value: 
+      objectReference: {fileID: 2056487986}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c71c44bb6d3bb1a4ea90bd325694f463, type: 3}
 --- !u!1 &1169822602
@@ -1140,6 +1150,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4584705862511285996, guid: 9fa3da0d6c46fbe46b34e7425564c150,
+        type: 3}
+      propertyPath: mDayLocation
+      value: 
+      objectReference: {fileID: 2056487986}
+    - target: {fileID: 4584705862511285996, guid: 9fa3da0d6c46fbe46b34e7425564c150,
+        type: 3}
+      propertyPath: mDuskLocation
+      value: 
+      objectReference: {fileID: 72507289}
+    - target: {fileID: 4584705862511285996, guid: 9fa3da0d6c46fbe46b34e7425564c150,
+        type: 3}
+      propertyPath: mWanderingSpeed
+      value: 1.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9fa3da0d6c46fbe46b34e7425564c150, type: 3}
 --- !u!1001 &3669821153286895877
@@ -1393,6 +1418,21 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -0.029999971
       objectReference: {fileID: 0}
+    - target: {fileID: 2293655667498756040, guid: c71c44bb6d3bb1a4ea90bd325694f463,
+        type: 3}
+      propertyPath: mDawnLocation
+      value: 
+      objectReference: {fileID: 2117229816}
+    - target: {fileID: 2293655667498756040, guid: c71c44bb6d3bb1a4ea90bd325694f463,
+        type: 3}
+      propertyPath: mDayLocation
+      value: 
+      objectReference: {fileID: 1574441116}
+    - target: {fileID: 2293655667498756040, guid: c71c44bb6d3bb1a4ea90bd325694f463,
+        type: 3}
+      propertyPath: mNightLocation
+      value: 
+      objectReference: {fileID: 72507289}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c71c44bb6d3bb1a4ea90bd325694f463, type: 3}
 --- !u!1001 &7973557565004798672

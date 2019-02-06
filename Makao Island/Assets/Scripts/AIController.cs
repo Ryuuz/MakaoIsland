@@ -9,8 +9,9 @@ public class AIController : MonoBehaviour
     public float mWaypointRadius = 4f;
     public float mTransitionDelay = 2f;
 
-    [HideInInspector]
-    public bool mTalking = false;
+    protected Vector3 mCurrentLocation;
+    protected NavMeshAgent mAgent;
+    protected GameManager mGameManager;
 
     [SerializeField]
     private Transform mDawnLocation;
@@ -19,18 +20,17 @@ public class AIController : MonoBehaviour
     [SerializeField]
     private Transform mDuskLocation;
     [SerializeField]
-    private Transform mNightLocation;
-    
-    private NavMeshAgent mAgent;
+    private Transform mNightLocation; 
 
-    // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
         mAgent = GetComponent<NavMeshAgent>();
         mAgent.speed = mSpeed;
+        mGameManager = GameManager.ManagerInstance();
+        mCurrentLocation = transform.position;
 
-        GameManager.ManagerInstance().eSpeedChanged.AddListener(ChangingSpeed);
-        GameManager.ManagerInstance().eTimeChanged.AddListener(Transition);
+        mGameManager.eSpeedChanged.AddListener(ChangingSpeed);
+        mGameManager.eTimeChanged.AddListener(Transition);
     }
 
     public void Transition(DayCyclus time)
@@ -59,30 +59,33 @@ public class AIController : MonoBehaviour
         if(pos)
         {
             //Take the position of the waypoint and set a destination in a radius near it
-            Vector3 destination = pos.position + Random.insideUnitSphere * mWaypointRadius;
-            destination.y = pos.position.y;
+            mCurrentLocation = pos.position + Random.insideUnitSphere * mWaypointRadius;
+            mCurrentLocation.y = pos.position.y;
 
-            StartCoroutine("MoveWhenReady", destination);
+            StartCoroutine(MoveWhenReady(mCurrentLocation));
         }
         
     }
 
-    public void ChangingSpeed(float speed)
+    public virtual void ChangingSpeed(float speed)
     {
         mAgent.speed = mSpeed * speed;
     }
 
-    private IEnumerator MoveWhenReady(Vector3 position)
+    public IEnumerator LookAtObject(Vector3 obj)
     {
-        if (mTalking)
-        {
-            yield return new WaitUntil(() => mTalking == false);
-        }
-        else
-        {
-            yield return new WaitForSeconds(mTransitionDelay);
-        }
+        Quaternion endRotation = Quaternion.LookRotation(obj - transform.position, Vector3.up);
 
+        while (Quaternion.Angle(transform.rotation, endRotation) > 2f)
+        {
+            transform.rotation = Quaternion.Slerp(transform.rotation, endRotation, Time.deltaTime * mGameManager.mGameSpeed);
+            yield return null;
+        }
+    }
+
+    protected virtual IEnumerator MoveWhenReady(Vector3 position)
+    {
+        yield return new WaitForSeconds(mTransitionDelay/mGameManager.mGameSpeed);
         mAgent.SetDestination(position);
     }
 }

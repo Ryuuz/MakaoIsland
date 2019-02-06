@@ -88,7 +88,6 @@ GameObject:
   - component: {fileID: 7128574489735542859}
   - component: {fileID: 7170472208005371228}
   - component: {fileID: 7128574489735542856}
-  - component: {fileID: 7128574489735542855}
   - component: {fileID: 2293655667498756040}
   m_Layer: 0
   m_Name: TalkingVillager
@@ -209,26 +208,6 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &7128574489735542855
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7128574489735542857}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e1312e23a200134c92590c3bc7007f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mSpeed: 3.5
-  mWaypointRadius: 4
-  mTransitionDelay: 2
-  mTalking: 0
-  mDawnLocation: {fileID: 0}
-  mDayLocation: {fileID: 0}
-  mDuskLocation: {fileID: 0}
-  mNightLocation: {fileID: 0}
 --- !u!114 &2293655667498756040
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,6 +220,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68b61d57a7a767b4dae9c25b52181a70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mSpeed: 3.5
+  mWaypointRadius: 4
+  mTransitionDelay: 2
+  mDawnLocation: {fileID: 0}
+  mDayLocation: {fileID: 0}
+  mDuskLocation: {fileID: 0}
+  mNightLocation: {fileID: 0}
   mIcon: {fileID: 0}
   mSpeechBubble: {fileID: 8231259210520175400}
 --- !u!1 &8969371377296859439
@@ -355,3 +341,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d58c63452bc57284e98f3b5a42a3ed32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mCamera: {fileID: 0}

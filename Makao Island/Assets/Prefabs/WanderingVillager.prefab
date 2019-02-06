@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 4584705862511285777}
   - component: {fileID: 4525923498702633734}
   - component: {fileID: 4584705862511285778}
-  - component: {fileID: 4584705862511285789}
   - component: {fileID: 4584705862511285996}
   m_Layer: 0
   m_Name: WanderingVillager
@@ -134,26 +133,6 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &4584705862511285789
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4584705862511285779}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e1312e23a200134c92590c3bc7007f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mSpeed: 3.5
-  mWaypointRadius: 4
-  mTransitionDelay: 2
-  mTalking: 0
-  mDawnLocation: {fileID: 0}
-  mDayLocation: {fileID: 0}
-  mDuskLocation: {fileID: 0}
-  mNightLocation: {fileID: 0}
 --- !u!114 &4584705862511285996
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,3 +145,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cc138fccef021d4c8e222e16ca43503, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mSpeed: 3.5
+  mWaypointRadius: 4
+  mTransitionDelay: 2
+  mDawnLocation: {fileID: 0}
+  mDayLocation: {fileID: 0}
+  mDuskLocation: {fileID: 0}
+  mNightLocation: {fileID: 0}
