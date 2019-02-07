@@ -3,11 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public enum DayCyclus
-{
-    dawn, day, dusk, night
-};
-
 [System.Serializable]
 public class SpeedChangeEvent : UnityEvent<float>
 {

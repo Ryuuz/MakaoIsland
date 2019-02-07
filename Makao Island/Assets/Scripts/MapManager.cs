@@ -5,10 +5,15 @@ using UnityEngine.UI;
 
 public class MapManager : MonoBehaviour
 {
+    public Sprite[] mDayCycleIcons;
     public bool mMapAvailable { get; set; }
 
     [SerializeField]
     private TrackPlayer mPlayerOnMap;
+    [SerializeField]
+    private Image[] mSpiritAnimalStatus;
+    [SerializeField]
+    private Image mDayTime;
 
     private void Start()
     {
@@ -20,6 +25,8 @@ public class MapManager : MonoBehaviour
         {
             InputHandler.InputInstance().mMapManager = this;
         }
+
+        mDayTime.overrideSprite = mDayCycleIcons[(int)DayCyclus.dawn];
     }
 
     private void Update()
@@ -45,6 +52,9 @@ public class MapManager : MonoBehaviour
 
     public void UpdateSidePanel(DayCyclus cycle)
     {
-
+        if((int)cycle < mDayCycleIcons.Length && mDayTime)
+        {
+            mDayTime.overrideSprite = mDayCycleIcons[(int)cycle];
+        }
     }
 }
