@@ -59,21 +59,27 @@ public class AIController : MonoBehaviour
         if(pos)
         {
             //Take the position of the waypoint and set a destination in a radius near it
-            mCurrentLocation = pos.position + Random.insideUnitSphere * mWaypointRadius;
+            mCurrentLocation = pos.position;
+            if(mWaypointRadius > 0f)
+            {
+                mCurrentLocation += Random.insideUnitSphere * mWaypointRadius;
+            }
             mCurrentLocation.y = pos.position.y;
 
             StartCoroutine(MoveWhenReady(mCurrentLocation));
         }
-        
     }
 
+    //Change the movement speed of the agent
     public virtual void ChangingSpeed(float speed)
     {
         mAgent.speed = mSpeed * speed;
     }
 
+    //Have the NPC turn and look at the given position
     public IEnumerator LookAtObject(Vector3 obj)
     {
+        //The desired rotation
         Quaternion endRotation = Quaternion.LookRotation(obj - transform.position, Vector3.up);
 
         while (Quaternion.Angle(transform.rotation, endRotation) > 2f)
@@ -83,9 +89,14 @@ public class AIController : MonoBehaviour
         }
     }
 
+    //The agent will be assigned a destination as soon as it is ready to move
     protected virtual IEnumerator MoveWhenReady(Vector3 position)
     {
-        yield return new WaitForSeconds(mTransitionDelay/mGameManager.mGameSpeed);
+        if(mGameManager.mGameSpeed > 0f)
+        {
+            yield return new WaitForSeconds(mTransitionDelay / mGameManager.mGameSpeed);
+        }
+        
         mAgent.SetDestination(position);
     }
 }

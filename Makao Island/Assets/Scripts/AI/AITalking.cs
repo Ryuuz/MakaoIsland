@@ -1,16 +1,26 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+
+[System.Serializable]
+public class AILeavingEvent : UnityEvent<GameObject>
+{
+
+}
 
 public class AITalking : AIController
 {
     public Sprite mIcon;
+    public AILeavingEvent eStartedMoving = new AILeavingEvent();
+
+    [HideInInspector]
+    public bool mInDialogueSphere = false;
 
     [SerializeField]
     private RectTransform mSpeechBubble;
 
     private bool mTalking = false;
-
     private void Awake()
     {
         ToggleSpeechBubble(false);
@@ -41,6 +51,11 @@ public class AITalking : AIController
         }
         else
         {
+            if(mInDialogueSphere)
+            {
+                eStartedMoving.Invoke(gameObject);
+            }
+            
             yield return new WaitForSeconds(mTransitionDelay / mGameManager.mGameSpeed);
         }
 

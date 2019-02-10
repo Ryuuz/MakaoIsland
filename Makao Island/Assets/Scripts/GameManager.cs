@@ -17,18 +17,22 @@ public class TimeChangeEvent : UnityEvent<DayCyclus>
 
 public class GameManager : MonoBehaviour
 {
-    [HideInInspector]
-    public InputHandler mInputHandler;
-
     public GameObject mPlayer;
     public GameObject mMainCamera;
     public GameObject mDialogueManager;
-    public DayCycle mDayCycle;
+    public float mGameSpeed = 1f;
+
+    public GameProgressData mProgress;
+    public GameStatusData mGameStatus;
 
     public SpeedChangeEvent eSpeedChanged = new SpeedChangeEvent();
     public TimeChangeEvent eTimeChanged = new TimeChangeEvent();
 
-    public float mGameSpeed = 1f;
+    [HideInInspector]
+    public InputHandler mInputHandler;
+
+    [SerializeField]
+    private DayCycle mDayCycle;
 
     //Singleton to ensure only one instance of the class
     private static GameManager sGameManager;
@@ -65,6 +69,10 @@ public class GameManager : MonoBehaviour
         {
             Destroy(this);
         }
+
+        //Assign game data
+        CreateProgressData();
+        CreateStatusData();
 
         //Get the needed objects if they haven't been provided
         if (!mPlayer)
@@ -111,5 +119,23 @@ public class GameManager : MonoBehaviour
             DayCyclus currentTimeOfDay = mDayCycle.GetTimeOfDay();
             eTimeChanged.Invoke(currentTimeOfDay);
         }
+    }
+
+    //Load or generate the player's progress
+    private void CreateProgressData()
+    {
+        mProgress.mMapStatus = true;
+        mProgress.mSpiritAnimalsStatus = new bool[(int)SpiritAnimalType.spiritAnimals];
+        
+        for(int i = 0; i < mProgress.mSpiritAnimalsStatus.Length; i++)
+        {
+            mProgress.mSpiritAnimalsStatus[i] = false;
+        }
+    }
+
+    //Load or generate the relevant game data
+    private void CreateStatusData()
+    {
+        mGameStatus.mDayTime = DayCyclus.dawn;
     }
 }

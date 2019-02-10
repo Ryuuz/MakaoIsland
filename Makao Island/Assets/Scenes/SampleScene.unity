@@ -979,6 +979,11 @@ PrefabInstance:
       propertyPath: mDuskLocation
       value: 
       objectReference: {fileID: 2056487986}
+    - target: {fileID: 2293655667498756040, guid: c71c44bb6d3bb1a4ea90bd325694f463,
+        type: 3}
+      propertyPath: mTransitionDelay
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c71c44bb6d3bb1a4ea90bd325694f463, type: 3}
 --- !u!1 &627328664
@@ -3000,7 +3005,7 @@ PrefabInstance:
     - target: {fileID: 6064041323942659588, guid: 0be6a98d49bc70a45bc06466bc15e3ea,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.58339524
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6064041323942659588, guid: 0be6a98d49bc70a45bc06466bc15e3ea,
         type: 3}
@@ -3206,6 +3211,11 @@ PrefabInstance:
       propertyPath: mNightLocation
       value: 
       objectReference: {fileID: 72507289}
+    - target: {fileID: 2293655667498756040, guid: c71c44bb6d3bb1a4ea90bd325694f463,
+        type: 3}
+      propertyPath: mTransitionDelay
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c71c44bb6d3bb1a4ea90bd325694f463, type: 3}
 --- !u!1001 &7973557565004798672

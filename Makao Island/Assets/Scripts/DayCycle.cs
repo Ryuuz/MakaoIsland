@@ -12,8 +12,8 @@ public class DayCycle : MonoBehaviour
     public UnityEvent eTimeChanged = new UnityEvent();
 
     private DayCyclus mCurrentCyclusStep;
-    private float mCurrentTime;
-    private float mCurrentCyclusLength;
+    private float mCurrentTime = 0;
+    private float mCurrentCyclusLength = 0;
     private float mCurrentRotation;
     private float mRotationStep;
     private float mCyclusSpeed;
@@ -31,14 +31,26 @@ public class DayCycle : MonoBehaviour
         }
 
         mCyclusSpeed = mGameManager.mGameSpeed;
+        float[] tempCyclusLengths = new float[] { mDawnLength, mDayLength, mDuskLength, mNightLength };
 
-        //Game starts at dawn
-        mCurrentCyclusStep = DayCyclus.dawn;
-        mCurrentCyclusLength = mDawnLength;
-        mCurrentTime = 0f;
+        //Retrieves the saved time of day
+        mCurrentCyclusStep = mGameManager.mGameStatus.mDayTime;
 
+        //Sets the current cyclus' length and the current time
+        for(int i = 0; i <= (int)mCurrentCyclusStep; i++)
+        {
+            mCurrentCyclusLength += tempCyclusLengths[i];
+        }
+
+        //Time is set to beginning of the cyclus step
+        for (int i = 0; i < (int)mCurrentCyclusStep; i++)
+        {
+            mCurrentTime += tempCyclusLengths[i]; //-----------safer option is to save current time and find cyclus step based on it
+        }
+        
+        //The positions of the sun and moon in the sky
         mRotationStep = 360f / (mDawnLength + mDayLength + mDuskLength + mNightLength);
-        mCurrentRotation = 0f;
+        mCurrentRotation = mRotationStep * mCurrentTime;
     }
 	
 	void Update()

@@ -17,16 +17,23 @@ public class MapManager : MonoBehaviour
 
     private void Start()
     {
-        mMapAvailable = true;
-        HideMap();
-        GameManager.ManagerInstance().eTimeChanged.AddListener(UpdateSidePanel);
+        GameManager tempManager = GameManager.ManagerInstance();
 
-        if(InputHandler.InputInstance().mMapManager == null)
+        tempManager.eTimeChanged.AddListener(UpdateDayIcon);
+        mMapAvailable = tempManager.mProgress.mMapStatus;
+        int tempDayIcon = (int)tempManager.mGameStatus.mDayTime;
+
+        if (InputHandler.InputInstance().mMapManager == null)
         {
             InputHandler.InputInstance().mMapManager = this;
         }
+        
+        if(tempDayIcon < mDayCycleIcons.Length)
+        {
+            mDayTime.overrideSprite = mDayCycleIcons[tempDayIcon];
+        }
 
-        mDayTime.overrideSprite = mDayCycleIcons[(int)DayCyclus.dawn];
+        HideMap();
     }
 
     private void Update()
@@ -50,7 +57,7 @@ public class MapManager : MonoBehaviour
         }
     }
 
-    public void UpdateSidePanel(DayCyclus cycle)
+    public void UpdateDayIcon(DayCyclus cycle)
     {
         if((int)cycle < mDayCycleIcons.Length && mDayTime)
         {

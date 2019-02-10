@@ -31,6 +31,15 @@ public class DialogueTrigger : MonoBehaviour
 
         GetDialogue();
 
+        //Get the script component of the AI
+        mSpeakerControllers = new AITalking[mSpeakers.Length];
+
+        for (int i = 0; i < mSpeakerControllers.Length; i++)
+        {
+            mSpeakerControllers[i] = mSpeakers[i].GetComponent<AITalking>();
+            mSpeakerControllers[i].eStartedMoving.AddListener(AIIsLeaving);
+        }
+
         //The speakers that are present inside the dialogue trigger from the start
         mSpeakerPresent = new bool[mSpeakers.Length];
 
@@ -39,6 +48,7 @@ public class DialogueTrigger : MonoBehaviour
             if(Vector3.Distance(mSpeakers[i].transform.position, transform.position) <= GetComponent<SphereCollider>().radius)
             {
                 mSpeakerPresent[i] = true;
+                mSpeakerControllers[i].mInDialogueSphere = true;
             }
             else
             {
@@ -46,13 +56,7 @@ public class DialogueTrigger : MonoBehaviour
             }
         }
 
-        //Get the script component of the AI
-        mSpeakerControllers = new AITalking[mSpeakers.Length];
-
-        for(int i = 0; i < mSpeakerControllers.Length; i++)
-        {
-            mSpeakerControllers[i] = mSpeakers[i].GetComponent<AITalking>();
-        }
+        
 
         if(AllSpeakersPresent())
         {
@@ -76,6 +80,7 @@ public class DialogueTrigger : MonoBehaviour
                     if(other.gameObject == mSpeakers[i])
                     {
                         mSpeakerPresent[i] = true;
+                        mSpeakerControllers[i].mInDialogueSphere = true;
                     }
                 }
 
@@ -107,28 +112,6 @@ public class DialogueTrigger : MonoBehaviour
                 mDialogueManager.HideDialogueBox();
             }
         }
-        //If one of the AIs that take part in the conversation leaves
-        else if(IsASpeaker(other.gameObject))
-        {
-            if (AllSpeakersPresent())
-            {
-                ToggleSpeechBubbles(false);
-            }
-
-            for (int i = 0; i < mSpeakers.Length; i++)
-            {
-                if (other.gameObject == mSpeakers[i])
-                {
-                    mSpeakerPresent[i] = false;
-                }
-            }
-
-            //Check if the dialogue can still take place
-            if (mPlayerPresent && !AllSpeakersPresent())
-            {
-                mPlayerPresent.mSpecialAction = null;
-            }
-        }
     }
 
     //Prepares everything and starts playing the dialogue
@@ -149,7 +132,7 @@ public class DialogueTrigger : MonoBehaviour
             StartCoroutine(DialogueRunning());
         }
         //Else if the dialogue is already playing, let the player listen to it
-        else
+        else if(mPlaying)
         {
             if (mDialogueManager)
             {
@@ -279,6 +262,25 @@ public class DialogueTrigger : MonoBehaviour
         for(int i = 0; i < mSpeakerControllers.Length; i++)
         {
             mSpeakerControllers[i].ToggleSpeechBubble(show);
+        }
+    }
+
+    private void AIIsLeaving(GameObject npc)
+    {
+        ToggleSpeechBubbles(false);
+
+        for (int i = 0; i < mSpeakers.Length; i++)
+        {
+            if (npc == mSpeakers[i])
+            {
+                mSpeakerPresent[i] = false;
+                mSpeakerControllers[i].mInDialogueSphere = false;
+            }
+        }
+
+        if (mPlayerPresent)
+        {
+            mPlayerPresent.mSpecialAction = null;
         }
     }
 }

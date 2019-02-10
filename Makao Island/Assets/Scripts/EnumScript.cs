@@ -7,7 +7,7 @@ public enum DayCyclus
     dawn, day, dusk, night, dayCycles
 };
 
-public enum SpiritAnimal
+public enum SpiritAnimalType
 {
     fire, water, air, earth, spiritAnimals
 };
