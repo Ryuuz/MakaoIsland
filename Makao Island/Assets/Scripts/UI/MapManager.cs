@@ -59,8 +59,8 @@ public class MapManager : MonoBehaviour
         if(mMapAvailable)
         {
             mCanvasGroup.alpha = 1f;
-            mCanvasGroup.blocksRaycasts = false;
-            mCanvasGroup.interactable = false;
+            mCanvasGroup.blocksRaycasts = true;
+            mCanvasGroup.interactable = true;
         }
     }
 
