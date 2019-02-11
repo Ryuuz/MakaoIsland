@@ -780,6 +780,7 @@ GameObject:
   - component: {fileID: 572665833}
   - component: {fileID: 572665835}
   - component: {fileID: 572665834}
+  - component: {fileID: 572665837}
   - component: {fileID: 572665836}
   m_Layer: 5
   m_Name: DialogueBox
@@ -862,6 +863,18 @@ MonoBehaviour:
   mNameField: {fileID: 191722756}
   mTextField: {fileID: 62909121}
   mIconField: {fileID: 728617100}
+--- !u!225 &572665837
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 572665832}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1001 &581689763
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1389,6 +1402,7 @@ GameObject:
   - component: {fileID: 1075200664}
   - component: {fileID: 1075200666}
   - component: {fileID: 1075200665}
+  - component: {fileID: 1075200668}
   - component: {fileID: 1075200667}
   m_Layer: 5
   m_Name: MapUI
@@ -1479,6 +1493,18 @@ MonoBehaviour:
   - {fileID: 3647343575737329589}
   - {fileID: 719306147493625945}
   mDayTime: {fileID: 1437269541918145756}
+--- !u!225 &1075200668
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1075200663}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1169822602
 GameObject:
   m_ObjectHideFlags: 0
@@ -2514,7 +2540,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.20784314, g: 0.20784314, b: 0.20784314, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2543,7 +2569,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.20784314, g: 0.20784314, b: 0.20784314, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2854,7 +2880,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.20784314, g: 0.20784314, b: 0.20784314, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2984,7 +3010,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.20784314, g: 0.20784314, b: 0.20784314, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:

@@ -25,8 +25,10 @@ public class GameManager : MonoBehaviour
     public GameProgressData mProgress;
     public GameStatusData mGameStatus;
 
+    //Events
     public SpeedChangeEvent eSpeedChanged = new SpeedChangeEvent();
     public TimeChangeEvent eTimeChanged = new TimeChangeEvent();
+    public UnityEvent eSpiritAnimalFound = new UnityEvent();
 
     [HideInInspector]
     public InputHandler mInputHandler;
@@ -119,6 +121,13 @@ public class GameManager : MonoBehaviour
             DayCyclus currentTimeOfDay = mDayCycle.GetTimeOfDay();
             eTimeChanged.Invoke(currentTimeOfDay);
         }
+    }
+
+    //The status of a spirit animal has changed
+    public void UpdateSpiritAnimals(int type)
+    {
+        mProgress.mSpiritAnimalsStatus[type] = true;
+        eSpiritAnimalFound.Invoke();
     }
 
     //Load or generate the player's progress

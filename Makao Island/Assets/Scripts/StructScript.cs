@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
+﻿
 public struct GameProgressData
 {
     public bool[] mSpiritAnimalsStatus;
@@ -11,4 +8,16 @@ public struct GameProgressData
 public struct GameStatusData
 {
     public DayCyclus mDayTime;
+}
+
+public struct Sentence
+{
+    public int speaker;
+    public string text;
+
+    public Sentence(int n, string s)
+    {
+        speaker = n;
+        text = s;
+    }
 }

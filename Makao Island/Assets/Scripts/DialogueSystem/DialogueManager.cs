@@ -17,6 +17,7 @@ public class DialogueManager : MonoBehaviour
     private Image mIconField;
 
     private bool mHidden;
+    private CanvasGroup mCanvasGroup;
 
     private void Awake()
     {
@@ -25,9 +26,13 @@ public class DialogueManager : MonoBehaviour
             GameManager.ManagerInstance().mDialogueManager = gameObject;
         }
 
+        mCanvasGroup = GetComponent<CanvasGroup>();
+        mCanvasGroup.blocksRaycasts = false;
+        mCanvasGroup.interactable = false;
         HideDialogueBox();
     }
 
+    //Fill the dialogue box with the relevant data
     public void FillDialogueBox(string name, string text, Sprite image)
     {
         if(mHidden)
@@ -42,13 +47,13 @@ public class DialogueManager : MonoBehaviour
 
     public void ShowDialogueBox()
     {
-        gameObject.SetActive(true);
+        mCanvasGroup.alpha = 1f;
         mHidden = false;
     }
 
     public void HideDialogueBox()
     {
-        gameObject.SetActive(false);
+        mCanvasGroup.alpha = 0f;
         mHidden = true;
     }
 }

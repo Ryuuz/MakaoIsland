@@ -56,8 +56,6 @@ public class DialogueTrigger : MonoBehaviour
             }
         }
 
-        
-
         if(AllSpeakersPresent())
         {
             ToggleSpeechBubbles(true);
@@ -257,6 +255,7 @@ public class DialogueTrigger : MonoBehaviour
         }
     }
 
+    //Shows or hides the speech bubbles
     private void ToggleSpeechBubbles(bool show)
     {
         for(int i = 0; i < mSpeakerControllers.Length; i++)
@@ -265,6 +264,7 @@ public class DialogueTrigger : MonoBehaviour
         }
     }
 
+    //The player can no longer start the conversation if one of the NPCs is leaving
     private void AIIsLeaving(GameObject npc)
     {
         ToggleSpeechBubbles(false);

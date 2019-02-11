@@ -1,16 +1,4 @@
 ﻿
-public struct Sentence
-{
-    public int speaker;
-    public string text;
-
-    public Sentence(int n, string s)
-    {
-        speaker = n;
-        text = s;
-    }
-}
-
 public class DialogueLines
 {
     private Sentence[][] mConversations =
@@ -25,6 +13,7 @@ public class DialogueLines
         }
     };
 
+    //Retrieve the conversation numbered n
     public Sentence[] GetConversation(int index)
     {
         return mConversations[index];

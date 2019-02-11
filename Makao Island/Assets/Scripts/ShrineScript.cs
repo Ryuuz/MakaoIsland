@@ -4,19 +4,16 @@ using UnityEngine;
 
 public class ShrineScript : MonoBehaviour
 {
-    public SpecialActionObject mSpecialObject;
+    private SpecialActionObject mSpecialObject;
 
-    // Start is called before the first frame update
     void Start()
     {
-        if(mSpecialObject == null)
-        {
-            mSpecialObject = new SpecialActionMeditate();
-        }
+        mSpecialObject = new SpecialActionMeditate();
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        //Give the player a special action when in range of shrine
         if(other.tag == "Player")
         {
             other.GetComponent<PlayerController>().mSpecialAction = mSpecialObject;

@@ -13,6 +13,7 @@ public class BillboardScript : MonoBehaviour
 
     void LateUpdate()
     {
+        //The plane will always face the player
         transform.LookAt(transform.position + mCamera.transform.rotation * Vector3.forward, Vector3.up);
     }
 }

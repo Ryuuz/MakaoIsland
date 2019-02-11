@@ -19,9 +19,12 @@ public class AIWandering : AIController
 
     void Update()
     {
+        //If the NPC isn't already headed somewhere
         if(!mAgent.hasPath)
         {
             mAgent.speed = mWanderingSpeed * mTimeSpeed;
+
+            //Set a random destination in a radius around a set location
             mDestination = mCurrentLocation + Random.insideUnitSphere* mWanderingRadius;
             mAgent.SetDestination(mDestination);
         }
@@ -34,7 +37,11 @@ public class AIWandering : AIController
 
     protected override IEnumerator MoveWhenReady(Vector3 position)
     {
-        yield return new WaitForSeconds(mTransitionDelay / mGameManager.mGameSpeed);
+        if (mGameManager.mGameSpeed > 0f)
+        {
+            yield return new WaitForSeconds(mTransitionDelay / mGameManager.mGameSpeed);
+        }
+
         mAgent.speed = mSpeed * mTimeSpeed;
         mAgent.SetDestination(position);
     }

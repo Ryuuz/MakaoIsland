@@ -33,6 +33,7 @@ public class AIController : MonoBehaviour
         mGameManager.eTimeChanged.AddListener(Transition);
     }
 
+    //Transition to a new position (if required) when the time of day changes
     public virtual void Transition(DayCyclus time)
     {
         Transform pos = null;
@@ -80,11 +81,13 @@ public class AIController : MonoBehaviour
     public IEnumerator LookAtObject(Vector3 obj)
     {
         float rotationTime = 0f;
+        
         //The desired rotation
-        Quaternion endRotation = Quaternion.LookRotation(obj - transform.position, Vector3.up);
         Quaternion startRotation = transform.rotation;
+        Quaternion endRotation = new Quaternion();
+        endRotation.eulerAngles = new Vector3(startRotation.eulerAngles.x, Quaternion.LookRotation(obj - transform.position).eulerAngles.y, startRotation.eulerAngles.z);
 
-        while (Quaternion.Angle(transform.rotation, endRotation) > 2f)
+        while (Quaternion.Angle(transform.rotation, endRotation) > 1f)
         {
             rotationTime += Time.deltaTime * mGameManager.mGameSpeed;
             transform.rotation = Quaternion.Slerp(startRotation, endRotation, rotationTime);

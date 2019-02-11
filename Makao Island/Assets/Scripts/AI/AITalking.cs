@@ -21,11 +21,13 @@ public class AITalking : AIController
     private RectTransform mSpeechBubble;
 
     private bool mTalking = false;
+
     private void Awake()
     {
         ToggleSpeechBubble(false);
     }
 
+    //Show or hide the speech bubble
     public void ToggleSpeechBubble(bool show)
     {
         if(show)
@@ -45,6 +47,7 @@ public class AITalking : AIController
 
     protected override IEnumerator MoveWhenReady(Vector3 position)
     {
+        //Won't move until done talking
         if (mTalking)
         {
             yield return new WaitUntil(() => mTalking == false);
@@ -56,7 +59,10 @@ public class AITalking : AIController
                 eStartedMoving.Invoke(gameObject);
             }
             
-            yield return new WaitForSeconds(mTransitionDelay / mGameManager.mGameSpeed);
+            if(mGameManager.mGameSpeed > 0f)
+            {
+                yield return new WaitForSeconds(mTransitionDelay / mGameManager.mGameSpeed);
+            }
         }
 
         mAgent.SetDestination(position);
