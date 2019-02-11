@@ -14,13 +14,13 @@ public class AIController : MonoBehaviour
     protected GameManager mGameManager;
 
     [SerializeField]
-    private Transform mDawnLocation;
+    protected Transform mDawnLocation;
     [SerializeField]
-    private Transform mDayLocation;
+    protected Transform mDayLocation;
     [SerializeField]
-    private Transform mDuskLocation;
+    protected Transform mDuskLocation;
     [SerializeField]
-    private Transform mNightLocation; 
+    protected Transform mNightLocation; 
 
     protected virtual void Start()
     {
@@ -33,7 +33,7 @@ public class AIController : MonoBehaviour
         mGameManager.eTimeChanged.AddListener(Transition);
     }
 
-    public void Transition(DayCyclus time)
+    public virtual void Transition(DayCyclus time)
     {
         Transform pos = null;
 
@@ -79,12 +79,15 @@ public class AIController : MonoBehaviour
     //Have the NPC turn and look at the given position
     public IEnumerator LookAtObject(Vector3 obj)
     {
+        float rotationTime = 0f;
         //The desired rotation
         Quaternion endRotation = Quaternion.LookRotation(obj - transform.position, Vector3.up);
+        Quaternion startRotation = transform.rotation;
 
         while (Quaternion.Angle(transform.rotation, endRotation) > 2f)
         {
-            transform.rotation = Quaternion.Slerp(transform.rotation, endRotation, Time.deltaTime * mGameManager.mGameSpeed);
+            rotationTime += Time.deltaTime * mGameManager.mGameSpeed;
+            transform.rotation = Quaternion.Slerp(startRotation, endRotation, rotationTime);
             yield return null;
         }
     }
