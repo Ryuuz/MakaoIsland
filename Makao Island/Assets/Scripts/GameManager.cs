@@ -99,11 +99,6 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         mInputHandler = InputHandler.InputInstance();
-
-        if(mDayCycle)
-        {
-            eSpeedChanged.AddListener(mDayCycle.CycleSpeedChanged);
-        }
     }
 
     //Set the speed the game should play at. 0 = pause, 1 = normal speed, >1 = speed up
@@ -146,5 +141,6 @@ public class GameManager : MonoBehaviour
     private void CreateStatusData()
     {
         mGameStatus.mDayTime = DayCyclus.dawn;
+        mGameStatus.mCyclusTime = 0f;
     }
 }

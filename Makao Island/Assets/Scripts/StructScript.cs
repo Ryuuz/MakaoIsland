@@ -8,6 +8,7 @@ public struct GameProgressData
 public struct GameStatusData
 {
     public DayCyclus mDayTime;
+    public float mCyclusTime;
 }
 
 public struct Sentence

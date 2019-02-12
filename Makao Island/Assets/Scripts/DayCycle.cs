@@ -9,14 +9,26 @@ public class DayCycle : MonoBehaviour
     public float mDuskLength = 10f;
     public float mNightLength = 20f;
 
+    public Gradient mSkyColorTint;
+    public Gradient mSunlightTint;
+    public AnimationCurve mAtmosphere;
+    public AnimationCurve mExposure;
+    public AnimationCurve mSunIntensity;
+
+    [HideInInspector]
     public UnityEvent eTimeChanged = new UnityEvent();
+
+    private float[] mStartRotation = new float[] { 335f, 15f, 165f, 205f };
+    private float[] mCyclusLength;
+    private float[] mRotationStep;
 
     private DayCyclus mCurrentCyclusStep;
     private float mCurrentTime = 0;
-    private float mCurrentCyclusLength = 0;
     private float mCurrentRotation;
-    private float mRotationStep;
-    private float mCyclusSpeed;
+    private float mFactor;
+
+    private Material mSkyMaterial;
+    private Light mSun;
 
     private GameManager mGameManager;
 
@@ -27,77 +39,92 @@ public class DayCycle : MonoBehaviour
         if(mGameManager)
         {
             eTimeChanged.AddListener(mGameManager.TimeOfDayChanged);
-            mGameManager.eSpeedChanged.AddListener(CycleSpeedChanged);
         }
 
-        mCyclusSpeed = mGameManager.mGameSpeed;
-        float[] tempCyclusLengths = new float[] { mDawnLength, mDayLength, mDuskLength, mNightLength };
+        mSkyMaterial = RenderSettings.skybox;
+        mSun = RenderSettings.sun;
+        mFactor = 1f / 360f;
+        mCyclusLength = new float[] { mDawnLength, mDayLength, mDuskLength, mNightLength };
+        mRotationStep = new float[mCyclusLength.Length];
+
+        //Finds how fast the sun must move for each cycle step
+        for(int i = 0; i < mRotationStep.Length; i++)
+        {
+            if ((mStartRotation[(i + 1) % mRotationStep.Length] < mStartRotation[i]))
+            {
+                mRotationStep[i] = (360f - mStartRotation[i]) + mStartRotation[(i + 1) % mRotationStep.Length];
+            }
+            else
+            {
+                mRotationStep[i] = mStartRotation[(i + 1) % mRotationStep.Length] - mStartRotation[i];
+            }
+
+            mRotationStep[i] /= mCyclusLength[i];
+        }
 
         //Retrieves the saved time of day
         mCurrentCyclusStep = mGameManager.mGameStatus.mDayTime;
-
-        //Sets the current cyclus' length and the current time
-        for(int i = 0; i <= (int)mCurrentCyclusStep; i++)
-        {
-            mCurrentCyclusLength += tempCyclusLengths[i];
-        }
-
-        //Time is set to beginning of the cyclus step
-        for (int i = 0; i < (int)mCurrentCyclusStep; i++)
-        {
-            mCurrentTime += tempCyclusLengths[i]; //-----------safer option is to save current time and find cyclus step based on it
-        }
+        mCurrentTime = mGameManager.mGameStatus.mCyclusTime;
         
-        //The positions of the sun and moon in the sky
-        mRotationStep = 360f / (mDawnLength + mDayLength + mDuskLength + mNightLength);
-        mCurrentRotation = mRotationStep * mCurrentTime;
+        //Sets the rotation the sun should start at
+        mCurrentRotation = mStartRotation[(int)mCurrentCyclusStep] + (mRotationStep[(int)mCurrentCyclusStep] * mCurrentTime);
     }
 	
 	void Update()
     {
         //Moves the day and night cycle along at the set speed
-        mCurrentTime += Time.deltaTime * mCyclusSpeed;
-        mCurrentRotation = (mRotationStep * mCurrentTime);
-        transform.eulerAngles = new Vector3(mCurrentRotation, 0f, 0f);
+        mCurrentTime += Time.deltaTime * mGameManager.mGameSpeed;
 
-        if(mCurrentTime >= mCurrentCyclusLength)
+        if(mCurrentTime >= mCyclusLength[(int)mCurrentCyclusStep])
         {
             NextCyclusStep();
             eTimeChanged.Invoke();
         }
-	}
+
+        mCurrentRotation = mStartRotation[(int)mCurrentCyclusStep] + (mRotationStep[(int)mCurrentCyclusStep] * mCurrentTime);
+        transform.eulerAngles = new Vector3(mCurrentRotation, 0f, 0f);
+        UpdateSky(mCurrentRotation * mFactor);
+    }
 
     //Change to the next part of the day
-    void NextCyclusStep()
+    private void NextCyclusStep()
     {
+        mCurrentTime = 0f;
+
         switch (mCurrentCyclusStep)
         {
             case DayCyclus.dawn:
-                mCurrentCyclusLength += mDayLength;
                 mCurrentCyclusStep = DayCyclus.day;
                 break;
 
             case DayCyclus.day:
-                mCurrentCyclusLength += mDuskLength;
                 mCurrentCyclusStep = DayCyclus.dusk;
                 break;
 
             case DayCyclus.dusk:
-                mCurrentCyclusLength += mNightLength;
                 mCurrentCyclusStep = DayCyclus.night;
                 break;
 
             case DayCyclus.night:
-                mCurrentCyclusLength = mDawnLength;
-                mCurrentTime = 0f;
                 mCurrentCyclusStep = DayCyclus.dawn;
                 break;
         }
     }
 
-    public void CycleSpeedChanged(float speed)
+    private void UpdateSky(float sunProgress)
     {
-        mCyclusSpeed = speed;
+        if(mSkyMaterial)
+        {
+            mSkyMaterial.SetColor("_SkyTint", mSkyColorTint.Evaluate(sunProgress));
+            mSkyMaterial.SetFloat("_AtmosphereThickness", mAtmosphere.Evaluate(sunProgress));
+            mSkyMaterial.SetFloat("_Exposure", mExposure.Evaluate(sunProgress));
+        }
+        
+        if(mSun)
+        {
+            mSun.color = mSunlightTint.Evaluate(sunProgress);
+            mSun.intensity = mSunIntensity.Evaluate(sunProgress);
+        }
     }
 
     public DayCyclus GetTimeOfDay()
