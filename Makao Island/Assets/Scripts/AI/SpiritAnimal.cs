@@ -7,19 +7,38 @@ public class SpiritAnimal : AIController
     public SpiritAnimalType mAnimalType;
 
     private Material mMaterial;
+    private Material[] mMaterialList;
     private bool mFadedIn;
     private bool mFading = false;
 
     protected override void Start()
     {
         base.Start();
+        mFadedIn = false;
 
-        mMaterial = GetComponent<MeshRenderer>().material;
-        mFadedIn = true;
+        MeshRenderer tempRenderer = GetComponent<MeshRenderer>();
+
+        if(tempRenderer)
+        {
+            mMaterial = tempRenderer.material;
+            mMaterial.color = new Color(mMaterial.color.r, mMaterial.color.g, mMaterial.color.b, 0f);
+        }
+        else
+        {
+            mMaterialList = GetComponentInChildren<SkinnedMeshRenderer>().materials;
+
+            if(mMaterialList.Length > 0)
+            {
+                for(int i = 0; i < mMaterialList.Length; i++)
+                {
+                    mMaterialList[i].color = new Color(mMaterialList[i].color.r, mMaterialList[i].color.g, mMaterialList[i].color.b, 0f);
+                }
+            }
+        }
 
         //Make sure the spirit animal is in the right place and state
         Transition(mGameManager.mGameStatus.mDayTime);
-
+        
         if (mCurrentLocation != transform.position)
         {
             transform.position = mCurrentLocation;
@@ -88,18 +107,53 @@ public class SpiritAnimal : AIController
         //The delay can't be 0 since it will be used for dividing
         float fadeSpeed = (mTransitionDelay > 0) ? mTransitionDelay : 1f;
 
-        Color endColor = mMaterial.color;
-        endColor.a = 0f;
-        Color startColor = mMaterial.color;
-
-        while (mMaterial.color.a > 0f)
+        if(mMaterial)
         {
-            fadeTime += (Time.deltaTime / fadeSpeed) * mGameManager.mGameSpeed;
-            mMaterial.color = Color.Lerp(startColor, endColor, fadeTime);
-            yield return null;
+            Color endColor = mMaterial.color;
+            endColor.a = 0f;
+            Color startColor = mMaterial.color;
+
+            while (mMaterial.color.a > 0f)
+            {
+                fadeTime += (Time.deltaTime / fadeSpeed) * mGameManager.mGameSpeed;
+                mMaterial.color = Color.Lerp(startColor, endColor, fadeTime);
+                yield return null;
+            }
+            //To make absolutely sure it is fully transparent
+            mMaterial.color = endColor;
         }
-        //To make absolutely sure it is fully transparent
-        mMaterial.color = endColor;
+        else if(mMaterialList.Length > 0)
+        {
+            Color[] endColors = new Color[mMaterialList.Length];
+            for(int i = 0; i < endColors.Length; i++)
+            {
+                endColors[i] = mMaterialList[i].color;
+                endColors[i].a = 0f;
+            }
+
+            Color[] startColors = new Color[mMaterialList.Length];
+            for (int i = 0; i < startColors.Length; i++)
+            {
+                startColors[i] = mMaterialList[i].color;
+            }
+
+            while (mMaterialList[0].color.a > 0f)
+            {
+                fadeTime += (Time.deltaTime / fadeSpeed) * mGameManager.mGameSpeed;
+
+                for(int i = 0; i < startColors.Length; i++)
+                {
+                    mMaterialList[i].color = Color.Lerp(startColors[i], endColors[i], fadeTime);
+                }
+                
+                yield return null;
+            }
+            //To make absolutely sure it is fully transparent
+            for (int i = 0; i < mMaterialList.Length; i++)
+            {
+                mMaterialList[i].color = endColors[i];
+            }
+        }
 
         mFading = false;
         mFadedIn = false;
@@ -114,18 +168,53 @@ public class SpiritAnimal : AIController
         //Make sure the delay isn't 0
         float fadeSpeed = (mTransitionDelay > 0) ? mTransitionDelay : 1f;
 
-        Color endColor = mMaterial.color;
-        endColor.a = 1f;
-        Color startColor = mMaterial.color;
-
-        while (mMaterial.color.a < 1f)
+        if (mMaterial)
         {
-            fadeTime += (Time.deltaTime / fadeSpeed) * mGameManager.mGameSpeed;
-            mMaterial.color = Color.Lerp(startColor, endColor, fadeTime);
-            yield return null;
+            Color endColor = mMaterial.color;
+            endColor.a = 1f;
+            Color startColor = mMaterial.color;
+
+            while (mMaterial.color.a < 1f)
+            {
+                fadeTime += (Time.deltaTime / fadeSpeed) * mGameManager.mGameSpeed;
+                mMaterial.color = Color.Lerp(startColor, endColor, fadeTime);
+                yield return null;
+            }
+            //To make absolutely sure it is fully transparent
+            mMaterial.color = endColor;
         }
-        //To make sure it is opaque
-        mMaterial.color = endColor;
+        else if (mMaterialList.Length > 0)
+        {
+            Color[] endColors = new Color[mMaterialList.Length];
+            for (int i = 0; i < endColors.Length; i++)
+            {
+                endColors[i] = mMaterialList[i].color;
+                endColors[i].a = 1f;
+            }
+
+            Color[] startColors = new Color[mMaterialList.Length];
+            for (int i = 0; i < startColors.Length; i++)
+            {
+                startColors[i] = mMaterialList[i].color;
+            }
+
+            while (mMaterialList[0].color.a < 1f)
+            {
+                fadeTime += (Time.deltaTime / fadeSpeed) * mGameManager.mGameSpeed;
+
+                for (int i = 0; i < startColors.Length; i++)
+                {
+                    mMaterialList[i].color = Color.Lerp(startColors[i], endColors[i], fadeTime);
+                }
+
+                yield return null;
+            }
+            //To make absolutely sure it is fully transparent
+            for (int i = 0; i < mMaterialList.Length; i++)
+            {
+                mMaterialList[i].color = endColors[i];
+            }
+        }
 
         mFading = false;
         mFadedIn = true;

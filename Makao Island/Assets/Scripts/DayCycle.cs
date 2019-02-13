@@ -26,6 +26,7 @@ public class DayCycle : MonoBehaviour
     private float mCurrentTime = 0;
     private float mCurrentRotation;
     private float mFactor;
+    private float mOffset = 0;
 
     private Material mSkyMaterial;
     private Light mSun;
@@ -52,7 +53,8 @@ public class DayCycle : MonoBehaviour
         {
             if ((mStartRotation[(i + 1) % mRotationStep.Length] < mStartRotation[i]))
             {
-                mRotationStep[i] = (360f - mStartRotation[i]) + mStartRotation[(i + 1) % mRotationStep.Length];
+                mOffset = (360f - mStartRotation[i]);
+                mRotationStep[i] = mOffset + mStartRotation[(i + 1) % mRotationStep.Length];
             }
             else
             {
@@ -83,7 +85,7 @@ public class DayCycle : MonoBehaviour
 
         mCurrentRotation = mStartRotation[(int)mCurrentCyclusStep] + (mRotationStep[(int)mCurrentCyclusStep] * mCurrentTime);
         transform.eulerAngles = new Vector3(mCurrentRotation, 0f, 0f);
-        UpdateSky(mCurrentRotation * mFactor);
+        UpdateSky((mCurrentRotation + mOffset) * mFactor);
     }
 
     //Change to the next part of the day
