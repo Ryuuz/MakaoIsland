@@ -8,6 +8,7 @@ public class DayCycle : MonoBehaviour
     public float mDayLength = 20f;
     public float mDuskLength = 10f;
     public float mNightLength = 20f;
+    //public float mTotalCycleLength = 120f;
 
     public Gradient mSkyColorTint;
     public Gradient mSunlightTint;
@@ -83,7 +84,7 @@ public class DayCycle : MonoBehaviour
             eTimeChanged.Invoke();
         }
 
-        mCurrentRotation = mStartRotation[(int)mCurrentCyclusStep] + (mRotationStep[(int)mCurrentCyclusStep] * mCurrentTime);
+        mCurrentRotation = mStartRotation[(int)mCurrentCyclusStep] - 1f + (mRotationStep[(int)mCurrentCyclusStep] * mCurrentTime);
         transform.eulerAngles = new Vector3(mCurrentRotation, 0f, 0f);
         UpdateSky((mCurrentRotation + mOffset) * mFactor);
     }
