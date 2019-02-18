@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class ShrineScript : MonoBehaviour
 {
-    private SpecialActionObject mSpecialObject;
+    private SpecialActionMeditate mMeditateAction;
+    private PlayerController mPlayer;
 
     void Start()
     {
-        mSpecialObject = new SpecialActionMeditate();
+        mMeditateAction = new SpecialActionMeditate();
+        mPlayer = GameManager.ManagerInstance().mPlayer.GetComponent<PlayerController>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -16,7 +18,7 @@ public class ShrineScript : MonoBehaviour
         //Give the player a special action when in range of shrine
         if(other.tag == "Player")
         {
-            other.GetComponent<PlayerController>().mSpecialAction = mSpecialObject;
+            mPlayer.mSpecialAction = mMeditateAction;
         }
     }
 
@@ -24,8 +26,11 @@ public class ShrineScript : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            other.GetComponent<PlayerController>().mSpecialAction = null;
-            mSpecialObject.UseSpecialAction(false);
+            if (mPlayer.mSpecialAction == mMeditateAction)
+            {
+                mPlayer.mSpecialAction = null;
+            }
+            mMeditateAction.UseSpecialAction(false);
         }
     }
 }

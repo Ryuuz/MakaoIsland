@@ -12,19 +12,21 @@ public class AILeavingEvent : UnityEvent<GameObject>
 public class AITalking : AIController
 {
     public Sprite mIcon;
-    public AILeavingEvent eStartedMoving = new AILeavingEvent();
 
     [HideInInspector]
-    public bool mInDialogueSphere = false;
+    public AILeavingEvent eStartedMoving = new AILeavingEvent();
+    [HideInInspector]
+    public bool mInDialogueSphere;
 
     [SerializeField]
     private RectTransform mSpeechBubble;
 
-    private bool mTalking = false;
+    protected bool mTalking = false;
 
     private void Awake()
     {
         ToggleSpeechBubble(false);
+        mInDialogueSphere = false;
     }
 
     //Show or hide the speech bubble
@@ -40,13 +42,18 @@ public class AITalking : AIController
         }
     }
 
-    public void SetTalking(bool talking)
+    public virtual void SetTalking(bool talking)
     {
         mTalking = talking;
     }
 
     protected override IEnumerator MoveWhenReady(Vector3 position)
     {
+        if (mInDialogueSphere)
+        {
+            eStartedMoving.Invoke(gameObject);
+        }
+
         //Won't move until done talking
         if (mTalking)
         {
@@ -54,11 +61,6 @@ public class AITalking : AIController
         }
         else
         {
-            if(mInDialogueSphere)
-            {
-                eStartedMoving.Invoke(gameObject);
-            }
-            
             if(mGameManager.mGameSpeed > 0f)
             {
                 yield return new WaitForSeconds(mTransitionDelay / mGameManager.mGameSpeed);

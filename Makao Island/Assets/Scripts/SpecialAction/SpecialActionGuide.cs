@@ -2,15 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpecialActionGuide : MonoBehaviour
+public class SpecialActionGuide : SpecialActionObject
 {
-    void Start()
+    private SpiritGirl mOwner;
+    private Transform mPlayer;
+
+    public SpecialActionGuide(SpiritGirl owner)
     {
-        
+        mOwner = owner;
+        mPlayer = GameManager.ManagerInstance().mPlayer.transform;
     }
 
-    void Update()
+    public override void UseSpecialAction(bool active)
     {
-        
+        if (active)
+        {
+            mOwner.FollowGuide(mPlayer.position);
+        }
     }
 }
