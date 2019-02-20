@@ -3,12 +3,7 @@ using UnityEngine.Events;
 
 public class DayCycle : MonoBehaviour
 {
-    //How long each part of the day last
-    public float mDawnLength = 10f;
-    public float mDayLength = 20f;
-    public float mDuskLength = 10f;
-    public float mNightLength = 20f;
-    //public float mFullCycleLength = 60f;
+    public float mCycleLength = 60f;
 
     public Gradient mSkyColorTint;
     public Gradient mSunlightTint;
@@ -20,14 +15,14 @@ public class DayCycle : MonoBehaviour
     public UnityEvent eTimeChanged = new UnityEvent();
 
     private float[] mStartRotation = new float[] { 335f, 15f, 165f, 205f };
-    private float[] mCyclusLength;
-    private float[] mRotationStep;
+    private float[] mRotationDegrees;
 
     private DayCyclus mCurrentCyclusStep;
     private float mCurrentTime = 0;
     private float mCurrentRotation;
     private float mFactor;
     private float mOffset = 0;
+    private float mRotationStep;
 
     private Material mSkyMaterial;
     private Light mSun;
@@ -46,23 +41,21 @@ public class DayCycle : MonoBehaviour
         mSkyMaterial = RenderSettings.skybox;
         mSun = RenderSettings.sun;
         mFactor = 1f / 360f;
-        mCyclusLength = new float[] { mDawnLength, mDayLength, mDuskLength, mNightLength };
-        mRotationStep = new float[mCyclusLength.Length];
+        mRotationStep = 360f / mCycleLength;
 
-        //Finds how fast the sun must move for each cycle step
-        for(int i = 0; i < mRotationStep.Length; i++)
+        mRotationDegrees = new float[mStartRotation.Length];
+
+        for(int i = 0; i < mRotationDegrees.Length; i++)
         {
-            if ((mStartRotation[(i + 1) % mRotationStep.Length] < mStartRotation[i]))
+            if ((mStartRotation[(i + 1) % mRotationDegrees.Length] < mStartRotation[i]))
             {
                 mOffset = (360f - mStartRotation[i]);
-                mRotationStep[i] = mOffset + mStartRotation[(i + 1) % mRotationStep.Length];
+                mRotationDegrees[i] = mOffset + mStartRotation[(i + 1) % mRotationDegrees.Length];
             }
             else
             {
-                mRotationStep[i] = mStartRotation[(i + 1) % mRotationStep.Length] - mStartRotation[i];
+                mRotationDegrees[i] = mStartRotation[(i + 1) % mRotationDegrees.Length] - mStartRotation[i];
             }
-
-            mRotationStep[i] /= mCyclusLength[i];
         }
 
         //Retrieves the saved time of day
@@ -70,7 +63,7 @@ public class DayCycle : MonoBehaviour
         mCurrentTime = mGameManager.mGameStatus.mCyclusTime;
         
         //Sets the rotation the sun should start at
-        mCurrentRotation = mStartRotation[(int)mCurrentCyclusStep] + (mRotationStep[(int)mCurrentCyclusStep] * mCurrentTime);
+        mCurrentRotation = (mRotationStep * mCurrentTime) - mOffset;
     }
 	
 	void Update()
@@ -78,13 +71,13 @@ public class DayCycle : MonoBehaviour
         //Moves the day and night cycle along at the set speed
         mCurrentTime += Time.deltaTime * mGameManager.mGameSpeed;
 
-        if(mCurrentTime >= mCyclusLength[(int)mCurrentCyclusStep])
+        if(mCurrentRotation >= ((mStartRotation[(int)mCurrentCyclusStep] + mRotationDegrees[(int)mCurrentCyclusStep]) % 360))
         {
             NextCyclusStep();
             eTimeChanged.Invoke();
         }
 
-        mCurrentRotation = mStartRotation[(int)mCurrentCyclusStep] + (mRotationStep[(int)mCurrentCyclusStep] * mCurrentTime);
+        mCurrentRotation = (mRotationStep * mCurrentTime) - mOffset;
         transform.eulerAngles = new Vector3(mCurrentRotation, 0f, 0f);
         UpdateSky((mCurrentRotation + mOffset) * mFactor);
     }
@@ -92,8 +85,6 @@ public class DayCycle : MonoBehaviour
     //Change to the next part of the day
     private void NextCyclusStep()
     {
-        mCurrentTime = 0f;
-
         switch (mCurrentCyclusStep)
         {
             case DayCyclus.dawn:
@@ -110,6 +101,7 @@ public class DayCycle : MonoBehaviour
 
             case DayCyclus.night:
                 mCurrentCyclusStep = DayCyclus.dawn;
+                mCurrentTime = 0f;
                 break;
         }
     }
