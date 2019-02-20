@@ -8,6 +8,7 @@ public class DayCycle : MonoBehaviour
     public float mDayLength = 20f;
     public float mDuskLength = 10f;
     public float mNightLength = 20f;
+    //public float mFullCycleLength = 60f;
 
     public Gradient mSkyColorTint;
     public Gradient mSunlightTint;

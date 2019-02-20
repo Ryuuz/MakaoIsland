@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7585729752787854468}
   - component: {fileID: 7987579354403182221}
   - component: {fileID: 1448465878153287177}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,9 +89,9 @@ GameObject:
   - component: {fileID: 7170472208005371228}
   - component: {fileID: 7128574489735542856}
   - component: {fileID: 2293655667498756040}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TalkingVillager
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -222,7 +222,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mSpeed: 3.5
   mWaypointRadius: 4
-  mTransitionDelay: 2
+  mTransitionDelay: 0
   mDawnLocation: {fileID: 0}
   mDayLocation: {fileID: 0}
   mDuskLocation: {fileID: 0}
@@ -248,7 +248,7 @@ GameObject:
   - component: {fileID: 6108147766339716948}
   - component: {fileID: 4803435562077297754}
   - component: {fileID: 7567344864391051718}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpeechBubble
   m_TagString: Untagged
   m_Icon: {fileID: 0}

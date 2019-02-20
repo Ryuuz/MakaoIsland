@@ -8,16 +8,16 @@ public class DialogueTrigger : MonoBehaviour
     public float mCooldown = 10f;
     public GameObject[] mSpeakers;
 
-    private AITalking[] mSpeakerControllers;
-    private PlayerController mPlayerPresent = null;
-    private List<Sentence> mSentences = new List<Sentence>();
-    private DialogueManager mDialogueManager;
-    private bool mPlaying = false;
-    private bool mPlayerListening = false;
-    private bool mCoolingDown = false;
-    private SpecialActionListen mListenAction;
+    protected AITalking[] mSpeakerControllers;
+    protected PlayerController mPlayerPresent = null;
+    protected List<Sentence> mSentences = new List<Sentence>();
+    protected DialogueManager mDialogueManager;
+    protected bool mPlaying = false;
+    protected bool mPlayerListening = false;
+    protected bool mCoolingDown = false;
+    protected SpecialActionListen mListenAction;
 
-    void Start()
+    protected virtual void Start()
     {
         mListenAction = new SpecialActionListen(this);
 
@@ -47,13 +47,10 @@ public class DialogueTrigger : MonoBehaviour
             }
         }
 
-        if(AllSpeakersPresent())
-        {
-            ToggleSpeechBubbles(true);
-        }
+        EvaluateStatus();
     }
 
-    private void OnTriggerEnter(Collider other)
+    protected void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
@@ -75,7 +72,7 @@ public class DialogueTrigger : MonoBehaviour
         EvaluateStatus();
     }
 
-    private void OnTriggerExit(Collider other)
+    protected void OnTriggerExit(Collider other)
     {
         //Player left the dialogue sphere. Conversation will continue if playing, but player will not hear it
         if (other.tag == "Player")
@@ -94,7 +91,7 @@ public class DialogueTrigger : MonoBehaviour
         }
     }
 
-    public void EvaluateStatus()
+    public virtual void EvaluateStatus()
     {
         if (AllSpeakersPresent() && !mPlaying)
         {
@@ -147,7 +144,7 @@ public class DialogueTrigger : MonoBehaviour
         }
     }
 
-    private IEnumerator DialogueRunning()
+    protected IEnumerator DialogueRunning()
     {
         float dialogueTime = 0f;
 
@@ -181,7 +178,7 @@ public class DialogueTrigger : MonoBehaviour
     }
 
     //Stops the dialogue and enforces a cooldown before it can be triggered again
-    private IEnumerator StopDialogue()
+    protected IEnumerator StopDialogue()
     {
         for (int i = 0; i < mSpeakerControllers.Length; i++)
         {
@@ -209,19 +206,11 @@ public class DialogueTrigger : MonoBehaviour
         mCoolingDown = false;
 
         //Give the player the listen action back if everyone is still in the dialogue sphere
-        if (AllSpeakersPresent())
-        {
-            ToggleSpeechBubbles(true);
-
-            if (mPlayerPresent)
-            {
-                mPlayerPresent.mSpecialAction = mListenAction;
-            }
-        }
+        EvaluateStatus();
     }
 
     //Returns if all the NPCs that are part of the dialogue are present in the dialogue sphere
-    private bool AllSpeakersPresent()
+    protected bool AllSpeakersPresent()
     {
         for(int i = 0; i < mSpeakerControllers.Length; i++)
         {
@@ -235,7 +224,7 @@ public class DialogueTrigger : MonoBehaviour
     }
 
     //Checks if the given gameobject is one of the NPCs set as a speaker
-    private bool IsASpeaker(GameObject character)
+    protected bool IsASpeaker(GameObject character)
     {
         for(int i = 0; i < mSpeakers.Length; i++)
         {
@@ -249,7 +238,7 @@ public class DialogueTrigger : MonoBehaviour
     }
 
     //Retrieves the dialogue lines
-    private void GetDialogue()
+    protected void GetDialogue()
     {
         if(mDialogueManager)
         {
@@ -263,7 +252,7 @@ public class DialogueTrigger : MonoBehaviour
     }
 
     //Shows or hides the speech bubbles
-    private void ToggleSpeechBubbles(bool show)
+    protected void ToggleSpeechBubbles(bool show)
     {
         for(int i = 0; i < mSpeakerControllers.Length; i++)
         {
@@ -272,7 +261,7 @@ public class DialogueTrigger : MonoBehaviour
     }
 
     //The player can no longer start the conversation if one of the NPCs is leaving
-    private void AIIsLeaving(GameObject npc)
+    protected void AIIsLeaving(GameObject npc)
     {
         ToggleSpeechBubbles(false);
 

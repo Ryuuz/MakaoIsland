@@ -16,6 +16,12 @@ public class DialogueLines
         new Sentence[]
         {
             new Sentence(1, "Please lead me to the shrine."),
+        },
+
+        //2
+        new Sentence[]
+        {
+            new Sentence(1, "Thank you."),
         }
     };
 

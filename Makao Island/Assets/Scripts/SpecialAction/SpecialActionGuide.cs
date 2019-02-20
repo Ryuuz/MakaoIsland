@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class SpecialActionGuide : SpecialActionObject
 {
-    private SpiritGirl mOwner;
+    private FollowGuideScript mOwner;
     private Transform mPlayer;
 
-    public SpecialActionGuide(SpiritGirl owner)
+    public SpecialActionGuide(FollowGuideScript owner)
     {
         mOwner = owner;
         mPlayer = GameManager.ManagerInstance().mPlayer.transform;

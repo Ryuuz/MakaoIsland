@@ -7,9 +7,8 @@ public class SpiritGirl : AITalking
     [SerializeField]
     private DialogueTrigger mDialogueSphere;
 
-    private bool mGuided = false;
+    private FollowGuideScript mFollow;
     private FadeScript mFade;
-    private SpecialActionGuide mGuideAction;
     private PlayerController mPlayer;
     private CanvasGroup mCanvas;
 
@@ -18,11 +17,15 @@ public class SpiritGirl : AITalking
         base.Start();
 
         mFade = GetComponent<FadeScript>();
-        mGuideAction = new SpecialActionGuide(this);
-        mCanvas = GetComponentInChildren<CanvasGroup>();
-        mCanvas.alpha = 0;
+        mFollow = GetComponentInChildren<FollowGuideScript>();
+        mCanvas = mSpeechBubble.GetComponent<CanvasGroup>();
 
         Transition(mGameManager.mGameStatus.mDayTime);
+
+        if(mCanvas)
+        {
+            mCanvas.alpha = 0f;
+        }
     }
 
     public override void Transition(DayCyclus time)
@@ -70,15 +73,14 @@ public class SpiritGirl : AITalking
     {
         base.SetTalking(talking);
 
-        if(talking == false)
+        if(talking == false && !mFollow.mGoalReached)
         {
-            mGuided = true;
-
-            if(mPlayer)
-            {
-
-                mPlayer.mSpecialAction = mGuideAction;
-            }
+            mFollow.mGuided = true;
+            mFollow.SetGuideAction(true);
+        }
+        else if(talking == false && mFollow.mGoalReached)
+        {
+            StartCoroutine(RestInPeace());
         }
         else
         {
@@ -86,24 +88,19 @@ public class SpiritGirl : AITalking
         }
     }
 
-    public void FollowGuide(Vector3 pos)
-    {
-        mAgent.stoppingDistance = 4;
-        mAgent.SetDestination(pos);
-    }
-
     private IEnumerator StartFadingIn()
     {
         yield return new WaitUntil(() => mFade.mFading == false);
         yield return StartCoroutine(mFade.FadeIn());
-        mCanvas.alpha = 1f;
-        if(Vector3.Distance(mDialogueSphere.gameObject.transform.position, gameObject.transform.position) <= mDialogueSphere.gameObject.GetComponent<SphereCollider>().radius)
+        if (mCanvas)
         {
-            mInDialogueSphere = true;
+            mCanvas.alpha = 1f;
         }
+        mFollow.mGoalReached = false;
 
         if (mDialogueSphere)
         {
+            mInDialogueSphere = true;
             mDialogueSphere.EvaluateStatus();
         }
     }
@@ -113,43 +110,19 @@ public class SpiritGirl : AITalking
         eStartedMoving.Invoke(gameObject);
         yield return new WaitUntil(() => mTalking == false);
         yield return new WaitUntil(() => mFade.mFading == false);
-        mGuided = false;
-        if (mPlayer)
+        mFollow.mGuided = false;
+        mFollow.SetGuideAction(false);
+        if (mCanvas)
         {
-            if (mPlayer.mSpecialAction == mGuideAction)
-            {
-                mPlayer.mSpecialAction = null;
-            }
+            mCanvas.alpha = 0f;
         }
-        mCanvas.alpha = 0f;
         StartCoroutine(mFade.FadeOut());
     }
 
-    private void OnTriggerEnter(Collider other)
+    private IEnumerator RestInPeace()
     {
-        if(other.tag == "Player")
-        {
-            mPlayer = other.GetComponent<PlayerController>();
-
-            if(mGuided)
-            {
-                mPlayer.mSpecialAction = mGuideAction;
-            }
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if(other.tag == "Player" && mPlayer)
-        {
-            if (mPlayer.mSpecialAction == mGuideAction)
-            {
-                mPlayer.mSpecialAction = null;
-            }
-
-            mPlayer = null;
-            mAgent.stoppingDistance = 0;
-            mAgent.SetDestination(mCurrentLocation);
-        }
+        eStartedMoving.Invoke(gameObject);
+        yield return StartCoroutine(mFade.FadeOut());
+        Destroy(gameObject);
     }
 }

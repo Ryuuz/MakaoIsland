@@ -19,7 +19,7 @@ public class AITalking : AIController
     public bool mInDialogueSphere;
 
     [SerializeField]
-    private RectTransform mSpeechBubble;
+    protected RectTransform mSpeechBubble;
 
     protected bool mTalking = false;
 

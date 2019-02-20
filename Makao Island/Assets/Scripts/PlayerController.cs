@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     public float mWalkSpeed = 5f;
     public float mRunSpeed = 10f;
     public float mJumpForce = 5f;
-    public float mMaxFallSpeed = 10f;
+    public float mMaxFallSpeed = 20f;
     public SpecialActionObject mSpecialAction { get; set; }
 
     private Vector3 mMovementDirection = Vector3.zero;
