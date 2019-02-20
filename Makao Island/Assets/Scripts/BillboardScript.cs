@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BillboardScript : MonoBehaviour
 {
-    public Camera mCamera;
+    private Camera mCamera;
 
     private void Start()
     {
