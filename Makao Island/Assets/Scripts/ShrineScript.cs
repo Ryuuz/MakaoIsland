@@ -18,6 +18,7 @@ public class ShrineScript : MonoBehaviour
         //Give the player a special action when in range of shrine
         if(other.tag == "Player")
         {
+            GameManager.ManagerInstance().mControlUI.ShowControlUI(ControlAction.meditate);
             mPlayer.mSpecialAction = mMeditateAction;
         }
     }
@@ -29,6 +30,7 @@ public class ShrineScript : MonoBehaviour
             if (mPlayer.mSpecialAction == mMeditateAction)
             {
                 mPlayer.mSpecialAction = null;
+                GameManager.ManagerInstance().mControlUI.HideControlUI();
             }
             mMeditateAction.UseSpecialAction(false);
         }

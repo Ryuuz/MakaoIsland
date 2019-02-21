@@ -45,12 +45,12 @@ public class DialogueTriggerSpecial : DialogueTrigger
             
             if(!mPlayerListening && mPlayerPresent && !mCoolingDown)
             {
-                mPlayerPresent.mSpecialAction = mListenAction;
+                SetListenAction(true);
             }
         }
         else if (!AllSpeakersPresent() && mPlaying && !mPlayerListening && mPlayerPresent)
         {
-            mPlayerPresent.mSpecialAction = mListenAction;
+            SetListenAction(true);
         }
     }
 }

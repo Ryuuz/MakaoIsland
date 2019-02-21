@@ -28,7 +28,7 @@ public class FollowGuideScript : MonoBehaviour
 
             if (mGuided)
             {
-                mPlayer.mSpecialAction = mGuideAction;
+                SetGuideAction(true);
             }
         }
     }
@@ -37,11 +37,9 @@ public class FollowGuideScript : MonoBehaviour
     {
         if (other.tag == "Player" && mPlayer)
         {
-            if (mPlayer.mSpecialAction == mGuideAction)
-            {
-                mPlayer.mSpecialAction = null;
-            }
-
+            SetGuideAction(false);
+            mAgent.isStopped = true;
+            mAgent.ResetPath();
             mPlayer = null;
             mAgent.stoppingDistance = 0;
         }
@@ -51,13 +49,7 @@ public class FollowGuideScript : MonoBehaviour
     {
         mGuided = false;
         mGoalReached = true;
-        if (mPlayer)
-        {
-            if (mPlayer.mSpecialAction == mGuideAction)
-            {
-                mPlayer.mSpecialAction = null;
-            }
-        }
+        SetGuideAction(false);
         mAgent.isStopped = true;
         mAgent.ResetPath();
     }
@@ -70,20 +62,19 @@ public class FollowGuideScript : MonoBehaviour
 
     public void SetGuideAction(bool give)
     {
-        if(give)
+        if(mPlayer)
         {
-            if (mPlayer)
+            if (give)
             {
                 mPlayer.mSpecialAction = mGuideAction;
+                GameManager.ManagerInstance().mControlUI.ShowControlUI(ControlAction.guide);
             }
-        }
-        else
-        {
-            if (mPlayer)
+            else
             {
                 if (mPlayer.mSpecialAction == mGuideAction)
                 {
                     mPlayer.mSpecialAction = null;
+                    GameManager.ManagerInstance().mControlUI.HideControlUI();
                 }
             }
         }

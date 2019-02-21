@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     public GameObject mPlayer;
     public GameObject mMainCamera;
     public GameObject mDialogueManager;
+    public ControlsUIScript mControlUI;
     public float mGameSpeed = 1f;
 
     public GameProgressData mProgress;
