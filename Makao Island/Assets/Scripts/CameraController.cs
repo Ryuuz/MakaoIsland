@@ -14,6 +14,8 @@ public class CameraController : MonoBehaviour
     void Start()
     {
         mPlayer = GameManager.ManagerInstance().mPlayer;
+        transform.rotation = mPlayer.transform.rotation;
+        mRotation.x = mPlayer.transform.rotation.eulerAngles.y;
     }
 	
 	void Update()

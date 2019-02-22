@@ -13,6 +13,11 @@ public class SpiritAnimal : AIController
         base.Start();
         mFade = GetComponent<FadeScript>();
 
+        if(!mFade)
+        {
+            mFade = gameObject.AddComponent<FadeScript>();
+        }
+
         //Make sure the spirit animal is in the right place and state
         Transition(mGameManager.mGameStatus.mDayTime);
         

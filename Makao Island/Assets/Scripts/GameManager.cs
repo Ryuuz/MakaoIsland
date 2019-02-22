@@ -17,18 +17,21 @@ public class TimeChangeEvent : UnityEvent<DayCyclus>
 
 public class GameManager : MonoBehaviour
 {
+    public float mGameSpeed = 1f;
     public GameObject mPlayer;
     public GameObject mMainCamera;
     public GameObject mDialogueManager;
     public ControlsUIScript mControlUI;
-    public float mGameSpeed = 1f;
 
     public GameProgressData mProgress;
     public GameStatusData mGameStatus;
 
     //Events
+    [HideInInspector]
     public SpeedChangeEvent eSpeedChanged = new SpeedChangeEvent();
+    [HideInInspector]
     public TimeChangeEvent eTimeChanged = new TimeChangeEvent();
+    [HideInInspector]
     public UnityEvent eSpiritAnimalFound = new UnityEvent();
 
     [HideInInspector]

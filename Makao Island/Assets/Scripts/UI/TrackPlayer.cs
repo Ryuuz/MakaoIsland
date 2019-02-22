@@ -26,6 +26,9 @@ public class TrackPlayer : MonoBehaviour
             Vector2 mapSize = new Vector2(mUpperRight.position.x - mLowerLeft.position.x, mUpperRight.position.z - mLowerLeft.position.z);
 
             mScale = new Vector2(UISize.x / mapSize.x, UISize.y / mapSize.y);
+
+            mPlayerOnMap.anchorMax = new Vector2(((0f - mLowerLeft.position.x) * mScale.x) / UISize.x, ((0f - mLowerLeft.position.z) * mScale.y) / UISize.y);
+            mPlayerOnMap.anchorMin = mPlayerOnMap.anchorMax;
         }
     }
 
