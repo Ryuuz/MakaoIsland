@@ -1,21 +1,22 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
     public float mCameraHeight = 0.8f;
     public float mTurnSpeed = 1.2f;
 
-    private GameObject mPlayer;
+    private Transform mPlayer;
+    private PlayerController mPlayerScript;
     private Vector2 mRotation = Vector2.zero;
     private Vector3 mCameraPosition;
 
     void Start()
     {
-        mPlayer = GameManager.ManagerInstance().mPlayer;
-        transform.rotation = mPlayer.transform.rotation;
-        mRotation.x = mPlayer.transform.rotation.eulerAngles.y;
+        mPlayer = GameManager.ManagerInstance().mPlayer.transform;
+        mPlayerScript = mPlayer.GetComponent<PlayerController>();
+
+        //Set the camera's start rotation to that of the player object (only around y axis)
+        mRotation.x = mPlayer.rotation.eulerAngles.y;
     }
 	
 	void Update()
@@ -23,7 +24,7 @@ public class CameraController : MonoBehaviour
         //Place camera at player's origin, then move up by 'mCameraHeight'
         if(mPlayer)
         {
-            mCameraPosition = mPlayer.transform.position;
+            mCameraPosition = mPlayer.position;
             mCameraPosition.y += mCameraHeight;
             transform.position = mCameraPosition;
         }
@@ -40,9 +41,9 @@ public class CameraController : MonoBehaviour
 
         transform.eulerAngles = new Vector3(mRotation.y, mRotation.x, 0f);
 
-        if(mPlayer)
+        if(mPlayerScript)
         {
-            mPlayer.GetComponent<PlayerController>().RotateCharacter(Quaternion.AngleAxis(transform.rotation.eulerAngles.y, Vector3.up));
+            mPlayerScript.RotateCharacter(Quaternion.AngleAxis(transform.rotation.eulerAngles.y, Vector3.up));
         }
     }
 }

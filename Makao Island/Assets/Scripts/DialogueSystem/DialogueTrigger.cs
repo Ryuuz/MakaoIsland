@@ -31,7 +31,7 @@ public class DialogueTrigger : MonoBehaviour
 
         GetDialogue();
 
-        //Get the script component of the AI
+        //Get the script component of the AI and check if the AI is present
         mSpeakerControllers = new AITalking[mSpeakers.Length];
         mSpeakerPresent = new bool[mSpeakers.Length];
 
@@ -39,21 +39,16 @@ public class DialogueTrigger : MonoBehaviour
         {
             mSpeakerControllers[i] = mSpeakers[i].GetComponent<AITalking>();
             mSpeakerControllers[i].eStartedMoving.AddListener(AIIsLeaving);
-        }
+            mSpeakerPresent[i] = false;
 
-        for(int i = 0; i < mSpeakers.Length; i++)
-        {
-            if(Vector3.Distance(mSpeakers[i].transform.position, transform.position) <= GetComponent<SphereCollider>().radius)
+            if (Vector3.Distance(mSpeakers[i].transform.position, transform.position) <= GetComponent<SphereCollider>().radius)
             {
                 mSpeakerPresent[i] = true;
                 mSpeakerControllers[i].mInDialogueSphere = true;
             }
-            else
-            {
-                mSpeakerPresent[i] = false;
-            }
         }
 
+        //Check if the listen action should be given to the player
         EvaluateStatus();
     }
 
@@ -96,6 +91,7 @@ public class DialogueTrigger : MonoBehaviour
         }
     }
 
+    //Checks if the speech bubbles should be visible and if the player should have the listen action
     public virtual void EvaluateStatus()
     {
         if (AllSpeakersPresent() && !mPlaying)
@@ -150,7 +146,7 @@ public class DialogueTrigger : MonoBehaviour
         foreach(Sentence line in mSentences)
         {
             //How long the line of dialogue will show calculated from the number of characters in it
-            dialogueTime = (0.3f * line.text.Length) * GameManager.ManagerInstance().mGameSpeed;
+            dialogueTime = (2f + (0.1f * line.text.Length)) * GameManager.ManagerInstance().mGameSpeed;
 
             if(line.speaker <= mSpeakers.Length)
             {
@@ -202,7 +198,7 @@ public class DialogueTrigger : MonoBehaviour
         EvaluateStatus();
     }
 
-    //Returns if all the NPCs that are part of the dialogue are present in the dialogue sphere
+    //Returns true if all the NPCs that are part of the dialogue are present in the dialogue sphere
     protected bool AllSpeakersPresent()
     {
         if (mSpeakerPresent.Length == 0)
@@ -275,6 +271,7 @@ public class DialogueTrigger : MonoBehaviour
         SetListenAction(false);
     }
 
+    //Gives or takes the listen action from the player depending on the parameter 'listen'
     protected void SetListenAction(bool listen)
     {
         if(mPlayerPresent)

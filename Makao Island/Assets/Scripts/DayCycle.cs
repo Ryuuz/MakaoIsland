@@ -45,6 +45,7 @@ public class DayCycle : MonoBehaviour
 
         mRotationDegrees = new float[mStartRotation.Length];
 
+        //How many degrees each part of the day lasts
         for(int i = 0; i < mRotationDegrees.Length; i++)
         {
             if ((mStartRotation[(i + 1) % mRotationDegrees.Length] < mStartRotation[i]))
@@ -77,6 +78,7 @@ public class DayCycle : MonoBehaviour
             eTimeChanged.Invoke();
         }
 
+        //Update the rotation
         mCurrentRotation = (mRotationStep * mCurrentTime) - mOffset;
         transform.eulerAngles = new Vector3(mCurrentRotation, 0f, 0f);
         UpdateSky((mCurrentRotation + mOffset) * mFactor);
@@ -106,6 +108,7 @@ public class DayCycle : MonoBehaviour
         }
     }
 
+    //Changes the properties of the sky based on the sun's position
     private void UpdateSky(float sunProgress)
     {
         if(mSkyMaterial)

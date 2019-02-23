@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
+﻿//Empty base class
 public class SpecialActionObject
 {
     public SpecialActionObject()

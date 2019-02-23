@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PauseMenuScript : MonoBehaviour
 {
@@ -10,6 +8,7 @@ public class PauseMenuScript : MonoBehaviour
     {
         mCanvasGroup = GetComponent<CanvasGroup>();
 
+        //Give the input handler access to this script if needed
         if(InputHandler.InputInstance().mPauseMenu == null)
         {
             InputHandler.InputInstance().mPauseMenu = this;
@@ -20,7 +19,6 @@ public class PauseMenuScript : MonoBehaviour
 
     public void HidePauseMenu()
     {
-
         mCanvasGroup.alpha = 0f;
         mCanvasGroup.blocksRaycasts = false;
         mCanvasGroup.interactable = false;
@@ -33,6 +31,7 @@ public class PauseMenuScript : MonoBehaviour
         mCanvasGroup.interactable = true;
     }
 
+    //Function for Resume button
     public void ResumeGame()
     {
         HidePauseMenu();
@@ -40,6 +39,7 @@ public class PauseMenuScript : MonoBehaviour
         InputHandler.InputInstance().ToggleMenu();
     }
 
+    //Function for Quit button
     public void QuitGame()
     {
         Application.Quit();

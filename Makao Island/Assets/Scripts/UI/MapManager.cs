@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class MapManager : MonoBehaviour
@@ -32,6 +30,7 @@ public class MapManager : MonoBehaviour
             InputHandler.InputInstance().mMapManager = this;
         }
 
+        //Set the correct icons
         UpdateDayIcon(mGameManager.mGameStatus.mDayTime);
         UpdateSpiritAnimal();
         HideMap();

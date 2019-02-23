@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class TrackPlayer : MonoBehaviour
 {
@@ -27,6 +25,7 @@ public class TrackPlayer : MonoBehaviour
 
             mScale = new Vector2(UISize.x / mapSize.x, UISize.y / mapSize.y);
 
+            //Set the anchor to the image at where the origin of the game world is
             mPlayerOnMap.anchorMax = new Vector2(((0f - mLowerLeft.position.x) * mScale.x) / UISize.x, ((0f - mLowerLeft.position.z) * mScale.y) / UISize.y);
             mPlayerOnMap.anchorMin = mPlayerOnMap.anchorMax;
         }

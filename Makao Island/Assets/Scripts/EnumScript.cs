@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
+﻿
 public enum DayCyclus
 {
     dawn, day, dusk, night, dayCycles

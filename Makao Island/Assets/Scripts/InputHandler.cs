@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class InputHandler : MonoBehaviour
 {
@@ -55,6 +53,7 @@ public class InputHandler : MonoBehaviour
 
     void Start()
     {
+        Cursor.lockState = CursorLockMode.Locked;
         mGameManager = GameManager.ManagerInstance();
         mPlayer = mGameManager.mPlayer;
         mCamera = mGameManager.mMainCamera;
@@ -134,6 +133,7 @@ public class InputHandler : MonoBehaviour
             {
                 ToggleMenu();
                 mPauseMenu.ShowPauseMenu();
+                Cursor.lockState = CursorLockMode.None;
                 Time.timeScale = 0f;
             }
         }
@@ -152,6 +152,7 @@ public class InputHandler : MonoBehaviour
         if (Input.GetButtonDown("Pause") && !mMapOpen)
         {
             mPauseMenu.HidePauseMenu();
+            Cursor.lockState = CursorLockMode.Locked;
             Time.timeScale = 1f;
             ToggleMenu();
         }

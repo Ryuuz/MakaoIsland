@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SpiritGirl : AITalking
@@ -19,6 +18,11 @@ public class SpiritGirl : AITalking
         mFade = GetComponent<FadeScript>();
         mFollow = GetComponentInChildren<FollowGuideScript>();
         mCanvas = mSpeechBubble.GetComponent<CanvasGroup>();
+
+        if (!mFade)
+        {
+            mFade = gameObject.AddComponent<FadeScript>();
+        }
 
         Transition(mGameManager.mGameStatus.mDayTime);
 
@@ -73,15 +77,18 @@ public class SpiritGirl : AITalking
     {
         base.SetTalking(talking);
 
+        //If done talking but not at the goal let the player guide the NPC
         if(talking == false && !mFollow.mGoalReached)
         {
             mFollow.mGuided = true;
             mFollow.SetGuideAction(true);
         }
+        //Else if done talking and at the goal then request has been complete
         else if(talking == false && mFollow.mGoalReached)
         {
             StartCoroutine(RestInPeace());
         }
+        //Else if started talking, make the NPC unavailable to the dialogue sphere
         else
         {
             eStartedMoving.Invoke(gameObject);
@@ -92,10 +99,8 @@ public class SpiritGirl : AITalking
     {
         yield return new WaitUntil(() => mFade.mFading == false);
         yield return StartCoroutine(mFade.FadeIn());
-        if (mCanvas)
-        {
-            mCanvas.alpha = 1f;
-        }
+
+        //Make the speech bubble visible and reset variables
         mFollow.mGoalReached = false;
 
         if (mDialogueSphere)
@@ -103,19 +108,27 @@ public class SpiritGirl : AITalking
             mInDialogueSphere = true;
             mDialogueSphere.EvaluateStatus();
         }
+
+        if (mCanvas)
+        {
+            mCanvas.alpha = 1f;
+        }
     }
 
     private IEnumerator StartFadingOut()
     {
-        eStartedMoving.Invoke(gameObject);
-        yield return new WaitUntil(() => mTalking == false);
-        yield return new WaitUntil(() => mFade.mFading == false);
-        mFollow.mGuided = false;
-        mFollow.SetGuideAction(false);
         if (mCanvas)
         {
             mCanvas.alpha = 0f;
         }
+
+        eStartedMoving.Invoke(gameObject);
+        yield return new WaitUntil(() => mTalking == false);
+        yield return new WaitUntil(() => mFade.mFading == false);
+
+        //Can no longer be guided
+        mFollow.mGuided = false;
+        mFollow.SetGuideAction(false);
         StartCoroutine(mFade.FadeOut());
     }
 

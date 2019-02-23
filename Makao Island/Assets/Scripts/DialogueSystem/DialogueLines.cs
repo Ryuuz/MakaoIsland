@@ -1,4 +1,4 @@
-﻿
+﻿//All the dialogue in the game
 public class DialogueLines
 {
     private Sentence[][] mConversations =
@@ -11,7 +11,7 @@ public class DialogueLines
             new Sentence(1, "If you say so."),
             new Sentence(1, "But...they usually don't gather on that plateau."),
             new Sentence(2, "Which one now?"),
-            new Sentence(1, "The one to the east. The southernmost of them."),
+            new Sentence(1, "The one to the east. The southernmost of them. They appear during the day."),
             new Sentence(2, "Hmm, that is unusual. Probably nothin' either way, I reckon.")
         },
 

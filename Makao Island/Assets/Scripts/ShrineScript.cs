@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ShrineScript : MonoBehaviour
 {
@@ -27,12 +25,15 @@ public class ShrineScript : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            //Removes the special action if it is the one currently active
             if (mPlayer.mSpecialAction == mMeditateAction)
             {
                 mPlayer.mSpecialAction = null;
                 GameManager.ManagerInstance().mControlUI.HideControlUI();
+
+                //Makes sure the game speed is returned to normal
+                mMeditateAction.UseSpecialAction(false);
             }
-            mMeditateAction.UseSpecialAction(false);
         }
     }
 }

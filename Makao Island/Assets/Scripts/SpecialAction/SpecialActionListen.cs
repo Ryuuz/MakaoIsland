@@ -1,9 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
+﻿
 public class SpecialActionListen : SpecialActionObject
 {
+    //The one responsible for giving the action
     private DialogueTrigger mOwner;
 
     public SpecialActionListen(DialogueTrigger owner)
@@ -15,6 +13,7 @@ public class SpecialActionListen : SpecialActionObject
     {
         if (active)
         {
+            //Start playing the dialogue of the owner
             mOwner.PlayDialogue();
         }
     }

@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class GoalScript : MonoBehaviour
 {
@@ -11,13 +9,18 @@ public class GoalScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        //If the assigned object entered the trigger
         if (other.gameObject == mTarget)
         {
             other.GetComponentInChildren<FollowGuideScript>().GoalReached();
-            if(mTriggerDialogue)
+
+            //If a dialogue sphere is connected with the goal then check if it can be played
+            if (mTriggerDialogue)
             {
                 mTriggerDialogue.EvaluateStatus();
             }
+
+            //All the goal sphere's tasks have been completed. No longer needed
             Destroy(gameObject);
         }
     }

@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class StarScript : MonoBehaviour
 {
@@ -14,6 +12,7 @@ public class StarScript : MonoBehaviour
 
         if(mStars)
         {
+            //The stars should be fully visible if night or dawn
             if (tempManager.mGameStatus.mDayTime == DayCyclus.night || tempManager.mGameStatus.mDayTime == DayCyclus.dawn)
             {
                 var tempPS = mStars.main;
@@ -30,6 +29,7 @@ public class StarScript : MonoBehaviour
 
     public void ToggleStars(DayCyclus day)
     {
+        //Stop or start the particle system depending on the time of day
         if(mStars)
         {
             if (day == DayCyclus.dawn)

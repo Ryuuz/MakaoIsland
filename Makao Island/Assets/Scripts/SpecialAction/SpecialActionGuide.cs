@@ -1,9 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class SpecialActionGuide : SpecialActionObject
 {
+    //The NPC to be guided who is also responsible for giving the action
     private FollowGuideScript mOwner;
     private Transform mPlayer;
 
@@ -13,6 +12,7 @@ public class SpecialActionGuide : SpecialActionObject
         mPlayer = GameManager.ManagerInstance().mPlayer.transform;
     }
 
+    //Have the owner go to the guide's location
     public override void UseSpecialAction(bool active)
     {
         if (active)

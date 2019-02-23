@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -24,6 +23,7 @@ public class ControlsUIScript : MonoBehaviour
         mCanvasGroup = GetComponent<CanvasGroup>();
         HideControlUI();
 
+        //Give the game manager access to object
         if(!GameManager.ManagerInstance().mControlUI)
         {
             GameManager.ManagerInstance().mControlUI = this;
@@ -32,6 +32,7 @@ public class ControlsUIScript : MonoBehaviour
 
     public void ShowControlUI(ControlAction type)
     {
+        //Make sure 'type' is within range of the list
         if((int)type < mControlsList.Count && mCanvasGroup)
         {
             mDefault.overrideSprite = mControlsList[(int)type].mDefaultControl;

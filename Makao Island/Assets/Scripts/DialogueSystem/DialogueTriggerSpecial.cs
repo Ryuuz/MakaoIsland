@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class DialogueTriggerSpecial : DialogueTrigger
 {
@@ -21,15 +19,22 @@ public class DialogueTriggerSpecial : DialogueTrigger
     {
         bool readyToTalk = true;
 
+        //Checks that all speakers exist and if they are ready to talk
         for (int i = 0; i < mSpeakers.Length; i++)
         {
+            //If one of the speakers are no longer in the game, this dialogue sphere is obsolete
             if (mSpeakers[i] == null)
             {
                 Destroy(gameObject);
             }
-            else if(mGuideScripts[i] != null)
+            else
             {
-                if(mGuideScripts[i].mGuided)
+                if (Vector3.Distance(mSpeakers[i].transform.position, transform.position) <= GetComponent<SphereCollider>().radius)
+                {
+                    mSpeakerPresent[i] = true;
+                    mSpeakerControllers[i].mInDialogueSphere = true;
+                }
+                if (mGuideScripts[i].mGuided)
                 {
                     readyToTalk = false;
                 }

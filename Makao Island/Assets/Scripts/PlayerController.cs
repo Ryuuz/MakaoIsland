@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
@@ -14,10 +12,12 @@ public class PlayerController : MonoBehaviour
     private float mCurrentFallSpeed;
     private float mCurrentMovementSpeed;
     private CharacterController mCharacterController;
+    private Transform mCharacterTransform;
 
     private void Awake()
     {
         mCharacterController = GetComponent<CharacterController>();
+        mCharacterTransform = GetComponent<Transform>();
     }
 
     void Start()
@@ -60,7 +60,7 @@ public class PlayerController : MonoBehaviour
     //Rotates the character to the given rotation
     public void RotateCharacter(Quaternion charRotation)
     {
-        transform.rotation = charRotation;
+        mCharacterTransform.rotation = charRotation;
     }
 
     //Makes the character jump if grounded
@@ -75,9 +75,10 @@ public class PlayerController : MonoBehaviour
     //Sets the direction the player should move in
     public void SetMovementDirection(float horizontal, float vertical)
     {
-        mMovementDirection = transform.TransformDirection(new Vector3(horizontal, 0f, vertical));
+        mMovementDirection = mCharacterTransform.TransformDirection(new Vector3(horizontal, 0f, vertical));
     }
 
+    //Set the movement speed based on wether the character is running or not
     public void TriggerSprint(bool sprinting)
     {
         if (sprinting)
@@ -90,6 +91,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    //Use the special action if it is available
     public void TriggerSpecialAction(bool active)
     {
         if(mSpecialAction != null)
