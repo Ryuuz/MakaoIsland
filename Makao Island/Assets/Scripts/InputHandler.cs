@@ -54,6 +54,7 @@ public class InputHandler : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         mGameManager = GameManager.ManagerInstance();
         mPlayer = mGameManager.mPlayer;
         mCamera = mGameManager.mMainCamera;
@@ -134,6 +135,7 @@ public class InputHandler : MonoBehaviour
                 ToggleMenu();
                 mPauseMenu.ShowPauseMenu();
                 Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
                 Time.timeScale = 0f;
             }
         }
@@ -153,6 +155,7 @@ public class InputHandler : MonoBehaviour
         {
             mPauseMenu.HidePauseMenu();
             Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
             Time.timeScale = 1f;
             ToggleMenu();
         }

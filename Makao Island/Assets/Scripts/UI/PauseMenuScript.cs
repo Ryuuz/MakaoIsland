@@ -37,6 +37,8 @@ public class PauseMenuScript : MonoBehaviour
         HidePauseMenu();
         Time.timeScale = 1f;
         InputHandler.InputInstance().ToggleMenu();
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     //Function for Quit button
