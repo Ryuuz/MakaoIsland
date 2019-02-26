@@ -14,7 +14,27 @@ ModelImporter:
     2300000: Festival_Gong
     3300000: Festival_Gong
     4300000: Festival_Gong
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Burgunder
+    second: {fileID: 2100000, guid: 9dcfefa1a11c99642ad3c31254f5ecd3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: White
+    second: {fileID: 2100000, guid: 53a1c046f5b9b614bb91d7c6b75c3c59, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert46
+    second: {fileID: 2100000, guid: 7416af46b7b04fc49b1346a893e81453, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: phong39
+    second: {fileID: 2100000, guid: 798fcfff421d5214e8b9bbf72348dd53, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -51,8 +71,8 @@ ModelImporter:
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
+    importCameras: 0
+    importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1

@@ -26,7 +26,22 @@ ModelImporter:
     6400000: GEO_door_
     6400002: GEO_door_rim
     6400004: //RootNode
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert_blue
+    second: {fileID: 2100000, guid: ffb87da9f71b6f440a52c537f78036be, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert_brown
+    second: {fileID: 2100000, guid: 1461557bad472694e928a3c97699bb51, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert_orange
+    second: {fileID: 2100000, guid: 40ca43e01851e5440aa844826667f4ed, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -63,8 +78,8 @@ ModelImporter:
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
+    importCameras: 0
+    importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1

@@ -13,7 +13,22 @@ ModelImporter:
     2300000: Vifte
     3300000: Vifte
     4300000: Vifte
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Burgunder
+    second: {fileID: 2100000, guid: 9dcfefa1a11c99642ad3c31254f5ecd3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: White
+    second: {fileID: 2100000, guid: 53a1c046f5b9b614bb91d7c6b75c3c59, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert42
+    second: {fileID: 2100000, guid: aace214b5ccaecc44a9b07fdbf597c03, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -50,8 +65,8 @@ ModelImporter:
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
+    importCameras: 0
+    importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1

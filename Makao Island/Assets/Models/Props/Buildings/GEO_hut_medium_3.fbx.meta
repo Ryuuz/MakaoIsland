@@ -5,8 +5,10 @@ ModelImporter:
   fileIDToRecycleName:
     100000: GEO_hut_medium_3
     100002: //RootNode
+    100004: GRP_completed_assets
     400000: GEO_hut_medium_3
     400002: //RootNode
+    400004: GRP_completed_assets
     2100000: lambert_orange
     2100002: lambert_wood_light
     2100004: lambert_brown
@@ -15,7 +17,27 @@ ModelImporter:
     3300000: GEO_hut_medium_3
     4300000: GEO_hut_medium_3
     6400000: GEO_hut_medium_3
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert_blue
+    second: {fileID: 2100000, guid: ffb87da9f71b6f440a52c537f78036be, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert_brown
+    second: {fileID: 2100000, guid: 1461557bad472694e928a3c97699bb51, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert_orange
+    second: {fileID: 2100000, guid: 40ca43e01851e5440aa844826667f4ed, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert_wood_light
+    second: {fileID: 2100000, guid: 36f5a81692d715c489e431029a185f9d, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -52,8 +74,8 @@ ModelImporter:
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
+    importCameras: 0
+    importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1

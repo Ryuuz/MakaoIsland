@@ -14,7 +14,27 @@ ModelImporter:
     2300000: Festival_Dec_
     3300000: Festival_Dec_
     4300000: Festival_Dec_
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert44
+    second: {fileID: 2100000, guid: d3cc5e490505889458696c8f2db00e44, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert45
+    second: {fileID: 2100000, guid: 2451d2e9618d8fd44ab7550360d2e640, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: phong37
+    second: {fileID: 2100000, guid: 842bbce0873146049966f448c3771b06, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: phong38
+    second: {fileID: 2100000, guid: d0715aa5242d28a4e8763c5c7677a5f9, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -51,8 +71,8 @@ ModelImporter:
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
+    importCameras: 0
+    importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1

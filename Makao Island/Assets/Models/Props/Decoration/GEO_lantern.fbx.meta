@@ -220,7 +220,17 @@ ModelImporter:
     4300080: chain_8
     4300082: chain_8
     4300084: chain_8
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert_blue
+    second: {fileID: 2100000, guid: ffb87da9f71b6f440a52c537f78036be, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert_orange
+    second: {fileID: 2100000, guid: 40ca43e01851e5440aa844826667f4ed, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -257,8 +267,8 @@ ModelImporter:
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
+    importCameras: 0
+    importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1

@@ -11,7 +11,17 @@ ModelImporter:
     3300000: //RootNode
     4300000: GEO_notice_board
     6400000: //RootNode
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert12
+    second: {fileID: 2100000, guid: 1f98ea4b505e93b4d8270648e3f6c4ce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert_paper
+    second: {fileID: 2100000, guid: a22e56580713a0f489fbc55a4ce320b2, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -48,8 +58,8 @@ ModelImporter:
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
+    importCameras: 0
+    importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1

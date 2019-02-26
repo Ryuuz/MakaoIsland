@@ -26,7 +26,17 @@ ModelImporter:
     4300000: Rich_Single_Lantern_Decor_Bottom
     4300002: Rich_Single_Lantern_Decor_Top
     4300004: Rich_Single_Lantern
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: phong35
+    second: {fileID: 2100000, guid: 873195089cf02504ba7b938e286780d8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: phong36
+    second: {fileID: 2100000, guid: fc2ab3d1b210f9b40b301074f33b96f9, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -63,8 +73,8 @@ ModelImporter:
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
+    importCameras: 0
+    importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
