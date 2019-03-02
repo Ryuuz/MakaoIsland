@@ -1,0 +1,318 @@
+fileFormatVersion: 2
+guid: 646a7322be368e34f8cb55d3b2c4ba76
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: chain_1
+    100002: chain_1 1
+    100004: chain_1 2
+    100006: chain_1 3
+    100008: chain_1 4
+    100010: chain_2
+    100012: chain_2 1
+    100014: chain_2 2
+    100016: chain_2 3
+    100018: chain_2 4
+    100020: chain_3
+    100022: chain_3 1
+    100024: chain_3 2
+    100026: chain_3 3
+    100028: chain_3 4
+    100030: chain_4
+    100032: chain_4 1
+    100034: chain_4 2
+    100036: chain_4 3
+    100038: chain_4 4
+    100040: chain_5
+    100042: chain_5 1
+    100044: chain_5 2
+    100046: chain_5 3
+    100048: chain_5 4
+    100050: chain_6
+    100052: chain_6 1
+    100054: chain_6 2
+    100056: chain_6 3
+    100058: chain_6 4
+    100060: chain_7
+    100062: chain_7 1
+    100064: chain_7 2
+    100066: chain_7 3
+    100068: chain_7 4
+    100070: chain_8
+    100072: chain_8 1
+    100074: chain_8 2
+    100076: chain_8 3
+    100078: chain_8 4
+    100080: //RootNode
+    100082: GEO_lantern_ball
+    100084: GEO_lantern_chain_2
+    400000: chain_1
+    400002: chain_1 1
+    400004: chain_1 2
+    400006: chain_1 3
+    400008: chain_1 4
+    400010: chain_2
+    400012: chain_2 1
+    400014: chain_2 2
+    400016: chain_2 3
+    400018: chain_2 4
+    400020: chain_3
+    400022: chain_3 1
+    400024: chain_3 2
+    400026: chain_3 3
+    400028: chain_3 4
+    400030: chain_4
+    400032: chain_4 1
+    400034: chain_4 2
+    400036: chain_4 3
+    400038: chain_4 4
+    400040: chain_5
+    400042: chain_5 1
+    400044: chain_5 2
+    400046: chain_5 3
+    400048: chain_5 4
+    400050: chain_6
+    400052: chain_6 1
+    400054: chain_6 2
+    400056: chain_6 3
+    400058: chain_6 4
+    400060: chain_7
+    400062: chain_7 1
+    400064: chain_7 2
+    400066: chain_7 3
+    400068: chain_7 4
+    400070: chain_8
+    400072: chain_8 1
+    400074: chain_8 2
+    400076: chain_8 3
+    400078: chain_8 4
+    400080: //RootNode
+    400082: GEO_lantern_ball
+    400084: GEO_lantern_chain_2
+    2100000: lambert_orange
+    2100002: lambert_blue
+    2300000: chain_1
+    2300002: chain_1 1
+    2300004: chain_1 2
+    2300006: chain_1 3
+    2300008: chain_1 4
+    2300010: chain_2
+    2300012: chain_2 1
+    2300014: chain_2 2
+    2300016: chain_2 3
+    2300018: chain_2 4
+    2300020: chain_3
+    2300022: chain_3 1
+    2300024: chain_3 2
+    2300026: chain_3 3
+    2300028: chain_3 4
+    2300030: chain_4
+    2300032: chain_4 1
+    2300034: chain_4 2
+    2300036: chain_4 3
+    2300038: chain_4 4
+    2300040: chain_5
+    2300042: chain_5 1
+    2300044: chain_5 2
+    2300046: chain_5 3
+    2300048: chain_5 4
+    2300050: chain_6
+    2300052: chain_6 1
+    2300054: chain_6 2
+    2300056: chain_6 3
+    2300058: chain_6 4
+    2300060: chain_7
+    2300062: chain_7 1
+    2300064: chain_7 2
+    2300066: chain_7 3
+    2300068: chain_7 4
+    2300070: chain_8
+    2300072: chain_8 1
+    2300074: chain_8 2
+    2300076: chain_8 3
+    2300078: chain_8 4
+    2300080: //RootNode
+    2300082: GEO_lantern_ball
+    2300084: GEO_lantern_chain_2
+    3300000: chain_1
+    3300002: chain_1 1
+    3300004: chain_1 2
+    3300006: chain_1 3
+    3300008: chain_1 4
+    3300010: chain_2
+    3300012: chain_2 1
+    3300014: chain_2 2
+    3300016: chain_2 3
+    3300018: chain_2 4
+    3300020: chain_3
+    3300022: chain_3 1
+    3300024: chain_3 2
+    3300026: chain_3 3
+    3300028: chain_3 4
+    3300030: chain_4
+    3300032: chain_4 1
+    3300034: chain_4 2
+    3300036: chain_4 3
+    3300038: chain_4 4
+    3300040: chain_5
+    3300042: chain_5 1
+    3300044: chain_5 2
+    3300046: chain_5 3
+    3300048: chain_5 4
+    3300050: chain_6
+    3300052: chain_6 1
+    3300054: chain_6 2
+    3300056: chain_6 3
+    3300058: chain_6 4
+    3300060: chain_7
+    3300062: chain_7 1
+    3300064: chain_7 2
+    3300066: chain_7 3
+    3300068: chain_7 4
+    3300070: chain_8
+    3300072: chain_8 1
+    3300074: chain_8 2
+    3300076: chain_8 3
+    3300078: chain_8 4
+    3300080: //RootNode
+    3300082: GEO_lantern_ball
+    3300084: GEO_lantern_chain_2
+    4300000: GEO_lantern
+    4300002: GEO_lantern_chain_2
+    4300004: GEO_lantern_ball
+    4300006: chain_1
+    4300008: chain_1
+    4300010: chain_1
+    4300012: chain_1
+    4300014: chain_1
+    4300016: chain_2
+    4300018: chain_2
+    4300020: chain_2
+    4300022: chain_2
+    4300024: chain_2
+    4300026: chain_3
+    4300028: chain_3
+    4300030: chain_3
+    4300032: chain_3
+    4300034: chain_3
+    4300036: chain_4
+    4300038: chain_4
+    4300040: chain_4
+    4300042: chain_4
+    4300044: chain_4
+    4300046: chain_5
+    4300048: chain_5
+    4300050: chain_5
+    4300052: chain_5
+    4300054: chain_5
+    4300056: chain_6
+    4300058: chain_6
+    4300060: chain_6
+    4300062: chain_6
+    4300064: chain_6
+    4300066: chain_7
+    4300068: chain_7
+    4300070: chain_7
+    4300072: chain_7
+    4300074: chain_7
+    4300076: chain_8
+    4300078: chain_8
+    4300080: chain_8
+    4300082: chain_8
+    4300084: chain_8
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert_blue
+    second: {fileID: 2100000, guid: ffb87da9f71b6f440a52c537f78036be, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert_orange
+    second: {fileID: 2100000, guid: 40ca43e01851e5440aa844826667f4ed, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
