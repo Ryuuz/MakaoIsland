@@ -11,7 +11,12 @@ ModelImporter:
     2300000: TreeBox
     3300000: TreeBox
     4300000: TreeBox
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert43
+    second: {fileID: 2100000, guid: 96274891b9bac3c46bf3c2749f2d840a, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -48,8 +53,8 @@ ModelImporter:
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
+    importCameras: 0
+    importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1

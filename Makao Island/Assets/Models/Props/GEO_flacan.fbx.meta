@@ -64,7 +64,37 @@ ModelImporter:
     4300000: Flacan
     9500000: //RootNode
     13700000: Flacan
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: beak_color
+    second: {fileID: 2100000, guid: fa2d3fd5ce0a1c0478e2bf529d12ff2a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: body_color
+    second: {fileID: 2100000, guid: d5225fcba9732b541b0511dc32f68a3b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: feet_color
+    second: {fileID: 2100000, guid: d9f24cab51570cd4d95219c6ab4cf8b3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: legs_color
+    second: {fileID: 2100000, guid: 0bfd9e5d75dab944eac4c59cfadad346, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tail_thingy_color
+    second: {fileID: 2100000, guid: fcdda45ebbf2d7248bdd4a064121ce14, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wings_color
+    second: {fileID: 2100000, guid: cf81970c7a020fd42b820568eff9ba6e, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -97,12 +127,12 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 1
+    addColliders: 0
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
+    importCameras: 0
+    importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1

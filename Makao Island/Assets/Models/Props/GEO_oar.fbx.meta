@@ -11,7 +11,17 @@ ModelImporter:
     3300000: //RootNode
     4300000: GEO_oar
     6400000: //RootNode
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert_wood_3
+    second: {fileID: 2100000, guid: 1702b2702a890014d835ec695ffdad4a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert_wood_4
+    second: {fileID: 2100000, guid: 1702b2702a890014d835ec695ffdad4a, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -48,8 +58,8 @@ ModelImporter:
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
+    importCameras: 0
+    importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1

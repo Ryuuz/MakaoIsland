@@ -12,7 +12,12 @@ ModelImporter:
     3300000: dock_02
     4300000: dock_02
     6400000: dock_02
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert_wood1
+    second: {fileID: 2100000, guid: 1702b2702a890014d835ec695ffdad4a, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -45,12 +50,12 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 1
+    addColliders: 0
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
+    importCameras: 0
+    importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
