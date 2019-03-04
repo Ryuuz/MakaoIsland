@@ -6,12 +6,20 @@ public class BillboardScript : MonoBehaviour
 
     private void Start()
     {
-        mCamera = GameManager.ManagerInstance().mMainCamera.GetComponent<Camera>().transform;
+        Camera tempCam = GameManager.ManagerInstance().mMainCamera.GetComponent<Camera>();
+
+        if(tempCam)
+        {
+            mCamera = tempCam.transform;
+        }
     }
 
     void LateUpdate()
     {
         //The plane will always face the player
-        transform.LookAt(transform.position + mCamera.rotation * Vector3.forward, Vector3.up);
+        if(mCamera)
+        {
+            transform.LookAt(transform.position + mCamera.rotation * Vector3.forward, Vector3.up);
+        }
     }
 }

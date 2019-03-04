@@ -6,7 +6,7 @@ public enum DayCyclus
 
 public enum SpiritAnimalType
 {
-    fire, water, air, earth, spiritAnimals
+    fire, water, air, spiritAnimals
 };
 
 public enum ControlAction

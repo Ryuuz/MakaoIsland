@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: MapControl
   m_EditorClassIdentifier: 
   mControlType: 7
-  mDefaultControl: {fileID: 0}
-  mGamepadControl: {fileID: 0}
+  mDefaultControl: {fileID: 21300000, guid: 1a8968a1ab8d0f84eaba6ce0c984aa9e, type: 3}
+  mGamepadControl: {fileID: 21300000, guid: 2f53900379febf543be5779a11b87d68, type: 3}
   mControlText: Open map

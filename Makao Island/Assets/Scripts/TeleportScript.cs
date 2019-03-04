@@ -1,9 +1,19 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class TeleportScript : MonoBehaviour
 {
     [SerializeField]
     private GameObject mStartPoint;
+    [SerializeField]
+    private GameObject mMapPrefab;
+
+    private FadeScript mFadeScript;
+
+    private void Start()
+    {
+        mFadeScript = GetComponentInChildren<FadeScript>();
+    }
 
     //Teleport to start point when player gets too close
     private void OnTriggerEnter(Collider other)
@@ -20,8 +30,18 @@ public class TeleportScript : MonoBehaviour
             //If there isn't a point to teleport to
             else
             {
-                Destroy(gameObject);
+                StartCoroutine(Vanish());
             }
         }
+    }
+
+    private IEnumerator Vanish()
+    {
+        if(mFadeScript)
+        {
+            yield return StartCoroutine(mFadeScript.FadeOut());
+        }
+        Instantiate(mMapPrefab, transform.position, Quaternion.identity);
+        Destroy(gameObject);
     }
 }

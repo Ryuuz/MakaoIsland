@@ -30,21 +30,25 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        Gravity();
         MoveCharacter();
+    }
+
+    private void LateUpdate()
+    {
+        Gravity();
     }
 
     //Moves the character with different speed depending on whether it's on the ground or in the air
     void MoveCharacter()
     {
-        if (mCharacterController.isGrounded)
+        Vector3 moving = mMovementDirection * mCurrentMovementSpeed;
+
+        if(moving.magnitude > mCurrentMovementSpeed)
         {
-            mCharacterController.Move(((mMovementDirection * mCurrentMovementSpeed) + new Vector3(0f, mCurrentFallSpeed, 0f)) * Time.deltaTime);
+            moving = moving.normalized * mCurrentMovementSpeed;
         }
-        else
-        {
-            mCharacterController.Move(((mMovementDirection * (mCurrentMovementSpeed * 0.6f)) + new Vector3(0f, mCurrentFallSpeed, 0f)) * Time.deltaTime);
-        }
+
+        mCharacterController.Move((moving + new Vector3(0f, mCurrentFallSpeed, 0f)) * Time.deltaTime);
     }
 
     //Applies gravity to the character

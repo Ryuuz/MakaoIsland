@@ -125,9 +125,13 @@ public class InputHandler : MonoBehaviour
 
             if (Input.GetButtonDown("Map") && mMapManager)
             {
-                mMapManager.ShowMap();
-                mMapOpen = true;
-                ToggleMenu();
+                if(mMapManager.mMapAvailable)
+                {
+                    mPlayerController.SetMovementDirection(0f, 0f);
+                    mMapManager.ShowMap();
+                    mMapOpen = true;
+                    ToggleMenu();
+                }
             }
 
             if (Input.GetButtonDown("Pause"))

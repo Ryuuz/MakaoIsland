@@ -4,7 +4,7 @@ using UnityEngine;
 public class FadeScript : MonoBehaviour
 {
     public float mFadeDelay = 2f;
-    public bool mFadedIn { get; set; }
+    public bool mFadedIn = false;
     public bool mFading { get; set; }
 
     private Material[] mMaterialList;
@@ -12,7 +12,6 @@ public class FadeScript : MonoBehaviour
 
     private void Start()
     {
-        mFadedIn = false;
         mFading = false;
         mGameManager = GameManager.ManagerInstance();
         MeshRenderer tempRenderer = GetComponent<MeshRenderer>();
@@ -27,8 +26,7 @@ public class FadeScript : MonoBehaviour
             mMaterialList = GetComponentInChildren<SkinnedMeshRenderer>().materials;
         }
 
-        //Starts out invisible
-        if (mMaterialList.Length > 0)
+        if (mMaterialList.Length > 0 && !mFadedIn)
         {
             for (int i = 0; i < mMaterialList.Length; i++)
             {

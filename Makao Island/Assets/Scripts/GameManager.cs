@@ -130,7 +130,7 @@ public class GameManager : MonoBehaviour
     //Load or generate the player's progress
     private void CreateProgressData()
     {
-        mProgress.mMapStatus = true;
+        mProgress.mMapStatus = false;
         mProgress.mSpiritAnimalsStatus = new bool[(int)SpiritAnimalType.spiritAnimals];
         
         for(int i = 0; i < mProgress.mSpiritAnimalsStatus.Length; i++)
