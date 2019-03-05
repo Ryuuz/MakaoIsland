@@ -8,9 +8,6 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 0
-    path: Assets/Scenes/IslandPrototype2.unity
-    guid: 290bc3ae22944b749b7d09c52baa57ef
   - enabled: 1
     path: Assets/Scenes/IslandPrototype.unity
     guid: f5b8359e77038414287cb46700e30210
