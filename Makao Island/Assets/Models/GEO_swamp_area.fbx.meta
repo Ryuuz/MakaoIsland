@@ -322,12 +322,74 @@ ModelImporter:
     4300118: rock_round_11
     4300120: rock_round_12
     4300122: rock_tall_14
+    6400000: forest_mountain_big
+    6400002: forest_mountain_small
+    6400004: GEO_addidion_grass_swamp
+    6400006: GEO_greybox_house_01
+    6400008: GEO_greybox_house_02
+    6400010: island_01
+    6400012: island_010
+    6400014: island_011
+    6400016: island_012
+    6400018: island_013
+    6400020: island_014
+    6400022: island_015
+    6400024: island_016
+    6400026: island_017
+    6400028: island_018
+    6400030: island_019
+    6400032: island_02
+    6400034: island_020
+    6400036: island_021
+    6400038: island_022
+    6400040: island_023
+    6400042: island_024
+    6400044: island_03
+    6400046: island_04
+    6400048: island_05
+    6400050: island_06
+    6400052: island_08
+    6400054: island_09
+    6400056: rock_flat_1
+    6400058: rock_flat_2
+    6400060: rock_flat_3
+    6400062: rock_flat_4
+    6400064: rock_flat_5
+    6400066: rock_flat_6
+    6400068: rock_flat_7
+    6400070: rock_flat_8
+    6400072: rock_flat_9
+    6400074: rock_round_1
+    6400076: rock_round_10
+    6400078: rock_round_11
+    6400080: rock_round_12
+    6400082: rock_round_2
+    6400084: rock_round_4
+    6400086: rock_round_5
+    6400088: rock_round_6
+    6400090: rock_round_7
+    6400092: rock_round_8
+    6400094: rock_round_9
+    6400096: rock_tall_1
+    6400098: rock_tall_10
+    6400100: rock_tall_11
+    6400102: rock_tall_12
+    6400104: rock_tall_13
+    6400106: rock_tall_14
+    6400108: rock_tall_2
+    6400110: rock_tall_3
+    6400112: rock_tall_4
+    6400114: rock_tall_5
+    6400116: rock_tall_6
+    6400118: rock_tall_7
+    6400120: rock_tall_8
+    6400122: rock_tall_9
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: MAT_texture_gradient_01
-    second: {fileID: 2100000, guid: b630b59f0f722634c97945a301959e26, type: 3}
+    second: {fileID: 2100000, guid: 59919cca40380f84ba4f276696935cd3, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -360,7 +422,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1
