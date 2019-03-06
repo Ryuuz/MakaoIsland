@@ -15,4 +15,4 @@ MonoBehaviour:
   mControlType: 5
   mDefaultControl: {fileID: 21300000, guid: 0025c71bf317508418dd550262e46d3c, type: 3}
   mGamepadControl: {fileID: 21300000, guid: ca7ef16b95726b045a290a46039a5927, type: 3}
-  mControlText: Meditate
+  mControlText: Hold to meditate

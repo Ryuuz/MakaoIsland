@@ -35,3 +35,5 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+Makao Island/Assets/Scenes/IslandPrototype/LightingData.asset
+Makao Island/Assets/Scenes/IslandPrototype/LightingData.asset.meta

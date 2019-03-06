@@ -85,7 +85,7 @@ public class PlayerController : MonoBehaviour
     //Set the movement speed based on wether the character is running or not
     public void TriggerSprint(bool sprinting)
     {
-        if (sprinting)
+        if (sprinting && mCharacterController.isGrounded)
         {
             mCurrentMovementSpeed = mRunSpeed;
         }
