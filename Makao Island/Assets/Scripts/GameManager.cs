@@ -34,6 +34,8 @@ public class GameManager : MonoBehaviour
 
     [HideInInspector]
     public InputHandler mInputHandler;
+    [HideInInspector]
+    public Vector3 mCurrentRespawnPoint;
 
     [SerializeField]
     private DayCycle mDayCycle;
@@ -82,6 +84,7 @@ public class GameManager : MonoBehaviour
         if (!mPlayer)
         {
             mPlayer = GameObject.Find("Player");
+            mCurrentRespawnPoint = mPlayer.transform.position;
         }
         if (!mMainCamera)
         {

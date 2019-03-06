@@ -179,14 +179,14 @@ public class DialogueTrigger : MonoBehaviour
         {
             mSpeakerControllers[i].SetTalking(false);
         }
-        mPlaying = false;
-        mPlayerListening = false;
 
-        if (mDialogueManager)
+        if (mDialogueManager && mPlayerListening)
         {
             mDialogueManager.HideDialogueBox();
         }
 
+        mPlaying = false;
+        mPlayerListening = false;
         SetListenAction(false);
 
         //Cooldown
