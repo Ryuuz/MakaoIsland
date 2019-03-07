@@ -1,20 +1,53 @@
 fileFormatVersion: 2
-guid: 3c57c6dfad5a1b14c895d705d2c042a2
+guid: e0e235bd9b7887a409f2c9f5deddd710
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
+    100002: GEO_tree_large_3_branch_1
+    100004: GEO_tree_large_3_branch_2
+    100006: GEO_tree_large_3_leaves_1
+    100008: GEO_tree_large_3_leaves_2
+    100010: GEO_tree_large_3_top
+    100012: GEO_tree_large_3_trunk
     400000: //RootNode
-    2100000: MAT_trees
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: GEO_stick_1
+    400002: GEO_tree_large_3_branch_1
+    400004: GEO_tree_large_3_branch_2
+    400006: GEO_tree_large_3_leaves_1
+    400008: GEO_tree_large_3_leaves_2
+    400010: GEO_tree_large_3_top
+    400012: GEO_tree_large_3_trunk
+    2100000: lambert_bark
+    2100002: lambert_green
+    2300000: GEO_tree_large_3_branch_1
+    2300002: GEO_tree_large_3_branch_2
+    2300004: GEO_tree_large_3_leaves_1
+    2300006: GEO_tree_large_3_leaves_2
+    2300008: GEO_tree_large_3_top
+    2300010: GEO_tree_large_3_trunk
+    3300000: GEO_tree_large_3_branch_1
+    3300002: GEO_tree_large_3_branch_2
+    3300004: GEO_tree_large_3_leaves_1
+    3300006: GEO_tree_large_3_leaves_2
+    3300008: GEO_tree_large_3_top
+    3300010: GEO_tree_large_3_trunk
+    4300000: GEO_tree_large_3_trunk
+    4300002: GEO_tree_large_3_branch_1
+    4300004: GEO_tree_large_3_leaves_1
+    4300006: GEO_tree_large_3_branch_2
+    4300008: GEO_tree_large_3_leaves_2
+    4300010: GEO_tree_large_3_top
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: MAT_trees
-    second: {fileID: 2100000, guid: 462e839a28e420c49b701b7dded32479, type: 2}
+      name: lambert_bark
+    second: {fileID: 2100000, guid: f62a87d6a4dfec4418ece3d9c07e5765, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert_green
+    second: {fileID: 2100000, guid: 64a17ab6287c8f04787721fc3c28416c, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -45,7 +78,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 25
+    globalScale: 70
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1

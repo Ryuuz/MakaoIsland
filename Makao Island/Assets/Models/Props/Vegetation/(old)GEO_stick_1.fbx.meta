@@ -1,20 +1,27 @@
 fileFormatVersion: 2
-guid: 3c57c6dfad5a1b14c895d705d2c042a2
+guid: dad4f2232c9205043b344193f0696982
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: MAT_trees
+    2100000: lambert_bark5
+    2100002: lambert_inside4
     2300000: //RootNode
     3300000: //RootNode
     4300000: GEO_stick_1
+    6400000: //RootNode
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: MAT_trees
-    second: {fileID: 2100000, guid: 462e839a28e420c49b701b7dded32479, type: 2}
+      name: lambert_bark5
+    second: {fileID: 2100000, guid: f62a87d6a4dfec4418ece3d9c07e5765, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert_inside4
+    second: {fileID: 2100000, guid: eb0c75a5d16bb83449a51a91637ba790, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -45,14 +52,14 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 25
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
+    importCameras: 0
+    importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
