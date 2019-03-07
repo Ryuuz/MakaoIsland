@@ -7,6 +7,7 @@ TagManager:
   - NPC
   - SpiritGirl
   - SpiritAnimal
+  - PhysicsObject
   layers:
   - Default
   - TransparentFX

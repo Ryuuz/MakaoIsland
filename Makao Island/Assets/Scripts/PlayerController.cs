@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     private float mCurrentMovementSpeed;
     private CharacterController mCharacterController;
     private Transform mCharacterTransform;
+    private bool mSprinting = false;
 
     private void Awake()
     {
@@ -41,6 +42,11 @@ public class PlayerController : MonoBehaviour
     //Moves the character with different speed depending on whether it's on the ground or in the air
     void MoveCharacter()
     {
+        if(mCharacterController.isGrounded)
+        {
+            mCurrentMovementSpeed = mSprinting ? mRunSpeed : mWalkSpeed;
+        }
+        
         Vector3 moving = mMovementDirection * mCurrentMovementSpeed;
 
         if(moving.magnitude > mCurrentMovementSpeed)
@@ -79,20 +85,21 @@ public class PlayerController : MonoBehaviour
     //Sets the direction the player should move in
     public void SetMovementDirection(float horizontal, float vertical)
     {
-        mMovementDirection = mCharacterTransform.TransformDirection(new Vector3(horizontal, 0f, vertical));
+        if(mCharacterController.isGrounded)
+        {
+            mMovementDirection = mCharacterTransform.TransformDirection(new Vector3(horizontal, 0f, vertical));
+        }
+        else
+        {
+            //Add the new directions to the current movement direction for slight changes
+            mMovementDirection += mCharacterTransform.TransformDirection(new Vector3((horizontal*0.08f), 0f,  (vertical*0.05f)));
+        }
     }
 
     //Set the movement speed based on wether the character is running or not
     public void TriggerSprint(bool sprinting)
     {
-        if (sprinting && mCharacterController.isGrounded)
-        {
-            mCurrentMovementSpeed = mRunSpeed;
-        }
-        else
-        {
-            mCurrentMovementSpeed = mWalkSpeed;
-        }
+        mSprinting = sprinting;
     }
 
     //Use the special action if it is available
@@ -101,6 +108,19 @@ public class PlayerController : MonoBehaviour
         if(mSpecialAction != null)
         {
             mSpecialAction.UseSpecialAction(active);
+        }
+    }
+
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        if(hit.gameObject.tag == "PhysicsObject")
+        {
+            Rigidbody body = hit.collider.attachedRigidbody;
+
+            if(body && !body.isKinematic)
+            {
+                body.velocity = new Vector3(hit.moveDirection.x, 0f, hit.moveDirection.z) * mCurrentMovementSpeed;
+            }
         }
     }
 }

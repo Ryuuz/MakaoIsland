@@ -44,6 +44,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GEO_physics_wooden_box Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 5689957899258147075, guid: 8486e7f3f850ab74f88b4112a366fb6b,
+        type: 3}
+      propertyPath: m_TagString
+      value: PhysicsObject
+      objectReference: {fileID: 0}
     - target: {fileID: 5689957899257916707, guid: 8486e7f3f850ab74f88b4112a366fb6b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -98,6 +103,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5689957899258147073, guid: 8486e7f3f850ab74f88b4112a366fb6b,
+        type: 3}
+      propertyPath: m_TagString
+      value: PhysicsObject
       objectReference: {fileID: 0}
     - target: {fileID: 8411318289421083493, guid: 8486e7f3f850ab74f88b4112a366fb6b,
         type: 3}

@@ -10,7 +10,10 @@ public class ControlTutorial : MonoBehaviour
     {
         if(Vector3.Distance(GameManager.ManagerInstance().mPlayer.transform.position, transform.position) < GetComponent<SphereCollider>().radius)
         {
-            GameManager.ManagerInstance().mControlUI.ShowControlUI(mAction);
+            if(GameManager.ManagerInstance().mControlUI)
+            {
+                GameManager.ManagerInstance().mControlUI.ShowControlUI(mAction);
+            }
         }
     }
 
