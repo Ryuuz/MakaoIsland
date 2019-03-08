@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RespawnPointScript : MonoBehaviour
+public class GarbageCollectorScript : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Player")
+        if(other.tag != "Player")
         {
-            GameManager.ManagerInstance().mCurrentRespawnPoint = transform;
+            Destroy(other.gameObject);
         }
     }
 }

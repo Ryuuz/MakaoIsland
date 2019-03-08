@@ -117,9 +117,9 @@ public class PlayerController : MonoBehaviour
         {
             Rigidbody body = hit.collider.attachedRigidbody;
 
-            if(body && !body.isKinematic)
+            if(body && !body.isKinematic && hit.moveDirection.y > -0.3f)
             {
-                body.velocity = new Vector3(hit.moveDirection.x, 0f, hit.moveDirection.z) * mCurrentMovementSpeed;
+                body.AddForce(new Vector3(hit.moveDirection.x, 0f, hit.moveDirection.z) * (mCurrentMovementSpeed * 0.1f), ForceMode.Impulse);
             }
         }
     }

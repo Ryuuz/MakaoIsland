@@ -4,6 +4,9 @@ public class RespawnScript : MonoBehaviour
 {
     public float mLowestPoint = -10f;
 
+    [SerializeField]
+    private Transform mStartSpawnPoint;
+
     private Transform mPosition;
 
     void Start()
@@ -15,7 +18,14 @@ public class RespawnScript : MonoBehaviour
     {
         if (mPosition.position.y < mLowestPoint)
         {
-            mPosition.position = GameManager.ManagerInstance().mCurrentRespawnPoint;
+            if(GameManager.ManagerInstance().mCurrentRespawnPoint)
+            {
+                mPosition.position = GameManager.ManagerInstance().mCurrentRespawnPoint.position;
+            }
+            else
+            {
+                mPosition.position = mStartSpawnPoint.position;
+            }
         }
     }
 }
