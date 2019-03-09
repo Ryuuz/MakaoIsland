@@ -2,12 +2,13 @@
 {
     Properties
     {
+		_Color ("Color", Color) = (1,1,1,1)
         _MainTex ("Texture", 2D) = "white" {}
 		_SecondTex ("Texture", 2D) = "white" {}
 		_Cutoff ("Cloud cutoff", Range(0,1)) = 0.2
 		_Softness ("Cloud softness", Range(0,3)) = 0.3
-		_MidYValue ("Middle Y value", Float) = 1.0
-		_Height ("Cloud Height", Float) = 1.0
+		[HideInInspector]_MidYValue ("Middle Y value", Float) = 1.0
+		[HideInInspector]_Height ("Cloud Height", Float) = 1.0
 		_Taper ("Taper amount", Float) = 1.26
     }
     SubShader
@@ -39,6 +40,7 @@
                 float4 vertex : SV_POSITION;
             };
 
+			fixed4 _Color;
             sampler2D _MainTex;
             float4 _MainTex_ST;
 			sampler2D _SecondTex;
@@ -60,8 +62,8 @@
             fixed4 frag (v2f i) : SV_Target
             {
                 // sample the texture
-                fixed4 col = tex2D(_MainTex, i.uv + (_Time.y / 100.0));
-				fixed4 noise = tex2D(_SecondTex, (i.uv - (_Time.y / 100.0)) * 0.5);
+                fixed4 col = tex2D(_MainTex, i.uv + (_Time.y * 0.005));
+				fixed4 noise = tex2D(_SecondTex, (i.uv - (_Time.y * 0.005)) * 0.5);
 
 				float falloff = abs(_MidYValue - i.worldPos.y) / (_Height * 0.38);
 				falloff = saturate(falloff);
@@ -74,6 +76,7 @@
 				colour = saturate(colour);
 				colour = pow(colour, _Softness);
 
+				colour.rgb = colour.rgb * _Color.rgb;
 				colour.a = saturate(colour.r * 3.0);
 
 				return colour;

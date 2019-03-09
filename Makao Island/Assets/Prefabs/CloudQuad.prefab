@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2238199579019049874}
   - component: {fileID: 2238199579019049875}
   m_Layer: 0
-  m_Name: QuadStack
+  m_Name: CloudQuad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -57,7 +57,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a1531827be7216e4fa2dfe75a3617854, type: 2}
+  - {fileID: 2100000, guid: 1c3d83490441a3d45a3077b96ecf8fdf, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
