@@ -1,27 +1,25 @@
 fileFormatVersion: 2
-guid: a9a907e9c669dab4082f298ca4dc594a
+guid: db9f298388b0ccc498526e4c8bff6032
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
+    100002: GEO_roof_L_rich
+    100004: NEW_VERSIONS
     400000: //RootNode
-    2100000: MushroomBottom
-    2100002: phong9
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: GEO_mushroom_purpletop
-    6400000: //RootNode
+    400002: GEO_roof_L_rich
+    400004: NEW_VERSIONS
+    2100000: MAT_pallet
+    2300000: GEO_roof_L_rich
+    3300000: GEO_roof_L_rich
+    4300000: GEO_roof_L_rich
+    6400000: GEO_roof_L_rich
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: MushroomBottom
-    second: {fileID: 2100000, guid: d9fd97708d37c7c4396e6ff8a6d8d814, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: phong9
-    second: {fileID: 2100000, guid: 8d229919707a5a14aa22a9e3416430d0, type: 2}
+      name: MAT_pallet
+    second: {fileID: 2100000, guid: 462e839a28e420c49b701b7dded32479, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -58,8 +56,8 @@ ModelImporter:
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 0
-    importLights: 0
+    importCameras: 1
+    importLights: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1

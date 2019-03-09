@@ -1,39 +1,17 @@
 fileFormatVersion: 2
-guid: c7d14659bd6f4944e85053f7c0d94ecd
+guid: 49dc54c90b4f3c649a366c911eeef6ed
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2100000: lambert11
-    2100002: phong12
-    2100004: phong13
-    2100006: phong11
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: GEO_mushroom_family_small
-    6400000: //RootNode
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lambert11
-    second: {fileID: 2100000, guid: b01f3480a2b659246add56ed305ded60, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: phong11
-    second: {fileID: 2100000, guid: e49b99f9dba953a4b93ef4b39d52d269, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: phong12
-    second: {fileID: 2100000, guid: 4d3f53cffae53f44d81ed42ada77707f, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: phong13
-    second: {fileID: 2100000, guid: d2d29b299f0e73f4cb1c9dd24cfe9883, type: 2}
+    100000: GEO_flower_corn
+    100002: //RootNode
+    400000: GEO_flower_corn
+    400002: //RootNode
+    2100000: MAT_vegetation
+    2300000: GEO_flower_corn
+    3300000: GEO_flower_corn
+    4300000: GEO_flower_corn
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
@@ -70,8 +48,8 @@ ModelImporter:
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 0
-    importLights: 0
+    importCameras: 1
+    importLights: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1

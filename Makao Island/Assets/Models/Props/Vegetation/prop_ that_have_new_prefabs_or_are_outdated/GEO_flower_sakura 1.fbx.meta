@@ -1,27 +1,17 @@
 fileFormatVersion: 2
-guid: dfd15bb30dde5644a9f8d70d90ef9986
+guid: 8f3490d02f11bc542b139b9c7b98fe17
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2100000: phong1
-    2100002: lambert2
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: GEO_tree_turtle
-    6400000: //RootNode
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lambert2
-    second: {fileID: 2100000, guid: 0bc80258408c3d84dac18d492d65b151, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: phong1
-    second: {fileID: 2100000, guid: 7df05b5f7772f5540943562aa6c7c77b, type: 2}
+    100000: GEO_flower_sakura
+    100002: //RootNode
+    400000: GEO_flower_sakura
+    400002: //RootNode
+    2100000: MAT_vegetation
+    2300000: GEO_flower_sakura
+    3300000: GEO_flower_sakura
+    4300000: GEO_flower_sakura
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
@@ -54,12 +44,12 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 1
+    addColliders: 0
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 0
-    importLights: 0
+    importCameras: 1
+    importLights: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
