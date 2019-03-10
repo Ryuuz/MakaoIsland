@@ -1,0 +1,165 @@
+fileFormatVersion: 2
+guid: e3cc6219c1506bf49b57c99617cabdd2
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: armLower_skel_L
+    100002: armLower_skel_R
+    100004: armUpper_skel_L
+    100006: armUpper_skel_R
+    100008: //RootNode
+    100010: foot_skel_L_END
+    100012: foot_skel_R_END
+    100014: hand_skel_L
+    100016: hand_skel_L_END
+    100018: hand_skel_R
+    100020: hand_skel_R_END
+    100022: head_skel
+    100024: head_skel_END
+    100026: hip_skel
+    100028: legLower_skel_L
+    100030: legLower_skel_R
+    100032: legUpper_skel_L
+    100034: legUpper_skel_R
+    100036: neck_skel
+    100038: spine1_skel
+    100040: spine2_skel
+    100042: spine3_skel
+    400000: armLower_skel_L
+    400002: armLower_skel_R
+    400004: armUpper_skel_L
+    400006: armUpper_skel_R
+    400008: //RootNode
+    400010: foot_skel_L_END
+    400012: foot_skel_R_END
+    400014: hand_skel_L
+    400016: hand_skel_L_END
+    400018: hand_skel_R
+    400020: hand_skel_R_END
+    400022: head_skel
+    400024: head_skel_END
+    400026: hip_skel
+    400028: legLower_skel_L
+    400030: legLower_skel_R
+    400032: legUpper_skel_L
+    400034: legUpper_skel_R
+    400036: neck_skel
+    400038: spine1_skel
+    400040: spine2_skel
+    400042: spine3_skel
+    7400000: walkcycle
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: walkcycle
+      takeName: walkcycle
+      firstFrame: 0
+      lastFrame: 23
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 10
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.099999994
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

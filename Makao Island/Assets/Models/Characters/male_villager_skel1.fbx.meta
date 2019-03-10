@@ -1,0 +1,293 @@
+fileFormatVersion: 2
+guid: 518f06323c736324e9f5cf7065b93743
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: armLower_skel_L
+    100002: armLower_skel_R
+    100004: armUpper_skel_L
+    100006: armUpper_skel_R
+    100008: foot_skel_L_END
+    100010: foot_skel_R_END
+    100012: GEO_GRP
+    100014: hand_skel_L
+    100016: hand_skel_L_END
+    100018: hand_skel_R
+    100020: hand_skel_R_END
+    100022: head_skel
+    100024: head_skel_END
+    100026: hip_skel
+    100028: legLower_skel_L
+    100030: legLower_skel_R
+    100032: legUpper_skel_L
+    100034: legUpper_skel_R
+    100036: male_villager_body_GEO
+    100038: male_villager_hair1_GEO
+    100040: male_villager_hair2_GEO
+    100042: male_villager_hair_GRP
+    100044: //RootNode
+    100046: neck_skel
+    100048: spine1_skel
+    100050: spine2_skel
+    100052: spine3_skel
+    400000: armLower_skel_L
+    400002: armLower_skel_R
+    400004: armUpper_skel_L
+    400006: armUpper_skel_R
+    400008: foot_skel_L_END
+    400010: foot_skel_R_END
+    400012: GEO_GRP
+    400014: hand_skel_L
+    400016: hand_skel_L_END
+    400018: hand_skel_R
+    400020: hand_skel_R_END
+    400022: head_skel
+    400024: head_skel_END
+    400026: hip_skel
+    400028: legLower_skel_L
+    400030: legLower_skel_R
+    400032: legUpper_skel_L
+    400034: legUpper_skel_R
+    400036: male_villager_body_GEO
+    400038: male_villager_hair1_GEO
+    400040: male_villager_hair2_GEO
+    400042: male_villager_hair_GRP
+    400044: //RootNode
+    400046: neck_skel
+    400048: spine1_skel
+    400050: spine2_skel
+    400052: spine3_skel
+    2100000: male_villager_material
+    2100002: male_villager_hair1_material
+    2100004: male_villager_hair2_material
+    2300000: male_villager_hair1_GEO
+    2300002: male_villager_hair2_GEO
+    3300000: male_villager_hair1_GEO
+    3300002: male_villager_hair2_GEO
+    4300000: male_villager_body_GEO
+    4300002: male_villager_hair1_GEO
+    4300004: male_villager_hair2_GEO
+    9500000: //RootNode
+    13700000: male_villager_body_GEO
+    2186277476908879412: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 10
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.099999994
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton:
+    - name: male_villager_skel1(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: GEO_GRP
+      parentName: male_villager_skel1(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: male_villager_body_GEO
+      parentName: GEO_GRP
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: male_villager_hair_GRP
+      parentName: GEO_GRP
+      position: {x: 3.2425477e-23, y: 7.105427e-16, z: -1.11022296e-17}
+      rotation: {x: 1.4904549e-12, y: -5.551835e-17, z: 2.1684043e-19, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: male_villager_hair1_GEO
+      parentName: male_villager_hair_GRP
+      position: {x: -0, y: 1.8974243, z: -0.021293031}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: male_villager_hair2_GEO
+      parentName: male_villager_hair_GRP
+      position: {x: -0.0010609864, y: 1.9367383, z: -0.02291274}
+      rotation: {x: 1.4904549e-12, y: -5.551835e-17, z: 2.1684043e-19, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: hip_skel
+      parentName: male_villager_skel1(Clone)
+      position: {x: -0, y: 0.8134041, z: -0.022899002}
+      rotation: {x: 0.06849579, y: 0.7037815, z: 0.06849579, w: 0.7037815}
+      scale: {x: 1, y: 1, z: 1}
+    - name: spine1_skel
+      parentName: hip_skel
+      position: {x: -4.4408918e-17, y: 0.17398359, z: 7.8889406e-17}
+      rotation: {x: 0.00011766387, y: -0.000011506072, z: -0.096411854, w: 0.99534154}
+      scale: {x: 1, y: 1, z: 1}
+    - name: spine2_skel
+      parentName: spine1_skel
+      position: {x: 1.3183898e-16, y: 0.2158167, z: 4.3368084e-20}
+      rotation: {x: -0.0002458571, y: -0.00001988415, z: -0.081526496, w: 0.99667114}
+      scale: {x: 1, y: 1, z: 1}
+    - name: spine3_skel
+      parentName: spine2_skel
+      position: {x: 4.4408918e-17, y: 0.20131855, z: -8.673617e-20}
+      rotation: {x: 0.0001276468, y: 0.000014293769, z: 0.05078189, w: 0.9987098}
+      scale: {x: 1, y: 1, z: 1}
+    - name: armUpper_skel_L
+      parentName: spine3_skel
+      position: {x: 0.0030948264, y: 0.07984928, z: -0.15934438}
+      rotation: {x: -0.70527965, y: -0.05080005, z: -0.0079146745, w: 0.70706254}
+      scale: {x: 1, y: 1, z: 1}
+    - name: armLower_skel_L
+      parentName: armUpper_skel_L
+      position: {x: 2.4980017e-17, y: 0.31492555, z: 5.32907e-16}
+      rotation: {x: 0.00000016862597, y: 1.9587582e-17, z: 0.09772602, w: 0.9952134}
+      scale: {x: 1, y: 1, z: 1}
+    - name: hand_skel_L
+      parentName: armLower_skel_L
+      position: {x: 4.4408918e-17, y: 0.23249911, z: 1.7763567e-16}
+      rotation: {x: -0.00000039159903, y: 0.000000019586546, z: -0.056304332, w: 0.9984137}
+      scale: {x: 1, y: 1, z: 1}
+    - name: hand_skel_L_END
+      parentName: hand_skel_L
+      position: {x: -1.0878514e-16, y: 0.17459698, z: 2.7886207e-17}
+      rotation: {x: -0.49999997, y: 0.5, z: 0.50000024, w: -0.4999998}
+      scale: {x: 1, y: 1, z: 1}
+    - name: armUpper_skel_R
+      parentName: spine3_skel
+      position: {x: 0.003094558, y: 0.0798534, z: 0.159344}
+      rotation: {x: 0.70527923, y: 0.050800964, z: -0.007915621, w: 0.70706284}
+      scale: {x: 1, y: 1, z: 1}
+    - name: armLower_skel_R
+      parentName: armUpper_skel_R
+      position: {x: 2.4980017e-17, y: 0.31492573, z: -5.32907e-16}
+      rotation: {x: 2.3830867e-16, y: -2.5192745e-17, z: 0.09772583, w: 0.9952134}
+      scale: {x: 1, y: 1, z: 1}
+    - name: hand_skel_R
+      parentName: armLower_skel_R
+      position: {x: -4.4408918e-17, y: 0.23249903, z: 5.2047254e-14}
+      rotation: {x: -2.5313085e-14, y: -4.5069504e-13, z: -0.056301787, w: 0.9984138}
+      scale: {x: 1, y: 1, z: 1}
+    - name: hand_skel_R_END
+      parentName: hand_skel_R
+      position: {x: -2.89911e-17, y: 0.174597, z: 1.6173848e-14}
+      rotation: {x: 0.50000197, y: 0.5000017, z: 0.49999854, w: 0.49999776}
+      scale: {x: 1, y: 1, z: 1}
+    - name: neck_skel
+      parentName: spine3_skel
+      position: {x: -6.661338e-17, y: 0.15229368, z: 3.077059e-19}
+      rotation: {x: -0.000000016710139, y: -5.391603e-10, z: 0.03224868, w: 0.9994799}
+      scale: {x: 1, y: 1, z: 1}
+    - name: head_skel
+      parentName: neck_skel
+      position: {x: -9.992007e-17, y: 0.116017975, z: 1.2403739e-20}
+      rotation: {x: 0.000000012026825, y: -5.5402866e-11, z: -0.004606558, w: 0.9999894}
+      scale: {x: 1, y: 1, z: 1}
+    - name: head_skel_END
+      parentName: head_skel
+      position: {x: 3.7021477e-15, y: 0.42456323, z: 9.648222e-21}
+      rotation: {x: 0.0019146351, y: -0.7071021, z: 0.0019146239, w: 0.70710623}
+      scale: {x: 1, y: 1, z: 1}
+    - name: legUpper_skel_L
+      parentName: hip_skel
+      position: {x: -0.0043446487, y: -0.02703849, z: -0.12348368}
+      rotation: {x: 0.9916896, y: -0.1286534, z: -0.000000007507547, w: 7.950074e-11}
+      scale: {x: 1, y: 1, z: 1}
+    - name: legLower_skel_L
+      parentName: legUpper_skel_L
+      position: {x: 2.2204459e-17, y: 0.38728875, z: 0}
+      rotation: {x: 2.988395e-17, y: -1.2663742e-18, z: -0.063565016, w: 0.9979777}
+      scale: {x: 1, y: 1, z: 1}
+    - name: foot_skel_L_END
+      parentName: legLower_skel_L
+      position: {x: 6.2969435e-17, y: 0.4024652, z: -1.3020629e-10}
+      rotation: {x: 0, y: 0, z: 0.7385878, w: 0.6741574}
+      scale: {x: 1, y: 1, z: 1}
+    - name: legUpper_skel_R
+      parentName: hip_skel
+      position: {x: -0.0043446636, y: -0.027038755, z: 0.123484}
+      rotation: {x: -0.63609993, y: 0.7716067, z: 0.00000027163844, w: -0.00000022392214}
+      scale: {x: 1, y: 1, z: 1}
+    - name: legLower_skel_R
+      parentName: legUpper_skel_R
+      position: {x: 0.38644287, y: 0.025578123, z: 0.00000001762764}
+      rotation: {x: 0.0000000105367075, y: 1.0619736e-11, z: 0.0010078748, w: 0.9999995}
+      scale: {x: 1, y: 1, z: 1}
+    - name: foot_skel_R_END
+      parentName: legLower_skel_R
+      position: {x: 0.4016633, y: -0.02539455, z: -0.000000016407956}
+      rotation: {x: -0.0000000052678883, y: 0.00000037611264, z: 0.99990195, w: -0.014004772}
+      scale: {x: 1, y: 1, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
