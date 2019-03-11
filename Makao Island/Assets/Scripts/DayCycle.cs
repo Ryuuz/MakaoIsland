@@ -14,6 +14,9 @@ public class DayCycle : MonoBehaviour
     [HideInInspector]
     public UnityEvent eTimeChanged = new UnityEvent();
 
+    [SerializeField]
+    private CloudScript mClouds;
+
     private float[] mStartRotation = new float[] { 335f, 15f, 165f, 205f };
     private float[] mRotationDegrees;
 
@@ -122,6 +125,11 @@ public class DayCycle : MonoBehaviour
         {
             mSun.color = mSunlightTint.Evaluate(sunProgress);
             mSun.intensity = mSunIntensity.Evaluate(sunProgress);
+        }
+
+        if(mClouds)
+        {
+            mClouds.UpdateCloudColor(sunProgress);
         }
     }
 
