@@ -122,7 +122,7 @@ NavMeshAgent:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2403421376211806230}
   m_Enabled: 1
-  m_AgentTypeID: 0
+  m_AgentTypeID: -1372625422
   m_Radius: 1
   m_Speed: 3.5
   m_Acceleration: 8
@@ -177,6 +177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mFadeDelay: 2
+  mFadedIn: 0
 --- !u!1 &4597884973362688368
 GameObject:
   m_ObjectHideFlags: 0
@@ -302,7 +303,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d58c63452bc57284e98f3b5a42a3ed32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mCamera: {fileID: 0}
 --- !u!1 &7445458964087300362
 GameObject:
   m_ObjectHideFlags: 0
