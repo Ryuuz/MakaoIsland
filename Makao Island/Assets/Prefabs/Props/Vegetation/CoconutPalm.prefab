@@ -1,0 +1,117 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5763396918278410472
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 85270724776010355}
+  - component: {fileID: 3386103321007839648}
+  - component: {fileID: 4873794826036969647}
+  m_Layer: 0
+  m_Name: CoconutPalm
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 9
+  m_IsActive: 1
+--- !u!4 &85270724776010355
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5763396918278410472}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 3415549995184052564}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &3386103321007839648
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5763396918278410472}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.20457713
+  m_Height: 3.8227108
+  m_Direction: 1
+  m_Center: {x: 0.029650372, y: 1.8309944, z: 0.011662802}
+--- !u!65 &4873794826036969647
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5763396918278410472}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.9651542, y: 0.32861647, z: 0.9049937}
+  m_Center: {x: -0.24479923, y: 3.8270776, z: 0.06842296}
+--- !u!1001 &3415549995184440272
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 85270724776010355}
+    m_Modifications:
+    - target: {fileID: 100004, guid: 1272cc144d2bc404285a1a48ac88026b, type: 3}
+      propertyPath: m_Name
+      value: GEO_tree_palm_coconuts
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 1272cc144d2bc404285a1a48ac88026b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 1272cc144d2bc404285a1a48ac88026b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 1272cc144d2bc404285a1a48ac88026b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 1272cc144d2bc404285a1a48ac88026b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 1272cc144d2bc404285a1a48ac88026b, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 1272cc144d2bc404285a1a48ac88026b, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 1272cc144d2bc404285a1a48ac88026b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 1272cc144d2bc404285a1a48ac88026b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 1272cc144d2bc404285a1a48ac88026b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1272cc144d2bc404285a1a48ac88026b, type: 3}
+--- !u!4 &3415549995184052564 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400004, guid: 1272cc144d2bc404285a1a48ac88026b,
+    type: 3}
+  m_PrefabInstance: {fileID: 3415549995184440272}
+  m_PrefabAsset: {fileID: 0}
