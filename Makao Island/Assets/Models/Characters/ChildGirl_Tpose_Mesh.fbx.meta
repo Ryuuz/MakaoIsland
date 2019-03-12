@@ -1,0 +1,184 @@
+fileFormatVersion: 2
+guid: 731f4ce177dc9b94599c7a7db2f8890a
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: CTRL_Arm_L
+    100004: CTRL_Arm_R
+    100006: CTRL_Elbow_L
+    100008: CTRL_Elbow_R
+    100010: CTRL_GRP
+    100012: CTRL_GRP_Head
+    100014: CTRL_Hand_L
+    100016: CTRL_Hand_R
+    100018: CTRL_Head
+    100020: CTRL_Hip
+    100022: CTRL_Neck
+    100024: CTRL_Shoulder_L
+    100026: CTRL_Shoulder_R
+    100028: CTRL_Spine
+    100030: CTRL_Supermover
+    100032: GEO_Hair
+    100034: GEO_SpiritGirl
+    100036: JOINT_Chest
+    100038: JOINT_Elbow_L
+    100040: JOINT_Elbow_R
+    100042: JOINT_FootTip
+    100044: JOINT_FootTip 1
+    100046: JOINT_Hand_L
+    100048: JOINT_Hand_R
+    100050: JOINT_HandTip_L
+    100052: JOINT_HandTip_R
+    100054: JOINT_Head
+    100056: JOINT_Hip_L
+    100058: JOINT_Hip_R
+    100060: JOINT_Knee
+    100062: JOINT_Knee 1
+    100064: JOINT_Neck
+    100066: JOINT_NeckBase
+    100068: JOINT_Root
+    100070: JOINT_Shoulder_L
+    100072: JOINT_Shoulder_R
+    100074: JOINT_Spine
+    100076: SKEL_GRP
+    100078: SpiritGirl_Body
+    400000: //RootNode
+    400002: CTRL_Arm_L
+    400004: CTRL_Arm_R
+    400006: CTRL_Elbow_L
+    400008: CTRL_Elbow_R
+    400010: CTRL_GRP
+    400012: CTRL_GRP_Head
+    400014: CTRL_Hand_L
+    400016: CTRL_Hand_R
+    400018: CTRL_Head
+    400020: CTRL_Hip
+    400022: CTRL_Neck
+    400024: CTRL_Shoulder_L
+    400026: CTRL_Shoulder_R
+    400028: CTRL_Spine
+    400030: CTRL_Supermover
+    400032: GEO_Hair
+    400034: GEO_SpiritGirl
+    400036: JOINT_Chest
+    400038: JOINT_Elbow_L
+    400040: JOINT_Elbow_R
+    400042: JOINT_FootTip
+    400044: JOINT_FootTip 1
+    400046: JOINT_Hand_L
+    400048: JOINT_Hand_R
+    400050: JOINT_HandTip_L
+    400052: JOINT_HandTip_R
+    400054: JOINT_Head
+    400056: JOINT_Hip_L
+    400058: JOINT_Hip_R
+    400060: JOINT_Knee
+    400062: JOINT_Knee 1
+    400064: JOINT_Neck
+    400066: JOINT_NeckBase
+    400068: JOINT_Root
+    400070: JOINT_Shoulder_L
+    400072: JOINT_Shoulder_R
+    400074: JOINT_Spine
+    400076: SKEL_GRP
+    400078: SpiritGirl_Body
+    2100000: lambert1
+    2100002: lambert6
+    2100004: lambert4
+    2100006: lambert5
+    2100008: lambert13
+    2100010: phong9
+    2100012: phong8
+    2300000: GEO_Hair
+    3300000: GEO_Hair
+    4300000: SpiritGirl_Body
+    4300002: GEO_Hair
+    9500000: //RootNode
+    13700000: SpiritGirl_Body
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 10
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -19,16 +19,22 @@ public class PauseMenuScript : MonoBehaviour
 
     public void HidePauseMenu()
     {
-        mCanvasGroup.alpha = 0f;
-        mCanvasGroup.blocksRaycasts = false;
-        mCanvasGroup.interactable = false;
+        if(mCanvasGroup)
+        {
+            mCanvasGroup.alpha = 0f;
+            mCanvasGroup.blocksRaycasts = false;
+            mCanvasGroup.interactable = false;
+        }
     }
 
     public void ShowPauseMenu()
     {
-        mCanvasGroup.alpha = 1f;
-        mCanvasGroup.blocksRaycasts = true;
-        mCanvasGroup.interactable = true;
+        if(mCanvasGroup)
+        {
+            mCanvasGroup.alpha = 1f;
+            mCanvasGroup.blocksRaycasts = true;
+            mCanvasGroup.interactable = true;
+        }
     }
 
     //Function for Resume button

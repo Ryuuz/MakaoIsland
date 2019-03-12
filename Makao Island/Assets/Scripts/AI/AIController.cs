@@ -24,7 +24,11 @@ public class AIController : MonoBehaviour
     protected virtual void Start()
     {
         mAgent = GetComponent<NavMeshAgent>();
-        mAgent.speed = mSpeed;
+        if(mAgent)
+        {
+            mAgent.speed = mSpeed;
+        }
+        
         mGameManager = GameManager.ManagerInstance();
         mCurrentLocation = transform.position;
 
@@ -73,7 +77,10 @@ public class AIController : MonoBehaviour
     //Change the movement speed of the agent
     public virtual void ChangingSpeed(float speed)
     {
-        mAgent.speed = mSpeed * speed;
+        if(mAgent)
+        {
+            mAgent.speed = mSpeed * speed;
+        }
     }
 
     //Have the NPC turn and look at the given position
@@ -102,6 +109,9 @@ public class AIController : MonoBehaviour
             yield return new WaitForSeconds(mTransitionDelay / mGameManager.mGameSpeed);
         }
         
-        mAgent.SetDestination(position);
+        if(mAgent)
+        {
+            mAgent.SetDestination(position);
+        }
     }
 }

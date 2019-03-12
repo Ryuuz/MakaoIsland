@@ -1,0 +1,516 @@
+fileFormatVersion: 2
+guid: 0a8813b25c035d5429eca0276e7ae6e2
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: CTRL_antenna_1
+    100004: CTRL_antenna_2
+    100006: CTRL_antenna_3
+    100008: CTRL_body
+    100010: CTRL_foot_L
+    100012: CTRL_foot_R
+    100014: CTRL_GRP
+    100016: CTRL_GRP_foot_L
+    100018: CTRL_GRP_foot_R
+    100020: CTRL_GRP_hand_L
+    100022: CTRL_GRP_index_01
+    100024: CTRL_GRP_index_01 1
+    100026: CTRL_GRP_index_01 2
+    100028: CTRL_GRP_index_01 3
+    100030: CTRL_GRP_index_02
+    100032: CTRL_GRP_index_02 1
+    100034: CTRL_GRP_index_02 2
+    100036: CTRL_GRP_index_02 3
+    100038: CTRL_GRP_middlefinger_01
+    100040: CTRL_GRP_middlefinger_01 1
+    100042: CTRL_GRP_middlefinger_01 2
+    100044: CTRL_GRP_middlefinger_01 3
+    100046: CTRL_GRP_middlefinger_02
+    100048: CTRL_GRP_middlefinger_02 1
+    100050: CTRL_GRP_middlefinger_02 2
+    100052: CTRL_GRP_middlefinger_02 3
+    100054: CTRL_GRP_pinky_01
+    100056: CTRL_GRP_pinky_01 1
+    100058: CTRL_GRP_pinky_01 2
+    100060: CTRL_GRP_pinky_01 3
+    100062: CTRL_GRP_pinky_02
+    100064: CTRL_GRP_pinky_02 1
+    100066: CTRL_GRP_pinky_02 2
+    100068: CTRL_GRP_pinky_02 3
+    100070: CTRL_GRP_ringfinger_01
+    100072: CTRL_GRP_ringfinger_01 1
+    100074: CTRL_GRP_ringfinger_01 2
+    100076: CTRL_GRP_ringfinger_01 3
+    100078: CTRL_GRP_ringfinger_02
+    100080: CTRL_GRP_ringfinger_02 1
+    100082: CTRL_GRP_ringfinger_02 2
+    100084: CTRL_GRP_ringfinger_02 3
+    100086: CTRL_GRP_thumb_01
+    100088: CTRL_GRP_thumb_01 1
+    100090: CTRL_GRP_thumb_01 2
+    100092: CTRL_GRP_thumb_01 3
+    100094: CTRL_GRP_thumb_02
+    100096: CTRL_GRP_thumb_02 1
+    100098: CTRL_GRP_thumb_02 2
+    100100: CTRL_GRP_thumb_02 3
+    100102: CTRL_hand_L
+    100104: CTRL_hand_R
+    100106: CTRL_index_01
+    100108: CTRL_index_01 1
+    100110: CTRL_index_01 2
+    100112: CTRL_index_01 3
+    100114: CTRL_index_02
+    100116: CTRL_index_02 1
+    100118: CTRL_index_02 2
+    100120: CTRL_index_02 3
+    100122: CTRL_master
+    100124: CTRL_middlefinger_01
+    100126: CTRL_middlefinger_01 1
+    100128: CTRL_middlefinger_01 2
+    100130: CTRL_middlefinger_01 3
+    100132: CTRL_middlefinger_02
+    100134: CTRL_middlefinger_02 1
+    100136: CTRL_middlefinger_02 2
+    100138: CTRL_middlefinger_02 3
+    100140: CTRL_neck
+    100142: CTRL_pinky_01
+    100144: CTRL_pinky_01 1
+    100146: CTRL_pinky_01 2
+    100148: CTRL_pinky_01 3
+    100150: CTRL_pinky_02
+    100152: CTRL_pinky_02 1
+    100154: CTRL_pinky_02 2
+    100156: CTRL_pinky_02 3
+    100158: CTRL_ringfinger_01
+    100160: CTRL_ringfinger_01 1
+    100162: CTRL_ringfinger_01 2
+    100164: CTRL_ringfinger_01 3
+    100166: CTRL_ringfinger_02
+    100168: CTRL_ringfinger_02 1
+    100170: CTRL_ringfinger_02 2
+    100172: CTRL_ringfinger_02 3
+    100174: CTRL_tail_1
+    100176: CTRL_tail_2
+    100178: CTRL_tail_3
+    100180: CTRL_thumb_01
+    100182: CTRL_thumb_01 1
+    100184: CTRL_thumb_01 2
+    100186: CTRL_thumb_01 3
+    100188: CTRL_thumb_02
+    100190: CTRL_thumb_02 1
+    100192: CTRL_thumb_02 2
+    100194: CTRL_thumb_02 3
+    100196: CTRL_torso_1
+    100198: CTRL_torso_2
+    100200: GEO_armazzard
+    100202: joint1
+    100204: JOINT_ankle_L
+    100206: JOINT_ankle_L 1
+    100208: JOINT_ankle_R
+    100210: JOINT_ankle_R 1
+    100212: JOINT_antenna_01
+    100214: JOINT_antenna_02
+    100216: JOINT_antenna_03
+    100218: JOINT_antenna_04
+    100220: JOINT_antenna_END
+    100222: JOINT_head_01
+    100224: JOINT_head_02
+    100226: JOINT_hip_L
+    100228: JOINT_hip_L1
+    100230: JOINT_hip_R
+    100232: JOINT_hip_R1
+    100234: JOINT_index_L_01
+    100236: JOINT_index_L_01 1
+    100238: JOINT_index_L_02
+    100240: JOINT_index_L_02 1
+    100242: JOINT_index_L_03
+    100244: JOINT_index_L_03 1
+    100246: JOINT_index_L_END
+    100248: JOINT_index_L_END 1
+    100250: JOINT_index_R_01
+    100252: JOINT_index_R_01 1
+    100254: JOINT_index_R_02
+    100256: JOINT_index_R_02 1
+    100258: JOINT_index_R_03
+    100260: JOINT_index_R_03 1
+    100262: JOINT_index_R_END
+    100264: JOINT_index_R_END 1
+    100266: JOINT_knee_L
+    100268: JOINT_knee_L 1
+    100270: JOINT_knee_R
+    100272: JOINT_knee_R 1
+    100274: JOINT_middlefinger_L_01
+    100276: JOINT_middlefinger_L_01 1
+    100278: JOINT_middlefinger_L_02
+    100280: JOINT_middlefinger_L_02 1
+    100282: JOINT_middlefinger_L_03
+    100284: JOINT_middlefinger_L_03 1
+    100286: JOINT_middlefinger_L_END
+    100288: JOINT_middlefinger_L_END 1
+    100290: JOINT_middlefinger_R_01
+    100292: JOINT_middlefinger_R_01 1
+    100294: JOINT_middlefinger_R_02
+    100296: JOINT_middlefinger_R_02 1
+    100298: JOINT_middlefinger_R_03
+    100300: JOINT_middlefinger_R_03 1
+    100302: JOINT_middlefinger_R_END
+    100304: JOINT_middlefinger_R_END 1
+    100306: JOINT_neck
+    100308: JOINT_pinky_L_01
+    100310: JOINT_pinky_L_01 1
+    100312: JOINT_pinky_L_02
+    100314: JOINT_pinky_L_02 1
+    100316: JOINT_pinky_L_03
+    100318: JOINT_pinky_L_03 1
+    100320: JOINT_pinky_L_END
+    100322: JOINT_pinky_L_END 1
+    100324: JOINT_pinky_R_01
+    100326: JOINT_pinky_R_01 1
+    100328: JOINT_pinky_R_02
+    100330: JOINT_pinky_R_02 1
+    100332: JOINT_pinky_R_03
+    100334: JOINT_pinky_R_03 1
+    100336: JOINT_pinky_R_END
+    100338: JOINT_pinky_R_END 1
+    100340: JOINT_ringfinger_L_01
+    100342: JOINT_ringfinger_L_01 1
+    100344: JOINT_ringfinger_L_02
+    100346: JOINT_ringfinger_L_02 1
+    100348: JOINT_ringfinger_L_03
+    100350: JOINT_ringfinger_L_03 1
+    100352: JOINT_ringfinger_L_END
+    100354: JOINT_ringfinger_L_END 1
+    100356: JOINT_ringfinger_R_01
+    100358: JOINT_ringfinger_R_01 1
+    100360: JOINT_ringfinger_R_02
+    100362: JOINT_ringfinger_R_02 1
+    100364: JOINT_ringfinger_R_03
+    100366: JOINT_ringfinger_R_03 1
+    100368: JOINT_ringfinger_R_END
+    100370: JOINT_ringfinger_R_END 1
+    100372: JOINT_root
+    100374: JOINT_tail_01
+    100376: JOINT_tail_02
+    100378: JOINT_tail_03
+    100380: JOINT_tail_END
+    100382: JOINT_thumb_L_01
+    100384: JOINT_thumb_L_01 1
+    100386: JOINT_thumb_L_02
+    100388: JOINT_thumb_L_02 1
+    100390: JOINT_thumb_L_03
+    100392: JOINT_thumb_L_03 1
+    100394: JOINT_thumb_L_END
+    100396: JOINT_thumb_L_END 1
+    100398: JOINT_thumb_R_01
+    100400: JOINT_thumb_R_01 1
+    100402: JOINT_thumb_R_02
+    100404: JOINT_thumb_R_02 1
+    100406: JOINT_thumb_R_03
+    100408: JOINT_thumb_R_03 1
+    100410: JOINT_thumb_R_END
+    100412: JOINT_thumb_R_END 1
+    100414: JOINT_torso_01
+    100416: JOINT_torso_02
+    100418: SKEL_GRP
+    400000: //RootNode
+    400002: CTRL_antenna_1
+    400004: CTRL_antenna_2
+    400006: CTRL_antenna_3
+    400008: CTRL_body
+    400010: CTRL_foot_L
+    400012: CTRL_foot_R
+    400014: CTRL_GRP
+    400016: CTRL_GRP_foot_L
+    400018: CTRL_GRP_foot_R
+    400020: CTRL_GRP_hand_L
+    400022: CTRL_GRP_index_01
+    400024: CTRL_GRP_index_01 1
+    400026: CTRL_GRP_index_01 2
+    400028: CTRL_GRP_index_01 3
+    400030: CTRL_GRP_index_02
+    400032: CTRL_GRP_index_02 1
+    400034: CTRL_GRP_index_02 2
+    400036: CTRL_GRP_index_02 3
+    400038: CTRL_GRP_middlefinger_01
+    400040: CTRL_GRP_middlefinger_01 1
+    400042: CTRL_GRP_middlefinger_01 2
+    400044: CTRL_GRP_middlefinger_01 3
+    400046: CTRL_GRP_middlefinger_02
+    400048: CTRL_GRP_middlefinger_02 1
+    400050: CTRL_GRP_middlefinger_02 2
+    400052: CTRL_GRP_middlefinger_02 3
+    400054: CTRL_GRP_pinky_01
+    400056: CTRL_GRP_pinky_01 1
+    400058: CTRL_GRP_pinky_01 2
+    400060: CTRL_GRP_pinky_01 3
+    400062: CTRL_GRP_pinky_02
+    400064: CTRL_GRP_pinky_02 1
+    400066: CTRL_GRP_pinky_02 2
+    400068: CTRL_GRP_pinky_02 3
+    400070: CTRL_GRP_ringfinger_01
+    400072: CTRL_GRP_ringfinger_01 1
+    400074: CTRL_GRP_ringfinger_01 2
+    400076: CTRL_GRP_ringfinger_01 3
+    400078: CTRL_GRP_ringfinger_02
+    400080: CTRL_GRP_ringfinger_02 1
+    400082: CTRL_GRP_ringfinger_02 2
+    400084: CTRL_GRP_ringfinger_02 3
+    400086: CTRL_GRP_thumb_01
+    400088: CTRL_GRP_thumb_01 1
+    400090: CTRL_GRP_thumb_01 2
+    400092: CTRL_GRP_thumb_01 3
+    400094: CTRL_GRP_thumb_02
+    400096: CTRL_GRP_thumb_02 1
+    400098: CTRL_GRP_thumb_02 2
+    400100: CTRL_GRP_thumb_02 3
+    400102: CTRL_hand_L
+    400104: CTRL_hand_R
+    400106: CTRL_index_01
+    400108: CTRL_index_01 1
+    400110: CTRL_index_01 2
+    400112: CTRL_index_01 3
+    400114: CTRL_index_02
+    400116: CTRL_index_02 1
+    400118: CTRL_index_02 2
+    400120: CTRL_index_02 3
+    400122: CTRL_master
+    400124: CTRL_middlefinger_01
+    400126: CTRL_middlefinger_01 1
+    400128: CTRL_middlefinger_01 2
+    400130: CTRL_middlefinger_01 3
+    400132: CTRL_middlefinger_02
+    400134: CTRL_middlefinger_02 1
+    400136: CTRL_middlefinger_02 2
+    400138: CTRL_middlefinger_02 3
+    400140: CTRL_neck
+    400142: CTRL_pinky_01
+    400144: CTRL_pinky_01 1
+    400146: CTRL_pinky_01 2
+    400148: CTRL_pinky_01 3
+    400150: CTRL_pinky_02
+    400152: CTRL_pinky_02 1
+    400154: CTRL_pinky_02 2
+    400156: CTRL_pinky_02 3
+    400158: CTRL_ringfinger_01
+    400160: CTRL_ringfinger_01 1
+    400162: CTRL_ringfinger_01 2
+    400164: CTRL_ringfinger_01 3
+    400166: CTRL_ringfinger_02
+    400168: CTRL_ringfinger_02 1
+    400170: CTRL_ringfinger_02 2
+    400172: CTRL_ringfinger_02 3
+    400174: CTRL_tail_1
+    400176: CTRL_tail_2
+    400178: CTRL_tail_3
+    400180: CTRL_thumb_01
+    400182: CTRL_thumb_01 1
+    400184: CTRL_thumb_01 2
+    400186: CTRL_thumb_01 3
+    400188: CTRL_thumb_02
+    400190: CTRL_thumb_02 1
+    400192: CTRL_thumb_02 2
+    400194: CTRL_thumb_02 3
+    400196: CTRL_torso_1
+    400198: CTRL_torso_2
+    400200: GEO_armazzard
+    400202: joint1
+    400204: JOINT_ankle_L
+    400206: JOINT_ankle_L 1
+    400208: JOINT_ankle_R
+    400210: JOINT_ankle_R 1
+    400212: JOINT_antenna_01
+    400214: JOINT_antenna_02
+    400216: JOINT_antenna_03
+    400218: JOINT_antenna_04
+    400220: JOINT_antenna_END
+    400222: JOINT_head_01
+    400224: JOINT_head_02
+    400226: JOINT_hip_L
+    400228: JOINT_hip_L1
+    400230: JOINT_hip_R
+    400232: JOINT_hip_R1
+    400234: JOINT_index_L_01
+    400236: JOINT_index_L_01 1
+    400238: JOINT_index_L_02
+    400240: JOINT_index_L_02 1
+    400242: JOINT_index_L_03
+    400244: JOINT_index_L_03 1
+    400246: JOINT_index_L_END
+    400248: JOINT_index_L_END 1
+    400250: JOINT_index_R_01
+    400252: JOINT_index_R_01 1
+    400254: JOINT_index_R_02
+    400256: JOINT_index_R_02 1
+    400258: JOINT_index_R_03
+    400260: JOINT_index_R_03 1
+    400262: JOINT_index_R_END
+    400264: JOINT_index_R_END 1
+    400266: JOINT_knee_L
+    400268: JOINT_knee_L 1
+    400270: JOINT_knee_R
+    400272: JOINT_knee_R 1
+    400274: JOINT_middlefinger_L_01
+    400276: JOINT_middlefinger_L_01 1
+    400278: JOINT_middlefinger_L_02
+    400280: JOINT_middlefinger_L_02 1
+    400282: JOINT_middlefinger_L_03
+    400284: JOINT_middlefinger_L_03 1
+    400286: JOINT_middlefinger_L_END
+    400288: JOINT_middlefinger_L_END 1
+    400290: JOINT_middlefinger_R_01
+    400292: JOINT_middlefinger_R_01 1
+    400294: JOINT_middlefinger_R_02
+    400296: JOINT_middlefinger_R_02 1
+    400298: JOINT_middlefinger_R_03
+    400300: JOINT_middlefinger_R_03 1
+    400302: JOINT_middlefinger_R_END
+    400304: JOINT_middlefinger_R_END 1
+    400306: JOINT_neck
+    400308: JOINT_pinky_L_01
+    400310: JOINT_pinky_L_01 1
+    400312: JOINT_pinky_L_02
+    400314: JOINT_pinky_L_02 1
+    400316: JOINT_pinky_L_03
+    400318: JOINT_pinky_L_03 1
+    400320: JOINT_pinky_L_END
+    400322: JOINT_pinky_L_END 1
+    400324: JOINT_pinky_R_01
+    400326: JOINT_pinky_R_01 1
+    400328: JOINT_pinky_R_02
+    400330: JOINT_pinky_R_02 1
+    400332: JOINT_pinky_R_03
+    400334: JOINT_pinky_R_03 1
+    400336: JOINT_pinky_R_END
+    400338: JOINT_pinky_R_END 1
+    400340: JOINT_ringfinger_L_01
+    400342: JOINT_ringfinger_L_01 1
+    400344: JOINT_ringfinger_L_02
+    400346: JOINT_ringfinger_L_02 1
+    400348: JOINT_ringfinger_L_03
+    400350: JOINT_ringfinger_L_03 1
+    400352: JOINT_ringfinger_L_END
+    400354: JOINT_ringfinger_L_END 1
+    400356: JOINT_ringfinger_R_01
+    400358: JOINT_ringfinger_R_01 1
+    400360: JOINT_ringfinger_R_02
+    400362: JOINT_ringfinger_R_02 1
+    400364: JOINT_ringfinger_R_03
+    400366: JOINT_ringfinger_R_03 1
+    400368: JOINT_ringfinger_R_END
+    400370: JOINT_ringfinger_R_END 1
+    400372: JOINT_root
+    400374: JOINT_tail_01
+    400376: JOINT_tail_02
+    400378: JOINT_tail_03
+    400380: JOINT_tail_END
+    400382: JOINT_thumb_L_01
+    400384: JOINT_thumb_L_01 1
+    400386: JOINT_thumb_L_02
+    400388: JOINT_thumb_L_02 1
+    400390: JOINT_thumb_L_03
+    400392: JOINT_thumb_L_03 1
+    400394: JOINT_thumb_L_END
+    400396: JOINT_thumb_L_END 1
+    400398: JOINT_thumb_R_01
+    400400: JOINT_thumb_R_01 1
+    400402: JOINT_thumb_R_02
+    400404: JOINT_thumb_R_02 1
+    400406: JOINT_thumb_R_03
+    400408: JOINT_thumb_R_03 1
+    400410: JOINT_thumb_R_END
+    400412: JOINT_thumb_R_END 1
+    400414: JOINT_torso_01
+    400416: JOINT_torso_02
+    400418: SKEL_GRP
+    2100000: MAT_armazard
+    4300000: GEO_armazzard
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: GEO_armazzard
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 10
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
