@@ -1,17 +1,51 @@
 fileFormatVersion: 2
-guid: 43e3b1b4d3696ad4b9c5af4f577aa95f
+guid: 47d8ea691096d93448a1ac735e07c05c
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: GEO_rock_tall_2
-    100002: //RootNode
-    400000: GEO_rock_tall_2
-    400002: //RootNode
+    100000: //RootNode
+    100002: GEO_moss_01
+    100004: GEO_moss_02
+    100006: GEO_moss_03
+    100008: GEO_moss_04
+    100010: GEO_moss_05
+    100012: GEO_moss_06
+    100014: GEO_moss_07
+    100016: GRP_moss
+    400000: //RootNode
+    400002: GEO_moss_01
+    400004: GEO_moss_02
+    400006: GEO_moss_03
+    400008: GEO_moss_04
+    400010: GEO_moss_05
+    400012: GEO_moss_06
+    400014: GEO_moss_07
+    400016: GRP_moss
     2100000: MAT_texture_gradient_01
-    2300000: GEO_rock_tall_2
-    3300000: GEO_rock_tall_2
-    4300000: GEO_rock_tall_2
-    6400000: GEO_rock_tall_2
+    2300000: //RootNode
+    2300002: GEO_moss_01
+    2300004: GEO_moss_02
+    2300006: GEO_moss_03
+    2300008: GEO_moss_04
+    2300010: GEO_moss_05
+    2300012: GEO_moss_06
+    2300014: GEO_moss_07
+    3300000: //RootNode
+    3300002: GEO_moss_01
+    3300004: GEO_moss_02
+    3300006: GEO_moss_03
+    3300008: GEO_moss_04
+    3300010: GEO_moss_05
+    3300012: GEO_moss_06
+    3300014: GEO_moss_07
+    4300000: GEO_flacan_spiral
+    4300002: GEO_moss_01
+    4300004: GEO_moss_02
+    4300006: GEO_moss_03
+    4300008: GEO_moss_04
+    4300010: GEO_moss_05
+    4300012: GEO_moss_06
+    4300014: GEO_moss_07
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -50,7 +84,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 1
+    addColliders: 0
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1

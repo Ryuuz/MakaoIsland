@@ -1,23 +1,23 @@
 fileFormatVersion: 2
-guid: 60d6e603847a6b74f93b33f498c7d8cf
+guid: 4f5f053935ff005428e627abff96f919
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: rock_round_3
-    400000: //RootNode
-    400002: rock_round_3
-    2100000: lambert15
-    2300000: rock_round_3
-    3300000: rock_round_3
-    4300000: rock_round_3
-    6400000: rock_round_3
+    100000: GEO_rock_round_3
+    100002: //RootNode
+    400000: GEO_rock_round_3
+    400002: //RootNode
+    2100000: MAT_texture_gradient_01
+    2300000: GEO_rock_round_3
+    3300000: GEO_rock_round_3
+    4300000: GEO_rock_round_3
+    6400000: GEO_rock_round_3
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: lambert15
-    second: {fileID: 2100000, guid: 0a7860d85b3a5954e96f8c2da94cfd1d, type: 2}
+      name: MAT_texture_gradient_01
+    second: {fileID: 2100000, guid: 462e839a28e420c49b701b7dded32479, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -54,8 +54,8 @@ ModelImporter:
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 0
-    importLights: 0
+    importCameras: 1
+    importLights: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1

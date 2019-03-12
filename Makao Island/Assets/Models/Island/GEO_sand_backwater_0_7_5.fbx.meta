@@ -1,17 +1,15 @@
 fileFormatVersion: 2
-guid: 43e3b1b4d3696ad4b9c5af4f577aa95f
+guid: ca8e641e2f8edc0448675c49b8d699b5
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: GEO_rock_tall_2
-    100002: //RootNode
-    400000: GEO_rock_tall_2
-    400002: //RootNode
+    100000: //RootNode
+    400000: //RootNode
     2100000: MAT_texture_gradient_01
-    2300000: GEO_rock_tall_2
-    3300000: GEO_rock_tall_2
-    4300000: GEO_rock_tall_2
-    6400000: GEO_rock_tall_2
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: GEO_sand_backwater_0_7_5
+    6400000: //RootNode
   externalObjects:
   - first:
       type: UnityEngine:Material

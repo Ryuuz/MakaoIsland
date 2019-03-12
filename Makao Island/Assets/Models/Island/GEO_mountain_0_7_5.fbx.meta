@@ -1,0 +1,364 @@
+fileFormatVersion: 2
+guid: 4b929c7fa4c9fea49a4fe185b6e56ec6
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: GEO_cave_0_7_5
+    100002: GEO_gate_frame
+    100004: GEO_gate_tree_L
+    100006: GEO_gate_tree_R
+    100008: GEO_leaves_01
+    100010: GEO_leaves_01 1
+    100012: GEO_leaves_02
+    100014: GEO_leaves_02 1
+    100016: GEO_leaves_03
+    100018: GEO_leaves_03 1
+    100020: GEO_leaves_04
+    100022: GEO_leaves_04 1
+    100024: GEO_leaves_05
+    100026: //RootNode
+    100028: GEO_platform_1
+    100030: GEO_platform_10
+    100032: GEO_platform_11
+    100034: GEO_platform_12
+    100036: GEO_platform_13
+    100038: GEO_platform_14
+    100040: GEO_platform_15
+    100042: GEO_platform_16
+    100044: GEO_platform_17
+    100046: GEO_platform_18
+    100048: GEO_platform_2
+    100050: GEO_platform_3
+    100052: GEO_platform_4
+    100054: GEO_platform_5
+    100056: GEO_platform_8
+    100058: GEO_platform_9
+    100060: GEO_rock_center
+    100062: GEO_rock_L1
+    100064: GEO_rock_L2
+    100066: GEO_rock_L3
+    100068: GEO_rock_L4
+    100070: GEO_rock_R1
+    100072: GEO_rock_R2
+    100074: GEO_rock_R3
+    100076: GEO_rock_R4
+    100078: GRP_cave_platforms1
+    100080: GRP_gate
+    100082: GRP_rocks
+    100084: polySurface1
+    100086: polySurface3
+    100088: polySurface4
+    100090: polySurface5
+    400000: GEO_cave_0_7_5
+    400002: GEO_gate_frame
+    400004: GEO_gate_tree_L
+    400006: GEO_gate_tree_R
+    400008: GEO_leaves_01
+    400010: GEO_leaves_01 1
+    400012: GEO_leaves_02
+    400014: GEO_leaves_02 1
+    400016: GEO_leaves_03
+    400018: GEO_leaves_03 1
+    400020: GEO_leaves_04
+    400022: GEO_leaves_04 1
+    400024: GEO_leaves_05
+    400026: //RootNode
+    400028: GEO_platform_1
+    400030: GEO_platform_10
+    400032: GEO_platform_11
+    400034: GEO_platform_12
+    400036: GEO_platform_13
+    400038: GEO_platform_14
+    400040: GEO_platform_15
+    400042: GEO_platform_16
+    400044: GEO_platform_17
+    400046: GEO_platform_18
+    400048: GEO_platform_2
+    400050: GEO_platform_3
+    400052: GEO_platform_4
+    400054: GEO_platform_5
+    400056: GEO_platform_8
+    400058: GEO_platform_9
+    400060: GEO_rock_center
+    400062: GEO_rock_L1
+    400064: GEO_rock_L2
+    400066: GEO_rock_L3
+    400068: GEO_rock_L4
+    400070: GEO_rock_R1
+    400072: GEO_rock_R2
+    400074: GEO_rock_R3
+    400076: GEO_rock_R4
+    400078: GRP_cave_platforms1
+    400080: GRP_gate
+    400082: GRP_rocks
+    400084: polySurface1
+    400086: polySurface3
+    400088: polySurface4
+    400090: polySurface5
+    2100000: MAT_texture_gradient_01
+    2100002: MAT_gate_rocks
+    2100004: MAT_gate_frame
+    2100006: MAT_texture_gradient_02
+    2300000: GEO_cave_0_7_5
+    2300002: GEO_gate_frame
+    2300004: GEO_gate_tree_R
+    2300006: GEO_leaves_01 1
+    2300008: GEO_leaves_02 1
+    2300010: GEO_leaves_03 1
+    2300012: GEO_leaves_04
+    2300014: GEO_leaves_04 1
+    2300016: GEO_leaves_05
+    2300018: //RootNode
+    2300020: GEO_platform_1
+    2300022: GEO_platform_10
+    2300024: GEO_platform_11
+    2300026: GEO_platform_12
+    2300028: GEO_platform_13
+    2300030: GEO_platform_14
+    2300032: GEO_platform_15
+    2300034: GEO_platform_16
+    2300036: GEO_platform_17
+    2300038: GEO_platform_18
+    2300040: GEO_platform_2
+    2300042: GEO_platform_3
+    2300044: GEO_platform_4
+    2300046: GEO_platform_5
+    2300048: GEO_platform_8
+    2300050: GEO_platform_9
+    2300052: GEO_rock_center
+    2300054: GEO_rock_L1
+    2300056: GEO_rock_L2
+    2300058: GEO_rock_L3
+    2300060: GEO_rock_L4
+    2300062: GEO_rock_R1
+    2300064: GEO_rock_R2
+    2300066: GEO_rock_R3
+    2300068: GEO_rock_R4
+    2300070: polySurface1
+    2300072: polySurface3
+    2300074: polySurface4
+    2300076: polySurface5
+    3300000: GEO_cave_0_7_5
+    3300002: GEO_gate_frame
+    3300004: GEO_gate_tree_R
+    3300006: GEO_leaves_01 1
+    3300008: GEO_leaves_02 1
+    3300010: GEO_leaves_03 1
+    3300012: GEO_leaves_04
+    3300014: GEO_leaves_04 1
+    3300016: GEO_leaves_05
+    3300018: //RootNode
+    3300020: GEO_platform_1
+    3300022: GEO_platform_10
+    3300024: GEO_platform_11
+    3300026: GEO_platform_12
+    3300028: GEO_platform_13
+    3300030: GEO_platform_14
+    3300032: GEO_platform_15
+    3300034: GEO_platform_16
+    3300036: GEO_platform_17
+    3300038: GEO_platform_18
+    3300040: GEO_platform_2
+    3300042: GEO_platform_3
+    3300044: GEO_platform_4
+    3300046: GEO_platform_5
+    3300048: GEO_platform_8
+    3300050: GEO_platform_9
+    3300052: GEO_rock_center
+    3300054: GEO_rock_L1
+    3300056: GEO_rock_L2
+    3300058: GEO_rock_L3
+    3300060: GEO_rock_L4
+    3300062: GEO_rock_R1
+    3300064: GEO_rock_R2
+    3300066: GEO_rock_R3
+    3300068: GEO_rock_R4
+    3300070: polySurface1
+    3300072: polySurface3
+    3300074: polySurface4
+    3300076: polySurface5
+    4300000: GEO_mountain_0_7_5
+    4300002: GEO_rock_R4
+    4300004: GEO_rock_R3
+    4300006: GEO_rock_R2
+    4300008: GEO_rock_R1
+    4300010: GEO_rock_center
+    4300012: GEO_rock_L4
+    4300014: GEO_rock_L3
+    4300016: GEO_rock_L2
+    4300018: GEO_rock_L1
+    4300020: GEO_gate_frame
+    4300022: polySurface3
+    4300024: polySurface4
+    4300026: polySurface5
+    4300028: GEO_leaves_04
+    4300030: GEO_leaves_05
+    4300032: polySurface1
+    4300034: GEO_gate_tree_R
+    4300036: GEO_leaves_01
+    4300038: GEO_leaves_02
+    4300040: GEO_leaves_03
+    4300042: GEO_leaves_04
+    4300044: GEO_cave_0_7_5
+    4300046: GEO_platform_1
+    4300048: GEO_platform_2
+    4300050: GEO_platform_3
+    4300052: GEO_platform_4
+    4300054: GEO_platform_5
+    4300056: GEO_platform_8
+    4300058: GEO_platform_9
+    4300060: GEO_platform_10
+    4300062: GEO_platform_11
+    4300064: GEO_platform_12
+    4300066: GEO_platform_13
+    4300068: GEO_platform_14
+    4300070: GEO_platform_15
+    4300072: GEO_platform_16
+    4300074: GEO_platform_17
+    4300076: GEO_platform_18
+    6400000: GEO_cave_0_7_5
+    6400002: GEO_gate_frame
+    6400004: GEO_gate_tree_R
+    6400006: GEO_leaves_01 1
+    6400008: GEO_leaves_02 1
+    6400010: GEO_leaves_03 1
+    6400012: GEO_leaves_04
+    6400014: GEO_leaves_04 1
+    6400016: GEO_leaves_05
+    6400018: //RootNode
+    6400020: GEO_platform_1
+    6400022: GEO_platform_10
+    6400024: GEO_platform_11
+    6400026: GEO_platform_12
+    6400028: GEO_platform_13
+    6400030: GEO_platform_14
+    6400032: GEO_platform_15
+    6400034: GEO_platform_16
+    6400036: GEO_platform_17
+    6400038: GEO_platform_18
+    6400040: GEO_platform_2
+    6400042: GEO_platform_3
+    6400044: GEO_platform_4
+    6400046: GEO_platform_5
+    6400048: GEO_platform_8
+    6400050: GEO_platform_9
+    6400052: GEO_rock_center
+    6400054: GEO_rock_L1
+    6400056: GEO_rock_L2
+    6400058: GEO_rock_L3
+    6400060: GEO_rock_L4
+    6400062: GEO_rock_R1
+    6400064: GEO_rock_R2
+    6400066: GEO_rock_R3
+    6400068: GEO_rock_R4
+    6400070: polySurface1
+    6400072: polySurface3
+    6400074: polySurface4
+    6400076: polySurface5
+    2186277476908879412: ImportLogs
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MAT_gate_frame
+    second: {fileID: 2100000, guid: 23454361e93ec294fa8b130bb84b8a87, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MAT_gate_rocks
+    second: {fileID: 2100000, guid: 80ee03ce6e8f7544c8be9263fcd67d83, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MAT_texture_gradient_01
+    second: {fileID: 2100000, guid: 462e839a28e420c49b701b7dded32479, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MAT_texture_gradient_02
+    second: {fileID: 2100000, guid: 462e839a28e420c49b701b7dded32479, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 1
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
