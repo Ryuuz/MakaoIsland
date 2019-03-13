@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7736983265010112098}
   - component: {fileID: 1409101559297187157}
   - component: {fileID: 1684216338177585049}
+  - component: {fileID: 8751495814737131398}
   m_Layer: 0
   m_Name: LanternTrio
   m_TagString: Untagged
@@ -76,6 +77,18 @@ CapsuleCollider:
   m_Height: 2.9242
   m_Direction: 1
   m_Center: {x: 0, y: 1.4562285, z: 0}
+--- !u!114 &8751495814737131398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7926304531901765615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f9d63ce2ced5ea4fb188f7b5393d118, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8707983716047251321
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -90,14 +103,6 @@ PrefabInstance:
     - target: {fileID: 100002, guid: f82bbfa78c4448d41b9519d22391cf19, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: f82bbfa78c4448d41b9519d22391cf19, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: f82bbfa78c4448d41b9519d22391cf19, type: 3}
-      propertyPath: m_NavMeshLayer
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: f82bbfa78c4448d41b9519d22391cf19, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -118,6 +123,14 @@ PrefabInstance:
     - target: {fileID: 400002, guid: f82bbfa78c4448d41b9519d22391cf19, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f82bbfa78c4448d41b9519d22391cf19, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f82bbfa78c4448d41b9519d22391cf19, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f82bbfa78c4448d41b9519d22391cf19, type: 3}

@@ -33,6 +33,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3302291772102705087, guid: de76e91fa54738e4aa5ac9c71b93b704,
+        type: 3}
+      propertyPath: m_TagString
+      value: PhysicsObject
+      objectReference: {fileID: 0}
     - target: {fileID: 3684095924931429066, guid: de76e91fa54738e4aa5ac9c71b93b704,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -103,22 +108,7 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 953992714083192021, guid: de76e91fa54738e4aa5ac9c71b93b704,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 953992714083192023, guid: de76e91fa54738e4aa5ac9c71b93b704,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 953992714083192017, guid: de76e91fa54738e4aa5ac9c71b93b704,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 953992714083192019, guid: de76e91fa54738e4aa5ac9c71b93b704,
+    - target: {fileID: 953992714083192031, guid: de76e91fa54738e4aa5ac9c71b93b704,
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
@@ -128,7 +118,22 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 953992714083192031, guid: de76e91fa54738e4aa5ac9c71b93b704,
+    - target: {fileID: 953992714083192023, guid: de76e91fa54738e4aa5ac9c71b93b704,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 953992714083192021, guid: de76e91fa54738e4aa5ac9c71b93b704,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 953992714083192019, guid: de76e91fa54738e4aa5ac9c71b93b704,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 953992714083192017, guid: de76e91fa54738e4aa5ac9c71b93b704,
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0

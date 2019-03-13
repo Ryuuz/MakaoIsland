@@ -1,0 +1,341 @@
+fileFormatVersion: 2
+guid: 05bd0393d4eca8241bc85aaebf2ff8cc
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: joint1
+    100004: JOINT_ankle_L
+    100006: JOINT_ankle_L 1
+    100008: JOINT_ankle_R
+    100010: JOINT_ankle_R 1
+    100012: JOINT_antenna_01
+    100014: JOINT_antenna_02
+    100016: JOINT_antenna_03
+    100018: JOINT_antenna_04
+    100020: JOINT_antenna_END
+    100022: JOINT_head_01
+    100024: JOINT_head_02
+    100026: JOINT_hip_L
+    100028: JOINT_hip_L1
+    100030: JOINT_hip_R
+    100032: JOINT_hip_R1
+    100034: JOINT_index_L_01
+    100036: JOINT_index_L_01 1
+    100038: JOINT_index_L_02
+    100040: JOINT_index_L_02 1
+    100042: JOINT_index_L_03
+    100044: JOINT_index_L_03 1
+    100046: JOINT_index_L_END
+    100048: JOINT_index_L_END 1
+    100050: JOINT_index_R_01
+    100052: JOINT_index_R_01 1
+    100054: JOINT_index_R_02
+    100056: JOINT_index_R_02 1
+    100058: JOINT_index_R_03
+    100060: JOINT_index_R_03 1
+    100062: JOINT_index_R_END
+    100064: JOINT_index_R_END 1
+    100066: JOINT_knee_L
+    100068: JOINT_knee_L 1
+    100070: JOINT_knee_R
+    100072: JOINT_knee_R 1
+    100074: JOINT_middlefinger_L_01
+    100076: JOINT_middlefinger_L_01 1
+    100078: JOINT_middlefinger_L_02
+    100080: JOINT_middlefinger_L_02 1
+    100082: JOINT_middlefinger_L_03
+    100084: JOINT_middlefinger_L_03 1
+    100086: JOINT_middlefinger_L_END
+    100088: JOINT_middlefinger_L_END 1
+    100090: JOINT_middlefinger_R_01
+    100092: JOINT_middlefinger_R_01 1
+    100094: JOINT_middlefinger_R_02
+    100096: JOINT_middlefinger_R_02 1
+    100098: JOINT_middlefinger_R_03
+    100100: JOINT_middlefinger_R_03 1
+    100102: JOINT_middlefinger_R_END
+    100104: JOINT_middlefinger_R_END 1
+    100106: JOINT_neck
+    100108: JOINT_pinky_L_01
+    100110: JOINT_pinky_L_01 1
+    100112: JOINT_pinky_L_02
+    100114: JOINT_pinky_L_02 1
+    100116: JOINT_pinky_L_03
+    100118: JOINT_pinky_L_03 1
+    100120: JOINT_pinky_L_END
+    100122: JOINT_pinky_L_END 1
+    100124: JOINT_pinky_R_01
+    100126: JOINT_pinky_R_01 1
+    100128: JOINT_pinky_R_02
+    100130: JOINT_pinky_R_02 1
+    100132: JOINT_pinky_R_03
+    100134: JOINT_pinky_R_03 1
+    100136: JOINT_pinky_R_END
+    100138: JOINT_pinky_R_END 1
+    100140: JOINT_ringfinger_L_01
+    100142: JOINT_ringfinger_L_01 1
+    100144: JOINT_ringfinger_L_02
+    100146: JOINT_ringfinger_L_02 1
+    100148: JOINT_ringfinger_L_03
+    100150: JOINT_ringfinger_L_03 1
+    100152: JOINT_ringfinger_L_END
+    100154: JOINT_ringfinger_L_END 1
+    100156: JOINT_ringfinger_R_01
+    100158: JOINT_ringfinger_R_01 1
+    100160: JOINT_ringfinger_R_02
+    100162: JOINT_ringfinger_R_02 1
+    100164: JOINT_ringfinger_R_03
+    100166: JOINT_ringfinger_R_03 1
+    100168: JOINT_ringfinger_R_END
+    100170: JOINT_ringfinger_R_END 1
+    100172: JOINT_root
+    100174: JOINT_tail_01
+    100176: JOINT_tail_02
+    100178: JOINT_tail_03
+    100180: JOINT_tail_END
+    100182: JOINT_thumb_L_01
+    100184: JOINT_thumb_L_01 1
+    100186: JOINT_thumb_L_02
+    100188: JOINT_thumb_L_02 1
+    100190: JOINT_thumb_L_03
+    100192: JOINT_thumb_L_03 1
+    100194: JOINT_thumb_L_END
+    100196: JOINT_thumb_L_END 1
+    100198: JOINT_thumb_R_01
+    100200: JOINT_thumb_R_01 1
+    100202: JOINT_thumb_R_02
+    100204: JOINT_thumb_R_02 1
+    100206: JOINT_thumb_R_03
+    100208: JOINT_thumb_R_03 1
+    100210: JOINT_thumb_R_END
+    100212: JOINT_thumb_R_END 1
+    100214: JOINT_torso_01
+    100216: JOINT_torso_02
+    100218: SKEL_GRP
+    400000: //RootNode
+    400002: joint1
+    400004: JOINT_ankle_L
+    400006: JOINT_ankle_L 1
+    400008: JOINT_ankle_R
+    400010: JOINT_ankle_R 1
+    400012: JOINT_antenna_01
+    400014: JOINT_antenna_02
+    400016: JOINT_antenna_03
+    400018: JOINT_antenna_04
+    400020: JOINT_antenna_END
+    400022: JOINT_head_01
+    400024: JOINT_head_02
+    400026: JOINT_hip_L
+    400028: JOINT_hip_L1
+    400030: JOINT_hip_R
+    400032: JOINT_hip_R1
+    400034: JOINT_index_L_01
+    400036: JOINT_index_L_01 1
+    400038: JOINT_index_L_02
+    400040: JOINT_index_L_02 1
+    400042: JOINT_index_L_03
+    400044: JOINT_index_L_03 1
+    400046: JOINT_index_L_END
+    400048: JOINT_index_L_END 1
+    400050: JOINT_index_R_01
+    400052: JOINT_index_R_01 1
+    400054: JOINT_index_R_02
+    400056: JOINT_index_R_02 1
+    400058: JOINT_index_R_03
+    400060: JOINT_index_R_03 1
+    400062: JOINT_index_R_END
+    400064: JOINT_index_R_END 1
+    400066: JOINT_knee_L
+    400068: JOINT_knee_L 1
+    400070: JOINT_knee_R
+    400072: JOINT_knee_R 1
+    400074: JOINT_middlefinger_L_01
+    400076: JOINT_middlefinger_L_01 1
+    400078: JOINT_middlefinger_L_02
+    400080: JOINT_middlefinger_L_02 1
+    400082: JOINT_middlefinger_L_03
+    400084: JOINT_middlefinger_L_03 1
+    400086: JOINT_middlefinger_L_END
+    400088: JOINT_middlefinger_L_END 1
+    400090: JOINT_middlefinger_R_01
+    400092: JOINT_middlefinger_R_01 1
+    400094: JOINT_middlefinger_R_02
+    400096: JOINT_middlefinger_R_02 1
+    400098: JOINT_middlefinger_R_03
+    400100: JOINT_middlefinger_R_03 1
+    400102: JOINT_middlefinger_R_END
+    400104: JOINT_middlefinger_R_END 1
+    400106: JOINT_neck
+    400108: JOINT_pinky_L_01
+    400110: JOINT_pinky_L_01 1
+    400112: JOINT_pinky_L_02
+    400114: JOINT_pinky_L_02 1
+    400116: JOINT_pinky_L_03
+    400118: JOINT_pinky_L_03 1
+    400120: JOINT_pinky_L_END
+    400122: JOINT_pinky_L_END 1
+    400124: JOINT_pinky_R_01
+    400126: JOINT_pinky_R_01 1
+    400128: JOINT_pinky_R_02
+    400130: JOINT_pinky_R_02 1
+    400132: JOINT_pinky_R_03
+    400134: JOINT_pinky_R_03 1
+    400136: JOINT_pinky_R_END
+    400138: JOINT_pinky_R_END 1
+    400140: JOINT_ringfinger_L_01
+    400142: JOINT_ringfinger_L_01 1
+    400144: JOINT_ringfinger_L_02
+    400146: JOINT_ringfinger_L_02 1
+    400148: JOINT_ringfinger_L_03
+    400150: JOINT_ringfinger_L_03 1
+    400152: JOINT_ringfinger_L_END
+    400154: JOINT_ringfinger_L_END 1
+    400156: JOINT_ringfinger_R_01
+    400158: JOINT_ringfinger_R_01 1
+    400160: JOINT_ringfinger_R_02
+    400162: JOINT_ringfinger_R_02 1
+    400164: JOINT_ringfinger_R_03
+    400166: JOINT_ringfinger_R_03 1
+    400168: JOINT_ringfinger_R_END
+    400170: JOINT_ringfinger_R_END 1
+    400172: JOINT_root
+    400174: JOINT_tail_01
+    400176: JOINT_tail_02
+    400178: JOINT_tail_03
+    400180: JOINT_tail_END
+    400182: JOINT_thumb_L_01
+    400184: JOINT_thumb_L_01 1
+    400186: JOINT_thumb_L_02
+    400188: JOINT_thumb_L_02 1
+    400190: JOINT_thumb_L_03
+    400192: JOINT_thumb_L_03 1
+    400194: JOINT_thumb_L_END
+    400196: JOINT_thumb_L_END 1
+    400198: JOINT_thumb_R_01
+    400200: JOINT_thumb_R_01 1
+    400202: JOINT_thumb_R_02
+    400204: JOINT_thumb_R_02 1
+    400206: JOINT_thumb_R_03
+    400208: JOINT_thumb_R_03 1
+    400210: JOINT_thumb_R_END
+    400212: JOINT_thumb_R_END 1
+    400214: JOINT_torso_01
+    400216: JOINT_torso_02
+    400218: SKEL_GRP
+    7400000: Armazard_Idle_Animation
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Armazard_Idle_Animation
+      takeName: Armazard_Idle_Animation
+      firstFrame: 0
+      lastFrame: 481
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 10
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.099999994
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

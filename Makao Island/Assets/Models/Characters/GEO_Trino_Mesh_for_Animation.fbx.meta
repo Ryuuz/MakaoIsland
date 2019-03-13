@@ -1,0 +1,204 @@
+fileFormatVersion: 2
+guid: 58ad013b109a1f444b1ba750f43633c9
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: CTRL_FrontLeg_1_L
+    100002: CTRL_FrontLeg_1_R
+    100004: CTRL_FrontLeg_2_L
+    100006: CTRL_FrontLeg_2_R
+    100008: CTRL_FrontLeg_3_L
+    100010: CTRL_FrontLeg_3_R
+    100012: CTRL_FrontLeg_4_L
+    100014: CTRL_FrontLeg_4_R
+    100016: CTRL_GRP_FrontLeg_L1
+    100018: CTRL_GRP_FrontLeg_R
+    100020: CTRL_GRP_HindLeg_L
+    100022: CTRL_GRP_HindLeg_R
+    100024: CTRL_Head
+    100026: CTRL_HindLeg_1_L
+    100028: CTRL_HindLeg_1_R
+    100030: CTRL_HindLeg_2_L
+    100032: CTRL_HindLeg_2_R
+    100034: CTRL_Neck
+    100036: CTRL_Supermover
+    100038: GEO_spirit_animal_turtle
+    100040: //RootNode
+    100042: GRP_CTRL_FrontLeg_1_L
+    100044: GRP_CTRL_FrontLeg_1_R
+    100046: GRP_CTRL_FrontLeg_2_L
+    100048: GRP_CTRL_FrontLeg_2_R
+    100050: GRP_CTRL_FrontLeg_3_L
+    100052: GRP_CTRL_FrontLeg_3_R
+    100054: GRP_CTRL_FrontLeg_4_L
+    100056: GRP_CTRL_FrontLeg_4_R
+    100058: JOINT_Chest
+    100060: JOINT_FrontLeg_1_L
+    100062: JOINT_FrontLeg_1_R
+    100064: JOINT_FrontLeg_2_L
+    100066: JOINT_FrontLeg_2_R
+    100068: JOINT_FrontLeg_3_L
+    100070: JOINT_FrontLeg_3_R
+    100072: JOINT_FrontLeg_4_L
+    100074: JOINT_FrontLeg_4_R
+    100076: JOINT_FrontLeg_Tip_5_L
+    100078: JOINT_FrontLeg_Tip_5_R
+    100080: JOINT_Head
+    100082: JOINT_Head_Tip
+    100084: JOINT_HindLeg_1_L
+    100086: JOINT_HindLeg_1_R
+    100088: JOINT_HindLeg_2_L
+    100090: JOINT_HindLeg_2_R
+    100092: JOINT_HindLeg_Tip_3_L
+    100094: JOINT_HindLeg_Tip_3_R
+    100096: JOINT_Neck
+    100098: JOINT_Root
+    100100: SKEL_GRP
+    100102: Turtle
+    400000: CTRL_FrontLeg_1_L
+    400002: CTRL_FrontLeg_1_R
+    400004: CTRL_FrontLeg_2_L
+    400006: CTRL_FrontLeg_2_R
+    400008: CTRL_FrontLeg_3_L
+    400010: CTRL_FrontLeg_3_R
+    400012: CTRL_FrontLeg_4_L
+    400014: CTRL_FrontLeg_4_R
+    400016: CTRL_GRP_FrontLeg_L1
+    400018: CTRL_GRP_FrontLeg_R
+    400020: CTRL_GRP_HindLeg_L
+    400022: CTRL_GRP_HindLeg_R
+    400024: CTRL_Head
+    400026: CTRL_HindLeg_1_L
+    400028: CTRL_HindLeg_1_R
+    400030: CTRL_HindLeg_2_L
+    400032: CTRL_HindLeg_2_R
+    400034: CTRL_Neck
+    400036: CTRL_Supermover
+    400038: GEO_spirit_animal_turtle
+    400040: //RootNode
+    400042: GRP_CTRL_FrontLeg_1_L
+    400044: GRP_CTRL_FrontLeg_1_R
+    400046: GRP_CTRL_FrontLeg_2_L
+    400048: GRP_CTRL_FrontLeg_2_R
+    400050: GRP_CTRL_FrontLeg_3_L
+    400052: GRP_CTRL_FrontLeg_3_R
+    400054: GRP_CTRL_FrontLeg_4_L
+    400056: GRP_CTRL_FrontLeg_4_R
+    400058: JOINT_Chest
+    400060: JOINT_FrontLeg_1_L
+    400062: JOINT_FrontLeg_1_R
+    400064: JOINT_FrontLeg_2_L
+    400066: JOINT_FrontLeg_2_R
+    400068: JOINT_FrontLeg_3_L
+    400070: JOINT_FrontLeg_3_R
+    400072: JOINT_FrontLeg_4_L
+    400074: JOINT_FrontLeg_4_R
+    400076: JOINT_FrontLeg_Tip_5_L
+    400078: JOINT_FrontLeg_Tip_5_R
+    400080: JOINT_Head
+    400082: JOINT_Head_Tip
+    400084: JOINT_HindLeg_1_L
+    400086: JOINT_HindLeg_1_R
+    400088: JOINT_HindLeg_2_L
+    400090: JOINT_HindLeg_2_R
+    400092: JOINT_HindLeg_Tip_3_L
+    400094: JOINT_HindLeg_Tip_3_R
+    400096: JOINT_Neck
+    400098: JOINT_Root
+    400100: SKEL_GRP
+    400102: Turtle
+    2100000: rsMaterial1
+    4300000: Turtle
+    9500000: //RootNode
+    13700000: Turtle
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rsMaterial1
+    second: {fileID: 2100000, guid: fd7a23ab4e973c045901a0aebc02672f, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 10
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.099999994
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
