@@ -599,6 +599,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5460595930242462384}
   - component: {fileID: 5460595930252008828}
+  - component: {fileID: 1946719802291020565}
   m_Layer: 0
   m_Name: MaleVillager
   m_TagString: Untagged
@@ -632,7 +633,7 @@ Animator:
   m_GameObject: {fileID: 5460595930242494160}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: f69e6107f5c0f9040964baf12057d979, type: 3}
-  m_Controller: {fileID: 9100000, guid: 5223a646873c5aa4aacea27d2d4ff780, type: 2}
+  m_Controller: {fileID: 9100000, guid: b2f5a57616d5df346af6f3a8f7df2774, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -641,6 +642,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1946719802291020565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5460595930242494160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03687ad1c1a0e6046a4b2e75b1799046, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5460595930242494162
 GameObject:
   m_ObjectHideFlags: 0
