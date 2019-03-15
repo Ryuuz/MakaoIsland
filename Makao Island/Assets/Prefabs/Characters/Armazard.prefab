@@ -1350,6 +1350,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3903954860626909302}
   - component: {fileID: 3903954860617594448}
+  - component: {fileID: 5071124590209248644}
   m_Layer: 0
   m_Name: Armazard
   m_TagString: Untagged
@@ -1393,6 +1394,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5071124590209248644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3903954860626936918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ece54d16ff9217040ae4c3906b99b4b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3903954860626936920
 GameObject:
   m_ObjectHideFlags: 0

@@ -870,6 +870,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5560083147193315399}
   - component: {fileID: 5560083147200208807}
+  - component: {fileID: 7879657083677790534}
   m_Layer: 0
   m_Name: ChildGirl
   m_TagString: Untagged
@@ -912,3 +913,15 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7879657083677790534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5560083147192822887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfc9703272e0b714b8639bc51d80b272, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
