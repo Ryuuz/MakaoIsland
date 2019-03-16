@@ -43,13 +43,19 @@ public class DialogueManager : MonoBehaviour
 
     public void ShowDialogueBox()
     {
-        mCanvasGroup.alpha = 1f;
-        mHidden = false;
+        if(mCanvasGroup)
+        {
+            mCanvasGroup.alpha = 1f;
+            mHidden = false;
+        }
     }
 
     public void HideDialogueBox()
     {
-        mCanvasGroup.alpha = 0f;
-        mHidden = true;
+        if(mCanvasGroup)
+        {
+            mCanvasGroup.alpha = 0f;
+            mHidden = true;
+        }
     }
 }

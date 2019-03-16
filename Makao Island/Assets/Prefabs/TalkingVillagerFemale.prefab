@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 7128574489735542856}
   - component: {fileID: 2293655667498756040}
   m_Layer: 9
-  m_Name: TalkingVillager
+  m_Name: TalkingVillagerFemale
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -308,11 +308,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7128574489735542852}
     m_Modifications:
-    - target: {fileID: 5458304100542883115, guid: fcbf315e67c704b4f8cb4ca4172e8865,
-        type: 3}
-      propertyPath: m_Name
-      value: FemaleVillager
-      objectReference: {fileID: 0}
     - target: {fileID: 5458304100543052043, guid: fcbf315e67c704b4f8cb4ca4172e8865,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -321,7 +316,7 @@ PrefabInstance:
     - target: {fileID: 5458304100543052043, guid: fcbf315e67c704b4f8cb4ca4172e8865,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.03
       objectReference: {fileID: 0}
     - target: {fileID: 5458304100543052043, guid: fcbf315e67c704b4f8cb4ca4172e8865,
         type: 3}
@@ -367,6 +362,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5458304100542883115, guid: fcbf315e67c704b4f8cb4ca4172e8865,
+        type: 3}
+      propertyPath: m_Name
+      value: FemaleVillager
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fcbf315e67c704b4f8cb4ca4172e8865, type: 3}

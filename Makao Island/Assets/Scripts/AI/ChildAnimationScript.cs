@@ -23,7 +23,7 @@ public class ChildAnimationScript : AIAnimationScript
                 mAnimator.SetBool("Walking", true);
             }
 
-            mAnimator.SetFloat("WalkSpeed", Mathf.Max(mAgent.velocity.magnitude / mAgent.speed, 0.3f));
+            mAnimator.SetFloat("WalkSpeed", Mathf.Max(mAgent.velocity.magnitude / mAgent.speed, 0.5f));
         }
         else
         {
