@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseMenuScript : MonoBehaviour
 {
@@ -47,9 +48,15 @@ public class PauseMenuScript : MonoBehaviour
         Cursor.visible = false;
     }
 
-    //Function for Quit button
-    public void QuitGame()
+    public void SaveCurrentGame()
     {
-        Application.Quit();
+        GameManager.ManagerInstance().StoreData();
+    }
+
+    //Function for Quit button
+    public void GoToMenu()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(0);
     }
 }

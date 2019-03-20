@@ -24,7 +24,7 @@ public class SpiritGirl : AITalking
             mFade = gameObject.AddComponent<FadeScript>();
         }
 
-        Transition(mGameManager.mGameStatus.mDayTime);
+        Transition((DayCyclus)mGameManager.mData.mDayTime);
 
         if(mCanvas)
         {

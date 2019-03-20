@@ -9,20 +9,21 @@ public class StarScript : MonoBehaviour
         GameManager tempManager = GameManager.ManagerInstance();
         mStars = GetComponent<ParticleSystem>();
         tempManager.eTimeChanged.AddListener(ToggleStars);
+        DayCyclus day = (DayCyclus)tempManager.mData.mDayTime;
 
         if(mStars)
         {
             //The stars should be fully visible if night or dawn
-            if (tempManager.mGameStatus.mDayTime == DayCyclus.night || tempManager.mGameStatus.mDayTime == DayCyclus.dawn)
+            if (day == DayCyclus.night || day == DayCyclus.dawn)
             {
                 var tempPS = mStars.main;
                 tempPS.prewarm = true;
                 mStars.Play();
                 tempPS.prewarm = false;
             }
-            if (tempManager.mGameStatus.mDayTime == DayCyclus.dawn || tempManager.mGameStatus.mDayTime == DayCyclus.dusk)
+            if (day == DayCyclus.dawn || day == DayCyclus.dusk)
             {
-                ToggleStars(tempManager.mGameStatus.mDayTime);
+                ToggleStars(day);
             }
         }
     }

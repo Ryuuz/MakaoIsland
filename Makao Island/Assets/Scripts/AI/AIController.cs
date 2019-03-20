@@ -8,7 +8,9 @@ public class AIController : MonoBehaviour
     public float mWaypointRadius = 4f;
     public float mTransitionDelay = 2f;
 
-    protected Vector3 mCurrentLocation;
+    [HideInInspector]
+    public Vector3 mCurrentLocation;
+
     protected NavMeshAgent mAgent;
     protected GameManager mGameManager;
 

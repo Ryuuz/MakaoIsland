@@ -1,14 +1,15 @@
 ﻿
-public struct GameProgressData
+[System.Serializable]
+public class GameData
 {
-    public bool[] mSpiritAnimalsStatus;
-    public bool mMapStatus;
-}
-
-public struct GameStatusData
-{
-    public DayCyclus mDayTime;
-    public float mCyclusTime;
+    public bool[] mSpiritAnimalsStatus = { false, false, false };
+    public bool mMapStatus = false;
+    public bool mSpiritGirlStatus = false;
+    public float[] mPlayerPosition;
+    public int mDayTime = 0;
+    public float mCyclusTime = 0;
+    public float[][] mAIPositions;
+    public string mCheckPoint = "RespawnPoint";
 }
 
 public struct Sentence

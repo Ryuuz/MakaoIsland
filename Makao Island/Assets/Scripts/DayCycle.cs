@@ -63,8 +63,8 @@ public class DayCycle : MonoBehaviour
         }
 
         //Retrieves the saved time of day
-        mCurrentCyclusStep = mGameManager.mGameStatus.mDayTime;
-        mCurrentTime = mGameManager.mGameStatus.mCyclusTime;
+        mCurrentCyclusStep = (DayCyclus)mGameManager.mData.mDayTime;
+        mCurrentTime = mGameManager.mData.mCyclusTime;
         
         //Sets the rotation the sun should start at
         mCurrentRotation = (mRotationStep * mCurrentTime) - mOffset;
@@ -136,5 +136,10 @@ public class DayCycle : MonoBehaviour
     public DayCyclus GetTimeOfDay()
     {
         return mCurrentCyclusStep;
+    }
+
+    public float GetCurrentTime()
+    {
+        return mCurrentTime;
     }
 }

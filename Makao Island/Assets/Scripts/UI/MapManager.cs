@@ -22,7 +22,7 @@ public class MapManager : MonoBehaviour
         mGameManager = GameManager.ManagerInstance();
         mGameManager.eTimeChanged.AddListener(UpdateDayIcon);
         mGameManager.eSpiritAnimalFound.AddListener(UpdateSpiritAnimal);
-        mMapAvailable = mGameManager.mProgress.mMapStatus;
+        mMapAvailable = mGameManager.mData.mMapStatus;
 
         //Give the input handler access to this object
         if (InputHandler.InputInstance().mMapManager == null)
@@ -31,7 +31,7 @@ public class MapManager : MonoBehaviour
         }
 
         //Set the correct icons
-        UpdateDayIcon(mGameManager.mGameStatus.mDayTime);
+        UpdateDayIcon((DayCyclus)mGameManager.mData.mDayTime);
         UpdateSpiritAnimal();
         HideMap();
     }
@@ -75,11 +75,11 @@ public class MapManager : MonoBehaviour
     //Updates the icons showing which spirit animals have been found
     public void UpdateSpiritAnimal()
     {
-        if(mSpiritAnimalStatus.Length <= mGameManager.mProgress.mSpiritAnimalsStatus.Length)
+        if(mSpiritAnimalStatus.Length <= mGameManager.mData.mSpiritAnimalsStatus.Length)
         {
             for (int i = 0; i < mSpiritAnimalStatus.Length; i++)
             {
-                if (mGameManager.mProgress.mSpiritAnimalsStatus[i])
+                if (mGameManager.mData.mSpiritAnimalsStatus[i])
                 {
                     mSpiritAnimalStatus[i].color = Color.white;
                 }

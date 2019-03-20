@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class LanternScript : MonoBehaviour
 {
@@ -20,7 +18,7 @@ public class LanternScript : MonoBehaviour
             }
         }
         GameManager.ManagerInstance().eTimeChanged.AddListener(ToggleLantern);
-        ToggleLantern(GameManager.ManagerInstance().mGameStatus.mDayTime);
+        ToggleLantern((DayCyclus)GameManager.ManagerInstance().mData.mDayTime);
     }
 
     public void ToggleLantern(DayCyclus timeOfDay)

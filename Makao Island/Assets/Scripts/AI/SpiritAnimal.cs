@@ -9,6 +9,11 @@ public class SpiritAnimal : AIController
 
     protected override void Start()
     {
+        if(GameManager.ManagerInstance().mData.mSpiritAnimalsStatus[(int)mAnimalType])
+        {
+            Destroy(gameObject);
+        }
+
         base.Start();
         mFade = GetComponent<FadeScript>();
 
@@ -18,7 +23,7 @@ public class SpiritAnimal : AIController
         }
 
         //Make sure the spirit animal is in the right place and state
-        Transition(mGameManager.mGameStatus.mDayTime);
+        Transition((DayCyclus)mGameManager.mData.mDayTime);
         
         if (mCurrentLocation != transform.position)
         {
