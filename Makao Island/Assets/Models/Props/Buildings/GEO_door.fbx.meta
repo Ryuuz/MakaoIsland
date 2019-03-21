@@ -1,35 +1,25 @@
 fileFormatVersion: 2
-guid: 630119f9e5fcabe4db65ae26640ca18e
+guid: 4e07dd76a7e99264eaaf5b0690360572
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
-    100002: GEO_door_1
-    100004: GEO_door_rim
+    100002: GEO_door_knob
+    100004: GEO_door_no_frame
     400000: //RootNode
-    400002: GEO_door_1
-    400004: GEO_door_rim
-    2100000: lambert_brown
-    2100002: lambert_orange
-    2300000: GEO_door_1
-    2300002: GEO_door_rim
-    3300000: GEO_door_1
-    3300002: GEO_door_rim
-    4300000: GEO_door_rim
-    4300002: GEO_door_1
-    6400000: GEO_door_1
-    6400002: GEO_door_rim
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lambert_brown
-    second: {fileID: 2100000, guid: 1461557bad472694e928a3c97699bb51, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lambert_orange
-    second: {fileID: 2100000, guid: 40ca43e01851e5440aa844826667f4ed, type: 2}
+    400002: GEO_door_knob
+    400004: GEO_door_no_frame
+    2100000: MAT_texture_gradient_01
+    2300000: //RootNode
+    2300002: GEO_door_knob
+    2300004: GEO_door_no_frame
+    3300000: //RootNode
+    3300002: GEO_door_knob
+    3300004: GEO_door_no_frame
+    4300000: GEO_door
+    4300002: GEO_door_no_frame
+    4300004: GEO_door_knob
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
@@ -66,8 +56,8 @@ ModelImporter:
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 0
-    importLights: 0
+    importCameras: 1
+    importLights: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
