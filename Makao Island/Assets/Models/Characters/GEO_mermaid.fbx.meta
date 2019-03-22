@@ -1,0 +1,243 @@
+fileFormatVersion: 2
+guid: 8c0fffe517d9a374d9f56d7fb880b4db
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: CTR_Body
+    100002: CTRL_Bang_1
+    100004: CTRL_Bang_2
+    100006: CTRL_Elbow_L
+    100008: CTRL_Elbow_R
+    100010: CTRL_Fin_1_L
+    100012: CTRL_Fin_1_R
+    100014: CTRL_Fin_2_L
+    100016: CTRL_Fin_2_R
+    100018: CTRL_GRP
+    100020: CTRL_GRP_Fin_1_L
+    100022: CTRL_GRP_Fin_1_R
+    100024: CTRL_GRP_Fin_2_L
+    100026: CTRL_GRP_Fin_2_R
+    100028: CTRL_GRP_Hand_L
+    100030: CTRL_GRP_Hand_R
+    100032: CTRL_GRP_Head
+    100034: CTRL_Hair_1
+    100036: CTRL_Hair_2
+    100038: CTRL_Hand_L
+    100040: CTRL_Hand_R
+    100042: CTRL_Head
+    100044: CTRL_Hip
+    100046: CTRL_Neck
+    100048: CTRL_Shoulder_L
+    100050: CTRL_Shoulder_R
+    100052: CTRL_Stomach
+    100054: CTRL_Supermover
+    100056: CTRL_Tail_1
+    100058: CTRL_Tail_2
+    100060: CTRL_Tail_3
+    100062: GEO_GRP
+    100064: //RootNode
+    100066: JOINT_Bang_1
+    100068: JOINT_Bang_2
+    100070: JOINT_Bang_3
+    100072: JOINT_Chest
+    100074: JOINT_Elbow_L
+    100076: JOINT_Elbow_R
+    100078: JOINT_Fin_1_L
+    100080: JOINT_Fin_1_R
+    100082: JOINT_Fin_2_L
+    100084: JOINT_Fin_2_R
+    100086: JOINT_Fin_3_R
+    100088: JOINT_FinTip_3_L
+    100090: JOINT_Hair_1
+    100092: JOINT_Hair_2
+    100094: JOINT_HairTip_3
+    100096: JOINT_Hand_L
+    100098: JOINT_Hand_R
+    100100: JOINT_HandTip_L
+    100102: JOINT_HandTip_R
+    100104: JOINT_Head
+    100106: JOINT_HeadTop
+    100108: JOINT_Neck
+    100110: JOINT_Root
+    100112: JOINT_Shoulder_L
+    100114: JOINT_Shoulder_R
+    100116: JOINT_Stomach
+    100118: JOINT_Tail_1
+    100120: JOINT_Tail_2
+    100122: JOINT_Tail_4
+    100124: Mermaid_Body
+    100126: Mermaid_Hair
+    100128: SKEL_GRP
+    100130: Starfish
+    400000: CTR_Body
+    400002: CTRL_Bang_1
+    400004: CTRL_Bang_2
+    400006: CTRL_Elbow_L
+    400008: CTRL_Elbow_R
+    400010: CTRL_Fin_1_L
+    400012: CTRL_Fin_1_R
+    400014: CTRL_Fin_2_L
+    400016: CTRL_Fin_2_R
+    400018: CTRL_GRP
+    400020: CTRL_GRP_Fin_1_L
+    400022: CTRL_GRP_Fin_1_R
+    400024: CTRL_GRP_Fin_2_L
+    400026: CTRL_GRP_Fin_2_R
+    400028: CTRL_GRP_Hand_L
+    400030: CTRL_GRP_Hand_R
+    400032: CTRL_GRP_Head
+    400034: CTRL_Hair_1
+    400036: CTRL_Hair_2
+    400038: CTRL_Hand_L
+    400040: CTRL_Hand_R
+    400042: CTRL_Head
+    400044: CTRL_Hip
+    400046: CTRL_Neck
+    400048: CTRL_Shoulder_L
+    400050: CTRL_Shoulder_R
+    400052: CTRL_Stomach
+    400054: CTRL_Supermover
+    400056: CTRL_Tail_1
+    400058: CTRL_Tail_2
+    400060: CTRL_Tail_3
+    400062: GEO_GRP
+    400064: //RootNode
+    400066: JOINT_Bang_1
+    400068: JOINT_Bang_2
+    400070: JOINT_Bang_3
+    400072: JOINT_Chest
+    400074: JOINT_Elbow_L
+    400076: JOINT_Elbow_R
+    400078: JOINT_Fin_1_L
+    400080: JOINT_Fin_1_R
+    400082: JOINT_Fin_2_L
+    400084: JOINT_Fin_2_R
+    400086: JOINT_Fin_3_R
+    400088: JOINT_FinTip_3_L
+    400090: JOINT_Hair_1
+    400092: JOINT_Hair_2
+    400094: JOINT_HairTip_3
+    400096: JOINT_Hand_L
+    400098: JOINT_Hand_R
+    400100: JOINT_HandTip_L
+    400102: JOINT_HandTip_R
+    400104: JOINT_Head
+    400106: JOINT_HeadTop
+    400108: JOINT_Neck
+    400110: JOINT_Root
+    400112: JOINT_Shoulder_L
+    400114: JOINT_Shoulder_R
+    400116: JOINT_Stomach
+    400118: JOINT_Tail_1
+    400120: JOINT_Tail_2
+    400122: JOINT_Tail_4
+    400124: Mermaid_Body
+    400126: Mermaid_Hair
+    400128: SKEL_GRP
+    400130: Starfish
+    2100000: MAT_Mermaid_Hair
+    2100002: MAT_Mermaid_Body
+    2300000: Starfish
+    3300000: Starfish
+    4300000: Mermaid_Hair
+    4300002: Starfish
+    4300004: Mermaid_Body
+    9500000: //RootNode
+    13700000: Mermaid_Body
+    13700002: Mermaid_Hair
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MAT_Mermaid_Body
+    second: {fileID: 2100000, guid: b6a5e0f0132bdd849b9f1aaccb22fb5a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MAT_Mermaid_Hair
+    second: {fileID: 2100000, guid: 410467c311bace8438c0642cfa2dd124, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 10
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.099999994
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,155 @@
+fileFormatVersion: 2
+guid: 3eab5eb76f499d7488ca412c7bcdaa1b
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: JOINT_Bang_1
+    100002: JOINT_Bang_2
+    100004: JOINT_Bang_3
+    100006: JOINT_Chest
+    100008: JOINT_Elbow_L
+    100010: JOINT_Elbow_R
+    100012: JOINT_Fin_1_L
+    100014: JOINT_Fin_1_R
+    100016: JOINT_Fin_2_L
+    100018: JOINT_Fin_2_R
+    100020: JOINT_Fin_3_R
+    100022: JOINT_FinTip_3_L
+    100024: JOINT_Hair_1
+    100026: JOINT_Hair_2
+    100028: JOINT_HairTip_3
+    100030: JOINT_Hand_L
+    100032: JOINT_Hand_R
+    100034: JOINT_HandTip_L
+    100036: JOINT_HandTip_R
+    100038: JOINT_Head
+    100040: JOINT_HeadTop
+    100042: JOINT_Neck
+    100044: JOINT_Root
+    100046: JOINT_Shoulder_L
+    100048: JOINT_Shoulder_R
+    100050: JOINT_Stomach
+    100052: JOINT_Tail_1
+    100054: JOINT_Tail_2
+    100056: JOINT_Tail_4
+    100058: //RootNode
+    100060: SKEL_GRP
+    400000: JOINT_Bang_1
+    400002: JOINT_Bang_2
+    400004: JOINT_Bang_3
+    400006: JOINT_Chest
+    400008: JOINT_Elbow_L
+    400010: JOINT_Elbow_R
+    400012: JOINT_Fin_1_L
+    400014: JOINT_Fin_1_R
+    400016: JOINT_Fin_2_L
+    400018: JOINT_Fin_2_R
+    400020: JOINT_Fin_3_R
+    400022: JOINT_FinTip_3_L
+    400024: JOINT_Hair_1
+    400026: JOINT_Hair_2
+    400028: JOINT_HairTip_3
+    400030: JOINT_Hand_L
+    400032: JOINT_Hand_R
+    400034: JOINT_HandTip_L
+    400036: JOINT_HandTip_R
+    400038: JOINT_Head
+    400040: JOINT_HeadTop
+    400042: JOINT_Neck
+    400044: JOINT_Root
+    400046: JOINT_Shoulder_L
+    400048: JOINT_Shoulder_R
+    400050: JOINT_Stomach
+    400052: JOINT_Tail_1
+    400054: JOINT_Tail_2
+    400056: JOINT_Tail_4
+    400058: //RootNode
+    400060: SKEL_GRP
+    7400000: Mermaid_Idle
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 10
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

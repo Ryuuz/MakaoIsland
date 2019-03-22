@@ -42,6 +42,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: GEO_rock_tall_2
       objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 43e3b1b4d3696ad4b9c5af4f577aa95f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 43e3b1b4d3696ad4b9c5af4f577aa95f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 43e3b1b4d3696ad4b9c5af4f577aa95f, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 43e3b1b4d3696ad4b9c5af4f577aa95f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

@@ -14,7 +14,12 @@ ModelImporter:
     3300000: GEO_roof_medium_1_rich
     4300000: GEO_roof_medium_1_rich
     6400000: GEO_roof_medium_1_rich
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MAT_pallet
+    second: {fileID: 2100000, guid: 462e839a28e420c49b701b7dded32479, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

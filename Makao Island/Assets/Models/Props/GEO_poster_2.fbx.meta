@@ -15,7 +15,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: lambert_posters
-    second: {fileID: 2100000, guid: 732af9152680f034f922ea86a0b6f247, type: 2}
+    second: {fileID: 2100000, guid: daf787fc58dca53409f0c4fa70f956f1, type: 2}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule

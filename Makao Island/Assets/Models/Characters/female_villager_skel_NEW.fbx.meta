@@ -1,0 +1,202 @@
+fileFormatVersion: 2
+guid: 47ba1e9d1e4ef5e4db93d911e056c919
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Accessories
+    100002: armLower_skel_L
+    100004: armLower_skel_R
+    100006: armUpper_skel_L
+    100008: armUpper_skel_R
+    100010: female_villager_body_GEO
+    100012: female_villager_bow_GEO
+    100014: female_villager_hair1_GEO
+    100016: female_villager_hair1_hairpin_GEO
+    100018: female_villager_hair2_GEO
+    100020: female_villager_hair2_hairpiece_GEO
+    100022: female_villager_hair3_GEO
+    100024: //RootNode
+    100026: foot_skel_L_END
+    100028: foot_skel_R_END
+    100030: GEO_GRP
+    100032: hair_GRP
+    100034: hand_skel_L
+    100036: hand_skel_L_END
+    100038: hand_skel_R
+    100040: hand_skel_R_END
+    100042: head_skel
+    100044: head_skel_END
+    100046: hip_skel
+    100048: legLower_skel_L
+    100050: legLower_skel_R
+    100052: legUpper_skel_L
+    100054: legUpper_skel_R
+    100056: neck_skel
+    100058: SKEL_GRP
+    100060: spine1_skel
+    100062: spine2_skel
+    100064: spine3_skel
+    400000: Accessories
+    400002: armLower_skel_L
+    400004: armLower_skel_R
+    400006: armUpper_skel_L
+    400008: armUpper_skel_R
+    400010: female_villager_body_GEO
+    400012: female_villager_bow_GEO
+    400014: female_villager_hair1_GEO
+    400016: female_villager_hair1_hairpin_GEO
+    400018: female_villager_hair2_GEO
+    400020: female_villager_hair2_hairpiece_GEO
+    400022: female_villager_hair3_GEO
+    400024: //RootNode
+    400026: foot_skel_L_END
+    400028: foot_skel_R_END
+    400030: GEO_GRP
+    400032: hair_GRP
+    400034: hand_skel_L
+    400036: hand_skel_L_END
+    400038: hand_skel_R
+    400040: hand_skel_R_END
+    400042: head_skel
+    400044: head_skel_END
+    400046: hip_skel
+    400048: legLower_skel_L
+    400050: legLower_skel_R
+    400052: legUpper_skel_L
+    400054: legUpper_skel_R
+    400056: neck_skel
+    400058: SKEL_GRP
+    400060: spine1_skel
+    400062: spine2_skel
+    400064: spine3_skel
+    2100000: Animation_walkcycle_Female_16_uv_fix_done_female_villager_material
+    2100002: Animation_walkcycle_Female_16_uv_fix_done_female_villager_hair1_material
+    2100004: Animation_walkcycle_Female_16_uv_fix_done_female_villager_hair2_material
+    2100006: Animation_walkcycle_Female_16_uv_fix_done_female_villager_hair3_material
+    2300000: female_villager_bow_GEO
+    2300002: female_villager_hair1_GEO
+    2300004: female_villager_hair1_hairpin_GEO
+    2300006: female_villager_hair2_GEO
+    2300008: female_villager_hair2_hairpiece_GEO
+    2300010: female_villager_hair3_GEO
+    3300000: female_villager_bow_GEO
+    3300002: female_villager_hair1_GEO
+    3300004: female_villager_hair1_hairpin_GEO
+    3300006: female_villager_hair2_GEO
+    3300008: female_villager_hair2_hairpiece_GEO
+    3300010: female_villager_hair3_GEO
+    4300000: female_villager_body_GEO
+    4300002: female_villager_hair1_GEO
+    4300004: female_villager_hair1_hairpin_GEO
+    4300006: female_villager_hair2_GEO
+    4300008: female_villager_hair2_hairpiece_GEO
+    4300010: female_villager_hair3_GEO
+    4300012: female_villager_bow_GEO
+    9500000: //RootNode
+    13700000: female_villager_body_GEO
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Animation_walkcycle_Female_16_uv_fix_done_female_villager_hair1_material
+    second: {fileID: 2100000, guid: 82d7a28d43b0a624399501bdc2e31814, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Animation_walkcycle_Female_16_uv_fix_done_female_villager_hair2_material
+    second: {fileID: 2100000, guid: 82d7a28d43b0a624399501bdc2e31814, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Animation_walkcycle_Female_16_uv_fix_done_female_villager_hair3_material
+    second: {fileID: 2100000, guid: 82d7a28d43b0a624399501bdc2e31814, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Animation_walkcycle_Female_16_uv_fix_done_female_villager_material
+    second: {fileID: 2100000, guid: 82d7a28d43b0a624399501bdc2e31814, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 10
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.099999994
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

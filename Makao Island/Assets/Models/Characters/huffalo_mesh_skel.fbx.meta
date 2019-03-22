@@ -1,0 +1,186 @@
+fileFormatVersion: 2
+guid: 30d867480307705419e3a02608be401f
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: backlegAncle_skel_L
+    100002: backlegAncle_skel_R
+    100004: backlegHeel_skel_L
+    100006: backlegHeel_skel_R
+    100008: backlegHoof_skel_L_END
+    100010: backlegHoof_skel_R_END
+    100012: backlegLower_skel_L
+    100014: backlegLower_skel_R
+    100016: backlegUpper_skel_L
+    100018: backlegUpper_skel_R
+    100020: ear1_skel_L
+    100022: ear1_skel_R
+    100024: ear2_skel_L
+    100026: ear2_skel_R
+    100028: ear_skel_L_END
+    100030: ear_skel_R_END
+    100032: frontlegAncle_skel_L
+    100034: frontlegAncle_skel_R
+    100036: frontlegHoof_skel_L_END
+    100038: frontlegHoof_skel_R_END
+    100040: frontlegLower_skel_L
+    100042: frontlegLower_skel_R
+    100044: frontlegUpper_skel_L
+    100046: frontlegUpper_skel_R
+    100048: GEO_GRP
+    100050: head_skel
+    100052: head_skel_END
+    100054: hip_skel
+    100056: Huffalo
+    100058: //RootNode
+    100060: neck1_skel
+    100062: neck2_skel
+    100064: SKEL_GRP
+    100066: spine1_skel
+    100068: spine2_skel
+    100070: spine3_skel
+    100072: tail1_skel
+    100074: tail2_skel
+    100076: tail4_skel
+    100078: tail5_skel
+    100080: tail7_skel
+    100082: tail9_skel
+    100084: tail_skel_END
+    400000: backlegAncle_skel_L
+    400002: backlegAncle_skel_R
+    400004: backlegHeel_skel_L
+    400006: backlegHeel_skel_R
+    400008: backlegHoof_skel_L_END
+    400010: backlegHoof_skel_R_END
+    400012: backlegLower_skel_L
+    400014: backlegLower_skel_R
+    400016: backlegUpper_skel_L
+    400018: backlegUpper_skel_R
+    400020: ear1_skel_L
+    400022: ear1_skel_R
+    400024: ear2_skel_L
+    400026: ear2_skel_R
+    400028: ear_skel_L_END
+    400030: ear_skel_R_END
+    400032: frontlegAncle_skel_L
+    400034: frontlegAncle_skel_R
+    400036: frontlegHoof_skel_L_END
+    400038: frontlegHoof_skel_R_END
+    400040: frontlegLower_skel_L
+    400042: frontlegLower_skel_R
+    400044: frontlegUpper_skel_L
+    400046: frontlegUpper_skel_R
+    400048: GEO_GRP
+    400050: head_skel
+    400052: head_skel_END
+    400054: hip_skel
+    400056: Huffalo
+    400058: //RootNode
+    400060: neck1_skel
+    400062: neck2_skel
+    400064: SKEL_GRP
+    400066: spine1_skel
+    400068: spine2_skel
+    400070: spine3_skel
+    400072: tail1_skel
+    400074: tail2_skel
+    400076: tail4_skel
+    400078: tail5_skel
+    400080: tail7_skel
+    400082: tail9_skel
+    400084: tail_skel_END
+    2100000: huffalo_material
+    4300000: Huffalo
+    9500000: //RootNode
+    13700000: Huffalo
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: huffalo_material
+    second: {fileID: 2100000, guid: bbfa9346278b19f43b37f9f0ed4a6b4a, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 20
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.099999994
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
