@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 using System.Collections.Generic;
+using UnityEngine.Playables;
 
 [System.Serializable]
 public class SpeedChangeEvent : UnityEvent<float>
@@ -22,7 +23,12 @@ public class GameManager : MonoBehaviour
     public GameObject mDialogueManager;
     public ControlsUIScript mControlUI;
 
+    [HideInInspector]
     public GameData mData;
+    [HideInInspector]
+    public InputHandler mInputHandler;
+    [HideInInspector]
+    public Transform mCurrentRespawnPoint;
 
     //Events
     [HideInInspector]
@@ -32,12 +38,12 @@ public class GameManager : MonoBehaviour
     [HideInInspector]
     public UnityEvent eSpiritAnimalFound = new UnityEvent();
 
-    [HideInInspector]
-    public InputHandler mInputHandler;
-    public Transform mCurrentRespawnPoint;
-
     [SerializeField]
     private DayCycle mDayCycle;
+    [SerializeField]
+    private PlayableDirector mDirector;
+    [SerializeField]
+    private PlayableAsset mClip;
 
     private List<AIController> mAIs = new List<AIController>();
 
@@ -96,10 +102,13 @@ public class GameManager : MonoBehaviour
             }
         }
 
+        mDirector = GameObject.Find("OpeningTimeline").GetComponent<PlayableDirector>();
+        mClip = mDirector.playableAsset;
+
         GameObject[] tempAIs = GameObject.FindGameObjectsWithTag("NPC");
         for(int i = 0; i < tempAIs.Length; i++)
         {
-            //mAIs.Add(tempAIs[i].GetComponent<AIController>());
+            mAIs.Add(tempAIs[i].GetComponent<AIController>());
         }
         mAIs.Sort((obj1, obj2) => obj1.gameObject.name.CompareTo(obj2.gameObject.name));
 
@@ -110,6 +119,16 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         mInputHandler = InputHandler.InputInstance();
+
+        /*if (PlayerPrefs.GetInt("Load", 0) == 0)
+        {
+            if (mInputHandler)
+            {
+                mInputHandler.StartCutscene((float)mClip.duration);
+            }
+
+            mDirector.Play(mClip);
+        }*/
     }
 
     //Set the speed the game should play at. 0 = pause, 1 = normal speed, >1 = speed up
@@ -142,6 +161,7 @@ public class GameManager : MonoBehaviour
         if(PlayerPrefs.GetInt("Load", 0) == 0)
         {
             mData = new GameData();
+            mCurrentRespawnPoint = GameObject.Find(mData.mCheckPoint).transform;
         }
         else
         {

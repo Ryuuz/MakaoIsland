@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections;
 
 public class InputHandler : MonoBehaviour
 {
@@ -7,6 +8,7 @@ public class InputHandler : MonoBehaviour
 
     private bool mInMenu = false;
     private bool mMapOpen = false;
+    private bool mInCutscene = false;
     private GameObject mPlayer;
     private GameObject mCamera;
     private GameManager mGameManager;
@@ -78,11 +80,11 @@ public class InputHandler : MonoBehaviour
 	void Update()
     {
         //Different handling of input depending on whether the player is in a menu
-		if(!mInMenu)
+		if(!mInMenu && !mInCutscene)
         {
             HandlePlayInput();
         }
-        else
+        else if(mInMenu && !mInCutscene)
         {
             HandlePauseInput();
         }
@@ -169,5 +171,20 @@ public class InputHandler : MonoBehaviour
     public void ToggleMenu()
     {
         mInMenu = !mInMenu;
+    }
+
+    public void StartCutscene(float duration)
+    {
+        if (!mInCutscene)
+        {
+            StartCoroutine(CutscenePlaying(duration));
+        }
+    }
+
+    private IEnumerator CutscenePlaying(float duration)
+    {
+        mInCutscene = true;
+        yield return new WaitForSeconds(duration);
+        mInCutscene = false;
     }
 }
