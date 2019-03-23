@@ -1,14 +1,15 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
     public DialogueLines mDialogueLines = new DialogueLines();
 
     [SerializeField]
-    private Text mNameField;
+    private TextMeshProUGUI mNameField;
     [SerializeField]
-    private Text mTextField;
+    private TextMeshProUGUI mTextField;
     [SerializeField]
     private Image mIconField;
 

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,7 +12,7 @@ public class ControlsUIScript : MonoBehaviour
     [SerializeField]
     private Image mGamepad;
     [SerializeField]
-    private Text mDescription;
+    private TextMeshProUGUI mDescription;
 
     private CanvasGroup mCanvasGroup;
 

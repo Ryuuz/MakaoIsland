@@ -47,15 +47,18 @@ public class MapManager : MonoBehaviour
 
     public void HideMap()
     {
-        mCanvasGroup.alpha = 0f;
-        mCanvasGroup.blocksRaycasts = false;
-        mCanvasGroup.interactable = false;
+        if(mCanvasGroup)
+        {
+            mCanvasGroup.alpha = 0f;
+            mCanvasGroup.blocksRaycasts = false;
+            mCanvasGroup.interactable = false;
+        }
     }
 
     public void ShowMap()
     {
         //Can only open the map if it is available to the player
-        if(mMapAvailable)
+        if(mMapAvailable && mCanvasGroup)
         {
             mCanvasGroup.alpha = 1f;
             mCanvasGroup.blocksRaycasts = true;
@@ -81,7 +84,7 @@ public class MapManager : MonoBehaviour
             {
                 if (mGameManager.mData.mSpiritAnimalsStatus[i])
                 {
-                    mSpiritAnimalStatus[i].color = Color.white;
+                    mSpiritAnimalStatus[i].color = new Color(1, 1, 1, 0);
                 }
             }
         }

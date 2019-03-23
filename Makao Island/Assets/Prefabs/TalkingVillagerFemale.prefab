@@ -152,7 +152,7 @@ NavMeshAgent:
   m_Radius: 1
   m_Speed: 3.5
   m_Acceleration: 8
-  avoidancePriority: 50
+  avoidancePriority: 1
   m_AngularSpeed: 120
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
@@ -177,6 +177,7 @@ MonoBehaviour:
   mSpeed: 3.5
   mWaypointRadius: 4
   mTransitionDelay: 0
+  mCurrentLocation: {x: 0, y: 0, z: 0}
   mDawnLocation: {fileID: 0}
   mDayLocation: {fileID: 0}
   mDuskLocation: {fileID: 0}
@@ -308,6 +309,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7128574489735542852}
     m_Modifications:
+    - target: {fileID: 5458304100542883115, guid: fcbf315e67c704b4f8cb4ca4172e8865,
+        type: 3}
+      propertyPath: m_Name
+      value: FemaleVillager
+      objectReference: {fileID: 0}
     - target: {fileID: 5458304100543052043, guid: fcbf315e67c704b4f8cb4ca4172e8865,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -362,11 +368,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5458304100542883115, guid: fcbf315e67c704b4f8cb4ca4172e8865,
-        type: 3}
-      propertyPath: m_Name
-      value: FemaleVillager
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fcbf315e67c704b4f8cb4ca4172e8865, type: 3}
