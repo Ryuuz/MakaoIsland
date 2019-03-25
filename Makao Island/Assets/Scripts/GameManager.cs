@@ -122,7 +122,7 @@ public class GameManager : MonoBehaviour
         mInputHandler = InputHandler.InputInstance();
         NavMesh.avoidancePredictionTime = 5f;
 
-        /*if (PlayerPrefs.GetInt("Load", 0) == 0)
+        if (PlayerPrefs.GetInt("Load", 0) == 0)
         {
             if (mInputHandler)
             {
@@ -130,7 +130,7 @@ public class GameManager : MonoBehaviour
             }
 
             mDirector.Play(mClip);
-        }*/
+        }
     }
 
     //Set the speed the game should play at. 0 = pause, 1 = normal speed, >1 = speed up
