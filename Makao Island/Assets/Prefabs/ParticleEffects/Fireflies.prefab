@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1428881213368859636}
   - component: {fileID: 1428881213368859635}
   - component: {fileID: 1428881213368859634}
+  - component: {fileID: 4278435185832188480}
   m_Layer: 0
   m_Name: Fireflies
   m_TagString: Untagged
@@ -4648,7 +4649,7 @@ ParticleSystem:
 --- !u!199 &1428881213368859634
 ParticleSystemRenderer:
   serializedVersion: 6
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -4707,3 +4708,15 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &4278435185832188480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1428881213368859633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8e7f22c0b511834db23f0b5eea33731, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

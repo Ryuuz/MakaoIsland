@@ -2,6 +2,7 @@
 using UnityEngine.Events;
 using System.Collections.Generic;
 using UnityEngine.Playables;
+using UnityEngine.AI;
 
 [System.Serializable]
 public class SpeedChangeEvent : UnityEvent<float>
@@ -119,6 +120,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         mInputHandler = InputHandler.InputInstance();
+        NavMesh.avoidancePredictionTime = 5f;
 
         /*if (PlayerPrefs.GetInt("Load", 0) == 0)
         {
@@ -170,6 +172,10 @@ public class GameManager : MonoBehaviour
             if(mData.mSpiritGirlStatus)
             {
                 Destroy(GameObject.Find("SpiritGirlGuiding"));
+            }
+            if(mData.mMapStatus)
+            {
+                Destroy(GameObject.Find("GodAnimal"));
             }
 
             mPlayer.transform.position = new Vector3(mData.mPlayerPosition[0], mData.mPlayerPosition[1], mData.mPlayerPosition[2]);

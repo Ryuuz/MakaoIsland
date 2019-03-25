@@ -13,3 +13,8 @@ public enum ControlAction
 {
     walk, look, sprint, jump, listen, meditate, guide, map, pause, actions
 }
+
+public enum TalkAnimation
+{
+    none, nod, cry, hands
+}

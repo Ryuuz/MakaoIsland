@@ -10,6 +10,7 @@ public class DialogueTrigger : MonoBehaviour
 
     protected AITalking[] mSpeakerControllers;
     protected bool[] mSpeakerPresent;
+    protected VillagerAnimationScript[] mSpeakerAnimations;
     protected PlayerController mPlayerPresent = null;
     protected List<Sentence> mSentences = new List<Sentence>();
     protected DialogueManager mDialogueManager;
@@ -34,12 +35,14 @@ public class DialogueTrigger : MonoBehaviour
         //Get the script component of the AI and check if the AI is present
         mSpeakerControllers = new AITalking[mSpeakers.Length];
         mSpeakerPresent = new bool[mSpeakers.Length];
+        mSpeakerAnimations = new VillagerAnimationScript[mSpeakers.Length];
 
         for (int i = 0; i < mSpeakerControllers.Length; i++)
         {
             mSpeakerControllers[i] = mSpeakers[i].GetComponent<AITalking>();
             mSpeakerControllers[i].eStartedMoving.AddListener(AIIsLeaving);
             mSpeakerPresent[i] = false;
+            mSpeakerAnimations[i] = mSpeakers[i].GetComponentInChildren<VillagerAnimationScript>();
 
             if (Vector3.Distance(mSpeakers[i].transform.position, transform.position) <= GetComponent<SphereCollider>().radius)
             {
@@ -157,6 +160,13 @@ public class DialogueTrigger : MonoBehaviour
                     {
                         StartCoroutine(mSpeakerControllers[i].LookAtObject(target));
                     }
+                }
+
+                //!!!----find the general direction of the other speakers and have the current speaker look in that direction-----!!!
+
+                if(mSpeakerAnimations[line.speaker - 1] && line.gesture != TalkAnimation.none)
+                {
+                    mSpeakerAnimations[line.speaker - 1].PlayTalkAnimation(line.gesture);
                 }
 
                 //Only update the UI if the player is listening
