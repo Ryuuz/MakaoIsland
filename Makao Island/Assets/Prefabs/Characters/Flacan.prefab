@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6811531799287872206}
   - component: {fileID: 6811531799278277928}
-  - component: {fileID: 2598348513017921739}
+  - component: {fileID: 1944033431574664098}
   m_Layer: 0
   m_Name: Flacan
   m_TagString: Untagged
@@ -53,7 +53,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &2598348513017921739
+--- !u!114 &1944033431574664098
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -62,7 +62,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6811531799287768814}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ece54d16ff9217040ae4c3906b99b4b3, type: 3}
+  m_Script: {fileID: 11500000, guid: 6f51d21f77bc42645b71356771083a63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &9053642070316715137

@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 public class DayCycle : MonoBehaviour
 {
-    public float mCycleLength = 60f;
+    public float mCycleLength = 1800f;
 
     public Gradient mSkyColorTint;
     public Gradient mSunlightTint;

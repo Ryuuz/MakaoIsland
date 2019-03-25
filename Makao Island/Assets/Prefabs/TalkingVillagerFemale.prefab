@@ -149,7 +149,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 7128574489735542857}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 1
+  m_Radius: 0.6
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 1
@@ -182,7 +182,7 @@ MonoBehaviour:
   mDayLocation: {fileID: 0}
   mDuskLocation: {fileID: 0}
   mNightLocation: {fileID: 0}
-  mIcon: {fileID: 0}
+  mIcon: {fileID: 21300000, guid: fd2a60b894236314894988678d3a35a7, type: 3}
   eStartedMoving:
     m_PersistentCalls:
       m_Calls: []

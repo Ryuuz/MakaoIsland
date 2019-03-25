@@ -62,7 +62,7 @@ public class AIController : MonoBehaviour
                 break;
         }
 
-        if(pos)
+        if(pos && (mCurrentLocation - pos.position).sqrMagnitude > (mWaypointRadius * mWaypointRadius))
         {
             //Take the position of the waypoint and set a destination in a radius near it
             mCurrentLocation = pos.position;

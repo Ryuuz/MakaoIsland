@@ -15,11 +15,13 @@ public class GameData
 public struct Sentence
 {
     public int speaker;
+    public TalkAnimation gesture;
     public string text;
 
-    public Sentence(int n, string s)
+    public Sentence(int n, TalkAnimation g, string s)
     {
         speaker = n;
+        gesture = g;
         text = s;
     }
 }

@@ -757,7 +757,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3881844016832064860}
   - component: {fileID: 3881844016825156230}
-  - component: {fileID: 1349311145182071274}
+  - component: {fileID: 1475700553669991102}
   m_Layer: 0
   m_Name: Huffalo
   m_TagString: Untagged
@@ -800,7 +800,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1349311145182071274
+--- !u!114 &1475700553669991102
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -809,7 +809,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3881844016832557372}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ece54d16ff9217040ae4c3906b99b4b3, type: 3}
+  m_Script: {fileID: 11500000, guid: cea1ca9788d980c49bcf788f198e20fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &3881844016832557374
