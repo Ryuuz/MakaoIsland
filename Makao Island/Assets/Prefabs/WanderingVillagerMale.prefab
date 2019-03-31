@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cc138fccef021d4c8e222e16ca43503, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mSpeed: 3.5
+  mSpeed: 3
   mWaypointRadius: 4
   mTransitionDelay: 2
   mCurrentLocation: {x: 0, y: 0, z: 0}

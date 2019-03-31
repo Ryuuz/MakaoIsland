@@ -17,7 +17,17 @@ ModelImporter:
     3300002: GEO_Shell_Open
     4300000: GEO_Shell_Open
     4300002: GEO_Pearl
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rsMaterial1
+    second: {fileID: 2100000, guid: 82d7a28d43b0a624399501bdc2e31814, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rsMaterial2
+    second: {fileID: 2100000, guid: 82d7a28d43b0a624399501bdc2e31814, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

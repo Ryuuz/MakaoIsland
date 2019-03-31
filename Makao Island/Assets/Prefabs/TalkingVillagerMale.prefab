@@ -174,7 +174,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68b61d57a7a767b4dae9c25b52181a70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mSpeed: 3.5
+  mSpeed: 3
   mWaypointRadius: 4
   mTransitionDelay: 0
   mCurrentLocation: {x: 0, y: 0, z: 0}

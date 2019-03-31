@@ -17,6 +17,9 @@ public class DialogueTrigger : MonoBehaviour
     protected bool mPlaying = false;
     protected bool mPlayerListening = false;
     protected bool mCoolingDown = false;
+    protected bool mSkipping = false;
+    protected Coroutine mCountingDown = null;
+    protected int mLineNumber = 0;
     protected SpecialActionListen mListenAction;
 
     protected virtual void Start()
@@ -53,6 +56,18 @@ public class DialogueTrigger : MonoBehaviour
 
         //Check if the listen action should be given to the player
         EvaluateStatus();
+    }
+
+    protected virtual void Update()
+    {
+        if(mPlaying && mPlayerListening)
+        {
+            if(Input.GetButtonDown("Special") && !mSkipping && mCountingDown != null)
+            {
+                mSkipping = true;
+                StopCoroutine(mCountingDown);
+            }
+        }
     }
 
     protected void OnTriggerEnter(Collider other)
@@ -134,7 +149,7 @@ public class DialogueTrigger : MonoBehaviour
         {
             if (mDialogueManager)
             {
-                mDialogueManager.ShowDialogueBox();
+                mDialogueManager.FillDialogueBox(mSpeakers[mSentences[mLineNumber].speaker - 1].name, mSentences[mLineNumber].text, mSpeakerControllers[mSentences[mLineNumber].speaker - 1].mIcon);
             }
             mPlayerListening = true;
 
@@ -176,7 +191,11 @@ public class DialogueTrigger : MonoBehaviour
                 }
             }
 
-            yield return new WaitForSeconds(dialogueTime);
+            yield return 0;
+            mCountingDown = StartCoroutine(SkipCountdown(dialogueTime));
+            yield return new WaitUntil(() => mSkipping == true);
+            mSkipping = false;
+            mLineNumber++;
         }
 
         StartCoroutine(StopDialogue());
@@ -195,6 +214,8 @@ public class DialogueTrigger : MonoBehaviour
             mDialogueManager.HideDialogueBox();
         }
 
+        mLineNumber = 0;
+        mCountingDown = null;
         mPlaying = false;
         mPlayerListening = false;
         SetListenAction(false);
@@ -206,6 +227,15 @@ public class DialogueTrigger : MonoBehaviour
 
         //Give the player the listen action back if everyone is still in the dialogue sphere
         EvaluateStatus();
+    }
+
+    protected IEnumerator SkipCountdown(float countdown)
+    {
+        yield return new WaitForSeconds(countdown);
+        if(!mSkipping)
+        {
+            mSkipping = true;
+        }
     }
 
     //Returns true if all the NPCs that are part of the dialogue are present in the dialogue sphere
