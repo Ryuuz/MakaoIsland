@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b19c9dd0ea8a1d44a8a5faa4ae9c752c
+guid: 400b30b77dd559d48859f7be721b7a46
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -11,12 +11,7 @@ ModelImporter:
     2300000: GEO_wooden_box
     3300000: GEO_wooden_box
     4300000: GEO_wooden_box
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: MAT_props
-    second: {fileID: 2100000, guid: 462e839a28e420c49b701b7dded32479, type: 2}
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
