@@ -100,7 +100,7 @@
             o.Metallic = _Metallic;
             o.Smoothness = _Glossiness;
             o.Alpha = _Transparency;
-			//o.Emission = UnderwaterVisuals(difference, uv) * (1 - _Transparency);
+			o.Emission = UnderwaterVisuals(difference, uv) * (1 - _Transparency);
         }
         ENDCG
     }

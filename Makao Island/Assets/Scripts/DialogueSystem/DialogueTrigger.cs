@@ -107,6 +107,8 @@ public class DialogueTrigger : MonoBehaviour
                 mDialogueManager.HideDialogueBox();
             }
         }
+
+        //------!!!!Else if it is a speaker, call a function of the AI to check if this trigger is its destination-----!!!!!!!!
     }
 
     //Checks if the speech bubbles should be visible and if the player should have the listen action
