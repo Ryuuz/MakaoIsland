@@ -68,4 +68,14 @@ public class AITalking : AIController
 
         mAgent.SetDestination(position);
     }
+
+    public bool isDestination(Vector3 target)
+    {
+        if((mAgent.destination - target).sqrMagnitude > mWaypointRadius)
+        {
+            return false;
+        }
+
+        return true;
+    }
 }
