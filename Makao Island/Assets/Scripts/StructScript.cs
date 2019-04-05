@@ -2,7 +2,7 @@
 [System.Serializable]
 public class GameData
 {
-    public bool[] mSpiritAnimalsStatus = { false, false, false };
+    public bool[] mSpiritAnimalsStatus = { false, false, false, false };
     public bool mMapStatus = false;
     public bool mSpiritGirlStatus = false;
     public float[] mPlayerPosition;

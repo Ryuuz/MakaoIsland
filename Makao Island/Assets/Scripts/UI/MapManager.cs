@@ -32,7 +32,7 @@ public class MapManager : MonoBehaviour
 
         //Set the correct icons
         UpdateDayIcon((DayCyclus)mGameManager.mData.mDayTime);
-        UpdateSpiritAnimal();
+        UpdateSpiritAnimal((int)SpiritAnimalType.spiritAnimals);
         HideMap();
     }
 
@@ -76,9 +76,9 @@ public class MapManager : MonoBehaviour
     }
 
     //Updates the icons showing which spirit animals have been found
-    public void UpdateSpiritAnimal()
+    public void UpdateSpiritAnimal(int n)
     {
-        if(mSpiritAnimalStatus.Length <= mGameManager.mData.mSpiritAnimalsStatus.Length)
+        if(n == mSpiritAnimalStatus.Length)
         {
             for (int i = 0; i < mSpiritAnimalStatus.Length; i++)
             {
@@ -87,6 +87,10 @@ public class MapManager : MonoBehaviour
                     mSpiritAnimalStatus[i].color = new Color(1, 1, 1, 0);
                 }
             }
+        }
+        else if(n > mSpiritAnimalStatus.Length)
+        {
+            mSpiritAnimalStatus[n].color = new Color(1, 1, 1, 0);
         }
     }
 }

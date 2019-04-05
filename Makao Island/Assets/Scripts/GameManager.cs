@@ -16,6 +16,12 @@ public class TimeChangeEvent : UnityEvent<DayCyclus>
 
 }
 
+[System.Serializable]
+public class SpiritAnimalEvent : UnityEvent<int>
+{
+
+}
+
 public class GameManager : MonoBehaviour
 {
     public float mGameSpeed = 1f;
@@ -37,7 +43,7 @@ public class GameManager : MonoBehaviour
     [HideInInspector]
     public TimeChangeEvent eTimeChanged = new TimeChangeEvent();
     [HideInInspector]
-    public UnityEvent eSpiritAnimalFound = new UnityEvent();
+    public SpiritAnimalEvent eSpiritAnimalFound = new SpiritAnimalEvent();
 
     [SerializeField]
     private DayCycle mDayCycle;
@@ -154,7 +160,7 @@ public class GameManager : MonoBehaviour
     public void UpdateSpiritAnimals(int type)
     {
         mData.mSpiritAnimalsStatus[type] = true;
-        eSpiritAnimalFound.Invoke();
+        eSpiritAnimalFound.Invoke(type);
     }
 
     //Load or generate the player's progress
@@ -175,7 +181,7 @@ public class GameManager : MonoBehaviour
             }
             if(mData.mMapStatus)
             {
-                Destroy(GameObject.Find("GodAnimal"));
+                Destroy(GameObject.Find("Pandamoose"));
             }
 
             mPlayer.transform.position = new Vector3(mData.mPlayerPosition[0], mData.mPlayerPosition[1], mData.mPlayerPosition[2]);

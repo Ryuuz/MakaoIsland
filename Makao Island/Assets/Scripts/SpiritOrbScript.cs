@@ -63,8 +63,8 @@ public class SpiritOrbScript : MonoBehaviour
         GetComponentInChildren<ParticleSystem>().Stop();
         yield return new WaitForSeconds(5f);
 
+        GameManager.ManagerInstance().UpdateSpiritAnimals((int)SpiritAnimalType.life);
         InputHandler.InputInstance().mMapManager.mMapAvailable = true;
-
         if (mMapTutorial)
         {
             GameObject temp = Instantiate(mMapTutorial, transform.position, Quaternion.identity);
