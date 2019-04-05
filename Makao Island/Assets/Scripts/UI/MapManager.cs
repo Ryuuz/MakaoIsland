@@ -88,7 +88,7 @@ public class MapManager : MonoBehaviour
                 }
             }
         }
-        else if(n > mSpiritAnimalStatus.Length)
+        else if(n < mSpiritAnimalStatus.Length)
         {
             mSpiritAnimalStatus[n].color = new Color(1, 1, 1, 0);
         }

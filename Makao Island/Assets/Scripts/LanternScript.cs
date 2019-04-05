@@ -28,7 +28,7 @@ public class LanternScript : MonoBehaviour
             //This is bad
             if (timeOfDay == DayCyclus.night)
             {
-                Color onColor = new Color(0.506f, 0.173f, 0.02f) * 10f;
+                Color onColor = new Color(0.506f, 0.173f, 0.02f) * 8f;
                 mMaterial.SetColor("_EmissionColor", onColor);
                 DynamicGI.SetEmissive(mRenderer, onColor);
             }
