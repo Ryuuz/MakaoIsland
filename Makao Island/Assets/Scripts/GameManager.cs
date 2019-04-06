@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.Playables;
 using UnityEngine.AI;
@@ -47,10 +48,11 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     private DayCycle mDayCycle;
-    [SerializeField]
-    private PlayableDirector mDirector;
-    [SerializeField]
-    private PlayableAsset mClip;
+
+    private PlayableDirector mStartDirector;
+    private PlayableAsset mStartClip;
+    private PlayableDirector mEndDirector;
+    private PlayableAsset mEndClip;
 
     private List<AIController> mAIs = new List<AIController>();
 
@@ -109,8 +111,10 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        mDirector = GameObject.Find("OpeningTimeline").GetComponent<PlayableDirector>();
-        mClip = mDirector.playableAsset;
+        mStartDirector = GameObject.Find("OpeningTimeline").GetComponent<PlayableDirector>();
+        mStartClip = mStartDirector.playableAsset;
+        mEndDirector = GameObject.Find("EndingTimeline").GetComponent<PlayableDirector>();
+        mEndClip = mEndDirector.playableAsset;
 
         GameObject[] tempAIs = GameObject.FindGameObjectsWithTag("NPC");
         for(int i = 0; i < tempAIs.Length; i++)
@@ -132,10 +136,10 @@ public class GameManager : MonoBehaviour
         {
             if (mInputHandler)
             {
-                mInputHandler.StartCutscene((float)mClip.duration);
+                mInputHandler.StartCutscene((float)mStartClip.duration);
             }
 
-            mDirector.Play(mClip);
+            mStartDirector.Play(mStartClip);
         }*/
     }
 
@@ -161,6 +165,17 @@ public class GameManager : MonoBehaviour
     {
         mData.mSpiritAnimalsStatus[type] = true;
         eSpiritAnimalFound.Invoke(type);
+
+        bool allSpiritsFound = true;
+        for(int i = 0; i < mData.mSpiritAnimalsStatus.Length; i++)
+        {
+            allSpiritsFound = allSpiritsFound && mData.mSpiritAnimalsStatus[i];
+        }
+
+        if(allSpiritsFound)
+        {
+            StartCoroutine(OpenGate());
+        }
     }
 
     //Load or generate the player's progress
@@ -213,5 +228,17 @@ public class GameManager : MonoBehaviour
         }
 
         SaveGameScript.SaveData();
+    }
+
+    private IEnumerator OpenGate()
+    {
+        yield return new WaitForSeconds(2f);
+
+        if (mInputHandler)
+        {
+            mInputHandler.StartCutscene((float)mEndClip.duration);
+        }
+
+        mEndDirector.Play(mEndClip);
     }
 }

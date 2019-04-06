@@ -184,6 +184,7 @@ public class InputHandler : MonoBehaviour
     private IEnumerator CutscenePlaying(float duration)
     {
         mInCutscene = true;
+        mPlayerController.SetMovementDirection(0f, 0f);
         yield return new WaitForSeconds(duration);
         mInCutscene = false;
     }
