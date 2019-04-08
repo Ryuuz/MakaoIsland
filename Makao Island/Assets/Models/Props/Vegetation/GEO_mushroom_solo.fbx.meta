@@ -3,20 +3,23 @@ guid: ec82db8b3cb353d48b805ff13073be93
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: GEO_mushroom_solo
-    100002: //RootNode
-    400000: GEO_mushroom_solo
-    400002: //RootNode
+    100000: //RootNode
+    100002: GEO_mushroom_Standing
+    100004: GEO_Mushroom_Stilk
+    100006: GEO_Mushroom_Top
+    400000: //RootNode
+    400002: GEO_mushroom_Standing
+    400004: GEO_Mushroom_Stilk
+    400006: GEO_Mushroom_Top
     2100000: MAT_vegetation
-    2300000: GEO_mushroom_solo
-    3300000: GEO_mushroom_solo
-    4300000: GEO_mushroom_solo
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: MAT_vegetation
-    second: {fileID: 2100000, guid: 462e839a28e420c49b701b7dded32479, type: 2}
+    2100002: MAT_MushroomSolo
+    2300000: GEO_Mushroom_Stilk
+    2300002: GEO_Mushroom_Top
+    3300000: GEO_Mushroom_Stilk
+    3300002: GEO_Mushroom_Top
+    4300000: GEO_Mushroom_Stilk
+    4300002: GEO_Mushroom_Top
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
