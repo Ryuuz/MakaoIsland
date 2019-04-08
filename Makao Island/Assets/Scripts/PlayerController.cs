@@ -122,5 +122,9 @@ public class PlayerController : MonoBehaviour
                 body.AddForce(new Vector3(hit.moveDirection.x, 0f, hit.moveDirection.z) * (mCurrentMovementSpeed * 0.1f), ForceMode.Impulse);
             }
         }
+        else if(hit.gameObject.tag == "Animal")
+        {
+
+        }
     }
 }
