@@ -12,7 +12,17 @@ ModelImporter:
     2300000: GEO_mushroom_solo
     3300000: GEO_mushroom_solo
     4300000: GEO_mushroom_solo
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MAT_MushroomSolo
+    second: {fileID: 2100000, guid: 82d7a28d43b0a624399501bdc2e31814, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MAT_vegetation
+    second: {fileID: 2100000, guid: 462e839a28e420c49b701b7dded32479, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

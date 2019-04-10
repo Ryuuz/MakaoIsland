@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3887063422182885423}
   - component: {fileID: 7399239813011924843}
+  - component: {fileID: 2169532866867977878}
   m_Layer: 0
   m_Name: Lantern Marineblue
   m_TagString: Untagged
@@ -46,6 +47,18 @@ CapsuleCollider:
   m_Height: 0.36
   m_Direction: 1
   m_Center: {x: 0, y: 0.40716064, z: 0}
+--- !u!114 &2169532866867977878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1747285063161539875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f9d63ce2ced5ea4fb188f7b5393d118, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2263546501866842080
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -101,6 +114,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 02973d922c4620c45ace0f34250a7158, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e14291108177c4245bc88b1c88b82b9c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02973d922c4620c45ace0f34250a7158, type: 3}
 --- !u!4 &2263546501867240802 stripped

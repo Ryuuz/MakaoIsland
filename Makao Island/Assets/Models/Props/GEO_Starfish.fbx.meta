@@ -14,7 +14,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: MAT_Starfish_family
-    second: {fileID: 2100000, guid: 119df7c1a35acb0409719e79de087731, type: 3}
+    second: {fileID: 2100000, guid: 82d7a28d43b0a624399501bdc2e31814, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

@@ -73,7 +73,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mStartPoint: {fileID: 0}
-  mMapPrefab: {fileID: 8170676332272991264, guid: 469d107be2ffe5d43af3cfebee753885,
+  mMapPrefab: {fileID: 1542116994475486652, guid: 31bac35bcfcdc224093f84ac8da86b2a,
     type: 3}
 --- !u!1 &1342061640885508666
 GameObject:

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7964226523374887714}
   - component: {fileID: 7964226523374887717}
+  - component: {fileID: 8680825693438792630}
   m_Layer: 0
   m_Name: Lantern Red
   m_TagString: Untagged
@@ -46,6 +47,18 @@ CapsuleCollider:
   m_Height: 0.36
   m_Direction: 1
   m_Center: {x: 0, y: 0.40716064, z: 0}
+--- !u!114 &8680825693438792630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7964226523374887716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f9d63ce2ced5ea4fb188f7b5393d118, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7964226523343874942
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -101,6 +114,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: f89856ac4554f4847b2176b784b57d1d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e14291108177c4245bc88b1c88b82b9c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f89856ac4554f4847b2176b784b57d1d, type: 3}
 --- !u!4 &7964226523343483388 stripped

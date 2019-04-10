@@ -53,7 +53,12 @@ ModelImporter:
     4300012: GEO_maidens_rock_platform_047
     4300014: GEO_maidens_rock_platform_048
     4300016: GEO_maidens_rock_platform_049
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MAT_texture_gradient_01
+    second: {fileID: 2100000, guid: 462e839a28e420c49b701b7dded32479, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

@@ -6,7 +6,7 @@ public class SpecialActionMeditate : SpecialActionObject
     {
         if(active)
         {
-            GameManager.ManagerInstance().SetGameSpeed(8f);
+            GameManager.ManagerInstance().SetGameSpeed(20f);
         }
         else
         {

@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class FadeScript : MonoBehaviour
@@ -7,28 +8,37 @@ public class FadeScript : MonoBehaviour
     public bool mFadedIn = false;
     public bool mFading { get; set; }
 
-    private Material[] mMaterialList;
+    private List<Material> mMaterialList;
     private GameManager mGameManager;
 
     private void Start()
     {
+        mMaterialList = new List<Material>();
         mFading = false;
         mGameManager = GameManager.ManagerInstance();
-        MeshRenderer tempRenderer = GetComponent<MeshRenderer>();
+        SkinnedMeshRenderer[] tempSkinnedRenderer = GetComponentsInChildren<SkinnedMeshRenderer>();
+        MeshRenderer[] tempRenderer = GetComponentsInChildren<MeshRenderer>();
 
         //Gets the material no matter which renderer is used
-        if (tempRenderer)
+        for(int i = 0; i < tempRenderer.Length; i++)
         {
-            mMaterialList = tempRenderer.materials;
+            if (tempRenderer[i])
+            {
+                mMaterialList.AddRange(tempRenderer[i].materials);
+            }
         }
-        else
+        
+        for(int i = 0; i < tempSkinnedRenderer.Length; i++)
         {
-            mMaterialList = GetComponentInChildren<SkinnedMeshRenderer>().materials;
+            if(tempSkinnedRenderer[i])
+            {
+                mMaterialList.AddRange(tempSkinnedRenderer[i].materials);
+            }
         }
 
-        if (mMaterialList.Length > 0 && !mFadedIn)
+        if (mMaterialList.Count > 0 && !mFadedIn)
         {
-            for (int i = 0; i < mMaterialList.Length; i++)
+            for (int i = 0; i < mMaterialList.Count; i++)
             {
                 mMaterialList[i].color = new Color(mMaterialList[i].color.r, mMaterialList[i].color.g, mMaterialList[i].color.b, 0f);
             }
@@ -43,10 +53,10 @@ public class FadeScript : MonoBehaviour
         //The delay can't be 0 since it will be used for dividing
         float fadeSpeed = (mFadeDelay > 0) ? mFadeDelay : 1f;
 
-        if (mMaterialList.Length > 0)
+        if (mMaterialList.Count > 0)
         {
             //The value it should end at
-            Color[] endColors = new Color[mMaterialList.Length];
+            Color[] endColors = new Color[mMaterialList.Count];
             for (int i = 0; i < endColors.Length; i++)
             {
                 endColors[i] = mMaterialList[i].color;
@@ -54,7 +64,7 @@ public class FadeScript : MonoBehaviour
             }
 
             //The value it starts at
-            Color[] startColors = new Color[mMaterialList.Length];
+            Color[] startColors = new Color[mMaterialList.Count];
             for (int i = 0; i < startColors.Length; i++)
             {
                 startColors[i] = mMaterialList[i].color;
@@ -73,7 +83,7 @@ public class FadeScript : MonoBehaviour
                 yield return null;
             }
             //To make absolutely sure it is fully transparent
-            for (int i = 0; i < mMaterialList.Length; i++)
+            for (int i = 0; i < mMaterialList.Count; i++)
             {
                 mMaterialList[i].color = endColors[i];
             }
@@ -91,10 +101,10 @@ public class FadeScript : MonoBehaviour
         //Make sure the delay isn't 0
         float fadeSpeed = (mFadeDelay > 0) ? mFadeDelay : 1f;
 
-        if (mMaterialList.Length > 0)
+        if (mMaterialList.Count > 0)
         {
             //The value it should end at
-            Color[] endColors = new Color[mMaterialList.Length];
+            Color[] endColors = new Color[mMaterialList.Count];
             for (int i = 0; i < endColors.Length; i++)
             {
                 endColors[i] = mMaterialList[i].color;
@@ -102,7 +112,7 @@ public class FadeScript : MonoBehaviour
             }
 
             //The value it should start at
-            Color[] startColors = new Color[mMaterialList.Length];
+            Color[] startColors = new Color[mMaterialList.Count];
             for (int i = 0; i < startColors.Length; i++)
             {
                 startColors[i] = mMaterialList[i].color;
@@ -121,7 +131,7 @@ public class FadeScript : MonoBehaviour
                 yield return null;
             }
             //To make absolutely sure it is fully transparent
-            for (int i = 0; i < mMaterialList.Length; i++)
+            for (int i = 0; i < mMaterialList.Count; i++)
             {
                 mMaterialList[i].color = endColors[i];
             }

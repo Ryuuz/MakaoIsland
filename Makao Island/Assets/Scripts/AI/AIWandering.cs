@@ -31,6 +31,7 @@ public class AIWandering : AIController
     public override void ChangingSpeed(float speed)
     {
         mTimeSpeed = speed;
+        mAgent.speed = mSpeed * mTimeSpeed;
     }
 
     protected override IEnumerator MoveWhenReady(Vector3 position)
