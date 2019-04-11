@@ -125,7 +125,6 @@ public class PlayerController : MonoBehaviour
         else if(hit.gameObject.tag == "Animal")
         {
             AnimalAIScript animal = hit.gameObject.GetComponent<AnimalAIScript>();
-            Debug.Log("Collided with animal with speed " + mMovementDirection);
             if(animal)
             {
                 animal.ForcedMove(mMovementDirection, mCurrentMovementSpeed);
