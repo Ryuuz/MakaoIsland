@@ -40,6 +40,7 @@ public class FadeScript : MonoBehaviour
         {
             for (int i = 0; i < mMaterialList.Count; i++)
             {
+                mMaterialList[i].SetInt("_ZWrite", 1);
                 mMaterialList[i].color = new Color(mMaterialList[i].color.r, mMaterialList[i].color.g, mMaterialList[i].color.b, 0f);
             }
         }

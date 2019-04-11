@@ -9,20 +9,23 @@
 		
 		_Tiling ("Tiling", Float) = 1
 		_Speed ("Speed", Float) = 1
-		//_UJump ("U jump per phase", Range(-0.25,0.25)) = 0.25
-		//_VJump ("V jump per phase", Range(-0.25,0.25)) = 0.25
+		_Transparency ("Water transparency", Range(0,1)) = 0.8
 
         _Glossiness ("Smoothness", Range(0,1)) = 0.5
         _Metallic ("Metallic", Range(0,1)) = 0.0
     }
     SubShader
     {
-        Tags { "RenderType"="Opaque" }
+        Tags { "Queue"="Transparent" "RenderType"="Transparent" }
         LOD 200
+
+		Cull off
+		ZWrite Off
+		Blend SrcAlpha OneMinusSrcAlpha
 
         CGPROGRAM
         // Physically based Standard lighting model, and enable shadows on all light types
-        #pragma surface surf Standard fullforwardshadows
+        #pragma surface surf Standard fullforwardshadows alpha
 
         // Use shader model 3.0 target, to get nicer looking lighting
         #pragma target 3.0
@@ -33,9 +36,7 @@
 
 		float _Tiling;
 		float _Speed;
-
-		//float _UJump;
-		//float _VJump;
+		float _Transparency;
 
         struct Input
         {
@@ -70,7 +71,7 @@
 
             fixed4 c = tex2D(_MainTex, uv.xy) * _Color;
             o.Albedo = c.rgb;
-			o.Alpha = c.a;
+			o.Alpha = _Transparency;
 
             o.Metallic = _Metallic;
             o.Smoothness = _Glossiness;

@@ -92,7 +92,7 @@ public class PlayerController : MonoBehaviour
         else
         {
             //Add the new directions to the current movement direction for slight changes
-            mMovementDirection += mCharacterTransform.TransformDirection(new Vector3((horizontal*0.05f), 0f,  (vertical*0.03f)));
+            mMovementDirection += mCharacterTransform.TransformDirection(new Vector3((horizontal*0.05f), 0f,  (vertical*0.1f)));
         }
     }
 
