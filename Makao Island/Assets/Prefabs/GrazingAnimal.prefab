@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1154109186502780141}
   m_Layer: 0
   m_Name: GrazingAnimal
-  m_TagString: Untagged
+  m_TagString: Animal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -93,6 +93,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Huffalo
+      objectReference: {fileID: 0}
+    - target: {fileID: 3881844016832557372, guid: 70eaace9f1315d046be0357e5d208bc3,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 3881844016832064860, guid: 70eaace9f1315d046be0357e5d208bc3,
         type: 3}

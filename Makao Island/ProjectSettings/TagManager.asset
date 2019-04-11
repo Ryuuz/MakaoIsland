@@ -8,6 +8,7 @@ TagManager:
   - SpiritGirl
   - SpiritAnimal
   - PhysicsObject
+  - Animal
   layers:
   - Default
   - TransparentFX

@@ -31,4 +31,8 @@ public class AnimalAIScript : MonoBehaviour
     }
 
     //Function to move animal x units in the direction of a vector
+    public void ForcedMove(Vector3 direction, float strength)
+    {
+        mAgent.SetDestination(transform.position + (direction.normalized * strength));
+    }
 }

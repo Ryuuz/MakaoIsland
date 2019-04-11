@@ -177,8 +177,6 @@ public class DialogueTrigger : MonoBehaviour
                     }
                 }
 
-                //!!!----find the general direction of the other speakers and have the current speaker look in that direction-----!!!
-
                 if(mSpeakerAnimations[line.speaker - 1] && line.gesture != TalkAnimation.none)
                 {
                     mSpeakerAnimations[line.speaker - 1].PlayTalkAnimation(line.gesture);
