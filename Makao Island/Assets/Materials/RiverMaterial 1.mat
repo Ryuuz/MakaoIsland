@@ -40,11 +40,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _FlowMap:
-        m_Texture: {fileID: 2800000, guid: 2298b3e09ad0ed043813222e1b0e4aef, type: 3}
+        m_Texture: {fileID: 2800000, guid: 3e35e6b2f4b538c4fbfcd8f9a1c08b57, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: a8a09b74ccec0e840b57a9574c2afdcf, type: 3}
+        m_Texture: {fileID: 2800000, guid: c4d0e3850ecb2d64fa07a91cc44cdb75, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -52,7 +52,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMap:
-        m_Texture: {fileID: 2800000, guid: adba49b97a2913f43980373c9b62c936, type: 3}
+        m_Texture: {fileID: 2800000, guid: 5fc9c7061809dba4b8f6dee2abbeb526, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -79,7 +79,7 @@ Material:
     - _SpecularHighlights: 1
     - _Speed: 0.006
     - _SrcBlend: 1
-    - _Tiling: 1
+    - _Tiling: 40
     - _Transparency: 0.8
     - _UVSec: 0
     - _ZWrite: 1
