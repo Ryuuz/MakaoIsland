@@ -23,12 +23,6 @@ public class DialogueLines
         //2
         new Sentence[]
         {
-            new Sentence(1, TalkAnimation.hands, "Don’t you play that close to the river! The current will take you just like it took that girl."),
-        },
-
-        //3
-        new Sentence[]
-        {
             new Sentence(1, TalkAnimation.none, "I dare you to go to the bottom of the waterfall tonight! Unless you’re a scaredy peakitten!"),
             new Sentence(2, TalkAnimation.none, "No way! Haven’t you heard those cries coming from there? What if there’s an evil ghost?"),
             new Sentence(1, TalkAnimation.none, "Hah! Ghosts aren’t real!"),
@@ -37,7 +31,7 @@ public class DialogueLines
             new Sentence(2, TalkAnimation.none, "Who’s the peakitten now?")
         },
 
-        //4
+        //3
         new Sentence[]
         {
             new Sentence(1, TalkAnimation.none, "Grandpa… have you been setting out food for the animals again?"),
@@ -50,20 +44,20 @@ public class DialogueLines
             new Sentence(1, TalkAnimation.none, "*Sigh*")
         },
 
-        //5
+        //4
         new Sentence[]
         {
             new Sentence(1, TalkAnimation.none, "I fell… It’s dark. I can’t see. I want to go home, but I can’t find the way."),
             new Sentence(1, TalkAnimation.none, "Who are you? I can see your light. Will… Will you help me? Can you guide me out of here?")
         },
 
-        //6
+        //5
         new Sentence[]
         {
             new Sentence(1, TalkAnimation.none, "*mumbles* Where is she? I haven’t seen her for days. Could she have been trapped in one of the fishing nets?")
         },
 
-        //7
+        //6
         new Sentence[]
         {
             new Sentence(1, TalkAnimation.none, "They’ve been gathering up near those poles every morning lately. It’s impossible to retrieve the nets."),
@@ -74,7 +68,7 @@ public class DialogueLines
             new Sentence(2, TalkAnimation.none, "Not if you can’t get the fish, it isn’t.")
         },
 
-        //8
+        //7
         new Sentence[]
         {
             new Sentence(1, TalkAnimation.none, "I heard you’ve been having a hard time again lately because of the flacans."),
@@ -83,7 +77,7 @@ public class DialogueLines
             new Sentence(2, TalkAnimation.none, "Haha! Now wouldn’t that be grand. I just wish they’d leave some more fish for us.")
         },
 
-        //9
+        //8
         new Sentence[]
         {
             new Sentence(1, TalkAnimation.none, "They say that mermaids come to the surface at dusk to collect the reflection of the stars in the water as they appear."),
@@ -94,7 +88,7 @@ public class DialogueLines
             new Sentence(2, TalkAnimation.none, "That is so sweet, but… I’m glad I didn’t have to go through all that to find you.")
         },
 
-        //10
+        //9
         new Sentence[]
         {
             new Sentence(1, TalkAnimation.nod, "It’s going to be a good harvest this year, no doubt about that."),
@@ -102,7 +96,7 @@ public class DialogueLines
             new Sentence(3, TalkAnimation.hands, "Don’t jinx it. My family is depending on this wheat to get us through to the next harvest.")
         },
 
-        //11
+        //10
         new Sentence[]
         {
             new Sentence(1, TalkAnimation.none, "My grandparents used to tell me that there lived a Great Animal in this lake."),
@@ -113,7 +107,7 @@ public class DialogueLines
             new Sentence(2, TalkAnimation.nod, "You’re right. Maybe it’s more than just a legend after all.")
         },
 
-        //12
+        //11
         new Sentence[]
         {
             new Sentence(1, TalkAnimation.none, "The pandamoose, the great God Animal, created the world in his image, but he soon grew lonely."),
@@ -128,7 +122,7 @@ public class DialogueLines
             new Sentence(1, TalkAnimation.none, "It is in their honor that we hold this yearly festival.")
         },
 
-        //13
+        //12
         new Sentence[]
         {
             new Sentence(1, TalkAnimation.none, "Why do we have this festival?"),
@@ -138,7 +132,7 @@ public class DialogueLines
             new Sentence(2, TalkAnimation.nod, "Of course you can! All hail the newest Great Animal!")
         },
 
-        //14
+        //13
         new Sentence[]
         {
             new Sentence(1, TalkAnimation.hands, "What’s up with these old shrines? I nearly walked straight into one the other night."),
@@ -149,14 +143,14 @@ public class DialogueLines
             new Sentence(2, TalkAnimation.none, "*Laughs*")
         },
 
-        //15
+        //14
         new Sentence[]
         {
             new Sentence(1, TalkAnimation.none, "Come and buy this year’s statuettes! There’s the great pandamoose, the creator of the world."),
             new Sentence(1, TalkAnimation.none, "And, of course, the chosen guardians: the lizard, the flacan, and the turtle. Don’t miss this great opportunity!")
         },
 
-        //16
+        //15
         new Sentence[]
         {
             new Sentence(1, TalkAnimation.none, "Thank you.")

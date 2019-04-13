@@ -160,8 +160,9 @@ public class DialogueTrigger : MonoBehaviour
     protected IEnumerator DialogueRunning()
     {
         float dialogueTime = 0f;
+        StartCoroutine(mSpeakerControllers[mSentences[0].speaker - 1].LookAtObject(transform.position));
 
-        foreach(Sentence line in mSentences)
+        foreach (Sentence line in mSentences)
         {
             //How long the line of dialogue will show calculated from the number of characters in it
             dialogueTime = (2f + (0.1f * line.text.Length)) * GameManager.ManagerInstance().mGameSpeed;
