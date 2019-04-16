@@ -15,6 +15,11 @@ public class SpiritGirl : AITalking
     {
         base.Start();
 
+        if (mGameManager.mData.mSpiritGirlStatus)
+        {
+            Destroy(transform.parent.gameObject);
+        }
+
         mFade = GetComponent<FadeScript>();
         mFollow = GetComponentInChildren<FollowGuideScript>();
         mCanvas = mSpeechBubble.GetComponent<CanvasGroup>();

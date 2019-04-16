@@ -2897,6 +2897,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1b969f67ebdc4b34a98627e6cb6eb89e, type: 2}
   - {fileID: 11400000, guid: 73cbb14ee4c3d3444a0cf06c9516bfb9, type: 2}
   - {fileID: 11400000, guid: ea94b6ef61d99534e90255b84e635a48, type: 2}
+  - {fileID: 11400000, guid: d8f870e2010fb9d4f867f629d9fbdd9a, type: 2}
   mDefault: {fileID: 8752270919788782080}
   mGamepad: {fileID: 8752270919963553498}
   mDescription: {fileID: 102778578418573959}

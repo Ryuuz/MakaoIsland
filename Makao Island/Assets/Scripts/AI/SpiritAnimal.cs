@@ -6,6 +6,9 @@ public class SpiritAnimal : AIController
     public SpiritAnimalType mAnimalType;
 
     private FadeScript mFade;
+    private SpecialActionRecieveBlessing mRecieveBlessing;
+    private PlayerController mPlayer;
+    private bool mPlayerPresent = false;
 
     protected override void Start()
     {
@@ -29,6 +32,9 @@ public class SpiritAnimal : AIController
         {
             transform.position = mCurrentLocation;
         }
+
+        mRecieveBlessing = new SpecialActionRecieveBlessing(this);
+        mPlayer = mGameManager.mPlayer.GetComponent<PlayerController>();
     }
 
     //Change the spirit animal's location based on the time of day
@@ -64,6 +70,12 @@ public class SpiritAnimal : AIController
                 mCurrentLocation = pos.position;
                 transform.position = mCurrentLocation;
                 StartCoroutine(mFade.FadeIn());
+
+                if(mPlayerPresent)
+                {
+                    mGameManager.mControlUI.ShowControlUI(ControlAction.recieveBlessing);
+                    mPlayer.mSpecialAction = mRecieveBlessing;
+                }
             }
         }
         else
@@ -71,6 +83,12 @@ public class SpiritAnimal : AIController
             //Fade out if possible
             if (mFade.mFadedIn && !mFade.mFading)
             {
+                if (mPlayerPresent && mPlayer.mSpecialAction == mRecieveBlessing)
+                {
+                    mPlayer.mSpecialAction = null;
+                    mGameManager.mControlUI.HideControlUI();
+                }
+
                 StartCoroutine(mFade.FadeOut());
             }
         }
@@ -81,12 +99,31 @@ public class SpiritAnimal : AIController
         //Only if the spirit animal isn't transitioning between states
         if(other.tag == "Player" && mFade.mFadedIn && !mFade.mFading)
         {
-            StartCoroutine(TriggerBlessing(other.transform.position));
+            mGameManager.mControlUI.ShowControlUI(ControlAction.recieveBlessing);
+            mPlayer.mSpecialAction = mRecieveBlessing;
         }
     }
 
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            //Removes the special action if it is the one currently active
+            if (mPlayer.mSpecialAction == mRecieveBlessing)
+            {
+                mPlayer.mSpecialAction = null;
+                mGameManager.mControlUI.HideControlUI();
+            }
+        }
+    }
+
+    public void TriggerBlessing()
+    {
+        StartCoroutine(Blessing(mPlayer.transform.position));
+    }
+
     //Register the spirit animal as found
-    private IEnumerator TriggerBlessing(Vector3 player)
+    private IEnumerator Blessing(Vector3 player)
     {
         yield return StartCoroutine(LookAtObject(player));
         mGameManager.UpdateSpiritAnimals((int)mAnimalType);

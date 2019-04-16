@@ -327,4 +327,11 @@ public class DialogueTrigger : MonoBehaviour
             }
         }
     }
+
+    public void SwapDialogue(int dialogueNumber)
+    {
+        mSentences.Clear();
+        mDialogueNumber = dialogueNumber;
+        GetDialogue();
+    }
 }

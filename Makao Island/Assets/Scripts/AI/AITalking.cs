@@ -71,7 +71,7 @@ public class AITalking : AIController
 
     public bool isDestination(Vector3 target)
     {
-        if((mAgent.destination - target).sqrMagnitude > mWaypointRadius)
+        if(mAgent.hasPath && ((mAgent.destination - target).sqrMagnitude > mWaypointRadius*mWaypointRadius))
         {
             return false;
         }

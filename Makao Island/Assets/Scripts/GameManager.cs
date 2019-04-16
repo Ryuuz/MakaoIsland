@@ -190,10 +190,6 @@ public class GameManager : MonoBehaviour
         {
             mData = SaveGameScript.LoadData();
 
-            if(mData.mSpiritGirlStatus)
-            {
-                Destroy(GameObject.Find("SpiritGirlGuiding"));
-            }
             if(mData.mMapStatus)
             {
                 Destroy(GameObject.Find("Pandamoose"));
