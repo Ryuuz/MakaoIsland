@@ -5,9 +5,6 @@ public class RespawnScript : MonoBehaviour
 {
     public float mLowestPoint = -10f;
 
-    [SerializeField]
-    private Transform mStartSpawnPoint;
-
     private Transform mPosition;
     private bool mRespawning = false;
     private PlayableDirector mDirector;
@@ -17,26 +14,29 @@ public class RespawnScript : MonoBehaviour
     {
         mPosition = GetComponent<Transform>();
         mDirector = GameObject.Find("BlackoutTimeline").GetComponent<PlayableDirector>();
-        mClip = mDirector.playableAsset;
+
+        if(mDirector)
+        {
+            mClip = mDirector.playableAsset;
+        }
     }
 
     void Update()
     {
-        if (mPosition.position.y < (mLowestPoint + 5f) && !mRespawning)
+        //Start playing the blackout before reaching the lowest point
+        if(mPosition.position.y < (mLowestPoint + 5f) && !mRespawning)
         {
             mRespawning = true;
-            mDirector.Play(mClip);
+
+            if(mDirector)
+            {
+                mDirector.Play(mClip);
+            }
         }
-        if (mPosition.position.y < mLowestPoint)
+        //Respawn
+        if(mPosition.position.y < mLowestPoint)
         {
-            if (GameManager.ManagerInstance().mCurrentRespawnPoint)
-            {
-                mPosition.position = GameManager.ManagerInstance().mCurrentRespawnPoint.position;
-            }
-            else
-            {
-                mPosition.position = mStartSpawnPoint.position;
-            }
+            mPosition.position = GameManager.ManagerInstance().mCurrentRespawnPoint.position;
             mRespawning = false;
         }
     }

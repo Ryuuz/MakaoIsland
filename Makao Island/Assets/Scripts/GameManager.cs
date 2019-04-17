@@ -1,27 +1,8 @@
 ﻿using UnityEngine;
-using UnityEngine.Events;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.Playables;
 using UnityEngine.AI;
-
-[System.Serializable]
-public class SpeedChangeEvent : UnityEvent<float>
-{
-
-}
-
-[System.Serializable]
-public class TimeChangeEvent : UnityEvent<DayCyclus>
-{
-
-}
-
-[System.Serializable]
-public class SpiritAnimalEvent : UnityEvent<int>
-{
-
-}
 
 public class GameManager : MonoBehaviour
 {

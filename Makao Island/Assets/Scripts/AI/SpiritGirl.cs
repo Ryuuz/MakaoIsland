@@ -20,52 +20,31 @@ public class SpiritGirl : AITalking
             Destroy(transform.parent.gameObject);
         }
 
-        mFade = GetComponent<FadeScript>();
         mFollow = GetComponentInChildren<FollowGuideScript>();
-        mCanvas = mSpeechBubble.GetComponent<CanvasGroup>();
 
+        mCanvas = mSpeechBubble.GetComponent<CanvasGroup>();
+        if(mCanvas)
+        {
+            mCanvas.alpha = 0f;
+        }
+
+        mFade = GetComponent<FadeScript>();
         if (!mFade)
         {
             mFade = gameObject.AddComponent<FadeScript>();
         }
 
         Transition((DayCyclus)mGameManager.mData.mDayTime);
-
-        if(mCanvas)
-        {
-            mCanvas.alpha = 0f;
-        }
     }
 
-    public override void Transition(DayCyclus time)
+    protected override void SetNewDestination(Transform position)
     {
-        Transform pos = null;
-
-        switch (time)
-        {
-            case DayCyclus.dawn:
-                pos = mDawnLocation;
-                break;
-
-            case DayCyclus.day:
-                pos = mDayLocation;
-                break;
-
-            case DayCyclus.dusk:
-                pos = mDuskLocation;
-                break;
-
-            case DayCyclus.night:
-                pos = mNightLocation;
-                break;
-        }
-
-        if (pos)
+        if (position)
         {
             if(!mFade.mFadedIn && !mFade.mFading)
             {
-                mCurrentLocation = pos.position;
-                transform.position = mCurrentLocation;
+                mCurrentLocation = position.position;
+                mTransform.position = mCurrentLocation;
                 StartCoroutine(StartFadingIn());
             }
         }

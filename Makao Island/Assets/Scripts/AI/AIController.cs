@@ -11,9 +11,6 @@ public class AIController : MonoBehaviour
     [HideInInspector]
     public Vector3 mCurrentLocation;
 
-    protected NavMeshAgent mAgent;
-    protected GameManager mGameManager;
-
     [SerializeField]
     protected Transform mDawnLocation;
     [SerializeField]
@@ -21,7 +18,11 @@ public class AIController : MonoBehaviour
     [SerializeField]
     protected Transform mDuskLocation;
     [SerializeField]
-    protected Transform mNightLocation; 
+    protected Transform mNightLocation;
+
+    protected NavMeshAgent mAgent;
+    protected GameManager mGameManager;
+    protected Transform mTransform;
 
     protected virtual void Start()
     {
@@ -32,14 +33,15 @@ public class AIController : MonoBehaviour
         }
         
         mGameManager = GameManager.ManagerInstance();
-        mCurrentLocation = transform.position;
+        mTransform = GetComponent<Transform>();
+        mCurrentLocation = mTransform.position;
 
         mGameManager.eSpeedChanged.AddListener(ChangingSpeed);
         mGameManager.eTimeChanged.AddListener(Transition);
     }
 
     //Transition to a new position (if required) when the time of day changes
-    public virtual void Transition(DayCyclus time)
+    public void Transition(DayCyclus time)
     {
         Transform pos = null;
 
@@ -62,15 +64,17 @@ public class AIController : MonoBehaviour
                 break;
         }
 
-        if(pos && (mCurrentLocation - pos.position).sqrMagnitude > (mWaypointRadius * mWaypointRadius))
+        SetNewDestination(pos);
+    }
+
+    protected virtual void SetNewDestination(Transform position)
+    {
+        if (position && (mCurrentLocation - position.position).sqrMagnitude > (mWaypointRadius * mWaypointRadius))
         {
             //Take the position of the waypoint and set a destination in a radius near it
-            mCurrentLocation = pos.position;
-            if(mWaypointRadius > 0f)
-            {
-                mCurrentLocation += Random.insideUnitSphere * mWaypointRadius;
-            }
-            mCurrentLocation.y = pos.position.y;
+            mCurrentLocation = position.position;
+            mCurrentLocation += (Random.insideUnitSphere * mWaypointRadius);
+            mCurrentLocation.y = position.position.y;
 
             StartCoroutine(MoveWhenReady(mCurrentLocation));
         }
@@ -91,14 +95,14 @@ public class AIController : MonoBehaviour
         float rotationTime = 0f;
         
         //The desired rotation
-        Quaternion startRotation = transform.rotation;
+        Quaternion startRotation = mTransform.rotation;
         Quaternion endRotation = new Quaternion();
-        endRotation.eulerAngles = new Vector3(startRotation.eulerAngles.x, Quaternion.LookRotation(obj - transform.position).eulerAngles.y, startRotation.eulerAngles.z);
+        endRotation.eulerAngles = new Vector3(startRotation.eulerAngles.x, Quaternion.LookRotation(obj - mTransform.position).eulerAngles.y, startRotation.eulerAngles.z);
 
-        while (Quaternion.Angle(transform.rotation, endRotation) > 1f)
+        while (Quaternion.Angle(mTransform.rotation, endRotation) > 1f)
         {
-            rotationTime += Time.deltaTime * mGameManager.mGameSpeed;
-            transform.rotation = Quaternion.Slerp(startRotation, endRotation, rotationTime);
+            rotationTime += (Time.deltaTime * mGameManager.mGameSpeed);
+            mTransform.rotation = Quaternion.Slerp(startRotation, endRotation, rotationTime);
             yield return null;
         }
     }

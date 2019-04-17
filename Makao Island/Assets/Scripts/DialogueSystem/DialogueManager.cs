@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using TMPro;
 
+[RequireComponent(typeof(CanvasGroup))]
 public class DialogueManager : MonoBehaviour
 {
     public DialogueLines mDialogueLines = new DialogueLines();
@@ -18,6 +19,7 @@ public class DialogueManager : MonoBehaviour
 
     private void Awake()
     {
+        //Give the Game Manager a reference to the Dialogue Manager for easy access
         if(GameManager.ManagerInstance().mDialogueManager == null)
         {
             GameManager.ManagerInstance().mDialogueManager = gameObject;
@@ -44,19 +46,13 @@ public class DialogueManager : MonoBehaviour
 
     public void ShowDialogueBox()
     {
-        if(mCanvasGroup)
-        {
-            mCanvasGroup.alpha = 1f;
-            mHidden = false;
-        }
+        mCanvasGroup.alpha = 1f;
+        mHidden = false;
     }
 
     public void HideDialogueBox()
     {
-        if(mCanvasGroup)
-        {
-            mCanvasGroup.alpha = 0f;
-            mHidden = true;
-        }
+        mCanvasGroup.alpha = 0f;
+        mHidden = true;
     }
 }

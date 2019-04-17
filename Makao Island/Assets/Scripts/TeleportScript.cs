@@ -35,6 +35,7 @@ public class TeleportScript : MonoBehaviour
         }
     }
 
+    //Fade out and give the player the map
     private IEnumerator Vanish()
     {
         if(mFadeScript)

@@ -1,8 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class SpecialActionRecieveBlessing : SpecialActionObject
+﻿public class SpecialActionRecieveBlessing : SpecialActionObject
 {
     private SpiritAnimal mOwner;
 
@@ -13,7 +9,7 @@ public class SpecialActionRecieveBlessing : SpecialActionObject
 
     public override void UseSpecialAction(bool active)
     {
-        if (active)
+        if(active)
         {
             mOwner.TriggerBlessing();
         }

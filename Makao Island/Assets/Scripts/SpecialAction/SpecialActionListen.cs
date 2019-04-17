@@ -1,5 +1,4 @@
-﻿
-public class SpecialActionListen : SpecialActionObject
+﻿public class SpecialActionListen : SpecialActionObject
 {
     //The one responsible for giving the action
     private DialogueTrigger mOwner;

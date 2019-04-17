@@ -1,12 +1,5 @@
 ﻿using System.Collections;
 using UnityEngine;
-using UnityEngine.Events;
-
-[System.Serializable]
-public class AILeavingEvent : UnityEvent<GameObject>
-{
-
-}
 
 public class AITalking : AIController
 {
@@ -69,9 +62,10 @@ public class AITalking : AIController
         mAgent.SetDestination(position);
     }
 
-    public bool isDestination(Vector3 target)
+    //Is the position in range of the AI's destination
+    public bool IsDestination(Vector3 target)
     {
-        if(mAgent.hasPath && ((mAgent.destination - target).sqrMagnitude > mWaypointRadius*mWaypointRadius))
+        if(mAgent.hasPath && ((mAgent.destination - target).sqrMagnitude > (mWaypointRadius * mWaypointRadius)))
         {
             return false;
         }

@@ -81,7 +81,7 @@ public class DialogueTrigger : MonoBehaviour
         {
             for(int i = 0; i < mSpeakers.Length; i++)
             {
-                if(other.gameObject == mSpeakers[i] && mSpeakerControllers[i].isDestination(transform.position))
+                if(other.gameObject == mSpeakers[i] && mSpeakerControllers[i].IsDestination(transform.position))
                 {
                     mSpeakerPresent[i] = true;
                     mSpeakerControllers[i].mInDialogueSphere = true;

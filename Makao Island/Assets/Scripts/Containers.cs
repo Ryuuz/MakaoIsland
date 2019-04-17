@@ -1,0 +1,67 @@
+﻿using UnityEngine;
+using UnityEngine.Events;
+
+//The data that is stored when saving the game
+[System.Serializable]
+public class GameData
+{
+    public bool[] mSpiritAnimalsStatus = { false, false, false, false };
+    public bool mMapStatus = false;
+    public bool mSpiritGirlStatus = false;
+    public float[] mPlayerPosition;
+    public int mDayTime = 0;
+    public float mCyclusTime = 0;
+    public float[][] mAIPositions;
+    public string mCheckPoint = "RespawnPoint";
+    public string[] mDeletedObjects;
+}
+
+public struct Sentence
+{
+    public int speaker;
+    public TalkAnimation gesture;
+    public string text;
+
+    public Sentence(int n, TalkAnimation g, string s)
+    {
+        speaker = n;
+        gesture = g;
+        text = s;
+    }
+}
+
+[System.Serializable]
+public class DialoguePair
+{
+    public DialogueTrigger mTrigger;
+    public int mConversation;
+}
+
+public class NextPoint : MonoBehaviour
+{
+    public GameObject mNext;
+}
+
+[System.Serializable]
+public class AILeavingEvent : UnityEvent<GameObject>
+{
+
+}
+
+[System.Serializable]
+public class SpeedChangeEvent : UnityEvent<float>
+{
+
+}
+
+[System.Serializable]
+public class TimeChangeEvent : UnityEvent<DayCyclus>
+{
+
+}
+
+[System.Serializable]
+public class SpiritAnimalEvent : UnityEvent<int>
+{
+
+}

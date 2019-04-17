@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class UnderwaterScript : MonoBehaviour
 {
@@ -18,18 +16,21 @@ public class UnderwaterScript : MonoBehaviour
         mCameraTransform = GameManager.ManagerInstance().mMainCamera.transform;
         mWaterTransform = gameObject.transform;
 
+        //The default values
         mFogColor = RenderSettings.fogColor;
         mDefaultDensity = RenderSettings.fogDensity;
     }
 
     void Update()
     {
+        //Increase the fog when going underwater
         if(!mIsUnderwater && mCameraTransform.position.y < mWaterTransform.position.y)
         {
             RenderSettings.fogColor = mUnderwaterColor;
             RenderSettings.fogDensity = mFogDensity;
             mIsUnderwater = true;
         }
+        //Reset the fog to default values when out of the water
         else if(mIsUnderwater && mCameraTransform.position.y > mWaterTransform.position.y)
         {
             RenderSettings.fogColor = mFogColor;

@@ -1,8 +1,8 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+[RequireComponent(typeof(NavMeshAgent))]
 public class SpiritOrbScript : MonoBehaviour
 {
     [SerializeField]
@@ -25,6 +25,7 @@ public class SpiritOrbScript : MonoBehaviour
         }
     }
 
+    //Start moving when the player is in range
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player")
@@ -37,10 +38,11 @@ public class SpiritOrbScript : MonoBehaviour
     {
         if(other.tag == "Player")
         {
+            //Adjust the speed to stay ahead of the player
             float playerSpeed = mPlayerController.velocity.magnitude;
             mAgent.speed = (playerSpeed > 4f) ? (playerSpeed + 1f) : mAgent.speed;
 
-            //Debug.Log(mAgent.hasPath);
+            //Disappear when the goal has been reached
             if(!mAgent.hasPath && !mAgent.pathPending && !mGoalReached)
             {
                 mGoalReached = true;
@@ -64,6 +66,8 @@ public class SpiritOrbScript : MonoBehaviour
         yield return new WaitForSeconds(5f);
 
         GameManager.ManagerInstance().UpdateSpiritAnimals((int)SpiritAnimalType.life);
+
+        //Give the map to the player and spawn a tutorial sphere for it
         InputHandler.InputInstance().mMapManager.mMapAvailable = true;
         if (mMapTutorial)
         {

@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class FollowWaterScript : MonoBehaviour
 {
@@ -20,6 +18,8 @@ public class FollowWaterScript : MonoBehaviour
         mTransform = GetComponent<Transform>();
 
         mOceanPositionY = mOcean.GetComponent<Transform>().position.y;
+
+        //Retrieve values from the material
         mSpeed = oceanMaterial.GetFloat("_Speed");
         mHeight = oceanMaterial.GetFloat("_Height");
         mAmount = oceanMaterial.GetFloat("_Amount");
@@ -31,6 +31,7 @@ public class FollowWaterScript : MonoBehaviour
     {
         mPosition = mTransform.position;
 
+        //Uses the same function as the shader to get y
         mPosition.y = mOceanPositionY + Mathf.Sin((Time.time * 2f) * mSpeed + (mPosition.x * mPosition.z * mAmount)) * mHeight;
         mTransform.position = mPosition;
     }

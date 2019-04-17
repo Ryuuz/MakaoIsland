@@ -82,6 +82,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mGrazingRadius: 4
+  mMinWalkDelay: 10
+  mMaxWalkDelay: 20
 --- !u!1001 &336359571219799706
 PrefabInstance:
   m_ObjectHideFlags: 0

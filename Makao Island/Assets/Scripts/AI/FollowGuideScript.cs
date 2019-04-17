@@ -3,7 +3,7 @@ using UnityEngine.AI;
 
 public class FollowGuideScript : MonoBehaviour
 {
-    public float mStoppingDistance = 3;
+    public float mStoppingDistance = 3f;
 
     [HideInInspector]
     public bool mGuided = false;
@@ -11,20 +11,22 @@ public class FollowGuideScript : MonoBehaviour
     public bool mGoalReached = false;
 
     private NavMeshAgent mAgent;
-    private PlayerController mPlayer;
     private SpecialActionGuide mGuideAction;
+    private PlayerController mPlayer;
+    private bool mPlayerPresent = false;
 
     void Start()
     {
         mAgent = GetComponentInParent<NavMeshAgent>();
         mGuideAction = new SpecialActionGuide(this);
+        mPlayer = GameManager.ManagerInstance().mPlayer.GetComponent<PlayerController>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
-            mPlayer = other.GetComponent<PlayerController>();
+            mPlayerPresent = true;
 
             if (mGuided)
             {
@@ -35,13 +37,25 @@ public class FollowGuideScript : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        //If the player goes to far away the guiding will be stopped
-        if (other.tag == "Player" && mPlayer)
+        //If the player goes too far away the guiding will be stopped
+        if (other.tag == "Player")
         {
-            SetGuideAction(false);
+            mPlayerPresent = false;
+
+            if(mGuided)
+            {
+                SetGuideAction(false);
+                StopAgent();
+            }
+        }
+    }
+
+    private void StopAgent()
+    {
+        if(mAgent)
+        {
             mAgent.isStopped = true;
             mAgent.ResetPath();
-            mPlayer = null;
             mAgent.stoppingDistance = 0;
         }
     }
@@ -52,8 +66,7 @@ public class FollowGuideScript : MonoBehaviour
         mGuided = false;
         mGoalReached = true;
         SetGuideAction(false);
-        mAgent.isStopped = true;
-        mAgent.ResetPath();
+        StopAgent();
     }
 
     public void FollowGuide(Vector3 pos)
@@ -65,20 +78,17 @@ public class FollowGuideScript : MonoBehaviour
     //Give or take the guide action provided the player is available
     public void SetGuideAction(bool give)
     {
-        if(mPlayer)
+        if(mPlayer && mPlayerPresent)
         {
-            if (give)
+            if(give)
             {
                 mPlayer.mSpecialAction = mGuideAction;
                 GameManager.ManagerInstance().mControlUI.ShowControlUI(ControlAction.guide);
             }
-            else
+            else if(!give && mPlayer.mSpecialAction == mGuideAction)
             {
-                if (mPlayer.mSpecialAction == mGuideAction)
-                {
-                    mPlayer.mSpecialAction = null;
-                    GameManager.ManagerInstance().mControlUI.HideControlUI();
-                }
+                mPlayer.mSpecialAction = null;
+                GameManager.ManagerInstance().mControlUI.HideControlUI();
             }
         }
     }

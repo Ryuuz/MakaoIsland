@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+[RequireComponent(typeof(ParticleSystem))]
 public class StarScript : MonoBehaviour
 {
     private ParticleSystem mStars;
@@ -21,6 +22,7 @@ public class StarScript : MonoBehaviour
                 mStars.Play();
                 tempPS.prewarm = false;
             }
+            //Should be toggled if dawn or dusk
             if (day == DayCyclus.dawn || day == DayCyclus.dusk)
             {
                 ToggleStars(day);

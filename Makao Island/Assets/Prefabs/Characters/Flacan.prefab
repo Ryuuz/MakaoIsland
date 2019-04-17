@@ -65,8 +65,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f51d21f77bc42645b71356771083a63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mMinDelay: 0
-  mMaxDelay: 1
+  mMinDelay: 8
+  mMaxDelay: 15
   mExtraIdleAnimations:
   - idle_turn
 --- !u!1 &9053642070316715137

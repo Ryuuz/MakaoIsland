@@ -6,7 +6,6 @@ public class AIWandering : AIController
     public float mWanderingRadius = 5f;
     public float mWanderingSpeed = 1.5f;
 
-    private Vector3 mDestination;
     private float mTimeSpeed;
 
     protected override void Start()
@@ -23,8 +22,7 @@ public class AIWandering : AIController
             mAgent.speed = mWanderingSpeed * mTimeSpeed;
 
             //Set a random destination in a radius around a set location
-            mDestination = mCurrentLocation + Random.insideUnitSphere* mWanderingRadius;
-            mAgent.SetDestination(mDestination);
+            mAgent.SetDestination(mCurrentLocation + (Random.insideUnitSphere * mWanderingRadius));
         }
     }
 

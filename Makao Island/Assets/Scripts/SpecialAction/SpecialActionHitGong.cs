@@ -1,8 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class SpecialActionHitGong : SpecialActionObject
+﻿public class SpecialActionHitGong : SpecialActionObject
 {
     private GongScript mOwner;
 

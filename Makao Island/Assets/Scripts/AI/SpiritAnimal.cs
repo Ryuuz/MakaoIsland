@@ -12,14 +12,16 @@ public class SpiritAnimal : AIController
 
     protected override void Start()
     {
-        if(GameManager.ManagerInstance().mData.mSpiritAnimalsStatus[(int)mAnimalType])
+        base.Start();
+
+        if (mGameManager.mData.mSpiritAnimalsStatus[(int)mAnimalType])
         {
             Destroy(gameObject);
         }
 
-        base.Start();
+        mRecieveBlessing = new SpecialActionRecieveBlessing(this);
+        mPlayer = mGameManager.mPlayer.GetComponent<PlayerController>();
         mFade = GetComponent<FadeScript>();
-
         if(!mFade)
         {
             mFade = gameObject.AddComponent<FadeScript>();
@@ -28,47 +30,23 @@ public class SpiritAnimal : AIController
         //Make sure the spirit animal is in the right place and state
         Transition((DayCyclus)mGameManager.mData.mDayTime);
         
-        if (mCurrentLocation != transform.position)
+        if (mCurrentLocation != mTransform.position)
         {
-            transform.position = mCurrentLocation;
+            mTransform.position = mCurrentLocation;
         }
-
-        mRecieveBlessing = new SpecialActionRecieveBlessing(this);
-        mPlayer = mGameManager.mPlayer.GetComponent<PlayerController>();
     }
 
     //Change the spirit animal's location based on the time of day
-    public override void Transition(DayCyclus time)
+    protected override void SetNewDestination(Transform position)
     {
-        Transform pos = null;
-
-        switch (time)
-        {
-            case DayCyclus.dawn:
-                pos = mDawnLocation;
-                break;
-
-            case DayCyclus.day:
-                pos = mDayLocation;
-                break;
-
-            case DayCyclus.dusk:
-                pos = mDuskLocation;
-                break;
-
-            case DayCyclus.night:
-                pos = mNightLocation;
-                break;
-        }
-
         //If the spirit animal is set to appear at a location
-        if (pos)
+        if (position)
         {
             //Fade it in if possible
             if (!mFade.mFadedIn && !mFade.mFading)
             {
-                mCurrentLocation = pos.position;
-                transform.position = mCurrentLocation;
+                mCurrentLocation = position.position;
+                mTransform.position = mCurrentLocation;
                 StartCoroutine(mFade.FadeIn());
 
                 if(mPlayerPresent)

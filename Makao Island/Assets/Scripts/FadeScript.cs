@@ -16,10 +16,11 @@ public class FadeScript : MonoBehaviour
         mMaterialList = new List<Material>();
         mFading = false;
         mGameManager = GameManager.ManagerInstance();
+
+        //Get all the renderers and their materials
         SkinnedMeshRenderer[] tempSkinnedRenderer = GetComponentsInChildren<SkinnedMeshRenderer>();
         MeshRenderer[] tempRenderer = GetComponentsInChildren<MeshRenderer>();
 
-        //Gets the material no matter which renderer is used
         for(int i = 0; i < tempRenderer.Length; i++)
         {
             if (tempRenderer[i])
@@ -36,11 +37,12 @@ public class FadeScript : MonoBehaviour
             }
         }
 
+        //Set the materials to transparent
         if (mMaterialList.Count > 0 && !mFadedIn)
         {
             for (int i = 0; i < mMaterialList.Count; i++)
             {
-                mMaterialList[i].SetInt("_ZWrite", 1);
+                mMaterialList[i].SetInt("_ZWrite", 1); //For correct sorting by the renderer
                 mMaterialList[i].color = new Color(mMaterialList[i].color.r, mMaterialList[i].color.g, mMaterialList[i].color.b, 0f);
             }
         }
@@ -56,7 +58,7 @@ public class FadeScript : MonoBehaviour
 
         if (mMaterialList.Count > 0)
         {
-            //The value it should end at
+            //The values it should end at
             Color[] endColors = new Color[mMaterialList.Count];
             for (int i = 0; i < endColors.Length; i++)
             {
@@ -64,7 +66,7 @@ public class FadeScript : MonoBehaviour
                 endColors[i].a = 0f;
             }
 
-            //The value it starts at
+            //The values it starts at
             Color[] startColors = new Color[mMaterialList.Count];
             for (int i = 0; i < startColors.Length; i++)
             {
@@ -104,7 +106,7 @@ public class FadeScript : MonoBehaviour
 
         if (mMaterialList.Count > 0)
         {
-            //The value it should end at
+            //The values it should end at
             Color[] endColors = new Color[mMaterialList.Count];
             for (int i = 0; i < endColors.Length; i++)
             {
@@ -112,7 +114,7 @@ public class FadeScript : MonoBehaviour
                 endColors[i].a = 1f;
             }
 
-            //The value it should start at
+            //The values it should start at
             Color[] startColors = new Color[mMaterialList.Count];
             for (int i = 0; i < startColors.Length; i++)
             {
@@ -131,7 +133,7 @@ public class FadeScript : MonoBehaviour
 
                 yield return null;
             }
-            //To make absolutely sure it is fully transparent
+            //To make absolutely sure it is fully opaque
             for (int i = 0; i < mMaterialList.Count; i++)
             {
                 mMaterialList[i].color = endColors[i];

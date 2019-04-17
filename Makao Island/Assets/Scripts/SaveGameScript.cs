@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 
@@ -22,6 +20,7 @@ public static class SaveGameScript
     {
         string path = Application.persistentDataPath + "/gamedata.dat";
 
+        //Make sure file path exists
         if(!File.Exists(path))
         {
             return null;

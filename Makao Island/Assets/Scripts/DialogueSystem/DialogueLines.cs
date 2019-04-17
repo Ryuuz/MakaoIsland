@@ -355,7 +355,7 @@ public class DialogueLines
         }
     };
 
-    //Retrieve the conversation numbered n
+    //Retrieve the conversation at 'index'
     public Sentence[] GetConversation(int index)
     {
         return mConversations[index];

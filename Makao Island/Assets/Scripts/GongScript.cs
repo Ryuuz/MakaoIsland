@@ -1,7 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
 public class GongScript : MonoBehaviour
 {
     private SpecialActionHitGong mHitGong;
@@ -37,8 +36,9 @@ public class GongScript : MonoBehaviour
         }
     }
 
+    //Play the gong animation
     public void PlayGongAnimation()
     {
-        mAnimator.CrossFadeInFixedTime("Gong_Animation_swing", 2f);
+        mAnimator.CrossFade("Gong_Animation_swing", 0.2f);
     }
 }

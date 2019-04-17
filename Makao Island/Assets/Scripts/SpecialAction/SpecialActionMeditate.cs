@@ -1,5 +1,4 @@
-﻿
-public class SpecialActionMeditate : SpecialActionObject
+﻿public class SpecialActionMeditate : SpecialActionObject
 {
     //Set the game speed based on the parameter
     public override void UseSpecialAction(bool active)

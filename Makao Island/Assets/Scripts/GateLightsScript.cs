@@ -1,10 +1,10 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GateLightsScript : MonoBehaviour
 {
     public float mIntensity = 0.4f;
+    public float mEmissionDelay = 0.4f;
 
     [SerializeField]
     private Material[] mGateMaterials;
@@ -20,8 +20,10 @@ public class GateLightsScript : MonoBehaviour
         UpdateLights((int)SpiritAnimalType.spiritAnimals);
     }
 
+    //Update the materials on the door based on what spirit animals have been found
     public void UpdateLights(int n)
     {
+        //Goes through and checks all the animals
         if (n == mGateMaterials.Length)
         {
             for (int i = 0; i < mGateMaterials.Length; i++)
@@ -33,6 +35,7 @@ public class GateLightsScript : MonoBehaviour
 
                     for(int j = 0; j < mRenderers.Length; j++)
                     {
+                        //If it is the correct material for the animal
                         if(mRenderers[j].material.name == (mGateMaterials[i].name + " (Instance)"))
                         {
                             mRenderers[j].material.SetColor("_EmissionColor", emissiveColor);
@@ -42,12 +45,14 @@ public class GateLightsScript : MonoBehaviour
                 }
             }
         }
+        //Only for the given animal
         else if (n < mGateMaterials.Length)
         {
             StartCoroutine(FadeInLight(n));
         }
     }
 
+    //Increases the intensity of the emission over time
     private IEnumerator FadeInLight(int n)
     {
         Color startColor = mGateMaterials[n].GetColor("_EmissionColor");
@@ -58,7 +63,7 @@ public class GateLightsScript : MonoBehaviour
 
         while(lerpTime <= 1f)
         {
-            lerpTime += (Time.deltaTime * 0.4f) * GameManager.ManagerInstance().mGameSpeed;
+            lerpTime += (Time.deltaTime * mEmissionDelay) * GameManager.ManagerInstance().mGameSpeed;
 
             emissiveColor = Color.Lerp(startColor, endColor, lerpTime);
 
@@ -72,15 +77,6 @@ public class GateLightsScript : MonoBehaviour
             }
 
             yield return null;
-        }
-
-        for (int i = 0; i < mRenderers.Length; i++)
-        {
-            if (mRenderers[i].material.name == (mGateMaterials[n].name + " (Instance)"))
-            {
-                mRenderers[i].material.SetColor("_EmissionColor", endColor);
-                DynamicGI.SetEmissive(mRenderers[i], endColor);
-            }
         }
     }
 }

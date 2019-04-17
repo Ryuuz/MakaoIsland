@@ -124,7 +124,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Child_Idle_Animation
+  m_Name: ChildGirl_Idle_Animation
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:

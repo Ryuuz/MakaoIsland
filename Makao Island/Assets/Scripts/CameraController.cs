@@ -5,6 +5,7 @@ public class CameraController : MonoBehaviour
     public float mCameraHeight = 0.8f;
     public float mTurnSpeed = 1.2f;
 
+    private Transform mTransform;
     private Transform mPlayer;
     private PlayerController mPlayerScript;
     private Vector2 mRotation = Vector2.zero;
@@ -12,6 +13,7 @@ public class CameraController : MonoBehaviour
 
     void Start()
     {
+        mTransform = GetComponent<Transform>();
         mPlayer = GameManager.ManagerInstance().mPlayer.transform;
         mPlayerScript = mPlayer.GetComponent<PlayerController>();
 
@@ -26,7 +28,7 @@ public class CameraController : MonoBehaviour
         {
             mCameraPosition = mPlayer.position;
             mCameraPosition.y += mCameraHeight;
-            transform.position = mCameraPosition;
+            mTransform.position = mCameraPosition;
         }
     }
 
@@ -39,11 +41,11 @@ public class CameraController : MonoBehaviour
         mRotation.y = Mathf.Max(mRotation.y, -60);
         mRotation.y = Mathf.Min(mRotation.y, 60);
 
-        transform.eulerAngles = new Vector3(mRotation.y, mRotation.x, 0f);
+        mTransform.eulerAngles = new Vector3(mRotation.y, mRotation.x, 0f);
 
         if(mPlayerScript)
         {
-            mPlayerScript.RotateCharacter(Quaternion.AngleAxis(transform.rotation.eulerAngles.y, Vector3.up));
+            mPlayerScript.RotateCharacter(Quaternion.AngleAxis(mTransform.rotation.eulerAngles.y, Vector3.up));
         }
     }
 }
