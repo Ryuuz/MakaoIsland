@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6811531799287872206}
   - component: {fileID: 6811531799278277928}
-  - component: {fileID: 1944033431574664098}
   - component: {fileID: 6331308354467885311}
+  - component: {fileID: 1944033431574664098}
   m_Layer: 0
   m_Name: NormalFlacan
   m_TagString: Untagged
@@ -54,18 +54,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1944033431574664098
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6811531799287768814}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f51d21f77bc42645b71356771083a63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &6331308354467885311
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -79,6 +67,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 2.488736, z: 1.7060548}
   m_Center: {x: 0, y: 1.2641265, z: 0.35302728}
+--- !u!114 &1944033431574664098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6811531799287768814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f51d21f77bc42645b71356771083a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mMinDelay: 0
+  mMaxDelay: 1
+  mExtraIdleAnimations:
+  - idle_turn
 --- !u!1 &9053642070316715137
 GameObject:
   m_ObjectHideFlags: 0

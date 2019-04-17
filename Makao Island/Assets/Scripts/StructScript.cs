@@ -10,6 +10,7 @@ public class GameData
     public float mCyclusTime = 0;
     public float[][] mAIPositions;
     public string mCheckPoint = "RespawnPoint";
+    public string[] mDeletedObjects;
 }
 
 public struct Sentence

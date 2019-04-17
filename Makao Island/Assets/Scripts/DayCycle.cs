@@ -17,7 +17,7 @@ public class DayCycle : MonoBehaviour
     [SerializeField]
     private CloudScript mClouds;
 
-    private float[] mStartRotation = new float[] { 335f, 15f, 165f, 205f };
+    private float[] mStartRotation = new float[] { 335f, 20f, 155f, 205f };
     private float[] mRotationDegrees;
 
     private DayCyclus mCurrentCyclusStep;

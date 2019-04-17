@@ -1407,6 +1407,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03687ad1c1a0e6046a4b2e75b1799046, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mMinDelay: 0
+  mMaxDelay: 1
+  mExtraIdleAnimations:
+  - idle_lean
+  - idle_turn
 --- !u!1001 &1735057946715990099
 PrefabInstance:
   m_ObjectHideFlags: 0

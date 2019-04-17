@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour
     private PlayableAsset mStartClip;
     private PlayableDirector mEndDirector;
     private PlayableAsset mEndClip;
-
+    private List<string> mRemovedObjects = new List<string>();
     private List<AIController> mAIs = new List<AIController>();
 
     //Singleton to ensure only one instance of the class
@@ -132,7 +132,7 @@ public class GameManager : MonoBehaviour
         mInputHandler = InputHandler.InputInstance();
         NavMesh.avoidancePredictionTime = 5f;
 
-        /*if (PlayerPrefs.GetInt("Load", 0) == 0)
+        if (PlayerPrefs.GetInt("Load", 0) == 0)
         {
             if (mInputHandler)
             {
@@ -140,7 +140,7 @@ public class GameManager : MonoBehaviour
             }
 
             mStartDirector.Play(mStartClip);
-        }*/
+        }
     }
 
     //Set the speed the game should play at. 0 = pause, 1 = normal speed, >1 = speed up
@@ -206,6 +206,12 @@ public class GameManager : MonoBehaviour
                 AIPosition.y = mData.mAIPositions[i][1];
                 mAIs[i].transform.position = AIPosition;
             }
+
+            for(int i = 0; i < mData.mDeletedObjects.Length; i++)
+            {
+                mRemovedObjects.Add(mData.mDeletedObjects[i]);
+                Destroy(GameObject.Find(mData.mDeletedObjects[i]));
+            }
         }
     }
 
@@ -223,6 +229,12 @@ public class GameManager : MonoBehaviour
             mData.mAIPositions[i] = new float[3] { mAIs[i].mCurrentLocation.x, mAIs[i].mCurrentLocation.y, mAIs[i].mCurrentLocation.z };
         }
 
+        mData.mDeletedObjects = new string[mRemovedObjects.Count];
+        for(int i = 0; i < mRemovedObjects.Count; i++)
+        {
+            mData.mDeletedObjects[i] = mRemovedObjects[i];
+        }
+
         SaveGameScript.SaveData();
     }
 
@@ -236,5 +248,10 @@ public class GameManager : MonoBehaviour
         }
 
         mEndDirector.Play(mEndClip);
+    }
+
+    public void RemoveObject(string name)
+    {
+        mRemovedObjects.Add(name);
     }
 }
