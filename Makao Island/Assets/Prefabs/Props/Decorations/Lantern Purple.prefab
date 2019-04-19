@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mLightColor: {r: 0.7060877, g: 0.33664113, b: 0.8396226, a: 1}
-  mOnStrength: 5
+  mOnStrength: 3
   mOffStrength: 0.01
 --- !u!1001 &6013112114418934873
 PrefabInstance:

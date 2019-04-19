@@ -21,7 +21,7 @@ public class CameraController : MonoBehaviour
         mRotation.x = mPlayer.rotation.eulerAngles.y;
     }
 	
-	void Update()
+	void LateUpdate()
     {
         //Place camera at player's origin, then move up by 'mCameraHeight'
         if(mPlayer)

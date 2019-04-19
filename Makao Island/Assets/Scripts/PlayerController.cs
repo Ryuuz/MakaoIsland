@@ -20,7 +20,6 @@ public class PlayerController : MonoBehaviour
     {
         mCharacterController = GetComponent<CharacterController>();
         mCharacterTransform = GetComponent<Transform>();
-        GetComponent<MeshRenderer>().enabled = false;
         mCurrentMovementSpeed = mWalkSpeed;
         mCurrentFallSpeed = 0f;
     }
@@ -30,7 +29,7 @@ public class PlayerController : MonoBehaviour
         MoveCharacter();
     }
 
-    private void LateUpdate()
+    private void FixedUpdate()
     {
         Gravity();
     }

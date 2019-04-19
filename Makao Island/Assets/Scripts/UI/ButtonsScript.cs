@@ -13,6 +13,7 @@ public class ButtonsScript : MonoBehaviour
         //Make sure the cursor is visible
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+        Time.timeScale = 1f;
 
         string path = Application.persistentDataPath + "/gamedata.dat";
 
