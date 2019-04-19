@@ -92,11 +92,13 @@ public class GameManager : MonoBehaviour
             }
         }
 
+        //Cutscenes (doing it like this because it seems to be bugged in the editor)
         mStartDirector = GameObject.Find("OpeningTimeline").GetComponent<PlayableDirector>();
         mStartClip = mStartDirector.playableAsset;
         mEndDirector = GameObject.Find("EndingTimeline").GetComponent<PlayableDirector>();
         mEndClip = mEndDirector.playableAsset;
 
+        //Retrieve all AIs and sort them so they will always be in the same order
         GameObject[] tempAIs = GameObject.FindGameObjectsWithTag("NPC");
         for(int i = 0; i < tempAIs.Length; i++)
         {
@@ -104,7 +106,7 @@ public class GameManager : MonoBehaviour
         }
         mAIs.Sort((obj1, obj2) => obj1.gameObject.name.CompareTo(obj2.gameObject.name));
 
-        //Assign game data
+        //Load or generate data
         RetrieveData();
     }
 
@@ -113,7 +115,8 @@ public class GameManager : MonoBehaviour
         mInputHandler = InputHandler.InputInstance();
         NavMesh.avoidancePredictionTime = 5f;
 
-        if (PlayerPrefs.GetInt("Load", 0) == 0)
+        //Play opening cutscene if new game
+        /*if (PlayerPrefs.GetInt("Load", 0) == 0)
         {
             if (mInputHandler)
             {
@@ -121,10 +124,10 @@ public class GameManager : MonoBehaviour
             }
 
             mStartDirector.Play(mStartClip);
-        }
+        }*/
     }
 
-    //Set the speed the game should play at. 0 = pause, 1 = normal speed, >1 = speed up
+    //Set the speed the game should play at. 1 = normal speed, >1 = speed up
     public void SetGameSpeed(float speed)
     {
         mGameSpeed = speed;
@@ -134,11 +137,8 @@ public class GameManager : MonoBehaviour
     //When the time of the day changes
     public void TimeOfDayChanged()
     {
-        if(mDayCycle)
-        {
-            DayCyclus currentTimeOfDay = mDayCycle.GetTimeOfDay();
-            eTimeChanged.Invoke(currentTimeOfDay);
-        }
+        DayCyclus currentTimeOfDay = mDayCycle.GetTimeOfDay();
+        eTimeChanged.Invoke(currentTimeOfDay);
     }
 
     //The status of a spirit animal has changed
@@ -147,12 +147,14 @@ public class GameManager : MonoBehaviour
         mData.mSpiritAnimalsStatus[type] = true;
         eSpiritAnimalFound.Invoke(type);
 
+        //Check if all of the spirits have been found
         bool allSpiritsFound = true;
         for(int i = 0; i < mData.mSpiritAnimalsStatus.Length; i++)
         {
             allSpiritsFound = allSpiritsFound && mData.mSpiritAnimalsStatus[i];
         }
 
+        //If all are found, open the stone gate
         if(allSpiritsFound)
         {
             StartCoroutine(OpenGate());
@@ -162,6 +164,7 @@ public class GameManager : MonoBehaviour
     //Load or generate the player's progress
     private void RetrieveData()
     {
+        //Starting a new game. Data set to default
         if(PlayerPrefs.GetInt("Load", 0) == 0)
         {
             mData = new GameData();
@@ -179,6 +182,7 @@ public class GameManager : MonoBehaviour
             mPlayer.transform.position = new Vector3(mData.mPlayerPosition[0], mData.mPlayerPosition[1], mData.mPlayerPosition[2]);
             mCurrentRespawnPoint = GameObject.Find(mData.mCheckPoint).transform;
 
+            //Place all the AIs
             Vector3 AIPosition;
             for(int i = 0; i < mData.mAIPositions.Length; i++)
             {
@@ -188,6 +192,7 @@ public class GameManager : MonoBehaviour
                 mAIs[i].transform.position = AIPosition;
             }
 
+            //Delete all objects marked as removed
             for(int i = 0; i < mData.mDeletedObjects.Length; i++)
             {
                 mRemovedObjects.Add(mData.mDeletedObjects[i]);
@@ -196,6 +201,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    //Save the data of the current game
     public void StoreData()
     {
         Transform playerTransform = mPlayer.transform;
@@ -204,6 +210,7 @@ public class GameManager : MonoBehaviour
         mData.mCyclusTime = mDayCycle.GetCurrentTime();
         mData.mCheckPoint = mCurrentRespawnPoint.name;
 
+        //The positions of all the AIs
         mData.mAIPositions = new float[mAIs.Count][];
         for(int i = 0; i < mAIs.Count; i++)
         {
@@ -219,6 +226,7 @@ public class GameManager : MonoBehaviour
         SaveGameScript.SaveData();
     }
 
+    //Plays animation to open the stone gate
     private IEnumerator OpenGate()
     {
         yield return new WaitForSeconds(2f);
@@ -231,6 +239,7 @@ public class GameManager : MonoBehaviour
         mEndDirector.Play(mEndClip);
     }
 
+    //Adds the name to the list of objects that have been removed
     public void RemoveObject(string name)
     {
         mRemovedObjects.Add(name);

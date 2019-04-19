@@ -89,7 +89,6 @@ public class SpiritGirl : AITalking
 
         if (mDialogueSphere)
         {
-            mInDialogueSphere = true;
             mDialogueSphere.EvaluateStatus();
         }
 

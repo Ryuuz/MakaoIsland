@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
+[RequireComponent(typeof(CanvasGroup))]
 public class PauseMenuScript : MonoBehaviour
 {
     private CanvasGroup mCanvasGroup;
@@ -48,12 +49,13 @@ public class PauseMenuScript : MonoBehaviour
         Cursor.visible = false;
     }
 
+    //Saves the game data
     public void SaveCurrentGame()
     {
         GameManager.ManagerInstance().StoreData();
     }
 
-    //Function for Quit button
+    //Return to the main menu
     public void GoToMenu()
     {
         Time.timeScale = 1f;

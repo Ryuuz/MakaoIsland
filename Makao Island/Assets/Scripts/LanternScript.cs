@@ -3,8 +3,8 @@
 public class LanternScript : MonoBehaviour
 {
     public Color mLightColor;
-    public float mOnStrength = 0.01f;
-    public float mOffStrength = 8f;
+    public float mOnStrength = 5f;
+    public float mOffStrength = 0.01f;
     private Renderer mRenderer;
     private Material mMaterial;
 

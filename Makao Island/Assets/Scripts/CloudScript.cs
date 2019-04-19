@@ -23,6 +23,7 @@ public class CloudScript : MonoBehaviour
 
     void Start()
     {
+        //Get everything ready for the texture creation
         float yValue = transform.position.y;
         mNoiseTexture = new Texture2D(mWidth, mHeight);
         mNoiseTexture.wrapMode = TextureWrapMode.Repeat;
@@ -33,6 +34,7 @@ public class CloudScript : MonoBehaviour
 
         mMaterial = mCloudObject.GetComponent<Renderer>().sharedMaterial;
 
+        //Set the shader values
         if (mMaterial)
         {
             mMaterial.SetTexture("_MainTex", mNoiseTexture);
@@ -42,12 +44,14 @@ public class CloudScript : MonoBehaviour
         }
     }
 
+    //Create a texture using Perlin noise
     private void CalculateNoise()
     {
         float xCoord;
         float yCoord;
         float sample;
 
+        //Go through each pixel of the texture
         for (int i = 0; i < mNoiseTexture.height; i++)
         {
             for (int j = 0; j < mNoiseTexture.width; j++)
@@ -63,9 +67,12 @@ public class CloudScript : MonoBehaviour
         mNoiseTexture.Apply();
     }
 
+    //Instantiate the quads with the cloud texture
     private void DrawClouds()
     {
+        //Distance between the quads
         float offset = mCloudHeight / (float)mNumberOfQuads / 2f;
+
         Vector3 startPosition = transform.position + (Vector3.up * (offset * (float)mNumberOfQuads / 2f));
 
         for (int i = 0; i < mNumberOfQuads; i++)
@@ -74,6 +81,7 @@ public class CloudScript : MonoBehaviour
         }
     }
 
+    //Change the color of the clouds based on 'progress'
     public void UpdateCloudColor(float progress)
     {
         if(mMaterial)

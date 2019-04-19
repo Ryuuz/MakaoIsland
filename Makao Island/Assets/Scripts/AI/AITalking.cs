@@ -7,8 +7,6 @@ public class AITalking : AIController
 
     [HideInInspector]
     public AILeavingEvent eStartedMoving = new AILeavingEvent();
-    [HideInInspector]
-    public bool mInDialogueSphere;
 
     [SerializeField]
     protected RectTransform mSpeechBubble;
@@ -18,7 +16,6 @@ public class AITalking : AIController
     private void Awake()
     {
         ToggleSpeechBubble(false);
-        mInDialogueSphere = false;
     }
 
     //Show or hide the speech bubble
@@ -41,10 +38,7 @@ public class AITalking : AIController
 
     protected override IEnumerator MoveWhenReady(Vector3 position)
     {
-        if (mInDialogueSphere)
-        {
-            eStartedMoving.Invoke(gameObject);
-        }
+        eStartedMoving.Invoke(gameObject);
 
         //Won't move until done talking
         if (mTalking)

@@ -1,17 +1,22 @@
 ﻿using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(AudioSource))]
 public class GongScript : MonoBehaviour
 {
+    public AudioClip mSound;
+
     private SpecialActionHitGong mHitGong;
     private PlayerController mPlayer;
     private Animator mAnimator;
+    private AudioSource mAudio;
 
     void Start()
     {
         mPlayer = GameManager.ManagerInstance().mPlayer.GetComponent<PlayerController>();
         mHitGong = new SpecialActionHitGong(this);
         mAnimator = GetComponentInChildren<Animator>();
+        mAudio = GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -39,6 +44,11 @@ public class GongScript : MonoBehaviour
     //Play the gong animation
     public void PlayGongAnimation()
     {
-        mAnimator.CrossFade("Gong_Animation_swing", 0.2f);
+        mAnimator.CrossFadeInFixedTime("Gong_Animation_swing", 2f);
+
+        if(mSound)
+        {
+            mAudio.PlayOneShot(mSound);
+        }
     }
 }

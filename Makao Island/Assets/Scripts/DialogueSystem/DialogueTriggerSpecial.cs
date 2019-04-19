@@ -17,31 +17,7 @@ public class DialogueTriggerSpecial : DialogueTrigger
 
     public override void EvaluateStatus()
     {
-        bool readyToTalk = true;
-
-        //Checks that all speakers exist and if they are ready to talk
-        for (int i = 0; i < mSpeakers.Length; i++)
-        {
-            //If one of the speakers are no longer in the game, this dialogue sphere is obsolete
-            if (mSpeakers[i] == null)
-            {
-                Destroy(gameObject);
-            }
-            else
-            {
-                if (Vector3.Distance(mSpeakers[i].transform.position, transform.position) <= GetComponent<SphereCollider>().radius)
-                {
-                    mSpeakerPresent[i] = true;
-                    mSpeakerControllers[i].mInDialogueSphere = true;
-                }
-                if (mGuideScripts[i].mGuided)
-                {
-                    readyToTalk = false;
-                }
-            }
-        }
-
-        if (AllSpeakersPresent() && readyToTalk)
+        if (AllSpeakersPresent() && IsReadyToTalk())
         {
             if(!mPlaying)
             {
@@ -53,9 +29,42 @@ public class DialogueTriggerSpecial : DialogueTrigger
                 SetListenAction(true);
             }
         }
+        //Even if some of the speakers have signalled to leave, give the player the listen action as long as conversation is still playing
         else if (!AllSpeakersPresent() && mPlaying && !mPlayerListening && mPlayerPresent)
         {
             SetListenAction(true);
         }
+    }
+
+    private bool IsReadyToTalk()
+    {
+        //Checks that all speakers exist and if they are ready to talk
+        for (int i = 0; i < mSpeakers.Length; i++)
+        {
+            //If one of the speakers are no longer in the game, this dialogue sphere is obsolete
+            if (mSpeakers[i] == null)
+            {
+                Destroy(gameObject);
+            }
+            else
+            {
+                //Can't talk if being guided
+                if (mGuideScripts[i].mGuided)
+                {
+                    return false;
+                }
+
+                if (Vector3.Distance(mTalkingAIs[i].mAITransform.position, transform.position) <= GetComponent<SphereCollider>().radius)
+                {
+                    mTalkingAIs[i].mAIPresent = true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+
+        return true;
     }
 }

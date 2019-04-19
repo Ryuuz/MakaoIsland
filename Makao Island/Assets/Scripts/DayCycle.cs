@@ -4,6 +4,10 @@ using UnityEngine.Events;
 public class DayCycle : MonoBehaviour
 {
     public float mCycleLength = 1800f;
+    public float mDawnStartRotation = 335f;
+    public float mDayStartRotation = 20f;
+    public float mDuskStartRotation = 155f;
+    public float mNightStartRotation = 205f;
 
     public Gradient mSkyColorTint;
     public Gradient mSunlightTint;
@@ -17,9 +21,10 @@ public class DayCycle : MonoBehaviour
     [SerializeField]
     private CloudScript mClouds;
 
-    private float[] mStartRotation = new float[] { 335f, 20f, 155f, 205f };
+    private float[] mStartRotation;
     private float[] mRotationDegrees;
 
+    private Transform mTransform;
     private DayCyclus mCurrentCyclusStep;
     private float mCurrentTime = 0;
     private float mCurrentRotation;
@@ -34,23 +39,22 @@ public class DayCycle : MonoBehaviour
 
 	void Start()
     {
+        mTransform = GetComponent<Transform>();
         mGameManager = GameManager.ManagerInstance();
-
-        if(mGameManager)
-        {
-            eTimeChanged.AddListener(mGameManager.TimeOfDayChanged);
-        }
+        eTimeChanged.AddListener(mGameManager.TimeOfDayChanged);
 
         mSkyMaterial = RenderSettings.skybox;
         mSun = RenderSettings.sun;
         mFactor = 1f / 360f;
         mRotationStep = 360f / mCycleLength;
 
+        mStartRotation = new float[] { mDawnStartRotation, mDayStartRotation, mDuskStartRotation, mNightStartRotation };
         mRotationDegrees = new float[mStartRotation.Length];
 
         //How many degrees each part of the day lasts
         for(int i = 0; i < mRotationDegrees.Length; i++)
         {
+            //If the next rotation is less than the current one the offset must be taken into consideration
             if ((mStartRotation[(i + 1) % mRotationDegrees.Length] < mStartRotation[i]))
             {
                 mOffset = (360f - mStartRotation[i]);
@@ -72,9 +76,9 @@ public class DayCycle : MonoBehaviour
 	
 	void Update()
     {
-        //Moves the day and night cycle along at the set speed
-        mCurrentTime += Time.deltaTime * mGameManager.mGameSpeed;
+        mCurrentTime += (Time.deltaTime * mGameManager.mGameSpeed);
 
+        //Checking if the time of day should change
         if(mCurrentRotation >= ((mStartRotation[(int)mCurrentCyclusStep] + mRotationDegrees[(int)mCurrentCyclusStep]) % 360))
         {
             NextCyclusStep();
@@ -83,7 +87,7 @@ public class DayCycle : MonoBehaviour
 
         //Update the rotation
         mCurrentRotation = (mRotationStep * mCurrentTime) - mOffset;
-        transform.eulerAngles = new Vector3(mCurrentRotation, 0f, 0f);
+        mTransform.eulerAngles = new Vector3(mCurrentRotation, 0f, 0f);
         UpdateSky((mCurrentRotation + mOffset) * mFactor);
     }
 
@@ -114,6 +118,7 @@ public class DayCycle : MonoBehaviour
     //Changes the properties of the sky based on the sun's position
     private void UpdateSky(float sunProgress)
     {
+        //Skybox
         if(mSkyMaterial)
         {
             mSkyMaterial.SetColor("_SkyTint", mSkyColorTint.Evaluate(sunProgress));
@@ -121,12 +126,14 @@ public class DayCycle : MonoBehaviour
             mSkyMaterial.SetFloat("_Exposure", mExposure.Evaluate(sunProgress));
         }
         
+        //Main directional light
         if(mSun)
         {
             mSun.color = mSunlightTint.Evaluate(sunProgress);
             mSun.intensity = mSunIntensity.Evaluate(sunProgress);
         }
 
+        //Clouds
         if(mClouds)
         {
             mClouds.UpdateCloudColor(sunProgress);

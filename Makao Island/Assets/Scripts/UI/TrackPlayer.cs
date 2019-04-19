@@ -9,8 +9,7 @@ public class TrackPlayer : MonoBehaviour
     private RectTransform mPlayerOnMap;
 
     private Transform mPlayer;
-    //Scale in x and y direction
-    private Vector2 mScale = new Vector2(1f, 1f);
+    private Vector2 mScale = new Vector2(1f, 1f); //Scale in x and y direction
     
     void Start()
     {
@@ -33,11 +32,8 @@ public class TrackPlayer : MonoBehaviour
 
     public void UpdatePlayerPosition()
     {
-        if(mPlayer)
-        {
-            //Update the position of the player icon on the map as the player moves
-            mPlayerOnMap.anchoredPosition = new Vector2((mPlayer.position.x * mScale.x), (mPlayer.position.z * mScale.y));
-            mPlayerOnMap.rotation = Quaternion.Euler(0f, 0f, -mPlayer.rotation.eulerAngles.y);
-        }
+        //Update the position and rotation of the player icon on the map as the player moves
+        mPlayerOnMap.anchoredPosition = new Vector2((mPlayer.position.x * mScale.x), (mPlayer.position.z * mScale.y));
+        mPlayerOnMap.rotation = Quaternion.Euler(0f, 0f, -mPlayer.rotation.eulerAngles.y);
     }
 }

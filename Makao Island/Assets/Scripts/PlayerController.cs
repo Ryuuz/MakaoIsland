@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+[RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
 {
     public float mWalkSpeed = 5f;
@@ -15,15 +16,10 @@ public class PlayerController : MonoBehaviour
     private Transform mCharacterTransform;
     private bool mSprinting = false;
 
-    private void Awake()
+    void Start()
     {
         mCharacterController = GetComponent<CharacterController>();
         mCharacterTransform = GetComponent<Transform>();
-    }
-
-    void Start()
-    {
-        GameManager.ManagerInstance();
         GetComponent<MeshRenderer>().enabled = false;
         mCurrentMovementSpeed = mWalkSpeed;
         mCurrentFallSpeed = 0f;
@@ -39,7 +35,7 @@ public class PlayerController : MonoBehaviour
         Gravity();
     }
 
-    //Moves the character with different speed depending on whether it's on the ground or in the air
+    //Moves the character with different speed depending on whether sprinting or not
     void MoveCharacter()
     {
         if(mCharacterController.isGrounded)
@@ -49,6 +45,7 @@ public class PlayerController : MonoBehaviour
         
         Vector3 moving = mMovementDirection * mCurrentMovementSpeed;
 
+        //Clamp the speed
         if(moving.magnitude > mCurrentMovementSpeed)
         {
             moving = moving.normalized * mCurrentMovementSpeed;
@@ -111,6 +108,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    //Player can push cetain objects when colliding with them
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
         if(hit.gameObject.tag == "PhysicsObject")

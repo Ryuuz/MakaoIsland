@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(CanvasGroup))]
 public class MapManager : MonoBehaviour
 {
     public Sprite[] mDayCycleIcons;
@@ -47,18 +48,15 @@ public class MapManager : MonoBehaviour
 
     public void HideMap()
     {
-        if(mCanvasGroup)
-        {
-            mCanvasGroup.alpha = 0f;
-            mCanvasGroup.blocksRaycasts = false;
-            mCanvasGroup.interactable = false;
-        }
+        mCanvasGroup.alpha = 0f;
+        mCanvasGroup.blocksRaycasts = false;
+        mCanvasGroup.interactable = false;
     }
 
     public void ShowMap()
     {
         //Can only open the map if it is available to the player
-        if(mMapAvailable && mCanvasGroup)
+        if(mMapAvailable)
         {
             mCanvasGroup.alpha = 1f;
             mCanvasGroup.blocksRaycasts = true;
@@ -78,6 +76,7 @@ public class MapManager : MonoBehaviour
     //Updates the icons showing which spirit animals have been found
     public void UpdateSpiritAnimal(int n)
     {
+        //Goes through and checks all the spirit animals
         if(n == mSpiritAnimalStatus.Length)
         {
             for (int i = 0; i < mSpiritAnimalStatus.Length; i++)
@@ -88,6 +87,7 @@ public class MapManager : MonoBehaviour
                 }
             }
         }
+        //Only sets the given animal
         else if(n < mSpiritAnimalStatus.Length)
         {
             mSpiritAnimalStatus[n].color = new Color(1, 1, 1, 0);

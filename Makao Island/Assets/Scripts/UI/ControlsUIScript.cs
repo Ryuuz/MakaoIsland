@@ -3,6 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(CanvasGroup))]
 public class ControlsUIScript : MonoBehaviour
 {
     public List<ControlInfoObject> mControlsList = new List<ControlInfoObject>();
@@ -24,7 +25,7 @@ public class ControlsUIScript : MonoBehaviour
         mCanvasGroup = GetComponent<CanvasGroup>();
         HideControlUI();
 
-        //Give the game manager access to object
+        //Give the game manager access to the object
         if(!GameManager.ManagerInstance().mControlUI)
         {
             GameManager.ManagerInstance().mControlUI = this;

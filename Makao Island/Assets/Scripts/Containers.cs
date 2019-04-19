@@ -30,6 +30,14 @@ public struct Sentence
     }
 }
 
+public struct TalkingAIData
+{
+    public AITalking mTalkingScript;
+    public VillagerAnimationScript mAnimationScript;
+    public Transform mAITransform;
+    public bool mAIPresent;
+}
+
 [System.Serializable]
 public class DialoguePair
 {
