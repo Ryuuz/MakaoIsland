@@ -2,11 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class ButtonsScript : MonoBehaviour
 {
     [SerializeField]
     private Button mLoadButton;
+    [SerializeField]
+    private StandaloneInputModule mModule;
+
+    private bool mDeactivated = false;
 
     void Start()
     {
@@ -21,6 +26,23 @@ public class ButtonsScript : MonoBehaviour
         if (File.Exists(path) && mLoadButton)
         {
             mLoadButton.interactable = true;
+        }
+    }
+
+    private void Update()
+    {
+        if(mModule)
+        {
+            if (!mDeactivated && (Input.GetAxisRaw("LookX") != 0f || Input.GetAxisRaw("LookY") != 0f))
+            {
+                mModule.DeactivateModule();
+                mDeactivated = true;
+            }
+            else if (mDeactivated && (Input.GetAxis("GP Horizontal") != 0f || Input.GetAxis("GP Vertical") != 0f))
+            {
+                mModule.ActivateModule();
+                mDeactivated = false;
+            }
         }
     }
 

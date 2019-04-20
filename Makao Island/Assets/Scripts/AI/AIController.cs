@@ -5,6 +5,7 @@ using UnityEngine.AI;
 public class AIController : MonoBehaviour
 {
     public float mSpeed = 3.5f;
+    public float mAcceleration = 8f;
     public float mWaypointRadius = 4f;
     public float mTransitionDelay = 2f;
 
@@ -86,6 +87,7 @@ public class AIController : MonoBehaviour
         if(mAgent)
         {
             mAgent.speed = mSpeed * speed;
+            mAgent.acceleration = mAcceleration * speed;
         }
     }
 

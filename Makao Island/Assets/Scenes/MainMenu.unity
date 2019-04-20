@@ -559,6 +559,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mLoadButton: {fileID: 796460332}
+  mModule: {fileID: 1790026292}
 --- !u!1 &1444576790
 GameObject:
   m_ObjectHideFlags: 0
@@ -917,8 +918,8 @@ MonoBehaviour:
   m_Script: {fileID: 1077351063, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
+  m_HorizontalAxis: GP Horizontal
+  m_VerticalAxis: GP Vertical
   m_SubmitButton: Submit
   m_CancelButton: Cancel
   m_InputActionsPerSecond: 10
@@ -936,7 +937,7 @@ MonoBehaviour:
   m_Script: {fileID: -619905303, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 1063735021}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &1790026294

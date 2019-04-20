@@ -30,22 +30,22 @@ public class CameraController : MonoBehaviour
             mCameraPosition.y += mCameraHeight;
             mTransform.position = mCameraPosition;
         }
+
+        //Rotate camera and character
+        mTransform.eulerAngles = new Vector3(mRotation.y, mRotation.x, 0f);
+        if (mPlayerScript)
+        {
+            mPlayerScript.RotateCharacter(Quaternion.AngleAxis(mTransform.rotation.eulerAngles.y, Vector3.up));
+        }
     }
 
-    public void RotateCamera(float xAxis, float yAxis)
+    public void RotateCamera(Vector2 rotationValues)
     {
-        mRotation.x = (mRotation.x + (xAxis * mTurnSpeed)) % 360;
-        mRotation.y = (mRotation.y - (yAxis * mTurnSpeed)) % 360;
+        mRotation.x = (mRotation.x + (rotationValues.x * mTurnSpeed)) % 360;
+        mRotation.y = (mRotation.y - (rotationValues.y * mTurnSpeed)) % 360;
 
         //Limit how far you can look up and down
         mRotation.y = Mathf.Max(mRotation.y, -60);
         mRotation.y = Mathf.Min(mRotation.y, 60);
-
-        mTransform.eulerAngles = new Vector3(mRotation.y, mRotation.x, 0f);
-
-        if(mPlayerScript)
-        {
-            mPlayerScript.RotateCharacter(Quaternion.AngleAxis(mTransform.rotation.eulerAngles.y, Vector3.up));
-        }
     }
 }
