@@ -11,6 +11,7 @@ public class DialogueTrigger : MonoBehaviour
     protected DialogueManager mDialogueManager;
     protected GameManager mGameManager;
     protected SpecialActionListen mListenAction;
+    protected SpecialActionSkip mSkipAction;
     protected PlayerController mPlayer;
     protected bool mPlayerPresent = false;
     protected List<Sentence> mSentences = new List<Sentence>();
@@ -28,6 +29,7 @@ public class DialogueTrigger : MonoBehaviour
     protected virtual void Start()
     {
         mListenAction = new SpecialActionListen(this);
+        mSkipAction = new SpecialActionSkip(this);
         mGameManager = GameManager.ManagerInstance();
         mPlayer = mGameManager.mPlayer.GetComponent<PlayerController>();
 
@@ -60,19 +62,6 @@ public class DialogueTrigger : MonoBehaviour
         EvaluateStatus();
     }
 
-    protected virtual void Update()
-    {
-        //Player can skip dialogue
-        if(mPlaying && mPlayerListening)
-        {
-            if(Input.GetButtonDown("Special") && !mSkipping && mCountingDown != null)
-            {
-                mSkipping = true;
-                StopCoroutine(mCountingDown);
-            }
-        }
-    }
-
     protected void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
@@ -102,7 +91,8 @@ public class DialogueTrigger : MonoBehaviour
         //Player left the dialogue sphere. Conversation will continue if already playing, but player will not hear it
         if (other.tag == "Player")
         {
-            SetListenAction(false);
+            SetListenAction(true, false);
+            SetListenAction(false, false);
             mPlayerPresent = false;
             mPlayerListening = false;
 
@@ -123,11 +113,11 @@ public class DialogueTrigger : MonoBehaviour
 
         if (AllSpeakersPresent() && !mPlayerListening && mPlayerPresent && !mCoolingDown)
         {
-            SetListenAction(true);
+            SetListenAction(true, true);
         }
         else if(!AllSpeakersPresent() && mPlaying && !mPlayerListening && mPlayerPresent)
         {
-            SetListenAction(true);
+            SetListenAction(true, true);
         }
     }
 
@@ -143,7 +133,8 @@ public class DialogueTrigger : MonoBehaviour
             mPlaying = true;
             mPlayerListening = true;
 
-            SetListenAction(false);
+            SetListenAction(true, false);
+            SetListenAction(false, true);
             ToggleSpeechBubbles(false);
 
             StartCoroutine(DialogueRunning());
@@ -157,7 +148,8 @@ public class DialogueTrigger : MonoBehaviour
             }
             mPlayerListening = true;
 
-            SetListenAction(false);
+            SetListenAction(true, false);
+            SetListenAction(false, true);
         }
     }
 
@@ -209,6 +201,8 @@ public class DialogueTrigger : MonoBehaviour
     //Stops the dialogue and enforces a cooldown before it can be triggered again
     protected IEnumerator StopDialogue()
     {
+        SetListenAction(false, false);
+
         for (int i = 0; i < mTalkingAIs.Length; i++)
         {
             mTalkingAIs[i].mTalkingScript.SetTalking(false);
@@ -224,7 +218,7 @@ public class DialogueTrigger : MonoBehaviour
         mCountingDown = null;
         mPlaying = false;
         mPlayerListening = false;
-        SetListenAction(false);
+        SetListenAction(true, false);
 
         //Cooldown
         mCoolingDown = true;
@@ -313,20 +307,34 @@ public class DialogueTrigger : MonoBehaviour
             mTalkingAIs[speakerIndex].mAIPresent = false;
         }
 
-        SetListenAction(false);
+        SetListenAction(true, false);
     }
 
     //Gives or takes the listen action from the player depending on the parameter 'listen'
-    protected void SetListenAction(bool listen)
+    protected void SetListenAction(bool listen, bool give)
     {
         if(mPlayerPresent)
         {
-            if(listen)
+            SpecialActionObject tempAction;
+            ControlAction tempControl;
+
+            if (listen)
             {
-                mPlayer.mSpecialAction = mListenAction;
-                mGameManager.mControlUI.ShowControlUI(ControlAction.listen);
+                tempAction = mListenAction;
+                tempControl = ControlAction.listen;
             }
-            else if(mPlayer.mSpecialAction == mListenAction)
+            else
+            {
+                tempAction = mSkipAction;
+                tempControl = ControlAction.skip;
+            }
+
+            if(give)
+            {
+                mPlayer.mSpecialAction = tempAction;
+                mGameManager.mControlUI.ShowControlUI(tempControl);
+            }
+            else if(mPlayer.mSpecialAction == tempAction)
             {
                 mPlayer.mSpecialAction = null;
                 mGameManager.mControlUI.HideControlUI();
@@ -340,5 +348,14 @@ public class DialogueTrigger : MonoBehaviour
         mSentences.Clear();
         mDialogueNumber = dialogueNumber;
         GetDialogue();
+    }
+
+    public void SkipDialogue()
+    {
+        if (mPlaying && mPlayerListening && !mSkipping && mCountingDown != null)
+        {
+            mSkipping = true;
+            StopCoroutine(mCountingDown);
+        }
     }
 }

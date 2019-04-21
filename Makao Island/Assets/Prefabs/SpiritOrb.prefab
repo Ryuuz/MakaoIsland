@@ -4721,6 +4721,7 @@ GameObject:
   - component: {fileID: 1542116994475486626}
   - component: {fileID: 1542116994475486653}
   - component: {fileID: 2361335743638796184}
+  - component: {fileID: 3553405535142732444}
   m_Layer: 5
   m_Name: SpiritOrb
   m_TagString: Untagged
@@ -4935,3 +4936,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3553405535142732444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1542116994475486652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7078861aa45ac845920599d6a5c1a0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mFadeDelay: 0.5

@@ -63,6 +63,12 @@ public class SpiritOrbScript : MonoBehaviour
     {
         yield return new WaitForSeconds(3f);
         GetComponentInChildren<ParticleSystem>().Stop();
+
+        FadeOutSound soundTemp = GetComponent<FadeOutSound>();
+        if(soundTemp)
+        {
+            soundTemp.StartFadingSound();
+        }
         yield return new WaitForSeconds(5f);
 
         GameManager.ManagerInstance().UpdateSpiritAnimals((int)SpiritAnimalType.life);

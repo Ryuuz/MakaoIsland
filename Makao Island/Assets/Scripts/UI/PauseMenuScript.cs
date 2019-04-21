@@ -13,7 +13,7 @@ public class PauseMenuScript : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI mSavedMessageText;
     [SerializeField]
-    private StandaloneInputModule mModule;
+    private EventSystem mEventSystem;
 
     private bool mDeactivated = false;
     private bool mHidden = true;
@@ -34,16 +34,16 @@ public class PauseMenuScript : MonoBehaviour
 
     private void Update()
     {
-        if (mModule && !mHidden)
+        if (mEventSystem && !mHidden)
         {
             if (!mDeactivated && (Input.GetAxisRaw("LookX") != 0f || Input.GetAxisRaw("LookY") != 0f))
             {
-                mModule.DeactivateModule();
+                mEventSystem.SetSelectedGameObject(null);
                 mDeactivated = true;
             }
             else if (mDeactivated && (Input.GetAxis("GP Horizontal") != 0f || Input.GetAxis("GP Vertical") != 0f))
             {
-                mModule.ActivateModule();
+                mSelectedButton.Select();
                 mDeactivated = false;
             }
         }

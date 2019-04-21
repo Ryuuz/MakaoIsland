@@ -118,6 +118,13 @@ public class SpiritGirl : AITalking
     private IEnumerator RestInPeace()
     {
         eStartedMoving.Invoke(gameObject);
+
+        FadeOutSound soundTemp = GetComponent<FadeOutSound>();
+        if(soundTemp)
+        {
+            soundTemp.StartFadingSound();
+        }
+
         yield return StartCoroutine(mFade.FadeOut());
         Destroy(gameObject);
     }

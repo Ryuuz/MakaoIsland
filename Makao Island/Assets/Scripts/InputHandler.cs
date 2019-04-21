@@ -106,7 +106,7 @@ public class InputHandler : MonoBehaviour
             }
             else if (Input.GetAxis("GP LookX") != 0f || Input.GetAxis("GP LookY") != 0f)
             {
-                mCameraController.RotateCamera(JoystickInputHandler(new Vector2(Input.GetAxis("GP LookX"), Input.GetAxis("GP LookY"))));
+                mCameraController.RotateCamera(JoystickInputHandler(new Vector2(Input.GetAxis("GP LookX"), Input.GetAxis("GP LookY"))) * 2f);
                 mGamepad = true;
             }
         }

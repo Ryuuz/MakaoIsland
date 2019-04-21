@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e43ba890a2832f34a8e7d5b14bb4e8de, type: 3}
+  m_Name: SkipDialogueControl
+  m_EditorClassIdentifier: 
+  mControlType: 11
+  mDefaultControl: {fileID: 21300000, guid: 0025c71bf317508418dd550262e46d3c, type: 3}
+  mGamepadControl: {fileID: 21300000, guid: ca7ef16b95726b045a290a46039a5927, type: 3}
+  mControlText: Press to skip

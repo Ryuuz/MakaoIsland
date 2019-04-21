@@ -19,13 +19,17 @@ public class ControlsUIScript : MonoBehaviour
     private bool mShowingGamepad = false;
     private bool mActive = false;
 
+    private void Awake()
+    {
+        mCanvasGroup = GetComponent<CanvasGroup>();
+    }
+
     void Start()
     {
         //Sort list
         mControlsList.Sort((obj1, obj2) => obj1.mControlType.CompareTo(obj2.mControlType));
 
         mInputHandler = InputHandler.InputInstance();
-        mCanvasGroup = GetComponent<CanvasGroup>();
         HideControlUI();
 
         //Give the game manager access to the object
@@ -59,15 +63,15 @@ public class ControlsUIScript : MonoBehaviour
         {
             mCurrentType = type;
 
-            if(!mInputHandler.mGamepad)
-            {
-                mDefault.overrideSprite = mControlsList[(int)type].mDefaultControl;
-                mShowingGamepad = false;
-            }
-            else
+            if(mInputHandler && mInputHandler.mGamepad)
             {
                 mDefault.overrideSprite = mControlsList[(int)type].mGamepadControl;
                 mShowingGamepad = true;
+            }
+            else
+            {
+                mDefault.overrideSprite = mControlsList[(int)type].mDefaultControl;
+                mShowingGamepad = false;
             }
             mDescription.text = mControlsList[(int)type].mControlText;
 

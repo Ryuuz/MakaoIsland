@@ -23,7 +23,7 @@
         Tags { "Queue"="Transparent" "RenderType"="Transparent" }
         LOD 200
 
-		Cull off
+		Cull Off
 		ZWrite Off
 		Blend SrcAlpha OneMinusSrcAlpha
 

@@ -814,8 +814,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mMinDelay: 8
   mMaxDelay: 16
+  mWalkingSound: {fileID: 0}
   mExtraIdleAnimations:
   - idle_eat
+  mEatingSound: {fileID: 8300000, guid: c46f4719c6e285d45b9a25d5f1c73237, type: 3}
+  mHuffaloSound: {fileID: 8300000, guid: 90a4808d023ea884f80330c341a12770, type: 3}
 --- !u!1 &3881844016832557374
 GameObject:
   m_ObjectHideFlags: 0

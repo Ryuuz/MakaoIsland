@@ -100,6 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mMinDelay: 5
   mMaxDelay: 12
+  mWalkingSound: {fileID: 8300000, guid: 56cc8a9c8812039479525fa54f14daf5, type: 3}
   mExtraIdleAnimations:
   - idle_lean
   - idle_turn

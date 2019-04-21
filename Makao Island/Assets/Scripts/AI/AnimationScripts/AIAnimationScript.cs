@@ -6,6 +6,7 @@ public class AIAnimationScript : MonoBehaviour
 {
     public float mMinDelay = 0f;
     public float mMaxDelay = 1f;
+    public AudioClip mWalkingSound;
     public string[] mExtraIdleAnimations;
 
     //Always used
@@ -14,6 +15,7 @@ public class AIAnimationScript : MonoBehaviour
 
     protected NavMeshAgent mAgent;
     protected Transform mTransform;
+    protected AudioSource mAudio;
     protected Vector3 mPreviousPosition = new Vector3();
     protected string mDefaultIdleAnimation;
     protected float mCurrentTime = 0f;
@@ -21,6 +23,7 @@ public class AIAnimationScript : MonoBehaviour
     protected virtual void Start()
     {
         mAnimator = GetComponent<Animator>();
+        mAudio = GetComponentInParent<AudioSource>();
         mGameManager = GameManager.ManagerInstance();
         mGameManager.eSpeedChanged.AddListener(SetPlaySpeed);
         SetPlaySpeed(mGameManager.mGameSpeed);
@@ -67,6 +70,11 @@ public class AIAnimationScript : MonoBehaviour
             if (!mAnimator.GetBool("Walking"))
             {
                 mAnimator.SetBool("Walking", true);
+
+                if(mAudio && mAudio.isPlaying)
+                {
+                    mAudio.Stop();
+                }
             }
 
             //Speed of the walk animation
@@ -78,12 +86,22 @@ public class AIAnimationScript : MonoBehaviour
             {
                 mAnimator.SetFloat("WalkSpeed", Mathf.Max(positionOffset.magnitude, 0.5f));
             }
+
+            if(mAudio && mWalkingSound && !mAudio.isPlaying)
+            {
+                mAudio.PlayOneShot(mWalkingSound);
+            }
         }
         else
         {
             if (mAnimator.GetBool("Walking"))
             {
                 mAnimator.SetBool("Walking", false);
+
+                if (mAudio && mWalkingSound && mAudio.isPlaying)
+                {
+                    mAudio.Stop();
+                }
             }
 
             //If agent has stopped moving before reaching the destination but is within an acceptable distance
@@ -96,7 +114,7 @@ public class AIAnimationScript : MonoBehaviour
     }
 
     //Randomly plays one of the idle animations in the array
-    protected void RandomIdleAnimation()
+    protected virtual void RandomIdleAnimation()
     {
         if(mAnimator.GetCurrentAnimatorStateInfo(0).IsName(mDefaultIdleAnimation) && mExtraIdleAnimations.Length > 0)
         {

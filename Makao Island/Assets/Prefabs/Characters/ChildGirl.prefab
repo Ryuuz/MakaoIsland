@@ -926,6 +926,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfc9703272e0b714b8639bc51d80b272, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mMinDelay: 0
+  mMaxDelay: 1
+  mWalkingSound: {fileID: 8300000, guid: 56cc8a9c8812039479525fa54f14daf5, type: 3}
+  mExtraIdleAnimations: []
 --- !u!1 &8098353480186776010
 GameObject:
   m_ObjectHideFlags: 0

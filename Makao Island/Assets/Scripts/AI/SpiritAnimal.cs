@@ -105,6 +105,13 @@ public class SpiritAnimal : AIController
     {
         yield return StartCoroutine(LookAtObject(player));
         mGameManager.UpdateSpiritAnimals((int)mAnimalType);
+
+        FadeOutSound soundTemp = GetComponent<FadeOutSound>();
+        if(soundTemp)
+        {
+            soundTemp.StartFadingSound();
+        }
+        
         yield return StartCoroutine(mFade.FadeOut());
         Destroy(gameObject);
     }

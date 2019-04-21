@@ -83,6 +83,7 @@ GameObject:
   - component: {fileID: 2999995000428647783}
   - component: {fileID: 2874697593456593385}
   - component: {fileID: 1003282801132290767}
+  - component: {fileID: 2121999774600934626}
   m_Layer: 8
   m_Name: Trino
   m_TagString: SpiritAnimal
@@ -136,6 +137,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mSpeed: 3.5
+  mAcceleration: 8
   mWaypointRadius: 4
   mTransitionDelay: 2
   mCurrentLocation: {x: 0, y: 0, z: 0}
@@ -276,6 +278,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2121999774600934626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5459817911787280463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7078861aa45ac845920599d6a5c1a0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mFadeDelay: 0.5
 --- !u!1 &5459817912013961320
 GameObject:
   m_ObjectHideFlags: 0

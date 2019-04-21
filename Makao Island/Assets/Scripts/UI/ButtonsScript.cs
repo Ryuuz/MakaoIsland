@@ -9,7 +9,7 @@ public class ButtonsScript : MonoBehaviour
     [SerializeField]
     private Button mLoadButton;
     [SerializeField]
-    private StandaloneInputModule mModule;
+    private EventSystem mEventSystem;
 
     private bool mDeactivated = false;
 
@@ -31,16 +31,16 @@ public class ButtonsScript : MonoBehaviour
 
     private void Update()
     {
-        if(mModule)
+        if(mEventSystem)
         {
             if (!mDeactivated && (Input.GetAxisRaw("LookX") != 0f || Input.GetAxisRaw("LookY") != 0f))
             {
-                mModule.DeactivateModule();
+                mEventSystem.SetSelectedGameObject(null);
                 mDeactivated = true;
             }
             else if (mDeactivated && (Input.GetAxis("GP Horizontal") != 0f || Input.GetAxis("GP Vertical") != 0f))
             {
-                mModule.ActivateModule();
+                mLoadButton.Select();
                 mDeactivated = false;
             }
         }

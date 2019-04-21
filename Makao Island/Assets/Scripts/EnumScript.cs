@@ -11,7 +11,7 @@ public enum SpiritAnimalType
 
 public enum ControlAction
 {
-    walk, look, sprint, jump, listen, meditate, guide, map, pause, hitGong, recieveBlessing, actions
+    walk, look, sprint, jump, listen, meditate, guide, map, pause, hitGong, recieveBlessing, skip, actions
 }
 
 public enum TalkAnimation

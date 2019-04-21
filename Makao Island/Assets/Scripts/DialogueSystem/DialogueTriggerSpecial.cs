@@ -26,13 +26,13 @@ public class DialogueTriggerSpecial : DialogueTrigger
             
             if(!mPlayerListening && mPlayerPresent && !mCoolingDown)
             {
-                SetListenAction(true);
+                SetListenAction(true, true);
             }
         }
         //Even if some of the speakers have signalled to leave, give the player the listen action as long as conversation is still playing
         else if (!AllSpeakersPresent() && mPlaying && !mPlayerListening && mPlayerPresent)
         {
-            SetListenAction(true);
+            SetListenAction(true, true);
         }
     }
 
