@@ -66,7 +66,7 @@ public class DialogueLines
             new Sentence(1, TalkAnimation.hands, "The flacans!"),
             new Sentence(3, TalkAnimation.none, "Don’t they do that every year around this time? You shouldn’t have put your nets there."),
             new Sentence(1, TalkAnimation.none, "But it’s the best fishing spot."),
-            new Sentence(2, TalkAnimation.none, "Not if you can’t get the fish")
+            new Sentence(2, TalkAnimation.none, "Not if you can’t get the fish.")
         },
 
         //7

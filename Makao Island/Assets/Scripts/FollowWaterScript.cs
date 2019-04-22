@@ -9,7 +9,7 @@ public class FollowWaterScript : MonoBehaviour
     private float mAmount;
     private float mSpeed;
     private float mHeight;
-    private float mOceanPositionY;
+    private float mStartYPosition;
     private Vector3 mPosition = new Vector3();
 
     void Start()
@@ -17,14 +17,12 @@ public class FollowWaterScript : MonoBehaviour
         Material oceanMaterial = mOcean.GetComponent<Renderer>().material;
         mTransform = GetComponent<Transform>();
 
-        mOceanPositionY = mTransform.position.y;
+        mStartYPosition = mTransform.position.y;
 
         //Retrieve values from the material
         mSpeed = oceanMaterial.GetFloat("_Speed");
         mHeight = oceanMaterial.GetFloat("_Height");
         mAmount = oceanMaterial.GetFloat("_Amount");
-
-        //mTransform.position.Set(mTransform.position.x, mOceanPositionY, mTransform.position.z);
     }
 
     void Update()
@@ -32,7 +30,7 @@ public class FollowWaterScript : MonoBehaviour
         mPosition = mTransform.position;
 
         //Uses the same function as the shader to get y
-        mPosition.y = mOceanPositionY + Mathf.Sin((Time.timeSinceLevelLoad * 2f) * mSpeed + (mPosition.x * mPosition.z * mAmount)) * mHeight;
+        mPosition.y = mStartYPosition + Mathf.Sin((Time.timeSinceLevelLoad * 2f) * mSpeed + (mPosition.x * mPosition.z * mAmount)) * mHeight;
         mTransform.position = mPosition;
     }
 }

@@ -69,9 +69,9 @@ public class SpiritOrbScript : MonoBehaviour
         {
             soundTemp.StartFadingSound();
         }
-        yield return new WaitForSeconds(5f);
 
         GameManager.ManagerInstance().UpdateSpiritAnimals((int)SpiritAnimalType.life);
+        yield return new WaitForSeconds(3.5f);
 
         //Give the map to the player and spawn a tutorial sphere for it
         InputHandler.InputInstance().mMapManager.mMapAvailable = true;
