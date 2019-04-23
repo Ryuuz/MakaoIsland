@@ -41,7 +41,7 @@ public class PauseMenuScript : MonoBehaviour
                 mEventSystem.SetSelectedGameObject(null);
                 mDeactivated = true;
             }
-            else if (mDeactivated && (Input.GetAxis("GP Horizontal") != 0f || Input.GetAxis("GP Vertical") != 0f))
+            else if (mDeactivated && (Input.GetAxisRaw("GP Horizontal") != 0f || Input.GetAxisRaw("GP Vertical") != 0f))
             {
                 mSelectedButton.Select();
                 mDeactivated = false;

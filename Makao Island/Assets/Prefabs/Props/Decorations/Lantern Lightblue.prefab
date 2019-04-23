@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f9d63ce2ced5ea4fb188f7b5393d118, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mLightColor: {r: 0.6061766, g: 0.9033884, b: 0.9245283, a: 1}
+  mLightColor: {r: 0.3571111, g: 0.68158895, b: 0.7075472, a: 1}
   mOnStrength: 3
   mOffStrength: 0.01
 --- !u!1001 &3825981105454109544

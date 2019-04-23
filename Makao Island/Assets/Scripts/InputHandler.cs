@@ -104,7 +104,7 @@ public class InputHandler : MonoBehaviour
                 mCameraController.RotateCamera(new Vector2(Input.GetAxisRaw("LookX"), Input.GetAxisRaw("LookY")));
                 mGamepad = false;
             }
-            else if (Input.GetAxis("GP LookX") != 0f || Input.GetAxis("GP LookY") != 0f)
+            else if (Input.GetAxisRaw("GP LookX") != 0f || Input.GetAxisRaw("GP LookY") != 0f)
             {
                 mCameraController.RotateCamera(JoystickInputHandler(new Vector2(Input.GetAxis("GP LookX"), Input.GetAxis("GP LookY"))) * 2f);
                 mGamepad = true;
@@ -119,7 +119,7 @@ public class InputHandler : MonoBehaviour
                 mPlayerController.SetMovementDirection(new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")));
                 mGamepad = false;
             }
-            else if(Input.GetAxis("GP Horizontal") != 0f || Input.GetAxis("GP Vertical") != 0f)
+            else if(Input.GetAxisRaw("GP Horizontal") != 0f || Input.GetAxisRaw("GP Vertical") != 0f)
             {
                 mPlayerController.SetMovementDirection(JoystickInputHandler(new Vector2(Input.GetAxis("GP Horizontal"), Input.GetAxis("GP Vertical"))));
                 mGamepad = true;
@@ -135,7 +135,7 @@ public class InputHandler : MonoBehaviour
                 mPlayerController.Jump();
                 mGamepad = false;
             }
-            else if(Input.GetButton("GP Jump"))
+            else if(Input.GetButtonDown("GP Jump"))
             {
                 mPlayerController.Jump();
                 mGamepad = true;
@@ -275,7 +275,7 @@ public class InputHandler : MonoBehaviour
         {
             mGamepad = false;
         }
-        else if(Input.GetAxis("GP Horizontal") != 0f || Input.GetAxis("GP Vertical") != 0f)
+        else if(Input.GetAxisRaw("GP Horizontal") != 0f || Input.GetAxisRaw("GP Vertical") != 0f)
         {
             mGamepad = true;
         }
