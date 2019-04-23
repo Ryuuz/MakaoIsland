@@ -80,7 +80,7 @@ public class FollowGuideScript : MonoBehaviour
     {
         if(mPlayer)
         {
-            if(give)
+            if(give && mPlayerPresent)
             {
                 mPlayer.mSpecialAction = mGuideAction;
                 GameManager.ManagerInstance().mControlUI.ShowControlUI(ControlAction.guide);

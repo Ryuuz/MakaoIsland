@@ -172,6 +172,10 @@ public class InputHandler : MonoBehaviour
             else if (Input.GetButtonUp("Special"))
             {
                 mPlayerController.TriggerSpecialAction(false);
+                if(Time.timeScale > 1f)
+                {
+                    Time.timeScale = 1f;
+                }
                 mGamepad = false;
             }
             else if(Input.GetButtonDown("GP Special"))
@@ -182,6 +186,10 @@ public class InputHandler : MonoBehaviour
             else if(Input.GetButtonUp("GP Special"))
             {
                 mPlayerController.TriggerSpecialAction(false);
+                if (Time.timeScale > 1f)
+                {
+                    Time.timeScale = 1f;
+                }
                 mGamepad = true;
             }
 

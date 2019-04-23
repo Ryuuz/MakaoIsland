@@ -75,14 +75,20 @@ public class ControlsUIScript : MonoBehaviour
             }
             mDescription.text = mControlsList[(int)type].mControlText;
 
-            mCanvasGroup.alpha = 1f;
-            mActive = true;
+            if(mCanvasGroup)
+            {
+                mCanvasGroup.alpha = 1f;
+                mActive = true;
+            }
         }
     }
 
     public void HideControlUI()
     {
-        mCanvasGroup.alpha = 0f;
-        mActive = false;
+        if(mCanvasGroup)
+        {
+            mCanvasGroup.alpha = 0f;
+            mActive = false;
+        }
     }
 }

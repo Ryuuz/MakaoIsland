@@ -31,7 +31,7 @@ public class LanternScript : MonoBehaviour
     {
         if(mRenderer)
         {
-            if(timeOfDay == DayCyclus.night)
+            if(timeOfDay == DayCyclus.dusk)
             {
                 Color onColor = mLightColor * mOnStrength;
                 mMaterial.SetColor("_EmissionColor", onColor);

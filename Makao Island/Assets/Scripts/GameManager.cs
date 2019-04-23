@@ -34,6 +34,8 @@ public class GameManager : MonoBehaviour
     private PlayableAsset mStartClip;
     private PlayableDirector mEndDirector;
     private PlayableAsset mEndClip;
+    private PlayableDirector mDoorDirector;
+    private PlayableAsset mDoorClip;
     private List<string> mRemovedObjects = new List<string>();
     private List<AIController> mAIs = new List<AIController>();
 
@@ -97,6 +99,8 @@ public class GameManager : MonoBehaviour
         mStartClip = mStartDirector.playableAsset;
         mEndDirector = GameObject.Find("EndingTimeline").GetComponent<PlayableDirector>();
         mEndClip = mEndDirector.playableAsset;
+        mDoorDirector = GameObject.Find("OpenDoor").GetComponent<PlayableDirector>();
+        mDoorClip = mDoorDirector.playableAsset;
 
         //Retrieve all AIs and sort them so they will always be in the same order
         GameObject[] tempAIs = GameObject.FindGameObjectsWithTag("NPC");
@@ -172,11 +176,22 @@ public class GameManager : MonoBehaviour
         }
         else
         {
+            bool openDoor = true;
             mData = SaveGameScript.LoadData();
 
             if(mData.mMapStatus)
             {
                 Destroy(GameObject.Find("Pandamoose"));
+            }
+
+            for(int i = 0; i < mData.mSpiritAnimalsStatus.Length; i++)
+            {
+                openDoor = openDoor && mData.mSpiritAnimalsStatus[i];
+            }
+
+            if(openDoor)
+            {
+                mDoorDirector.Play(mDoorClip);
             }
 
             mPlayer.transform.position = new Vector3(mData.mPlayerPosition[0], mData.mPlayerPosition[1], mData.mPlayerPosition[2]);

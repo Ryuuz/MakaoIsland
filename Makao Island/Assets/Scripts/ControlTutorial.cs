@@ -3,9 +3,11 @@
 public class ControlTutorial : MonoBehaviour
 {
     public ControlAction mAction;
+    private GameManager mGameManager;
 
     void Start()
     {
+        mGameManager = GameManager.ManagerInstance();
         //Check if player is inside the trigger
         if(Vector3.Distance(GameManager.ManagerInstance().mPlayer.transform.position, transform.position) < GetComponent<SphereCollider>().radius)
         {
@@ -36,6 +38,9 @@ public class ControlTutorial : MonoBehaviour
 
     private void OnDisable()
     {
-        GameManager.ManagerInstance().mControlUI.HideControlUI();
+        if(mGameManager)
+        {
+            mGameManager.mControlUI.HideControlUI();
+        }
     }
 }

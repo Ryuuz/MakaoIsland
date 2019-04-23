@@ -51,18 +51,24 @@ public class PauseMenuScript : MonoBehaviour
 
     public void HidePauseMenu()
     {
-        mCanvasGroup.alpha = 0f;
-        mCanvasGroup.blocksRaycasts = false;
-        mCanvasGroup.interactable = false;
-        mHidden = true;
+        if(mCanvasGroup)
+        {
+            mCanvasGroup.alpha = 0f;
+            mCanvasGroup.blocksRaycasts = false;
+            mCanvasGroup.interactable = false;
+            mHidden = true;
+        }
     }
 
     public void ShowPauseMenu()
     {
-        mCanvasGroup.alpha = 1f;
-        mCanvasGroup.blocksRaycasts = true;
-        mCanvasGroup.interactable = true;
-        mHidden = false;
+        if(mCanvasGroup)
+        {
+            mCanvasGroup.alpha = 1f;
+            mCanvasGroup.blocksRaycasts = true;
+            mCanvasGroup.interactable = true;
+            mHidden = false;
+        }
 
         if(mSelectedButton)
         {
@@ -92,7 +98,7 @@ public class PauseMenuScript : MonoBehaviour
     private IEnumerator SavedGameMessage()
     {
         mSavedMessageText.text = "The game has been saved!";
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSecondsRealtime(5f);
         mSavedMessageText.text = "";
     }
 }

@@ -156,7 +156,8 @@ public class DialogueTrigger : MonoBehaviour
     protected IEnumerator DialogueRunning()
     {
         float dialogueTime = 0f;
-        StartCoroutine(mTalkingAIs[mSentences[0].speaker - 1].mTalkingScript.LookAtObject(transform.position));
+        //StartCoroutine(mTalkingAIs[mSentences[0].speaker - 1].mTalkingScript.LookAtObject(transform.position));
+        LookAtListeners();
 
         foreach (Sentence line in mSentences)
         {
@@ -356,6 +357,48 @@ public class DialogueTrigger : MonoBehaviour
         {
             mSkipping = true;
             StopCoroutine(mCountingDown);
+        }
+    }
+
+    private void LookAtListeners()
+    {
+        Vector3 lookPosition = new Vector3();
+        int minListener = 1;
+        float minDistance = 100f;
+        int maxListener = 1;
+        float maxDistance = 0f;
+        float distance = 0f;
+
+        if(mTalkingAIs.Length > 2)
+        {
+            for (int i = 0; i < mTalkingAIs.Length; i++)
+            {
+                if ((mSentences[0].speaker - 1) != i)
+                {
+                    distance = (mTalkingAIs[mSentences[0].speaker - 1].mAITransform.position - mTalkingAIs[i].mAITransform.position).sqrMagnitude;
+                    if (distance < minDistance)
+                    {
+                        minListener = i;
+                        minDistance = distance;
+                    }
+                    if(distance > maxDistance)
+                    {
+                        maxListener = i;
+                        maxDistance = distance;
+                    }
+                }
+            }
+
+            if(minListener == maxListener)
+            {
+                StartCoroutine(mTalkingAIs[mSentences[0].speaker - 1].mTalkingScript.LookAtObject(mTalkingAIs[minListener].mAITransform.position));
+            }
+            else
+            {
+                lookPosition = mTalkingAIs[maxListener].mAITransform.position - mTalkingAIs[minListener].mAITransform.position;
+                lookPosition = mTalkingAIs[minListener].mAITransform.position + (lookPosition.normalized * (lookPosition.magnitude * 0.5f));
+                StartCoroutine(mTalkingAIs[mSentences[0].speaker - 1].mTalkingScript.LookAtObject(lookPosition));
+            }
         }
     }
 }
