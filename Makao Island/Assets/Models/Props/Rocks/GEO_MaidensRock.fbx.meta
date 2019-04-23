@@ -53,6 +53,15 @@ ModelImporter:
     4300012: GEO_maidens_rock_platform_047
     4300014: GEO_maidens_rock_platform_048
     4300016: GEO_maidens_rock_platform_049
+    6400000: GEO_maidens_rock_platform_044
+    6400002: GEO_maidens_rock_platform_045
+    6400004: GEO_maidens_rock_platform_046
+    6400006: GEO_maidens_rock_platform_047
+    6400008: GEO_maidens_rock_platform_048
+    6400010: GEO_maidens_rock_platform_049
+    6400012: GEO_maidens_rock_platform_050
+    6400014: GEO_maidens_rock_platform_051
+    6400016: GEO_maidens_rock_platform_052
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -91,7 +100,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1
