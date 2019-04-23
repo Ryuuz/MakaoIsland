@@ -71,14 +71,15 @@ public class SpiritOrbScript : MonoBehaviour
         }
 
         GameManager.ManagerInstance().UpdateSpiritAnimals((int)SpiritAnimalType.life);
-        yield return new WaitForSeconds(3.5f);
+        yield return new WaitForSeconds(4f);
 
         //Give the map to the player and spawn a tutorial sphere for it
-        InputHandler.InputInstance().mMapManager.mMapAvailable = true;
+        GameManager.ManagerInstance().mData.mMapStatus = true;
         if (mMapTutorial)
         {
             GameObject temp = Instantiate(mMapTutorial, transform.position, Quaternion.identity);
             temp.GetComponent<ControlTutorial>().mAction = ControlAction.map;
+            temp.GetComponent<SphereCollider>().radius = 5f;
         }
 
         Destroy(gameObject);

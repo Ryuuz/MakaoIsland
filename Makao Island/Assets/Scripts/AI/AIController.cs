@@ -94,18 +94,21 @@ public class AIController : MonoBehaviour
     //Have the NPC turn and look at the given position
     public IEnumerator LookAtObject(Vector3 obj)
     {
-        float rotationTime = 0f;
-        
-        //The desired rotation
-        Quaternion startRotation = mTransform.rotation;
-        Quaternion endRotation = new Quaternion();
-        endRotation.eulerAngles = new Vector3(startRotation.eulerAngles.x, Quaternion.LookRotation(obj - mTransform.position).eulerAngles.y, startRotation.eulerAngles.z);
-
-        while (Quaternion.Angle(mTransform.rotation, endRotation) > 1f)
+        if(mTransform.up == Vector3.up)
         {
-            rotationTime += (Time.deltaTime * mGameManager.mGameSpeed);
-            mTransform.rotation = Quaternion.Slerp(startRotation, endRotation, rotationTime);
-            yield return null;
+            float rotationTime = 0f;
+
+            //The desired rotation
+            Quaternion startRotation = mTransform.rotation;
+            Quaternion endRotation = new Quaternion();
+            endRotation.eulerAngles = new Vector3(startRotation.eulerAngles.x, Quaternion.LookRotation(obj - mTransform.position).eulerAngles.y, startRotation.eulerAngles.z);
+
+            while (Quaternion.Angle(mTransform.rotation, endRotation) > 1f)
+            {
+                rotationTime += (Time.deltaTime * mGameManager.mGameSpeed);
+                mTransform.rotation = Quaternion.Slerp(startRotation, endRotation, rotationTime);
+                yield return null;
+            }
         }
     }
 

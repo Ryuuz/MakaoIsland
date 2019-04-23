@@ -5,7 +5,6 @@ using UnityEngine.UI;
 public class MapManager : MonoBehaviour
 {
     public Sprite[] mDayCycleIcons;
-    public bool mMapAvailable { get; set; }
 
     [SerializeField]
     private TrackPlayer mPlayerOnMap;
@@ -23,7 +22,6 @@ public class MapManager : MonoBehaviour
         mGameManager = GameManager.ManagerInstance();
         mGameManager.eTimeChanged.AddListener(UpdateDayIcon);
         mGameManager.eSpiritAnimalFound.AddListener(UpdateSpiritAnimal);
-        mMapAvailable = mGameManager.mData.mMapStatus;
 
         //Give the input handler access to this object
         if (InputHandler.InputInstance().mMapManager == null)
@@ -56,7 +54,7 @@ public class MapManager : MonoBehaviour
     public void ShowMap()
     {
         //Can only open the map if it is available to the player
-        if(mMapAvailable)
+        if(mGameManager.mData.mMapStatus)
         {
             mCanvasGroup.alpha = 1f;
             mCanvasGroup.blocksRaycasts = true;

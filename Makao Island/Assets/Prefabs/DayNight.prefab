@@ -262,6 +262,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mCycleLength: 180
+  mDawnStartRotation: 335
+  mDayStartRotation: 20
+  mDuskStartRotation: 155
+  mNightStartRotation: 205
   mSkyColorTint:
     serializedVersion: 2
     key0: {r: 0.4811321, g: 0.4811321, b: 0.4811321, a: 1}

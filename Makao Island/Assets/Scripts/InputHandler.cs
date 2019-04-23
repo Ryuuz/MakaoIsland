@@ -186,12 +186,12 @@ public class InputHandler : MonoBehaviour
             }
 
             //Open map
-            if (Input.GetButtonDown("Map") && mMapManager)
+            if (Input.GetButtonDown("Map"))
             {
                 ToggleMap();
                 mGamepad = false;
             }
-            else if(Input.GetButtonDown("GP Map") && mMapManager)
+            else if(Input.GetButtonDown("GP Map"))
             {
                 ToggleMap();
                 mGamepad = true;
@@ -214,34 +214,34 @@ public class InputHandler : MonoBehaviour
     //Handling of input while the game is paused
     private void HandlePauseInput()
     {
-        if(mGamepad)
-        {
-            Cursor.visible = false;
-        }
-        else
+        if(!mGamepad && !mMapOpen)
         {
             Cursor.visible = true;
         }
+        else
+        {
+            Cursor.visible = false;
+        }
 
         //Close map
-        if (Input.GetButtonDown("Map") && mMapOpen)
+        if (Input.GetButtonDown("Map"))
         {
             ToggleMap();
             mGamepad = false;
         }
-        else if(Input.GetButtonDown("GP Map") && mMapOpen)
+        else if(Input.GetButtonDown("GP Map"))
         {
             ToggleMap();
             mGamepad = true;
         }
 
         //Close pause menu
-        if (Input.GetButtonDown("Pause") && !mMapOpen)
+        if (Input.GetButtonDown("Pause"))
         {
             TogglePause();
             mGamepad = false;
         }
-        else if(Input.GetButtonDown("GP Pause") && !mMapOpen)
+        else if(Input.GetButtonDown("GP Pause"))
         {
             TogglePause();
             mGamepad = true;
@@ -296,10 +296,10 @@ public class InputHandler : MonoBehaviour
 
     private void ToggleMap()
     {
-        if(mMapManager.mMapAvailable)
+        if(mMapManager)
         {
             //Opens map if not open
-            if(mMapManager.mMapAvailable && !mMapOpen)
+            if(mGameManager.mData.mMapStatus && !mMapOpen)
             {
                 mPlayerController.SetMovementDirection(Vector2.zero);
                 mMapManager.ShowMap();
@@ -307,11 +307,12 @@ public class InputHandler : MonoBehaviour
                 mInMenu = true;
             }
             //Closes map
-            else
+            else if(mMapOpen)
             {
                 mMapManager.HideMap();
                 mMapOpen = false;
                 mInMenu = false;
+                Cursor.visible = false;
             }
         }
     }
@@ -328,7 +329,7 @@ public class InputHandler : MonoBehaviour
             mInMenu = false;
         }
         //Opens pause menu
-        else
+        else if(!mMapOpen)
         {
             mInMenu = true;
             mPauseMenu.ShowPauseMenu();

@@ -17,7 +17,7 @@ public class DialogueTriggerSpecial : DialogueTrigger
 
     public override void EvaluateStatus()
     {
-        if (AllSpeakersPresent() && IsReadyToTalk())
+        if (IsReadyToTalk())
         {
             if(!mPlaying)
             {

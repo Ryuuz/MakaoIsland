@@ -103,6 +103,12 @@ public class SpiritAnimal : AIController
     //Register the spirit animal as found
     private IEnumerator Blessing(Vector3 player)
     {
+        if (mPlayer.mSpecialAction == mRecieveBlessing)
+        {
+            mPlayer.mSpecialAction = null;
+            mGameManager.mControlUI.HideControlUI();
+        }
+
         yield return StartCoroutine(LookAtObject(player));
         mGameManager.UpdateSpiritAnimals((int)mAnimalType);
 

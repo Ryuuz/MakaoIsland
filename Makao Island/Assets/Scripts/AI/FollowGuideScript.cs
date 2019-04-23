@@ -41,10 +41,10 @@ public class FollowGuideScript : MonoBehaviour
         if (other.tag == "Player")
         {
             mPlayerPresent = false;
+            SetGuideAction(false);
 
-            if(mGuided)
+            if (mGuided)
             {
-                SetGuideAction(false);
                 StopAgent();
             }
         }
@@ -78,7 +78,7 @@ public class FollowGuideScript : MonoBehaviour
     //Give or take the guide action provided the player is available
     public void SetGuideAction(bool give)
     {
-        if(mPlayer && mPlayerPresent)
+        if(mPlayer)
         {
             if(give)
             {

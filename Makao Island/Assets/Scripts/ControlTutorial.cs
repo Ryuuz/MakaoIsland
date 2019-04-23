@@ -29,9 +29,13 @@ public class ControlTutorial : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            GameManager.ManagerInstance().mControlUI.HideControlUI();
             GameManager.ManagerInstance().RemoveObject(name);
             Destroy(gameObject);
         }
+    }
+
+    private void OnDisable()
+    {
+        GameManager.ManagerInstance().mControlUI.HideControlUI();
     }
 }
