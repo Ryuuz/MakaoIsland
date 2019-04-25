@@ -149,12 +149,12 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: MAT_gate_frame
-    second: {fileID: 2100000, guid: 80ee03ce6e8f7544c8be9263fcd67d83, type: 2}
+    second: {fileID: 2100000, guid: 5a6ced62b8c708e468203f535a043508, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: MAT_gate_rocks
-    second: {fileID: 2100000, guid: 3d3ee1e4d5fdbc84395311699c1603bf, type: 2}
+    second: {fileID: 2100000, guid: 1e72a98b165953d42923cd459c700222, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
