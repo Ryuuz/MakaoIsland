@@ -51,7 +51,8 @@ public class AIAnimationScript : MonoBehaviour
     //Sets the variable that decides the speed of the animation
     public void SetPlaySpeed(float speed)
     {
-        mAnimator.SetFloat("GameSpeed", speed);
+        float newSpeed = speed > 1f ? 3f : 1f;
+        mAnimator.SetFloat("GameSpeed", newSpeed);
     }
 
     protected void WalkingAnimation()
@@ -80,11 +81,11 @@ public class AIAnimationScript : MonoBehaviour
             //Speed of the walk animation
             if(mAgent)
             {
-                mAnimator.SetFloat("WalkSpeed", Mathf.Max(mAgent.velocity.magnitude / mAgent.speed, 0.5f));
+                mAnimator.SetFloat("WalkSpeed", Mathf.Max(mAgent.velocity.magnitude / mAgent.speed, 0.6f));
             }
             else
             {
-                mAnimator.SetFloat("WalkSpeed", Mathf.Max(positionOffset.magnitude, 0.5f));
+                mAnimator.SetFloat("WalkSpeed", Mathf.Max(positionOffset.magnitude, 0.6f));
             }
 
             if(mAudio && mWalkingSound && !mAudio.isPlaying)

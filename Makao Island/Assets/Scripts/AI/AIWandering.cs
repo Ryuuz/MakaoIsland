@@ -19,7 +19,14 @@ public class AIWandering : AIController
         //If the NPC isn't already headed somewhere
         if(!mAgent.hasPath)
         {
-            mAgent.speed = mWanderingSpeed * mTimeSpeed;
+            if (mTimeSpeed > 1f)
+            {
+                mAgent.speed = 8f;
+            }
+            else
+            {
+                mAgent.speed = mWanderingSpeed;
+            }
 
             //Set a random destination in a radius around a set location
             mAgent.SetDestination(mCurrentLocation + (Random.insideUnitSphere * mWanderingRadius));
@@ -39,7 +46,15 @@ public class AIWandering : AIController
             yield return new WaitForSeconds(mTransitionDelay / mGameManager.mGameSpeed);
         }
 
-        mAgent.speed = mSpeed * mTimeSpeed;
+        if(mTimeSpeed > 1f)
+        {
+            mAgent.speed = 10f;
+        }
+        else
+        {
+            mAgent.speed = mSpeed;
+        }
+        
         mAgent.SetDestination(position);
     }
 }

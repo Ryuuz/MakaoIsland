@@ -63,7 +63,7 @@ public class GateLightsScript : MonoBehaviour
 
         while(lerpTime <= 1f)
         {
-            lerpTime += (Time.deltaTime * mEmissionDelay) * GameManager.ManagerInstance().mGameSpeed;
+            lerpTime += (Time.deltaTime * mEmissionDelay);
 
             emissiveColor = Color.Lerp(startColor, endColor, lerpTime);
 

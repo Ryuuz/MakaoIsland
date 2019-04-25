@@ -156,13 +156,17 @@ public class DialogueTrigger : MonoBehaviour
     protected IEnumerator DialogueRunning()
     {
         float dialogueTime = 0f;
-        //StartCoroutine(mTalkingAIs[mSentences[0].speaker - 1].mTalkingScript.LookAtObject(transform.position));
         LookAtListeners();
 
         foreach (Sentence line in mSentences)
         {
             //How long the line of dialogue will show calculated from the number of characters in it
-            dialogueTime = (2f + (0.1f * line.text.Length)) * GameManager.ManagerInstance().mGameSpeed;
+            dialogueTime = (2f + (0.1f * line.text.Length));
+
+            if(GameManager.ManagerInstance().mGameSpeed > 1f)
+            {
+                dialogueTime *= 4f;
+            }
 
             if(line.speaker <= mSpeakers.Length)
             {
@@ -311,7 +315,7 @@ public class DialogueTrigger : MonoBehaviour
         SetListenAction(true, false);
     }
 
-    //Gives or takes the listen action from the player depending on the parameter 'listen'
+    //Gives or takes the listen or skip action from the player depending on the parameters
     protected void SetListenAction(bool listen, bool give)
     {
         if(mPlayerPresent)
@@ -351,6 +355,7 @@ public class DialogueTrigger : MonoBehaviour
         GetDialogue();
     }
 
+    //Skip the current line
     public void SkipDialogue()
     {
         if (mPlaying && mPlayerListening && !mSkipping && mCountingDown != null)
@@ -360,6 +365,7 @@ public class DialogueTrigger : MonoBehaviour
         }
     }
 
+    //The AI talking first will look at the listeners
     private void LookAtListeners()
     {
         Vector3 lookPosition = new Vector3();
@@ -369,10 +375,12 @@ public class DialogueTrigger : MonoBehaviour
         float maxDistance = 0f;
         float distance = 0f;
 
+        //Must be at least one listener (a total of two speakers including the one currently speaking)
         if(mTalkingAIs.Length > 2)
         {
             for (int i = 0; i < mTalkingAIs.Length; i++)
             {
+                //Find the AIs that are closest and furthest from the speaker
                 if ((mSentences[0].speaker - 1) != i)
                 {
                     distance = (mTalkingAIs[mSentences[0].speaker - 1].mAITransform.position - mTalkingAIs[i].mAITransform.position).sqrMagnitude;
@@ -389,10 +397,12 @@ public class DialogueTrigger : MonoBehaviour
                 }
             }
 
+            //If it's the same AI for both cases (suggesting only one other AI in addition to speaker)
             if(minListener == maxListener)
             {
                 StartCoroutine(mTalkingAIs[mSentences[0].speaker - 1].mTalkingScript.LookAtObject(mTalkingAIs[minListener].mAITransform.position));
             }
+            //Else look at a point between the max and min AI
             else
             {
                 lookPosition = mTalkingAIs[maxListener].mAITransform.position - mTalkingAIs[minListener].mAITransform.position;

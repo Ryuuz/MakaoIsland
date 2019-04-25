@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7734822027482057029}
   - component: {fileID: 7734822027482057028}
   - component: {fileID: 4892020121095399670}
+  - component: {fileID: 4538873307459168987}
   m_Layer: 0
   m_Name: Fireflies
   m_TagString: Untagged
@@ -4718,5 +4719,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8e7f22c0b511834db23f0b5eea33731, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4538873307459168987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7734822027482057031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cd0aae7049dd114fa0459f6c20b325d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

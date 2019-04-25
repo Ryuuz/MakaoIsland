@@ -17,6 +17,8 @@
 		_Speed ("Speed", Range(0, 1)) = 0.4
 		_Height ("Wave height", Range(0, 1)) = 0.5
 		_Amount ("Amount", Range(0, 1)) = 0.5
+
+		[HideInInspector]_GameSpeed ("Game speed", Float) = 1.0
     }
     SubShader
     {
@@ -61,6 +63,8 @@
 		float _Speed;
 		float _Height;
 		float _Amount;
+		float _GameSpeed;
+
 		sampler2D _CameraDepthTexture;
 		sampler2D _WaterBackground;
 
@@ -78,7 +82,7 @@
 
         void vert(inout appdata_full v)
 		{
-			v.vertex.y += sin(_Time.z * _Speed + (v.vertex.x * v.vertex.z * _Amount)) * _Height;
+			v.vertex.y += sin(_Time.z * (_Speed * _GameSpeed) + (v.vertex.x * v.vertex.z * _Amount)) * _Height;
 
 			float3 tangent = normalize(float3(1, _Amount * _Height * cos(_Time.z * _Speed + (v.vertex.x * v.vertex.z * _Amount)), 0));
 			v.normal = float3(-tangent.y, tangent.x, 0);

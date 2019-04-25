@@ -31,7 +31,7 @@ public class UnderwaterScript : MonoBehaviour
             mIsUnderwater = true;
         }
         //Reset the fog to default values when out of the water
-        else if(mIsUnderwater && mCameraTransform.position.y > mWaterTransform.position.y)
+        else if(mIsUnderwater && mCameraTransform.position.y >= mWaterTransform.position.y)
         {
             RenderSettings.fogColor = mFogColor;
             RenderSettings.fogDensity = mDefaultDensity;

@@ -23,21 +23,15 @@ public class RespawnScript : MonoBehaviour
 
     void Update()
     {
-        //Start playing the blackout before reaching the lowest point
-        if(mPosition.position.y < (mLowestPoint + 5f) && !mRespawning)
-        {
-            mRespawning = true;
-
-            if(mDirector)
-            {
-                mDirector.Play(mClip);
-            }
-        }
         //Respawn
         if(mPosition.position.y < mLowestPoint)
         {
+            if (mDirector)
+            {
+                Debug.Log("playing black out");
+                mDirector.Play(mClip);
+            }
             mPosition.position = GameManager.ManagerInstance().mCurrentRespawnPoint.position;
-            mRespawning = false;
         }
     }
 }

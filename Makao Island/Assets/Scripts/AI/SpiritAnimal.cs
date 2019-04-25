@@ -5,6 +5,9 @@ public class SpiritAnimal : AIController
 {
     public SpiritAnimalType mAnimalType;
 
+    [SerializeField]
+    private GameObject mMapTutorial;
+
     private FadeScript mFade;
     private SpecialActionRecieveBlessing mRecieveBlessing;
     private PlayerController mPlayer;
@@ -119,6 +122,14 @@ public class SpiritAnimal : AIController
         }
         
         yield return StartCoroutine(mFade.FadeOut());
+
+        if (mMapTutorial)
+        {
+            GameObject temp = Instantiate(mMapTutorial, transform.position, Quaternion.identity);
+            temp.GetComponent<ControlTutorial>().mAction = ControlAction.map;
+            temp.GetComponent<SphereCollider>().radius = 6f;
+        }
+
         Destroy(gameObject);
     }
 }

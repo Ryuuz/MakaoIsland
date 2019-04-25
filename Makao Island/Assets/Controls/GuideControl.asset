@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: GuideControl
   m_EditorClassIdentifier: 
   mControlType: 6
-  mDefaultControl: {fileID: 21300000, guid: 0025c71bf317508418dd550262e46d3c, type: 3}
-  mGamepadControl: {fileID: 21300000, guid: ca7ef16b95726b045a290a46039a5927, type: 3}
+  mDefaultControl: {fileID: 21300000, guid: b7982f8787c03634497533c071c88520, type: 3}
+  mGamepadControl: {fileID: 21300000, guid: a82ae4927a945374b81095a7b3b3b1b4, type: 3}
   mControlText: Press to guide

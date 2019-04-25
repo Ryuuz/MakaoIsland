@@ -86,8 +86,16 @@ public class AIController : MonoBehaviour
     {
         if(mAgent)
         {
-            mAgent.speed = mSpeed * speed;
-            mAgent.acceleration = mAcceleration * speed;
+            if(speed > 1f)
+            {
+                mAgent.speed = 10f;
+                mAgent.acceleration = 60f;
+            }
+            else
+            {
+                mAgent.speed = mSpeed;
+                mAgent.acceleration = mAcceleration;
+            }
         }
     }
 
