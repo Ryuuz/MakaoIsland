@@ -228,7 +228,52 @@ ModelImporter:
     4300074: Red_Lantern_2
     4300076: Red_Lantern_1
     4300078: Candybooth
-  externalObjects: {}
+    6400000: Candybooth
+    6400002: Dumpling_1
+    6400004: Dumpling_2
+    6400006: Dumpling_3
+    6400008: Dumpling_4
+    6400010: Dumpling_5
+    6400012: Dumpling_6
+    6400014: Dumpling_7
+    6400016: Dumpling_8
+    6400018: GEO_Bucket_Blue
+    6400020: GEO_Bucket_Green
+    6400022: GEO_Bucket_Pink
+    6400024: GEO_cutting_boards_1
+    6400026: GEO_cutting_boards_2
+    6400028: GEO_cutting_boards_3
+    6400030: GEO_Sign_1
+    6400032: GEO_Sign_2
+    6400034: GEO_Sign_3
+    6400036: GEO_wooden_table
+    6400038: KittyDumpling_1
+    6400040: KittyDumpling_2
+    6400042: KittyDumpling_3
+    6400044: KittyDumpling_4
+    6400046: Meatball_1
+    6400048: Meatball_2
+    6400050: Meatball_3
+    6400052: Meatball_4
+    6400054: Meatball_5
+    6400056: Meatball_6
+    6400058: Meatball_Fish_Stick_1
+    6400060: Meatball_Fish_Stick_2
+    6400062: Meatball_Fish_Stick_3
+    6400064: Meatball_Fish_Stick_4
+    6400066: Meatball_Paw_Stick_1
+    6400068: Meatball_Paw_Stick_2
+    6400070: Meatball_Paw_Stick_3
+    6400072: Meatball_Paw_Stick_4
+    6400074: Poster
+    6400076: Red_Lantern_1
+    6400078: Red_Lantern_2
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MAT_decorations
+    second: {fileID: 2100000, guid: d29b679633806c145973218965ae1403, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -261,7 +306,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1

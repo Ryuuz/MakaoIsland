@@ -36,6 +36,12 @@ ModelImporter:
     4300006: GEO_sand_Spawn
     4300008: GRP_windy_peaks_sand
     4300010: GEO_sand_underwater
+    6400000: GEO_sand_FieldSmall
+    6400002: GEO_sand_ForestPlus
+    6400004: GEO_sand_MarketFields
+    6400006: GEO_sand_Spawn
+    6400008: GEO_sand_underwater
+    6400010: GRP_windy_peaks_sand
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -74,7 +80,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1
