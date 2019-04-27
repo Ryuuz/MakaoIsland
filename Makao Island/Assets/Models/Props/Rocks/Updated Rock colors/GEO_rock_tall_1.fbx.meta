@@ -11,6 +11,7 @@ ModelImporter:
     2300000: GEO_rock_tall_1
     3300000: GEO_rock_tall_1
     4300000: GEO_rock_tall_1
+    6400000: GEO_rock_tall_1
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -49,7 +50,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1
