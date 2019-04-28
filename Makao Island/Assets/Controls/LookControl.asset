@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: LookControl
   m_EditorClassIdentifier: 
   mControlType: 1
-  mDefaultControl: {fileID: 21300000, guid: 2bd3722e09258f64bb48096d0cd61b62, type: 3}
+  mDefaultControl: {fileID: 21300000, guid: e0a4921e60a3c4d4b906cb0c559c3070, type: 3}
   mGamepadControl: {fileID: 21300000, guid: 013f8e1d8d7d963499d0ba3655951967, type: 3}
   mControlText: Look around

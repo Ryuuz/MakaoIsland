@@ -14,6 +14,8 @@ public class PauseMenuScript : MonoBehaviour
     private TextMeshProUGUI mSavedMessageText;
     [SerializeField]
     private EventSystem mEventSystem;
+    [SerializeField]
+    private AudioSource mBackgroundMusic;
 
     private bool mDeactivated = false;
     private bool mHidden = true;
@@ -93,6 +95,21 @@ public class PauseMenuScript : MonoBehaviour
     public void GoToMenu()
     {
         SceneManager.LoadScene(0);
+    }
+
+    public void MuteMusic()
+    {
+        if(mBackgroundMusic)
+        {
+            if(mBackgroundMusic.isPlaying)
+            {
+                mBackgroundMusic.Stop();
+            }
+            else
+            {
+                mBackgroundMusic.Play();
+            }
+        }
     }
 
     private IEnumerator SavedGameMessage()

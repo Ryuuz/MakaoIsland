@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 907980706625313426}
   m_Layer: 0
-  m_Name: Mask_Female_Shop (2)
+  m_Name: Mask_Female_Shop_v1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -89,7 +89,7 @@ PrefabInstance:
     - target: {fileID: 2300000, guid: ad3357d21fba9504389efe8afddda7bd, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 96b11a468683778438e26f7b9fe0b835, type: 2}
+      objectReference: {fileID: 2100000, guid: d4c61a7f3b3125a4c97da911a61a379a, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad3357d21fba9504389efe8afddda7bd, type: 3}
 --- !u!4 &7384620439927987451 stripped

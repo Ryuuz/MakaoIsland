@@ -125,10 +125,10 @@ public class SpiritAnimal : AIController
 
         if (mMapTutorial)
         {
-            GameObject temp = Instantiate(mMapTutorial, transform.position, Quaternion.identity);
-            temp.GetComponent<ControlTutorial>().mAction = ControlAction.map;
-            temp.GetComponent<SphereCollider>().radius = 6f;
+            Instantiate(mMapTutorial, mPlayer.transform.position, Quaternion.identity);
         }
+
+        mPlayer.GetComponent<AudioSource>().Play();
 
         Destroy(gameObject);
     }

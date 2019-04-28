@@ -9,6 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5614368937049376224}
+  - component: {fileID: 2158540780962928294}
+  - component: {fileID: 5809519928979227362}
+  - component: {fileID: 105826463997221881}
+  - component: {fileID: 6865805378389635596}
+  - component: {fileID: 5851762479736903349}
+  - component: {fileID: 1529369976299329488}
   m_Layer: 0
   m_Name: CandyShop
   m_TagString: Untagged
@@ -28,10 +34,168 @@ Transform:
   m_LocalScale: {x: 1.3405, y: 1.3405, z: 1.3405}
   m_Children:
   - {fileID: 2807955915369257391}
-  - {fileID: 5584784539333791600}
+  - {fileID: 9055550082108505079}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2158540780962928294
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5614368937049376225}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.3656456, y: 1.0263077, z: 2.3266618}
+  m_Center: {x: -0.0038869074, y: 0.51064485, z: -0.690703}
+--- !u!65 &5809519928979227362
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5614368937049376225}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.3603334, y: 0.5932028, z: 3.0197344}
+  m_Center: {x: -0.0005606082, y: 2.1902049, z: -0.33409476}
+--- !u!65 &105826463997221881
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5614368937049376225}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.3651063, y: 0.8668755, z: 1.4246048}
+  m_Center: {x: -0.0029596451, y: 1.458319, z: -1.1451557}
+--- !u!65 &6865805378389635596
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5614368937049376225}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.7418122, y: 0.8384038, z: 0.09066024}
+  m_Center: {x: -2.022195, y: 1.9231194, z: -1.5560957}
+--- !u!135 &5851762479736903349
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5614368937049376225}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.20699838
+  m_Center: {x: 1.8894957, y: 1.8074787, z: 0.73933667}
+--- !u!135 &1529369976299329488
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5614368937049376225}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.20507129
+  m_Center: {x: -1.8878942, y: 1.8074787, z: 0.7393366}
+--- !u!1001 &306689431838436072
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 5614368937049376224}
+    m_Modifications:
+    - target: {fileID: 6427978516050760808, guid: aa2d98788aa1957488d6771e08f99ce8,
+        type: 3}
+      propertyPath: m_Name
+      value: CandyShopModel
+      objectReference: {fileID: 0}
+    - target: {fileID: 8784924988681392415, guid: aa2d98788aa1957488d6771e08f99ce8,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8784924988681392415, guid: aa2d98788aa1957488d6771e08f99ce8,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8784924988681392415, guid: aa2d98788aa1957488d6771e08f99ce8,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8784924988681392415, guid: aa2d98788aa1957488d6771e08f99ce8,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8784924988681392415, guid: aa2d98788aa1957488d6771e08f99ce8,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8784924988681392415, guid: aa2d98788aa1957488d6771e08f99ce8,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8784924988681392415, guid: aa2d98788aa1957488d6771e08f99ce8,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8784924988681392415, guid: aa2d98788aa1957488d6771e08f99ce8,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8784924988681392415, guid: aa2d98788aa1957488d6771e08f99ce8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8784924988681392415, guid: aa2d98788aa1957488d6771e08f99ce8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8784924988681392415, guid: aa2d98788aa1957488d6771e08f99ce8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5539288092260714296, guid: aa2d98788aa1957488d6771e08f99ce8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: aa2d98788aa1957488d6771e08f99ce8, type: 3}
+--- !u!4 &9055550082108505079 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8784924988681392415, guid: aa2d98788aa1957488d6771e08f99ce8,
+    type: 3}
+  m_PrefabInstance: {fileID: 306689431838436072}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2807955915369382699
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -94,75 +258,4 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400004, guid: 2272184519af22742a9988c4cf0e4129,
     type: 3}
   m_PrefabInstance: {fileID: 2807955915369382699}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &5584784539333662194
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 5614368937049376224}
-    m_Modifications:
-    - target: {fileID: 100002, guid: a27bfaf9f3b7f0a4bbe8c0a6137ff2dd, type: 3}
-      propertyPath: m_Name
-      value: CandyShopModel
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: a27bfaf9f3b7f0a4bbe8c0a6137ff2dd, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: a27bfaf9f3b7f0a4bbe8c0a6137ff2dd, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: a27bfaf9f3b7f0a4bbe8c0a6137ff2dd, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: a27bfaf9f3b7f0a4bbe8c0a6137ff2dd, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: a27bfaf9f3b7f0a4bbe8c0a6137ff2dd, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: a27bfaf9f3b7f0a4bbe8c0a6137ff2dd, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: a27bfaf9f3b7f0a4bbe8c0a6137ff2dd, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: a27bfaf9f3b7f0a4bbe8c0a6137ff2dd, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: a27bfaf9f3b7f0a4bbe8c0a6137ff2dd, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: a27bfaf9f3b7f0a4bbe8c0a6137ff2dd, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: a27bfaf9f3b7f0a4bbe8c0a6137ff2dd, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: a27bfaf9f3b7f0a4bbe8c0a6137ff2dd, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 100098, guid: a27bfaf9f3b7f0a4bbe8c0a6137ff2dd, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: a27bfaf9f3b7f0a4bbe8c0a6137ff2dd, type: 3}
---- !u!4 &5584784539333791600 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 400002, guid: a27bfaf9f3b7f0a4bbe8c0a6137ff2dd,
-    type: 3}
-  m_PrefabInstance: {fileID: 5584784539333662194}
   m_PrefabAsset: {fileID: 0}

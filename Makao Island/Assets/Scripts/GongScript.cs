@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 
-[RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(AudioSource))]
 public class GongScript : MonoBehaviour
 {

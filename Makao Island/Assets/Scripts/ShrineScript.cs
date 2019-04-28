@@ -4,11 +4,13 @@ public class ShrineScript : MonoBehaviour
 {
     private SpecialActionMeditate mMeditateAction;
     private PlayerController mPlayer;
+    private AudioSource mAudio;
 
     void Start()
     {
-        mMeditateAction = new SpecialActionMeditate();
+        mMeditateAction = new SpecialActionMeditate(this);
         mPlayer = GameManager.ManagerInstance().mPlayer.GetComponent<PlayerController>();
+        mAudio = GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -33,6 +35,21 @@ public class ShrineScript : MonoBehaviour
 
                 //Makes sure the game speed is returned to normal
                 mMeditateAction.UseSpecialAction(false);
+            }
+        }
+    }
+
+    public void ShrineSound(bool play)
+    {
+        if(mAudio)
+        {
+            if(play && !mAudio.isPlaying)
+            {
+                mAudio.Play();
+            }
+            else
+            {
+                mAudio.Stop();
             }
         }
     }

@@ -31,7 +31,12 @@ ModelImporter:
     4300004: waterfall_3
     4300006: river_tiles
     4300008: small_waterfall_1
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: water_river_tile_material
+    second: {fileID: 2100000, guid: 82d7a28d43b0a624399501bdc2e31814, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -68,8 +73,8 @@ ModelImporter:
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
+    importCameras: 0
+    importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -93,7 +98,7 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
-  importAnimation: 1
+  importAnimation: 0
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2

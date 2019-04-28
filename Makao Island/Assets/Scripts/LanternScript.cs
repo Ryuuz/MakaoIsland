@@ -24,6 +24,11 @@ public class LanternScript : MonoBehaviour
                 i = materials.Length;
             }
         }
+
+        Color onColor = mLightColor * mOnStrength;
+        mMaterial.SetColor("_EmissionColor", onColor);
+        DynamicGI.SetEmissive(mRenderer, onColor);
+
         GameManager.ManagerInstance().eTimeChanged.AddListener(ToggleLantern);
         ToggleLantern((DayCyclus)GameManager.ManagerInstance().mData.mDayTime);
     }
@@ -39,7 +44,7 @@ public class LanternScript : MonoBehaviour
                 mMaterial.SetColor("_EmissionColor", onColor);
                 DynamicGI.SetEmissive(mRenderer, onColor);
             }
-            else if(timeOfDay == DayCyclus.dawn)
+            else if(timeOfDay == DayCyclus.day)
             {
                 Color offColor = mLightColor * mOffStrength;
                 mMaterial.SetColor("_EmissionColor", offColor);

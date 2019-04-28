@@ -6,7 +6,6 @@ public class RespawnScript : MonoBehaviour
     public float mLowestPoint = -10f;
 
     private Transform mPosition;
-    private bool mRespawning = false;
     private PlayableDirector mDirector;
     private PlayableAsset mClip;
 
@@ -28,7 +27,6 @@ public class RespawnScript : MonoBehaviour
         {
             if (mDirector)
             {
-                Debug.Log("playing black out");
                 mDirector.Play(mClip);
             }
             mPosition.position = GameManager.ManagerInstance().mCurrentRespawnPoint.position;

@@ -77,6 +77,8 @@ MonoBehaviour:
   mDuskLocation: {fileID: 0}
   mNightLocation: {fileID: 0}
   mAnimalType: 0
+  mMapTutorial: {fileID: 1310813453187436767, guid: ccfa738e2b31d7445812e54486645acc,
+    type: 3}
 --- !u!114 &2999995000428647783
 MonoBehaviour:
   m_ObjectHideFlags: 0

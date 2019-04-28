@@ -77,10 +77,9 @@ public class SpiritOrbScript : MonoBehaviour
         GameManager.ManagerInstance().mData.mMapStatus = true;
         if (mMapTutorial)
         {
-            GameObject temp = Instantiate(mMapTutorial, transform.position, Quaternion.identity);
-            temp.GetComponent<ControlTutorial>().mAction = ControlAction.map;
-            temp.GetComponent<SphereCollider>().radius = 5f;
+            Instantiate(mMapTutorial, GameManager.ManagerInstance().mPlayer.transform.position, Quaternion.identity);
         }
+        GameManager.ManagerInstance().mPlayer.GetComponent<AudioSource>().Play();
 
         Destroy(gameObject);
     }

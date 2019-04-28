@@ -21,13 +21,16 @@ public class AITalking : AIController
     //Show or hide the speech bubble
     public void ToggleSpeechBubble(bool show)
     {
-        if(show)
+        if(mSpeechBubble)
         {
-            mSpeechBubble.gameObject.SetActive(true);
-        }
-        else
-        {
-            mSpeechBubble.gameObject.SetActive(false);
+            if (show)
+            {
+                mSpeechBubble.gameObject.SetActive(true);
+            }
+            else
+            {
+                mSpeechBubble.gameObject.SetActive(false);
+            }
         }
     }
 

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.Playables;
 using UnityEngine.AI;
+using UnityEngine.Events;
 
 public class GameManager : MonoBehaviour
 {
@@ -26,6 +27,8 @@ public class GameManager : MonoBehaviour
     public TimeChangeEvent eTimeChanged = new TimeChangeEvent();
     [HideInInspector]
     public SpiritAnimalEvent eSpiritAnimalFound = new SpiritAnimalEvent();
+    [HideInInspector]
+    public UnityEvent eSpiritGirlFound = new UnityEvent();
 
     [SerializeField]
     private DayCycle mDayCycle;
@@ -143,6 +146,12 @@ public class GameManager : MonoBehaviour
     {
         DayCyclus currentTimeOfDay = mDayCycle.GetTimeOfDay();
         eTimeChanged.Invoke(currentTimeOfDay);
+    }
+
+    public void FoundSpiritGirl()
+    {
+        mData.mSpiritGirlStatus = true;
+        eSpiritGirlFound.Invoke();
     }
 
     //The status of a spirit animal has changed

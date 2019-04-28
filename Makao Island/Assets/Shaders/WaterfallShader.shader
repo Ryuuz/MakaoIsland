@@ -5,6 +5,7 @@
         _Color ("Color", Color) = (1,1,1,1)
         _MainTex ("Albedo (RGB)", 2D) = "white" {}
 		_Transparency ("Water transparency", Range(0,1)) = 0.8
+		_Speed ("Speed", Float) = 1
         _Glossiness ("Smoothness", Range(0,1)) = 0.5
         _Metallic ("Metallic", Range(0,1)) = 0.0
     }
@@ -34,11 +35,12 @@
         half _Glossiness;
         half _Metallic;
 		float _Transparency;
+		float _Speed;
         fixed4 _Color;
 
         void surf (Input IN, inout SurfaceOutputStandard o)
         {
-            float2 uv = float2(IN.uv_MainTex.x, IN.uv_MainTex.y + (_Time.y * 0.8));
+            float2 uv = float2(IN.uv_MainTex.x, IN.uv_MainTex.y + (_Time.y * _Speed));
             fixed4 c = tex2D (_MainTex, uv) * _Color;
             o.Albedo = c.rgb;
             

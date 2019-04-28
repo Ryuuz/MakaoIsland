@@ -26,13 +26,13 @@ Material:
     m_Floats:
     - _Amount: 0.5
     - _DepthFactor: 1.67
-    - _FogDensity: 0.39
+    - _FogDensity: 0.21
     - _GameSpeed: 1
     - _Glossiness: 0.462
     - _Height: 0.5
     - _Metallic: 0
     - _Speed: 0.4
-    - _Transparency: 0.5
+    - _Transparency: 0.213
     m_Colors:
     - _Color: {r: 0.23137255, g: 0.6039216, b: 0.9490196, a: 1}
     - _FoamColor: {r: 1, g: 1, b: 1, a: 1}

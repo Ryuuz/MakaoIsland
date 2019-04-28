@@ -4,7 +4,7 @@ public class ControlTutorial : MonoBehaviour
 {
     public ControlAction mAction;
 
-    void Start()
+    protected void Start()
     {
         //Check if player is inside the trigger
         if(Vector3.Distance(GameManager.ManagerInstance().mPlayer.transform.position, transform.position) < GetComponent<SphereCollider>().radius)
@@ -21,7 +21,7 @@ public class ControlTutorial : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    protected virtual void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player")
         {
@@ -30,7 +30,7 @@ public class ControlTutorial : MonoBehaviour
     }
 
     //Delete the trigger when the player exits
-    private void OnTriggerExit(Collider other)
+    protected virtual void OnTriggerExit(Collider other)
     {
         if(other.tag == "Player")
         {

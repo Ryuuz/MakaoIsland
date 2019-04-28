@@ -12,6 +12,8 @@ public class MapManager : MonoBehaviour
     private Image[] mSpiritAnimalStatus;
     [SerializeField]
     private Image mDayTime;
+    [SerializeField]
+    private Image mSpiritGirl;
 
     private GameManager mGameManager;
     private CanvasGroup mCanvasGroup;
@@ -22,6 +24,7 @@ public class MapManager : MonoBehaviour
         mGameManager = GameManager.ManagerInstance();
         mGameManager.eTimeChanged.AddListener(UpdateDayIcon);
         mGameManager.eSpiritAnimalFound.AddListener(UpdateSpiritAnimal);
+        mGameManager.eSpiritGirlFound.AddListener(UpdateSpiritGirl);
 
         //Give the input handler access to this object
         if (InputHandler.InputInstance().mMapManager == null)
@@ -32,6 +35,7 @@ public class MapManager : MonoBehaviour
         //Set the correct icons
         UpdateDayIcon((DayCyclus)mGameManager.mData.mDayTime);
         UpdateSpiritAnimal((int)SpiritAnimalType.spiritAnimals);
+        UpdateSpiritGirl();
         HideMap();
     }
 
@@ -68,6 +72,14 @@ public class MapManager : MonoBehaviour
         if((int)cycle < mDayCycleIcons.Length && mDayTime)
         {
             mDayTime.overrideSprite = mDayCycleIcons[(int)cycle];
+        }
+    }
+
+    public void UpdateSpiritGirl()
+    {
+        if(mGameManager.mData.mSpiritGirlStatus)
+        {
+            mSpiritGirl.color = new Color(1, 1, 1, 0);
         }
     }
 

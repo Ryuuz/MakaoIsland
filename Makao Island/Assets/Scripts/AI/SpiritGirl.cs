@@ -5,10 +5,12 @@ public class SpiritGirl : AITalking
 {
     [SerializeField]
     private DialogueTrigger mDialogueSphere;
+    [SerializeField]
+    private GameObject mMapTutorial;
 
     private FollowGuideScript mFollow;
     private FadeScript mFade;
-    private PlayerController mPlayer;
+    private GameObject mPlayer;
     private CanvasGroup mCanvas;
 
     protected override void Start()
@@ -21,6 +23,7 @@ public class SpiritGirl : AITalking
         }
 
         mFollow = GetComponentInChildren<FollowGuideScript>();
+        mPlayer = mGameManager.mPlayer;
 
         mCanvas = mSpeechBubble.GetComponent<CanvasGroup>();
         if(mCanvas)
@@ -118,6 +121,7 @@ public class SpiritGirl : AITalking
     private IEnumerator RestInPeace()
     {
         eStartedMoving.Invoke(gameObject);
+        mGameManager.FoundSpiritGirl();
 
         FadeOutSound soundTemp = GetComponent<FadeOutSound>();
         if(soundTemp)
@@ -126,6 +130,11 @@ public class SpiritGirl : AITalking
         }
 
         yield return StartCoroutine(mFade.FadeOut());
+        if (mMapTutorial)
+        {
+            Instantiate(mMapTutorial, mPlayer.transform.position, Quaternion.identity);
+        }
+        mPlayer.GetComponent<AudioSource>().Play();
         Destroy(gameObject);
     }
 }
