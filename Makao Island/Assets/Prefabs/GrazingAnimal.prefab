@@ -82,6 +82,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6baf9b8191dbfbf439fa2641d858c5a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mSpeed: 2
+  mAcceleration: 8
   mGrazingRadius: 4
   mMinWalkDelay: 10
   mMaxWalkDelay: 20
@@ -206,7 +208,7 @@ PrefabInstance:
     - target: {fileID: 3881844016832064860, guid: 70eaace9f1315d046be0357e5d208bc3,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.09
       objectReference: {fileID: 0}
     - target: {fileID: 3881844016832064860, guid: 70eaace9f1315d046be0357e5d208bc3,
         type: 3}
