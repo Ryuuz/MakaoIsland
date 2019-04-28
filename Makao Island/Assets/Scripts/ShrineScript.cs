@@ -41,7 +41,7 @@ public class ShrineScript : MonoBehaviour
 
     public void ShrineSound(bool play)
     {
-        if(mAudio)
+        if(mAudio && mAudio.clip)
         {
             if(play && !mAudio.isPlaying)
             {

@@ -7,23 +7,18 @@ public class ControlTutorial : MonoBehaviour
     protected void Start()
     {
         //Check if player is inside the trigger
-        if(Vector3.Distance(GameManager.ManagerInstance().mPlayer.transform.position, transform.position) < GetComponent<SphereCollider>().radius)
+        if(PlayerPrefs.GetInt("Load", 0) == 0 && (GameManager.ManagerInstance().mPlayer.transform.position - transform.position).sqrMagnitude < GetComponent<SphereCollider>().radius)
         {
             if(GameManager.ManagerInstance().mControlUI)
             {
                 GameManager.ManagerInstance().mControlUI.ShowControlUI(mAction);
             }
         }
-
-        if(PlayerPrefs.GetInt("Load", 0) == 1)
-        {
-            GameManager.ManagerInstance().mControlUI.HideControlUI();
-        }
     }
 
     protected virtual void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Player")
+        if(other.tag == "Player" && (PlayerPrefs.GetInt("Load", 0) == 0 || mAction != ControlAction.walk))
         {
             GameManager.ManagerInstance().mControlUI.ShowControlUI(mAction);
         }
