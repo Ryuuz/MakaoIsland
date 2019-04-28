@@ -34,6 +34,6 @@ public class TrackPlayer : MonoBehaviour
     {
         //Update the position and rotation of the player icon on the map as the player moves
         mPlayerOnMap.anchoredPosition = new Vector2((mPlayer.position.x * mScale.x), (mPlayer.position.z * mScale.y));
-        mPlayerOnMap.rotation = Quaternion.Euler(0f, 0f, -mPlayer.rotation.eulerAngles.y);
+        mPlayerOnMap.rotation = Quaternion.Euler(0f, 0f, 180f - mPlayer.rotation.eulerAngles.y);
     }
 }

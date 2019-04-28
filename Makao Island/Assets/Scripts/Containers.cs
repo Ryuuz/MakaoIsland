@@ -6,7 +6,7 @@ using UnityEngine.Events;
 public class GameData
 {
     public bool[] mSpiritAnimalsStatus = { false, false, false, false };
-    public bool mMapStatus = false;
+    public bool mMapStatus = true;
     public bool mSpiritGirlStatus = false;
     public float[] mPlayerPosition;
     public int mDayTime = 0;
