@@ -81,11 +81,11 @@ public class PlayerController : MonoBehaviour
     //Sets the direction the player should move in
     public void SetMovementDirection(Vector2 direction)
     {
-        if(mCharacterController.isGrounded)
+        if(mCharacterController && mCharacterController.isGrounded)
         {
             mMovementDirection = mCharacterTransform.TransformDirection(new Vector3(direction.x, 0f, direction.y));
         }
-        else
+        else if(mCharacterController)
         {
             //Add the new directions to the current movement direction for slight changes
             mMovementDirection += mCharacterTransform.TransformDirection(new Vector3((direction.x * 0.05f), 0f,  (direction.y * 0.1f)));

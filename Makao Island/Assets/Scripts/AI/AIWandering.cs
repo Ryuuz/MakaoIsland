@@ -19,6 +19,7 @@ public class AIWandering : AIController
         //If the NPC isn't already headed somewhere
         if(!mAgent.hasPath)
         {
+            //Debug.Log("Wandering");
             if (mTimeSpeed > 1f)
             {
                 mAgent.speed = 8f;
@@ -41,11 +42,6 @@ public class AIWandering : AIController
 
     protected override IEnumerator MoveWhenReady(Vector3 position)
     {
-        if (mGameManager.mGameSpeed > 0f)
-        {
-            yield return new WaitForSeconds(mTransitionDelay / mGameManager.mGameSpeed);
-        }
-
         if(mTimeSpeed > 1f)
         {
             mAgent.speed = 10f;
@@ -54,7 +50,9 @@ public class AIWandering : AIController
         {
             mAgent.speed = mSpeed;
         }
-        
+
         mAgent.SetDestination(position);
+
+        yield return null;
     }
 }
