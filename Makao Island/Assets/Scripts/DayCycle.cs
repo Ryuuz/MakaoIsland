@@ -89,15 +89,6 @@ public class DayCycle : MonoBehaviour
         mCurrentRotation = (mRotationStep * mCurrentTime) - mOffset;
         mTransform.eulerAngles = new Vector3(mCurrentRotation, 0f, 0f);
         UpdateSky((mCurrentRotation + mOffset) * mFactor);
-
-        if(mCurrentRotation > 180f && mCurrentRotation < 360f && mSun.shadowStrength > 0f)
-        {
-            mSun.shadowStrength = 0f;
-        }
-        else if(mSun.shadowStrength == 0f)
-        {
-            mSun.shadowStrength = 1f;
-        }
     }
 
     //Change to the next part of the day

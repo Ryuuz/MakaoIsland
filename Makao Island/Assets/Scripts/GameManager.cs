@@ -123,7 +123,7 @@ public class GameManager : MonoBehaviour
         NavMesh.avoidancePredictionTime = 5f;
 
         //Play opening cutscene if new game
-        /*if (PlayerPrefs.GetInt("Load", 0) == 0)
+        if (PlayerPrefs.GetInt("Load", 0) == 0)
         {
             if (mInputHandler)
             {
@@ -131,7 +131,7 @@ public class GameManager : MonoBehaviour
             }
 
             mStartDirector.Play(mStartClip);
-        }*/
+        }
     }
 
     //Set the speed the game should play at. 1 = normal speed, >1 = speed up
