@@ -41,7 +41,7 @@ public class DialogueTrigger : MonoBehaviour
 
         GetDialogue();
 
-        //Get the script components of the AI and check if the AI is present
+        //Get the various components of the AIs and check if the AIs are present
         mTalkingAIs = new TalkingAIData[mSpeakers.Length];
 
         for (int i = 0; i < mTalkingAIs.Length; i++)
@@ -68,7 +68,7 @@ public class DialogueTrigger : MonoBehaviour
         {
             mPlayerPresent = true;
         }
-        //If one of the AI belonging to the dialogue sphere enters, set its status to present
+        //If one of the AIs belonging to the dialogue sphere enters, set its status to present
         else if(other.tag == "NPC")
         {
             int speakerIndex = IsASpeaker(other.gameObject);
@@ -163,6 +163,7 @@ public class DialogueTrigger : MonoBehaviour
             //How long the line of dialogue will show calculated from the number of characters in it
             dialogueTime = (2f + (0.1f * line.text.Length));
 
+            //Speed up the dialogue if time is sped up
             if(GameManager.ManagerInstance().mGameSpeed > 1f)
             {
                 dialogueTime *= 4f;
@@ -180,6 +181,7 @@ public class DialogueTrigger : MonoBehaviour
                     }
                 }
 
+                //Play the animation associated with the line if there is one
                 if(mTalkingAIs[line.speaker - 1].mAnimationScript && line.gesture != TalkAnimation.none)
                 {
                     mTalkingAIs[line.speaker - 1].mAnimationScript.PlayTalkAnimation(line.gesture);
@@ -376,7 +378,7 @@ public class DialogueTrigger : MonoBehaviour
         float distance = 0f;
 
         //Must be at least one listener (a total of two speakers including the one currently speaking)
-        if(mTalkingAIs.Length > 2)
+        if(mTalkingAIs.Length > 1)
         {
             for (int i = 0; i < mTalkingAIs.Length; i++)
             {
@@ -384,12 +386,12 @@ public class DialogueTrigger : MonoBehaviour
                 if ((mSentences[0].speaker - 1) != i)
                 {
                     distance = (mTalkingAIs[mSentences[0].speaker - 1].mAITransform.position - mTalkingAIs[i].mAITransform.position).sqrMagnitude;
-                    if (distance < minDistance)
+                    if (distance <= minDistance)
                     {
                         minListener = i;
                         minDistance = distance;
                     }
-                    if(distance > maxDistance)
+                    if(distance >= maxDistance)
                     {
                         maxListener = i;
                         maxDistance = distance;

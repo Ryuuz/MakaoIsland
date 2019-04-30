@@ -40,7 +40,7 @@ public class GongScript : MonoBehaviour
         }
     }
 
-    //Play the gong animation
+    //Play the gong animation and sound
     public void PlayGongAnimation()
     {
         mAnimator.CrossFadeInFixedTime("Gong_Animation_swing", 2f);

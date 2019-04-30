@@ -17,6 +17,7 @@ public class DialogueTriggerSpecial : DialogueTrigger
 
     public override void EvaluateStatus()
     {
+        //All speakers must be ready
         if (IsReadyToTalk())
         {
             if(!mPlaying)
@@ -45,6 +46,7 @@ public class DialogueTriggerSpecial : DialogueTrigger
             if (mSpeakers[i] == null)
             {
                 Destroy(gameObject);
+                return false;
             }
             else
             {
@@ -54,6 +56,7 @@ public class DialogueTriggerSpecial : DialogueTrigger
                     return false;
                 }
 
+                //Check if speaker is within the dialogue sphere, and if yes then make sure it is set as present
                 if (Vector3.Distance(mTalkingAIs[i].mAITransform.position, transform.position) <= GetComponent<SphereCollider>().radius)
                 {
                     mTalkingAIs[i].mAIPresent = true;
@@ -65,6 +68,7 @@ public class DialogueTriggerSpecial : DialogueTrigger
             }
         }
 
+        //Everyone is ready for the dialogue to start
         return true;
     }
 }

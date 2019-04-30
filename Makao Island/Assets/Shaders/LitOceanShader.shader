@@ -57,6 +57,7 @@
 		float _SteepnessA, _SteepnessB, _SteepnessC, _SteepnessD;
 		float4 _DirectionA, _DirectionB, _DirectionC, _DirectionD;
 
+		//https://developer.nvidia.com/gpugems/GPUGems/gpugems_ch01.html
 		float3 GerstnerWave (float a, float l, float s, float q, float3 d, float3 p, inout float3 tangent, inout float3 binormal)
 		{
 			float w = ((2 * UNITY_PI) / l);

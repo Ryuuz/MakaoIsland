@@ -22,6 +22,8 @@ public class MapManager : MonoBehaviour
     {
         mCanvasGroup = GetComponent<CanvasGroup>();
         mGameManager = GameManager.ManagerInstance();
+
+        //Listens for these events
         mGameManager.eTimeChanged.AddListener(UpdateDayIcon);
         mGameManager.eSpiritAnimalFound.AddListener(UpdateSpiritAnimal);
         mGameManager.eSpiritGirlFound.AddListener(UpdateSpiritGirl);
@@ -50,15 +52,18 @@ public class MapManager : MonoBehaviour
 
     public void HideMap()
     {
-        mCanvasGroup.alpha = 0f;
-        mCanvasGroup.blocksRaycasts = false;
-        mCanvasGroup.interactable = false;
+        if(mCanvasGroup)
+        {
+            mCanvasGroup.alpha = 0f;
+            mCanvasGroup.blocksRaycasts = false;
+            mCanvasGroup.interactable = false;
+        }
     }
 
     public void ShowMap()
     {
         //Can only open the map if it is available to the player
-        if(mGameManager.mData.mMapStatus)
+        if(mCanvasGroup && mGameManager.mData.mMapStatus)
         {
             mCanvasGroup.alpha = 1f;
             mCanvasGroup.blocksRaycasts = true;

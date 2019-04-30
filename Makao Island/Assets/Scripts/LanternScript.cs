@@ -45,7 +45,6 @@ public class LanternScript : MonoBehaviour
         {
             if(timeOfDay == DayCyclus.dusk)
             {
-
                 Color onColor = mLightColor * mOnStrength;
                 mMaterial.SetColor("_EmissionColor", onColor);
                 DynamicGI.SetEmissive(mRenderer, onColor);

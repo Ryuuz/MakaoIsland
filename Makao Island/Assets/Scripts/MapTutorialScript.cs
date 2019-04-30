@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class MapTutorialScript : ControlTutorial
 {
@@ -8,6 +6,7 @@ public class MapTutorialScript : ControlTutorial
 
     protected void Update()
     {
+        //Destroy the object if the player opens the map while inside the map sphere
         if(mPlayer && (Input.GetButtonDown("Map") || Input.GetButtonDown("GP Map")))
         {
             GameManager.ManagerInstance().mControlUI.HideControlUI();

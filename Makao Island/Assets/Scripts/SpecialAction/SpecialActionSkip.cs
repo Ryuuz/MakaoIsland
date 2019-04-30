@@ -1,4 +1,5 @@
-﻿public class SpecialActionSkip : SpecialActionObject
+﻿//Action for skipping dialogue
+public class SpecialActionSkip : SpecialActionObject
 {
     private DialogueTrigger mOwner;
 

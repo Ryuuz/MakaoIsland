@@ -123,11 +123,11 @@ public class SpiritAnimal : AIController
         
         yield return StartCoroutine(mFade.FadeOut());
 
+        //Remind the player to check the map
         if (mMapTutorial)
         {
             Instantiate(mMapTutorial, mPlayer.transform.position, Quaternion.identity);
         }
-
         mPlayer.GetComponent<AudioSource>().Play();
 
         Destroy(gameObject);

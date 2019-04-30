@@ -26,7 +26,7 @@ public class ControlsUIScript : MonoBehaviour
 
     void Start()
     {
-        //Sort list
+        //Sort list https://answers.unity.com/questions/677070/sorting-a-list-linq.html
         mControlsList.Sort((obj1, obj2) => obj1.mControlType.CompareTo(obj2.mControlType));
 
         mInputHandler = InputHandler.InputInstance();
@@ -41,6 +41,7 @@ public class ControlsUIScript : MonoBehaviour
 
     private void Update()
     {
+        //If the UI is showing, update to show the controls for the correct input method
         if(mActive && (int)mCurrentType < mControlsList.Count)
         {
             if (mInputHandler.mGamepad && !mShowingGamepad)
@@ -63,6 +64,7 @@ public class ControlsUIScript : MonoBehaviour
         {
             mCurrentType = type;
 
+            //The image shown depends on the current input method
             if(mInputHandler && mInputHandler.mGamepad)
             {
                 mDefault.overrideSprite = mControlsList[(int)type].mGamepadControl;

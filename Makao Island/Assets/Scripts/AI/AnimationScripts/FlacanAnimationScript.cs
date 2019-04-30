@@ -17,6 +17,7 @@ public class FlacanAnimationScript : AIAnimationScript
 
     protected override void RandomIdleAnimation()
     {
+        //Randomly choose between playing a different idle animation or playing a sound clip
         if (mAnimator.GetCurrentAnimatorStateInfo(0).IsName(mDefaultIdleAnimation))
         {
             if (Random.value > 0.5f && mExtraIdleAnimations.Length > 0)

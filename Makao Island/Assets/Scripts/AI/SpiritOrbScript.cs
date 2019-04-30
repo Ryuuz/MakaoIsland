@@ -64,6 +64,7 @@ public class SpiritOrbScript : MonoBehaviour
         yield return new WaitForSeconds(3f);
         GetComponentInChildren<ParticleSystem>().Stop();
 
+        //Fade out sound if there is one
         FadeOutSound soundTemp = GetComponent<FadeOutSound>();
         if(soundTemp)
         {

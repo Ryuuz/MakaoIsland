@@ -46,6 +46,7 @@
 			float3 worldPos;
         };
 
+		//https://www.patreon.com/posts/volumetric-write-21646034
         void surf (Input IN, inout SurfaceOutputStandard o)
         {
             fixed4 mainColor = tex2D(_MainTex, IN.uv_MainTex + (_Time.y * 0.005));

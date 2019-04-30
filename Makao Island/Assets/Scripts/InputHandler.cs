@@ -70,6 +70,7 @@ public class InputHandler : MonoBehaviour
             mPlayerController = mPlayer.GetComponent<PlayerController>();
         }
 
+        //Try to get the camera controller script
         if(mCamera)
         {
             mCameraController = mCamera.GetComponent<CameraController>();
@@ -78,7 +79,6 @@ public class InputHandler : MonoBehaviour
                 mCameraController = mCamera.AddComponent<CameraController>();
             }
         }
-        
     }
 	
 	void Update()
@@ -99,6 +99,7 @@ public class InputHandler : MonoBehaviour
     {
         if(mCameraController)
         {
+            //Look around / rotate camera
             if(Input.GetAxisRaw("LookX") != 0f || Input.GetAxisRaw("LookY") != 0f)
             {
                 mCameraController.RotateCamera(new Vector2(Input.GetAxisRaw("LookX"), Input.GetAxisRaw("LookY")));
@@ -172,6 +173,8 @@ public class InputHandler : MonoBehaviour
             else if (Input.GetButtonUp("Special"))
             {
                 mPlayerController.TriggerSpecialAction(false);
+
+                //Dirty fix to make sure time doesn't get stuck when speeding up
                 if(Time.timeScale > 1f)
                 {
                     Time.timeScale = 1f;

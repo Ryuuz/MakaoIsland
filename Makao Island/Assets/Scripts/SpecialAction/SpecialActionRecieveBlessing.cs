@@ -1,4 +1,5 @@
-﻿public class SpecialActionRecieveBlessing : SpecialActionObject
+﻿//Action for interacting with a spirit animal
+public class SpecialActionRecieveBlessing : SpecialActionObject
 {
     private SpiritAnimal mOwner;
 

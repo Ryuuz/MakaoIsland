@@ -10,6 +10,7 @@ public class TrackPlayer : MonoBehaviour
 
     private Transform mPlayer;
     private Vector2 mScale = new Vector2(1f, 1f); //Scale in x and y direction
+    private float mInverse = 0f;
     
     void Start()
     {
@@ -24,7 +25,12 @@ public class TrackPlayer : MonoBehaviour
 
             mScale = new Vector2(UISize.x / mapSize.x, UISize.y / mapSize.y);
 
-            //Set the anchor to the image at where the origin of the game world is
+            if(mScale.x < 0f && mScale.y < 0f)
+            {
+                mInverse = 180f;
+            }
+
+            //Set the anchor to the player icon at where the origin of the game world is on the map
             mPlayerOnMap.anchorMax = new Vector2(((0f - mLowerLeft.position.x) * mScale.x) / UISize.x, ((0f - mLowerLeft.position.z) * mScale.y) / UISize.y);
             mPlayerOnMap.anchorMin = mPlayerOnMap.anchorMax;
         }
@@ -34,6 +40,6 @@ public class TrackPlayer : MonoBehaviour
     {
         //Update the position and rotation of the player icon on the map as the player moves
         mPlayerOnMap.anchoredPosition = new Vector2((mPlayer.position.x * mScale.x), (mPlayer.position.z * mScale.y));
-        mPlayerOnMap.rotation = Quaternion.Euler(0f, 0f, 180f - mPlayer.rotation.eulerAngles.y);
+        mPlayerOnMap.rotation = Quaternion.Euler(0f, 0f, mInverse - mPlayer.rotation.eulerAngles.y);
     }
 }

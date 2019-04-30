@@ -42,6 +42,7 @@ public class SpiritGirl : AITalking
 
     protected override void SetNewDestination(Transform position)
     {
+        //If faded out then fade in if a position is set
         if (position)
         {
             if(!mFade.mFadedIn && !mFade.mFading)
@@ -51,6 +52,7 @@ public class SpiritGirl : AITalking
                 StartCoroutine(StartFadingIn());
             }
         }
+        //Else if faded in and no position, fade out
         else
         {
             if(mFade.mFadedIn && !mFade.mFading)
@@ -87,14 +89,14 @@ public class SpiritGirl : AITalking
         yield return new WaitUntil(() => mFade.mFading == false);
         yield return StartCoroutine(mFade.FadeIn());
 
-        //Make the speech bubble visible and reset variables
         mFollow.mGoalReached = false;
 
         if (mDialogueSphere)
         {
             mDialogueSphere.EvaluateStatus();
         }
-
+        
+        //Make the speech bubble visible
         if (mCanvas)
         {
             mCanvas.alpha = 1f;
@@ -103,12 +105,15 @@ public class SpiritGirl : AITalking
 
     private IEnumerator StartFadingOut()
     {
+        //Hide speech bubble
         if (mCanvas)
         {
             mCanvas.alpha = 0f;
         }
 
         eStartedMoving.Invoke(gameObject);
+
+        //Make sure to not fade out while still speaking or while already in a fading phase
         yield return new WaitUntil(() => mTalking == false);
         yield return new WaitUntil(() => mFade.mFading == false);
 
@@ -118,11 +123,13 @@ public class SpiritGirl : AITalking
         StartCoroutine(mFade.FadeOut());
     }
 
+    //Makes the AI fade out and disappear for good
     private IEnumerator RestInPeace()
     {
         eStartedMoving.Invoke(gameObject);
         mGameManager.FoundSpiritGirl();
 
+        //Fade out sound if there is one
         FadeOutSound soundTemp = GetComponent<FadeOutSound>();
         if(soundTemp)
         {
@@ -130,11 +137,14 @@ public class SpiritGirl : AITalking
         }
 
         yield return StartCoroutine(mFade.FadeOut());
+
+        //Remind player to check the map
         if (mMapTutorial)
         {
             Instantiate(mMapTutorial, mPlayer.transform.position, Quaternion.identity);
         }
         mPlayer.GetComponent<AudioSource>().Play();
+
         Destroy(gameObject);
     }
 }

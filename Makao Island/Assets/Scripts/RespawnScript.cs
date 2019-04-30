@@ -22,7 +22,7 @@ public class RespawnScript : MonoBehaviour
 
     void Update()
     {
-        //Respawn
+        //Respawn when below the lowest point
         if(mPosition.position.y < mLowestPoint)
         {
             if (mDirector)

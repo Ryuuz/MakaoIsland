@@ -6,6 +6,7 @@ public class DialogueLines
         //0
         new Sentence[]
         {
+                    //Speaker //Animation       //Dialogue
             new Sentence(1, TalkAnimation.none, "I hear they still haven’t found the body of that girl."),
             new Sentence(2, TalkAnimation.none, "So you think she’s dead?"),
             new Sentence(1, TalkAnimation.nod, "She must be. Wasn’t she playing close to the waterfall? I bet her body washed out to sea."),

@@ -36,15 +36,18 @@ public class PauseMenuScript : MonoBehaviour
 
     private void Update()
     {
+        //Continually checks for the active input method as long as the UI is shown
         if (mEventSystem && !mHidden)
         {
             if (!mDeactivated && (Input.GetAxisRaw("LookX") != 0f || Input.GetAxisRaw("LookY") != 0f))
             {
+                //Deselect buttons if mouse is being used https://answers.unity.com/questions/883220/how-to-change-selected-button-in-eventsystem-or-de.html
                 mEventSystem.SetSelectedGameObject(null);
                 mDeactivated = true;
             }
             else if (mDeactivated && (Input.GetAxisRaw("GP Horizontal") != 0f || Input.GetAxisRaw("GP Vertical") != 0f))
             {
+                //Select the assigned button if gamepad is being used https://answers.unity.com/questions/943335/xbox-controller-and-unity-5-menu.html
                 mSelectedButton.Select();
                 mDeactivated = false;
             }
@@ -97,6 +100,7 @@ public class PauseMenuScript : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
+    //Mutes the music if it is player. Unmutes it otherwise
     public void MuteMusic()
     {
         if(mBackgroundMusic)

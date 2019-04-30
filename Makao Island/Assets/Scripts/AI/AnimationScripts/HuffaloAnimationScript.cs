@@ -16,6 +16,7 @@ public class HuffaloAnimationScript : AIAnimationScript
 
     protected override void RandomIdleAnimation()
     {
+        //Randomly play an alternative animation or a given sound
         if (mAnimator.GetCurrentAnimatorStateInfo(0).IsName(mDefaultIdleAnimation))
         {
             if(Random.value > 0.3f && mExtraIdleAnimations.Length > 0)

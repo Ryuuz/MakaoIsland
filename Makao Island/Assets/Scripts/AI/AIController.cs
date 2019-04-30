@@ -68,6 +68,7 @@ public class AIController : MonoBehaviour
         SetNewDestination(pos);
     }
 
+    //Set the agent's destination based on the given position
     protected virtual void SetNewDestination(Transform position)
     {
         if (position && (mCurrentLocation - position.position).sqrMagnitude > (mWaypointRadius * mWaypointRadius))
@@ -86,11 +87,13 @@ public class AIController : MonoBehaviour
     {
         if(mAgent)
         {
+            //Speeding up
             if(speed > 1f)
             {
                 mAgent.speed = 10f;
-                mAgent.acceleration = 60f;
+                mAgent.acceleration = 60f; //https://answers.unity.com/questions/236828/how-can-i-stop-navmesh-agent-sliding.html
             }
+            //Normal speed
             else
             {
                 mAgent.speed = mSpeed;

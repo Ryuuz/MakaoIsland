@@ -37,12 +37,12 @@ public class FadeScript : MonoBehaviour
             }
         }
 
-        //Set the materials to transparent
+        //Set the materials to transparent if the object shouldn't start as visible
         if (mMaterialList.Count > 0 && !mFadedIn)
         {
             for (int i = 0; i < mMaterialList.Count; i++)
             {
-                mMaterialList[i].SetInt("_ZWrite", 1); //For correct sorting by the renderer
+                mMaterialList[i].SetInt("_ZWrite", 1); //For correct sorting by the renderer https://forum.unity.com/threads/unity-5-fade-render-mode-sort-order-issue.318298/
                 mMaterialList[i].color = new Color(mMaterialList[i].color.r, mMaterialList[i].color.g, mMaterialList[i].color.b, 0f);
             }
         }

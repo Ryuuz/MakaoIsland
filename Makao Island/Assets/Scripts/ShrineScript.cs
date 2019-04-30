@@ -39,6 +39,7 @@ public class ShrineScript : MonoBehaviour
         }
     }
 
+    //Play the sound the shrine has
     public void ShrineSound(bool play)
     {
         if(mAudio && mAudio.clip)

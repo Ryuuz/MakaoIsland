@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class AudioZoneTrigger : MonoBehaviour
 {
@@ -15,6 +13,7 @@ public class AudioZoneTrigger : MonoBehaviour
     {
         mAudio = GetComponent<AudioSource>();
 
+        //Save the original volume of the sounds that are set to be dimmed
         if(mDimmedSources.Length > 0)
         {
             mOriginalVolume = new float[mDimmedSources.Length];
@@ -26,8 +25,10 @@ public class AudioZoneTrigger : MonoBehaviour
         }
     }
 
+    //https://johnleonardfrench.com/articles/10-unity-audio-tips-that-you-wont-find-in-the-tutorials/#audio_zones
     private void OnTriggerEnter(Collider other)
     {
+        //Increase the trigger count and start playing the sound while dimming the other assigned sounds
         if(other.tag == "Player" && mAudio)
         {
             ++mTriggerCount;
@@ -46,6 +47,7 @@ public class AudioZoneTrigger : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
+        //Decrease trigger count. If 0 then the player isn't in any of the triggers and the sound should stop playing
         if (other.tag == "Player" && mAudio)
         {
             mTriggerCount--;
@@ -54,6 +56,7 @@ public class AudioZoneTrigger : MonoBehaviour
             {
                 mAudio.Stop();
 
+                //Return the dimmed sounds to their original volume
                 for (int i = 0; i < mDimmedSources.Length; i++)
                 {
                      mDimmedSources[i].volume = mOriginalVolume[i];

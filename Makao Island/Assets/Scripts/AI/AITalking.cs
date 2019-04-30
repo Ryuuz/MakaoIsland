@@ -59,7 +59,7 @@ public class AITalking : AIController
         mAgent.SetDestination(position);
     }
 
-    //Is the position in range of the AI's destination
+    //Is the target position in range of the AI's destination?
     public bool IsDestination(Vector3 target)
     {
         if(mAgent.hasPath && ((mAgent.destination - target).sqrMagnitude > (mWaypointRadius * mWaypointRadius)))

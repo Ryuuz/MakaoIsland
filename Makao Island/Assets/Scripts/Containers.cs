@@ -16,6 +16,21 @@ public class GameData
     public string[] mDeletedObjects;
 }
 
+[System.Serializable]
+public class DialoguePair
+{
+    public DialogueTrigger mTrigger;
+    public int mConversation;
+}
+
+public class NextPoint : MonoBehaviour
+{
+    public GameObject mNext;
+}
+
+
+//------Structs
+
 public struct Sentence
 {
     public int speaker;
@@ -38,17 +53,8 @@ public struct TalkingAIData
     public bool mAIPresent;
 }
 
-[System.Serializable]
-public class DialoguePair
-{
-    public DialogueTrigger mTrigger;
-    public int mConversation;
-}
 
-public class NextPoint : MonoBehaviour
-{
-    public GameObject mNext;
-}
+//-----Events
 
 [System.Serializable]
 public class AILeavingEvent : UnityEvent<GameObject>

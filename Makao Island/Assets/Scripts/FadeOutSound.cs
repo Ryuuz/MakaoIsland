@@ -11,6 +11,7 @@ public class FadeOutSound : MonoBehaviour
         mAudio = GetComponent<AudioSource>();
     }
 
+    //Start fade out if there is an audio source
     public void StartFadingSound()
     {
         if(mAudio)

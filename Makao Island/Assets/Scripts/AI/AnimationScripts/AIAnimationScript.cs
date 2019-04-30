@@ -28,6 +28,7 @@ public class AIAnimationScript : MonoBehaviour
         mGameManager.eSpeedChanged.AddListener(SetPlaySpeed);
         SetPlaySpeed(mGameManager.mGameSpeed);
 
+        //The default animation
         AnimatorClipInfo[] clipInfo = mAnimator.GetCurrentAnimatorClipInfo(0);
         mDefaultIdleAnimation = clipInfo[0].clip.name;
         mAnimator.Play(mDefaultIdleAnimation, 0, Random.value);
@@ -81,6 +82,7 @@ public class AIAnimationScript : MonoBehaviour
             //Speed of the walk animation
             if(mAgent)
             {
+                //https://answers.unity.com/questions/252292/is-there-a-way-to-check-agent-velocity-for-navmesh.html (answer by kristoof)
                 mAnimator.SetFloat("WalkSpeed", Mathf.Max(mAgent.velocity.magnitude / mAgent.speed, 0.6f));
             }
             else
@@ -93,6 +95,7 @@ public class AIAnimationScript : MonoBehaviour
                 mAudio.PlayOneShot(mWalkingSound);
             }
         }
+        //AI is not moving
         else
         {
             if (mAnimator.GetBool("Walking"))

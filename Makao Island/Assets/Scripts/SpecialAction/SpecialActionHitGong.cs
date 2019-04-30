@@ -1,4 +1,5 @@
-﻿public class SpecialActionHitGong : SpecialActionObject
+﻿//Action for interacting with the gong asset
+public class SpecialActionHitGong : SpecialActionObject
 {
     private GongScript mOwner;
 
@@ -11,6 +12,7 @@
     {
         if(active)
         {
+            //Plays the gong's animation and sound
             mOwner.PlayGongAnimation();
         }
     }

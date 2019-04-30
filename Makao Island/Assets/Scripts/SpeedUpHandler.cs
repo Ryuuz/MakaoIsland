@@ -14,6 +14,7 @@ public class SpeedUpHandler : MonoBehaviour
 
     public void SpeedingUp(float speed)
     {
+        //Time is speeding up
         if(speed > 1f)
         {
             if (mAudio)
@@ -27,6 +28,7 @@ public class SpeedUpHandler : MonoBehaviour
                 main.simulationSpeed = 3f;
             }
         }
+        //Time is back to normal
         else
         {
             if (mAudio)

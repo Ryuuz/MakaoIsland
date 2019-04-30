@@ -31,6 +31,7 @@ public class ButtonsScript : MonoBehaviour
 
     private void Update()
     {
+        //Continually check for the active input method to update how buttons are selected
         if(mEventSystem)
         {
             if (!mDeactivated && (Input.GetAxisRaw("LookX") != 0f || Input.GetAxisRaw("LookY") != 0f))
