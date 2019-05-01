@@ -25,11 +25,16 @@ public class RespawnScript : MonoBehaviour
         //Respawn when below the lowest point
         if(mPosition.position.y < mLowestPoint)
         {
-            if (mDirector)
-            {
-                mDirector.Play(mClip);
-            }
-            mPosition.position = GameManager.ManagerInstance().mCurrentRespawnPoint.position;
+            RespawnPlayer();
         }
+    }
+
+    public void RespawnPlayer()
+    {
+        if (mDirector)
+        {
+            mDirector.Play(mClip);
+        }
+        mPosition.position = GameManager.ManagerInstance().mCurrentRespawnPoint.position;
     }
 }

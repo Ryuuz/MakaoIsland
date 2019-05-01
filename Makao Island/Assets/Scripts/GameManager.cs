@@ -211,9 +211,7 @@ public class GameManager : MonoBehaviour
             for(int i = 0; i < mData.mAIPositions.Length; i++)
             {
                 AIPosition = new Vector3(mData.mAIPositions[i][0], mData.mAIPositions[i][1], mData.mAIPositions[i][2]);
-                AIPosition = AIPosition + (Random.insideUnitSphere * mAIs[i].mWaypointRadius);
-                AIPosition.y = mData.mAIPositions[i][1];
-                mAIs[i].transform.position = AIPosition;
+                mAIs[i].mCurrentLocation = AIPosition;
             }
 
             //Delete all objects marked as removed

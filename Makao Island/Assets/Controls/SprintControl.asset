@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mControlType: 2
   mDefaultControl: {fileID: 21300000, guid: f5c0611a3b3d02c4e87630f81330aeb2, type: 3}
-  mGamepadControl: {fileID: 21300000, guid: 9473807663843274aa89b9b5491a6faa, type: 3}
+  mGamepadControl: {fileID: 21300000, guid: ff20da422a1910d4abd062cc914e6020, type: 3}
   mControlText: Hold to sprint

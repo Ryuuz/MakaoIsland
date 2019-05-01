@@ -10,7 +10,7 @@ public class AIController : MonoBehaviour
     public float mTransitionDelay = 2f;
 
     [HideInInspector]
-    public Vector3 mCurrentLocation;
+    public Vector3 mCurrentLocation = Vector3.zero;
 
     [SerializeField]
     protected Transform mDawnLocation;
@@ -35,10 +35,16 @@ public class AIController : MonoBehaviour
         
         mGameManager = GameManager.ManagerInstance();
         mTransform = GetComponent<Transform>();
-        mCurrentLocation = mTransform.position;
 
         mGameManager.eSpeedChanged.AddListener(ChangingSpeed);
         mGameManager.eTimeChanged.AddListener(Transition);
+
+        if(PlayerPrefs.GetInt("Load", 0) == 1 && mCurrentLocation != Vector3.zero)
+        {
+            mAgent.Warp(mCurrentLocation);
+        }
+
+        Transition((DayCyclus)mGameManager.mData.mDayTime);
     }
 
     //Transition to a new position (if required) when the time of day changes
@@ -71,14 +77,20 @@ public class AIController : MonoBehaviour
     //Set the agent's destination based on the given position
     protected virtual void SetNewDestination(Transform position)
     {
-        if (position && (mCurrentLocation - position.position).sqrMagnitude > (mWaypointRadius * mWaypointRadius))
+        if (position)
         {
-            //Take the position of the waypoint and set a destination in a radius near it
             mCurrentLocation = position.position;
-            mCurrentLocation += (Random.insideUnitSphere * mWaypointRadius);
-            mCurrentLocation.y = position.position.y;
 
-            StartCoroutine(MoveWhenReady(mCurrentLocation));
+            //Take the position of the waypoint and set a destination in a radius near it
+            Vector3 tempPosition = position.position;
+            tempPosition += (Random.insideUnitSphere * mWaypointRadius);
+            tempPosition.y = position.position.y;
+
+            StartCoroutine(MoveWhenReady(tempPosition));
+        }
+        else if(mCurrentLocation == Vector3.zero)
+        {
+            mCurrentLocation = mTransform.position;
         }
     }
 

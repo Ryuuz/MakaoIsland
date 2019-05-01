@@ -52,7 +52,7 @@ public class DialogueTrigger : MonoBehaviour
             mTalkingAIs[i].mAnimationScript = mSpeakers[i].GetComponentInChildren<VillagerAnimationScript>();
             mTalkingAIs[i].mAITransform = mSpeakers[i].GetComponent<Transform>();
 
-            if (Vector3.Distance(mTalkingAIs[i].mAITransform.position, transform.position) <= GetComponent<SphereCollider>().radius)
+            if (PlayerPrefs.GetInt("Load", 0) == 0 && (mTalkingAIs[i].mAITransform.position - transform.position).sqrMagnitude <= Mathf.Pow(GetComponent<SphereCollider>().radius, 2))
             {
                 mTalkingAIs[i].mAIPresent = true;
             }

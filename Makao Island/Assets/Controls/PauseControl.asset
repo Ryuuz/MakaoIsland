@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: PauseControl
   m_EditorClassIdentifier: 
   mControlType: 8
-  mDefaultControl: {fileID: 21300000, guid: 3b147b69ab1a2f442a741e8e5bbc451f, type: 3}
-  mGamepadControl: {fileID: 21300000, guid: e4827fb136ecc7548ae7e01f27dafd9d, type: 3}
+  mDefaultControl: {fileID: 21300000, guid: 165358ba10665ed468481391e419aa52, type: 3}
+  mGamepadControl: {fileID: 21300000, guid: 76a5b548832a8b140b0ac99a4d7e648a, type: 3}
   mControlText: Pause game

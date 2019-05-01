@@ -13,6 +13,15 @@ public class SpiritGirl : AITalking
     private GameObject mPlayer;
     private CanvasGroup mCanvas;
 
+    private void Awake()
+    {
+        mFade = GetComponent<FadeScript>();
+        if (!mFade)
+        {
+            mFade = gameObject.AddComponent<FadeScript>();
+        }
+    }
+
     protected override void Start()
     {
         base.Start();
@@ -31,13 +40,7 @@ public class SpiritGirl : AITalking
             mCanvas.alpha = 0f;
         }
 
-        mFade = GetComponent<FadeScript>();
-        if (!mFade)
-        {
-            mFade = gameObject.AddComponent<FadeScript>();
-        }
-
-        Transition((DayCyclus)mGameManager.mData.mDayTime);
+        //Transition((DayCyclus)mGameManager.mData.mDayTime);
     }
 
     protected override void SetNewDestination(Transform position)

@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mControlType: 7
   mDefaultControl: {fileID: 21300000, guid: 32626afc0be52224da57cf4a3d248854, type: 3}
-  mGamepadControl: {fileID: 21300000, guid: 2f53900379febf543be5779a11b87d68, type: 3}
+  mGamepadControl: {fileID: 21300000, guid: 2cd8cf08f7b7b9f4d8b0dba76817caf1, type: 3}
   mControlText: Open map

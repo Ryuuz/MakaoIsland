@@ -13,6 +13,15 @@ public class SpiritAnimal : AIController
     private PlayerController mPlayer;
     private bool mPlayerPresent = false;
 
+    private void Awake()
+    {
+        mFade = GetComponent<FadeScript>();
+        if (!mFade)
+        {
+            mFade = gameObject.AddComponent<FadeScript>();
+        }
+    }
+
     protected override void Start()
     {
         base.Start();
@@ -24,14 +33,9 @@ public class SpiritAnimal : AIController
 
         mRecieveBlessing = new SpecialActionRecieveBlessing(this);
         mPlayer = mGameManager.mPlayer.GetComponent<PlayerController>();
-        mFade = GetComponent<FadeScript>();
-        if(!mFade)
-        {
-            mFade = gameObject.AddComponent<FadeScript>();
-        }
 
         //Make sure the spirit animal is in the right place and state
-        Transition((DayCyclus)mGameManager.mData.mDayTime);
+        //Transition((DayCyclus)mGameManager.mData.mDayTime);
         
         if (mCurrentLocation != mTransform.position)
         {

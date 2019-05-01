@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mControlType: 4
   mDefaultControl: {fileID: 21300000, guid: b7982f8787c03634497533c071c88520, type: 3}
-  mGamepadControl: {fileID: 21300000, guid: a82ae4927a945374b81095a7b3b3b1b4, type: 3}
+  mGamepadControl: {fileID: 21300000, guid: 58303d7b478fa624e886e67c6062abf3, type: 3}
   mControlText: Press to listen

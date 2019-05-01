@@ -41,7 +41,10 @@ public class AITalking : AIController
 
     protected override IEnumerator MoveWhenReady(Vector3 position)
     {
-        eStartedMoving.Invoke(gameObject);
+        if((mTransform.position - mCurrentLocation).sqrMagnitude > (mWaypointRadius * mWaypointRadius))
+        {
+            eStartedMoving.Invoke(gameObject);
+        }
 
         //Won't move until done talking
         if (mTalking)
@@ -62,7 +65,12 @@ public class AITalking : AIController
     //Is the target position in range of the AI's destination?
     public bool IsDestination(Vector3 target)
     {
-        if(mAgent.hasPath && ((mAgent.destination - target).sqrMagnitude > (mWaypointRadius * mWaypointRadius)))
+        /*if(mAgent.hasPath && ((mAgent.destination - target).sqrMagnitude > (mWaypointRadius * mWaypointRadius)))
+        {
+            return false;
+        }*/
+
+        if((mCurrentLocation - target).sqrMagnitude > (mWaypointRadius * mWaypointRadius))
         {
             return false;
         }

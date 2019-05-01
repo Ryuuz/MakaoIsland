@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mControlType: 1
   mDefaultControl: {fileID: 21300000, guid: e0a4921e60a3c4d4b906cb0c559c3070, type: 3}
-  mGamepadControl: {fileID: 21300000, guid: 013f8e1d8d7d963499d0ba3655951967, type: 3}
+  mGamepadControl: {fileID: 21300000, guid: f945a843760a2054ab86459c7245defe, type: 3}
   mControlText: Look around

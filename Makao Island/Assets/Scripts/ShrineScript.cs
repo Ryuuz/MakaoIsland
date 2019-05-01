@@ -2,6 +2,9 @@
 
 public class ShrineScript : MonoBehaviour
 {
+    [SerializeField]
+    private AudioSource mMuteSound;
+
     private SpecialActionMeditate mMeditateAction;
     private PlayerController mPlayer;
     private AudioSource mAudio;
@@ -11,6 +14,7 @@ public class ShrineScript : MonoBehaviour
         mMeditateAction = new SpecialActionMeditate(this);
         mPlayer = GameManager.ManagerInstance().mPlayer.GetComponent<PlayerController>();
         mAudio = GetComponent<AudioSource>();
+        mMuteSound = GameObject.Find("UI").GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -47,10 +51,20 @@ public class ShrineScript : MonoBehaviour
             if(play && !mAudio.isPlaying)
             {
                 mAudio.Play();
+
+                if(mMuteSound)
+                {
+                    mMuteSound.Pause();
+                }
             }
             else
             {
                 mAudio.Stop();
+
+                if(mMuteSound)
+                {
+                    mMuteSound.UnPause();
+                }
             }
         }
     }

@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mControlType: 3
   mDefaultControl: {fileID: 21300000, guid: 86e913bc36ef8af4ba6eb168f584091b, type: 3}
-  mGamepadControl: {fileID: 21300000, guid: 3c8115bf858b4b449af5dd76a34496b0, type: 3}
+  mGamepadControl: {fileID: 21300000, guid: 87062d51b8ed2bb4badab93413b6db6c, type: 3}
   mControlText: Press to jump
