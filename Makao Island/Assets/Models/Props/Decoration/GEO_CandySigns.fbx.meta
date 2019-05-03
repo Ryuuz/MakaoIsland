@@ -23,6 +23,9 @@ ModelImporter:
     4300000: PandaDumpling_Sign
     4300002: DumplingTrio_Sign
     4300004: Cat_Sign
+    6400000: Cat_Sign
+    6400002: DumplingTrio_Sign
+    6400004: PandaDumpling_Sign
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -61,7 +64,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1
