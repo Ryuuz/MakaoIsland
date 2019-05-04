@@ -60,9 +60,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f9d63ce2ced5ea4fb188f7b5393d118, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mLightColor: {r: 0.35933605, g: 0.67086506, b: 0.8962264, a: 1}
+  mLightColor: {r: 0.09385012, g: 0.34981337, b: 0.5377358, a: 1}
   mOnStrength: 3
   mOffStrength: 0.01
+  mLightIntensity: 1
 --- !u!1 &6738382428079015053
 GameObject:
   m_ObjectHideFlags: 0

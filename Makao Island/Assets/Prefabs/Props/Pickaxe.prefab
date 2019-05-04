@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4183703696688973045}
+  - component: {fileID: 7023157856914243045}
+  - component: {fileID: 7777118055080065376}
   m_Layer: 0
   m_Name: Pickaxe
   m_TagString: Untagged
@@ -31,6 +33,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &7023157856914243045
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3065708490175383940}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.18361208, y: 0.11930168, z: 0.031091325}
+  m_Center: {x: 0.037195876, y: 0.44034916, z: 0.0025353767}
+--- !u!65 &7777118055080065376
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3065708490175383940}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.08188969, y: 0.400028, z: 0.032294795}
+  m_Center: {x: -0.0049614385, y: 0.18124211, z: 0.0012208819}
 --- !u!1001 &5809076245954738790
 PrefabInstance:
   m_ObjectHideFlags: 0

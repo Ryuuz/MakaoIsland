@@ -92,6 +92,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void StopMovement()
+    {
+        mMovementDirection = Vector3.zero;
+    }
+
     //Set the movement speed based on wether the character is running or not
     public void TriggerSprint(bool sprinting)
     {

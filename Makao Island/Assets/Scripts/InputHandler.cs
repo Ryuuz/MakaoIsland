@@ -312,7 +312,7 @@ public class InputHandler : MonoBehaviour
             //Opens map if not open
             if(mGameManager.mData.mMapStatus && !mMapOpen)
             {
-                mPlayerController.SetMovementDirection(Vector2.zero);
+                mPlayerController.StopMovement();
                 mMapManager.ShowMap();
                 mMapOpen = true;
                 mInMenu = true;
@@ -363,7 +363,7 @@ public class InputHandler : MonoBehaviour
         mInCutscene = true;
         if(mPlayerController)
         {
-            mPlayerController.SetMovementDirection(Vector2.zero);
+            mPlayerController.StopMovement();
         }
         yield return new WaitForSeconds(duration);
         mInCutscene = false;

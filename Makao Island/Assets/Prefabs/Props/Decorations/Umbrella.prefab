@@ -54,6 +54,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7164830743306638637}
   - component: {fileID: 7674365520663289610}
+  - component: {fileID: 6844429691813138787}
   m_Layer: 0
   m_Name: Umbrella
   m_TagString: Untagged
@@ -92,6 +93,19 @@ CapsuleCollider:
   m_Height: 1.811546
   m_Direction: 1
   m_Center: {x: 0, y: 0.90391034, z: 0}
+--- !u!65 &6844429691813138787
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4124782912590295372}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.13042665, z: 1}
+  m_Center: {x: 0, y: 1.6357821, z: 0}
 --- !u!1 &6404553218852242292
 GameObject:
   m_ObjectHideFlags: 0

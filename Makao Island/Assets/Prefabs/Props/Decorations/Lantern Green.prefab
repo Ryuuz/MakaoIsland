@@ -129,9 +129,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f9d63ce2ced5ea4fb188f7b5393d118, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mLightColor: {r: 0.48810175, g: 0.764151, b: 0.32079923, a: 1}
+  mLightColor: {r: 0.2756223, g: 0.5943396, b: 0.08690815, a: 1}
   mOnStrength: 3
   mOffStrength: 0.01
+  mLightIntensity: 1
 --- !u!1001 &1049077307086510020
 PrefabInstance:
   m_ObjectHideFlags: 0

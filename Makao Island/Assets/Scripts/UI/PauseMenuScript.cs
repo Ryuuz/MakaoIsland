@@ -75,7 +75,7 @@ public class PauseMenuScript : MonoBehaviour
             mHidden = false;
         }
 
-        if(mSelectedButton)
+        if(!mDeactivated && mSelectedButton)
         {
             mSelectedButton.Select();
         }

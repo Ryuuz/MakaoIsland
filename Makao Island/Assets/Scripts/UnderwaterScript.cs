@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+//http://wiki.unity3d.com/index.php/Underwater_Script
 public class UnderwaterScript : MonoBehaviour
 {
     public Color mUnderwaterColor = new Color(1, 1, 1, 1);
