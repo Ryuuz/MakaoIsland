@@ -43,8 +43,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.43578222, y: 0.43870634, z: 0.43870804}
-  m_Center: {x: 0.0014620653, y: 0.20463745, z: 0.00000011733264}
+  m_Size: {x: 0.42977747, y: 0.4288805, z: 0.43024436}
+  m_Center: {x: 0.000097386095, y: 0.20518331, z: 0.00000012571354}
 --- !u!1001 &6425705678187652169
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -52,6 +52,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 278228085977869670}
     m_Modifications:
+    - target: {fileID: 100000, guid: 155f3ae375e59d648a67996f2163ba10, type: 3}
+      propertyPath: m_Name
+      value: GEO_crate_small
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 155f3ae375e59d648a67996f2163ba10, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 155f3ae375e59d648a67996f2163ba10, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -95,14 +103,6 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 155f3ae375e59d648a67996f2163ba10, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 155f3ae375e59d648a67996f2163ba10, type: 3}
-      propertyPath: m_Name
-      value: GEO_crate_small
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 155f3ae375e59d648a67996f2163ba10, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 155f3ae375e59d648a67996f2163ba10, type: 3}
