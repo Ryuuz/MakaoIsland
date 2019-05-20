@@ -293,7 +293,7 @@ public class DialogueLines
         //30
         new Sentence[]
         {
-            new Sentence(1, TalkAnimation.none, "I can’t believe they’re still teacher children about those silly animals."),
+            new Sentence(1, TalkAnimation.none, "I can’t believe they’re still teaching children about those silly animals."),
             new Sentence(2, TalkAnimation.none, "Uh-huh."),
             new Sentence(1, TalkAnimation.hands, "Hey, are you listening to me?"),
             new Sentence(2, TalkAnimation.none, "Uh-huh."),

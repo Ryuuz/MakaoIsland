@@ -42,7 +42,7 @@ PrefabInstance:
     - target: {fileID: 7874755963552206776, guid: 44dad27a04af68045a4c7b81650a3aad,
         type: 3}
       propertyPath: m_Name
-      value: physics_stool_rich
+      value: physics_stool_rich Variant
       objectReference: {fileID: 0}
     - target: {fileID: 7874755963552206776, guid: 44dad27a04af68045a4c7b81650a3aad,
         type: 3}
@@ -139,6 +139,26 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3976895136308799754, guid: 44dad27a04af68045a4c7b81650a3aad,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 217e544530248c34387d94bbfc3b1868, type: 2}
+    - target: {fileID: 3976895136308799752, guid: 44dad27a04af68045a4c7b81650a3aad,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 217e544530248c34387d94bbfc3b1868, type: 2}
+    - target: {fileID: 3976895136308799758, guid: 44dad27a04af68045a4c7b81650a3aad,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 217e544530248c34387d94bbfc3b1868, type: 2}
+    - target: {fileID: 3976895136308799756, guid: 44dad27a04af68045a4c7b81650a3aad,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 217e544530248c34387d94bbfc3b1868, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 44dad27a04af68045a4c7b81650a3aad, type: 3}
 --- !u!1 &8431134371745564171 stripped

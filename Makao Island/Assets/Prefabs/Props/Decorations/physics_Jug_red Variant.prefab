@@ -42,7 +42,7 @@ PrefabInstance:
     - target: {fileID: 5369702813220571354, guid: ae674a85a7ee2ae48a6d816ec08eeb6e,
         type: 3}
       propertyPath: m_Name
-      value: physics_Jug_red
+      value: physics_Jug_red Variant
       objectReference: {fileID: 0}
     - target: {fileID: 5369702813220571354, guid: ae674a85a7ee2ae48a6d816ec08eeb6e,
         type: 3}
@@ -109,6 +109,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7861134245815357955, guid: ae674a85a7ee2ae48a6d816ec08eeb6e,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 217e544530248c34387d94bbfc3b1868, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae674a85a7ee2ae48a6d816ec08eeb6e, type: 3}
 --- !u!1 &2108659152578827550 stripped

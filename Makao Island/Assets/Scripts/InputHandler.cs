@@ -313,6 +313,7 @@ public class InputHandler : MonoBehaviour
             if(mGameManager.mData.mMapStatus && !mMapOpen)
             {
                 mPlayerController.StopMovement();
+                mPlayerController.TriggerSpecialAction(false);
                 mMapManager.ShowMap();
                 mMapOpen = true;
                 mInMenu = true;

@@ -138,6 +138,36 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 953992714081260063, guid: de76e91fa54738e4aa5ac9c71b93b704,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 217e544530248c34387d94bbfc3b1868, type: 2}
+    - target: {fileID: 953992714081260061, guid: de76e91fa54738e4aa5ac9c71b93b704,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 217e544530248c34387d94bbfc3b1868, type: 2}
+    - target: {fileID: 953992714081260055, guid: de76e91fa54738e4aa5ac9c71b93b704,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 217e544530248c34387d94bbfc3b1868, type: 2}
+    - target: {fileID: 953992714081260053, guid: de76e91fa54738e4aa5ac9c71b93b704,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 217e544530248c34387d94bbfc3b1868, type: 2}
+    - target: {fileID: 953992714081260051, guid: de76e91fa54738e4aa5ac9c71b93b704,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 217e544530248c34387d94bbfc3b1868, type: 2}
+    - target: {fileID: 953992714081260049, guid: de76e91fa54738e4aa5ac9c71b93b704,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 217e544530248c34387d94bbfc3b1868, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de76e91fa54738e4aa5ac9c71b93b704, type: 3}
 --- !u!1 &64093229797185201 stripped
